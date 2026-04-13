@@ -50,7 +50,7 @@ await topicWriter.WriteEventDataAsync(eventDefinition);
 9. **Генерация налоговых проводок** (`taxPostingsProvider.ProvideAsync()`) — ветвление по СНО, запись через `ITaxPostingsUsnClient`/`ITaxPostingsPsnClient`
 10. Очистка providing state (`providingStateSetter.UnsetStateAsync()`)
 
-**LinkedDocuments consumer** (`md-linkedDocuments/src/apps/Moedelo.LinkedDocuments.Handler/HostedServices/Money/FromMoney_PaymentFromCustomerHostedService.cs:54-65`) — обновляет `BaseDocument` (дату, номер, сумму). Файл существует в репо `md-linkedDocuments`.
+**LinkedDocuments consumer** (`md-linkedDocuments/src/apps/Moedelo.LinkedDocuments.Handler/HostedServices/Money/FromMoney_PaymentFromCustomerHostedService.cs:54-65`) — обновляет `BaseDocument` (дату, номер, сумму). Файл подтверждён в репо: `md-linkedDocuments`, commit `64a3b3012`.
 
 **ChangeLog consumer** — аудит-лог.
 
@@ -114,15 +114,30 @@ await updater.UpdateAsync(request);
 [HttpPost("Incoming/PaymentFromCustomer/{documentBaseId}/ProvideSync")]
 public async Task<IActionResult> ProvideSyncAsync(long documentBaseId, PaymentFromCustomerSyncProvideRequest request)
 {
-    // Маппинг из sync request в provide request
     var provideRequest = MapToProvideRequest(request);
 
-    // ProvidingStateId создаётся и снимается внутри endpoint
+    // ProvidingStateId — lifecycle внутри endpoint
     provideRequest.ProvidingStateId = await providingStateSetter.SetStateAsync(documentBaseId);
     provideRequest.EventType = HandleEventType.Updated;
-    provideRequest.IsBadOperationState = false;  // ручной PUT не может быть bad state
 
-    await provider.ProvideAsync(provideRequest);  // тот же provider что вызывает Kafka consumer
+    // IsBadOperationState маппится из OperationState, как в текущем Kafka-пути
+    // (PaymentFromCustomerMapper.cs:102: eventData.OperationState.IsBadOperationState())
+    provideRequest.IsBadOperationState = request.OperationState.IsBadOperationState();
+
+    try
+    {
+        await provider.ProvideAsync(provideRequest);
+    }
+    catch
+    {
+        // Cleanup: если ProvideAsync упал посередине, state не должен зависнуть.
+        // В текущем коде (PaymentFromCustomerProvider.cs) нет finally —
+        // UnsetStateAsync вызывается только в happy path и early-return ветках (строки 89, 99, 139, 169).
+        // Sync endpoint берёт на себя гарантию cleanup.
+        await providingStateSetter.UnsetStateAsync(provideRequest.ProvidingStateId);
+        throw;
+    }
+
     return Ok();
 }
 ```
@@ -138,14 +153,16 @@ IsMediation, MediationCommissionSum,
 BillLinks[], DocumentLinks[], InvoiceLinks[],
 ReserveSum, TaxationSystemType, PatentId,
 IsMainContractor, ProvideInAccounting,
-IsManualTaxPostings (из TaxPostings.ProvidePostingType)
+IsManualTaxPostings (из TaxPostings.ProvidePostingType),
+OperationState (из SaveRequest, строка 67)
 ```
 
 Поля которые endpoint добавляет сам:
 ```
 ProvidingStateId — создаётся через providingStateSetter.SetStateAsync()
 EventType = HandleEventType.Updated
-IsBadOperationState = false
+IsBadOperationState — маппится из OperationState.IsBadOperationState()
+  (как в текущем Kafka-пути: PaymentFromCustomerMapper.cs:102)
 ```
 
 Это те же данные что сейчас передаются через Kafka event `PaymentFromCustomerUpdated` (см. `PaymentFromCustomerMapper.MapToUpdatedMessage()` строки 165-204), но без промежуточного этапа сериализации/десериализации через Kafka.
