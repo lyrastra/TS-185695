@@ -217,7 +217,7 @@ private async Task UpdateOperationAsync(PaymentFromCustomerSaveRequest request)
 
     // ② sync: Providing pipeline (ВМЕСТО Kafka event)
     //    Тот же PaymentFromCustomerProvider.ProvideAsync() через sync HTTP endpoint
-    await providingClient.ProvideAsync(MapToProvideRequest(request));
+    await providingClient.ProvideSyncAsync(request);
 
     // ③ sync: ByHand проводки (через SyncTaxPostingsWriter вместо Kafka commands)
     await customTaxPostingsSaver.OverwriteSyncAsync(
