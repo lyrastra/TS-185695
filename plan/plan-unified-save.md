@@ -2,7 +2,9 @@
 
 ## Задача
 
-Ручное редактирование одной операции (PUT) — sync-first, без Kafka. Source-of-truth и производные модели записываются синхронно до возврата 200 OK.
+Ручное редактирование одной операции (PUT) — sync-first, без Kafka. Source-of-truth и производные модели записываются синхронно до возврата 200 OK. Это касается обоих путей обновления проводок:
+- **Auto** (по умолчанию) — сейчас через Kafka → Providing consumer
+- **ByHand** (ручные) — сейчас через Kafka command writers в `CustomTaxPostingsSaver`
 
 Массовые операции — Kafka для распределения по операциям, каждый consumer вызывает тот же Updater.
 
@@ -48,7 +50,7 @@ await topicWriter.WriteEventDataAsync(eventDefinition);
 9. **Генерация налоговых проводок** (`taxPostingsProvider.ProvideAsync()`) — ветвление по СНО, запись через `ITaxPostingsUsnClient`/`ITaxPostingsPsnClient`
 10. Очистка providing state (`providingStateSetter.UnsetStateAsync()`)
 
-**LinkedDocuments consumer** (`FromMoney_PaymentFromCustomerHostedService.cs:54-65`) — обновляет `BaseDocument`.
+**LinkedDocuments consumer** (`md-linkedDocuments/src/apps/Moedelo.LinkedDocuments.Handler/HostedServices/Money/FromMoney_PaymentFromCustomerHostedService.cs:54-65`) — обновляет `BaseDocument` (дату, номер, сумму). Файл существует в репо `md-linkedDocuments`.
 
 **ChangeLog consumer** — аудит-лог.
 
@@ -95,22 +97,63 @@ await updater.UpdateAsync(request);
 
 Сейчас нет sync HTTP endpoint для `ProvideAsync()`. Нужно создать его в Providing API. Это не "вызвать пару HTTP-клиентов напрямую" — это полный pipeline из 10 шагов (бухсправки, связи, статусы счетов, бух. проводки, налоговые проводки, providing state).
 
+**ProvidingStateId lifecycle:**
+
+Сейчас state создаётся перед Kafka-публикацией и снимается в конце ProvideAsync:
+- Создание: `PaymentFromCustomerEventWriter.cs:49` → `providingStateSetter.SetStateAsync()` → HTTP к Providing API → возвращает `ProvidingStateId`
+- Снятие: `PaymentFromCustomerProvider.cs:169` → `providingStateSetter.UnsetStateAsync(request.ProvidingStateId)`
+
+`PaymentOrderProvidingStateSetter.cs:26-43`: `SetStateAsync()` делает HTTP POST к Providing API с `ProvidingStateType.All`.
+
+В sync-пути state lifecycle должен быть внутри sync endpoint — endpoint сам создаёт state перед `ProvideAsync()` и снимает после. Money.Business не передаёт `ProvidingStateId` — endpoint управляет им самостоятельно.
+
 **Подход:**
 
 1. В `Moedelo.Money.Providing.Api` добавить sync HTTP endpoint:
 ```csharp
-[HttpPost("Incoming/PaymentFromCustomer/{documentBaseId}/Provide")]
-public async Task<IActionResult> ProvideAsync(long documentBaseId, PaymentFromCustomerProvideRequest request)
+[HttpPost("Incoming/PaymentFromCustomer/{documentBaseId}/ProvideSync")]
+public async Task<IActionResult> ProvideSyncAsync(long documentBaseId, PaymentFromCustomerSyncProvideRequest request)
 {
-    await provider.ProvideAsync(request);  // тот же provider что вызывает Kafka consumer
+    // Маппинг из sync request в provide request
+    var provideRequest = MapToProvideRequest(request);
+
+    // ProvidingStateId создаётся и снимается внутри endpoint
+    provideRequest.ProvidingStateId = await providingStateSetter.SetStateAsync(documentBaseId);
+    provideRequest.EventType = HandleEventType.Updated;
+    provideRequest.IsBadOperationState = false;  // ручной PUT не может быть bad state
+
+    await provider.ProvideAsync(provideRequest);  // тот же provider что вызывает Kafka consumer
     return Ok();
 }
 ```
 
+**Контракт sync endpoint — `PaymentFromCustomerSyncProvideRequest`:**
+
+Поля которые Money.Business передаёт (из `PaymentFromCustomerSaveRequest`):
+```
+DocumentBaseId, Date, Number, Sum, SettlementAccountId,
+KontragentId (из Kontragent.Id), KontragentName,
+ContractBaseId, IncludeNds, NdsSum, MediationNdsSum,
+IsMediation, MediationCommissionSum,
+BillLinks[], DocumentLinks[], InvoiceLinks[],
+ReserveSum, TaxationSystemType, PatentId,
+IsMainContractor, ProvideInAccounting,
+IsManualTaxPostings (из TaxPostings.ProvidePostingType)
+```
+
+Поля которые endpoint добавляет сам:
+```
+ProvidingStateId — создаётся через providingStateSetter.SetStateAsync()
+EventType = HandleEventType.Updated
+IsBadOperationState = false
+```
+
+Это те же данные что сейчас передаются через Kafka event `PaymentFromCustomerUpdated` (см. `PaymentFromCustomerMapper.MapToUpdatedMessage()` строки 165-204), но без промежуточного этапа сериализации/десериализации через Kafka.
+
 2. В `Moedelo.Money.Business` вызывать этот endpoint через HTTP-клиент вместо Kafka event:
 ```csharp
 // Вместо: await writer.WriteUpdatedEventAsync(request);
-await providingClient.ProvideAsync(request);  // sync HTTP к Providing API
+await providingClient.ProvideSyncAsync(request);  // sync HTTP к Providing API
 ```
 
 **Почему это работает:** `PaymentFromCustomerProvider.ProvideAsync()` уже содержит всю бизнес-логику. Kafka consumer просто маппит event → request и вызывает его. Sync endpoint делает то же самое, но синхронно.
@@ -196,9 +239,11 @@ public async Task<IActionResult> SetReserveAsync(long documentBaseId, SetReserve
 
 ### PaymentToSupplier: добавить TaxationSystemType + e2e тест
 
-На все слои по аналогии с PaymentFromCustomer. SQL готов:
-- `Update.sql:27`: `TaxationSystemType = @TaxationSystemType`
-- `Select.sql:28`: `TaxationSystemType`
+На все слои по аналогии с PaymentFromCustomer. SQL подтверждён:
+- `md-money/src/apps/paymentOrders/Moedelo.Money.PaymentOrders.DataAccess/PaymentOrders/Scripts/Update.sql:27`: `TaxationSystemType = @TaxationSystemType`
+- `md-money/src/apps/paymentOrders/Moedelo.Money.PaymentOrders.DataAccess/PaymentOrders/Scripts/Select.sql:28`: `TaxationSystemType`
+
+Оба SQL — общие для всех типов операций (`PaymentOrderDao`). Поле уже используется PaymentFromCustomer.
 
 Обязательно: e2e контрактный тест по всей цепочке.
 
