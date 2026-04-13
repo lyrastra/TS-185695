@@ -288,4 +288,95 @@
       </root>
     </mxGraphModel>
   </diagram>
+  <diagram id="kafka" name="4. Системные Kafka-инициаторы">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="550">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" value="Kafka-сценарии, которые запускаются НЕ действием пользователя в форме" style="text;html=1;align=center;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="10" width="700" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="Пользовательские сценарии (редактирование, удаление, резерв, массовая смена) описаны на вкладках 1-3.&#xa;Здесь — системные и технические инициаторы, которые остаются на Kafka." style="text;html=1;align=center;fontSize=10;fontColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="150" y="32" width="700" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="h1" value="Кто запускает" style="text;align=center;fontSize=12;fontStyle=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="5" y="68" width="170" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="h2" value="Что происходит" style="text;align=center;fontSize=12;fontStyle=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="185" y="68" width="230" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="h3" value="Kafka-событие / команда" style="text;align=center;fontSize=12;fontStyle=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="425" y="68" width="260" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="h4" value="Зачем нужно" style="text;align=center;fontSize=12;fontStyle=1;fillColor=#E6E6E6;" vertex="1" parent="1">
+          <mxGeometry x="695" y="68" width="310" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: Import -->
+        <mxCell id="i1" value="Банковская интеграция&#xa;(автоматический импорт)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="5" y="95" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Банк прислал выписку,&#xa;система создаёт операцию&#xa;автоматически (без участия&#xa;пользователя)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="185" y="95" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k1" value="ImportPaymentFromCustomer&#xa;(Kafka command →&#xa;PaymentFromCustomerCommands&#xa;HostedService.cs:54-58)" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="425" y="95" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z1" value="Importer создаёт операцию →&#xa;Creator → WriteCreatedEventAsync() →&#xa;Providing consumer создаёт зависимости.&#xa;Весь путь async через Kafka." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="695" y="95" width="310" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: ProvideRequired -->
+        <mxCell id="i2" value="Providing сервис&#xa;(PaymentFromCustomer&#xa;Provider.cs:48, 65)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="5" y="160" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Нужно повторно провести&#xa;операцию: пересчитать все&#xa;зависимые данные заново&#xa;(без редактирования формы)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="185" y="160" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k2" value="PaymentFromCustomer&#xa;ProvideRequired&#xa;(WriteProvideRequired&#xa;EventAsync)" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="425" y="160" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z2" value="Providing consumer запускает&#xa;полный pipeline: связи, бухсправки,&#xa;статусы, проводки.&#xa;Операция не меняется — только зависимости." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="695" y="160" width="310" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: BatchProvide -->
+        <mxCell id="i3" value="Технический процесс&#xa;(Kafka command →&#xa;BatchProvideHosted&#xa;Service.cs:51)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="5" y="225" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Массовое повторное&#xa;проведение N операций.&#xa;Запускается техническим&#xa;процессом, не из UI." style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="185" y="225" width="230" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="k3" value="PaymentOrdersBatch&#xa;ProvideCommand" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="425" y="225" width="260" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="z3" value="Handler вызывает PaymentOrderProvider&#xa;.ProvideAsync(ids) — для каждой операции&#xa;запускается ProvideRequired.&#xa;В конце снимает batch providing state." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="695" y="225" width="310" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Row 4: TaxationSystemChanged -->
+        <mxCell id="i4" value="TaxationSystem&#xa;Updater&#xa;(после смены СНО&#xa;каждой операции)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="5" y="295" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="После обновления СНО&#xa;одной операции — уведомить&#xa;систему о завершении&#xa;(для трекинга массовой смены)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="185" y="295" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k4" value="TaxationSystemChangedEvent&#xa;(TaxationSystemChanged&#xa;EventWriter.cs)" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="425" y="295" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="z4" value="TaxationSystemChangedEvent&#xa;HostedService обновляет sync-объект.&#xa;Нужен для отслеживания завершения&#xa;массовой смены СНО." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="695" y="295" width="310" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Note -->
+        <mxCell id="note" value="" style="rounded=1;fillColor=#F5F5F5;strokeColor=#CCC;" vertex="1" parent="1">
+          <mxGeometry x="5" y="365" width="1000" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="nt" value="Все эти сценарии остаются на Kafka — они не затрагиваются планом.&#xa;План меняет только пользовательские сценарии: ручной Update, SetReserve и массовую смену СНО (вкладки 1-3)." style="text;fontSize=10;fontStyle=1;align=left;fontColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="12" y="368" width="985" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>

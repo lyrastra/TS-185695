@@ -10,6 +10,31 @@
 
 ---
 
+## Scope и Kafka-инициаторы
+
+В системе существует 6 Kafka-инициаторов для PaymentFromCustomer (подтверждено по `PaymentFromCustomerEventWriter.cs`):
+
+| Инициатор | Действие | Kafka-событие | Откуда запускается |
+|---|---|---|---|
+| Пользователь | Создаёт операцию | `PaymentFromCustomerCreated` | `POST /PaymentFromCustomer` → `WriteCreatedEventAsync()` |
+| Пользователь | Меняет операцию | `PaymentFromCustomerUpdated` | `PUT /PaymentFromCustomer/{id}` → `WriteUpdatedEventAsync()` |
+| Пользователь | Удаляет операцию | `PaymentFromCustomerDeleted` | `DELETE /PaymentFromCustomer/{id}` → `WriteDeletedEventAsync()` |
+| Пользователь | Меняет резерв | `PaymentFromCustomerSetReserve` | `POST /PaymentFromCustomer/{id}/SetReserve` → `WriteSetReserveEventAsync()` |
+| Пользователь | Массово меняет СНО | Kafka fan-out команда | `POST /Operations/ChangeTaxationSystem` → `ChangeTaxationSystemSender` |
+| Система | Повторное проведение | `PaymentFromCustomerProvideRequired` | `WriteProvideRequiredEventAsync()` — технический/системный сценарий |
+
+**Что входит в scope этого плана:**
+- Ручной `Update` одной операции (основной сценарий бага TS-185695)
+- `SetReserve` (сейчас Kafka-only)
+- Массовая смена СНО (использует тот же Updater)
+
+**Что существует в системе, но вне scope:**
+- `Create` — при создании новой операции Kafka event нужен для инициализации зависимых данных. Логика аналогична, но сценарий создания не является причиной бага.
+- `Delete` — при удалении Kafka event нужен для очистки зависимых данных. Отдельная задача.
+- `ProvideRequired` — технический re-provide без ручного редактирования. Используется системными процессами.
+
+---
+
 ## Что сейчас в коде
 
 ### Updater: `PaymentFromCustomerUpdater.UpdateOperationAsync()` (строки 82-105)
