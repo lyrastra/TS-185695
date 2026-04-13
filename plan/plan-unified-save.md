@@ -50,7 +50,7 @@ await topicWriter.WriteEventDataAsync(eventDefinition);
 9. **Генерация налоговых проводок** (`taxPostingsProvider.ProvideAsync()`) — ветвление по СНО, запись через `ITaxPostingsUsnClient`/`ITaxPostingsPsnClient`
 10. Очистка providing state (`providingStateSetter.UnsetStateAsync()`)
 
-**LinkedDocuments consumer** (`md-linkedDocuments/src/apps/Moedelo.LinkedDocuments.Handler/HostedServices/Money/FromMoney_PaymentFromCustomerHostedService.cs:54-65`) — обновляет `BaseDocument` (дату, номер, сумму). Файл подтверждён в репо: `md-linkedDocuments`, commit `64a3b3012`.
+**LinkedDocuments consumer** (внешний репозиторий `md-linkedDocuments`, файл `src/apps/Moedelo.LinkedDocuments.Handler/HostedServices/Money/FromMoney_PaymentFromCustomerHostedService.cs:54-65`, commit `64a3b3012` в монорепо `plus`) — обновляет `BaseDocument` (дату, номер, сумму).
 
 **ChangeLog consumer** — аудит-лог.
 
@@ -252,7 +252,7 @@ public async Task<IActionResult> SetReserveAsync(long documentBaseId, SetReserve
 
 **Нагрузка:** Updater тяжелее (sync HTTP к Providing вместо Kafka publish). Consumer setting: `PaymentOrderChangeTaxationSystemCommandConsumerCount` (не `MoneyEventConsumerCount` — это другой consumer). Мониторить latency и lag.
 
-Фронт: заменить `setTimeout(10000)` (`MassChangeTaxSystemStore.js:112`) на polling sync-объекта.
+Фронт (репозиторий `md-finances`): заменить `setTimeout(10000)` (`md-finances/src/webStatic/apps/money/stores/MassChangeTaxSystemStore.js:112`) на polling sync-объекта (`TaxationSystemChangingSyncObjectManager` в `md-money`).
 
 ### PaymentToSupplier: добавить TaxationSystemType + e2e тест
 

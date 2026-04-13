@@ -69,7 +69,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="t" value="TO-BE: ручной PUT — sync Providing facade. Массовая — Kafka fan-out, тот же Updater" style="text;html=1;align=center;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+        <mxCell id="t" value="TO-BE: ручной PUT — sync Providing facade. Массовая — Kafka, тот же Updater" style="text;html=1;align=center;fontSize=15;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="10" width="800" height="25" as="geometry" />
         </mxCell>
         <mxCell id="f1t" value="Flow 1: ручной PUT — ВСЁ SYNC" style="text;fontSize=12;fontStyle=1;fontColor=#007700;" vertex="1" parent="1">
@@ -88,26 +88,26 @@
         <mxCell id="s1" value="① apiClient&#xa;SQL UPDATE" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="80" y="80" width="90" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="s2" value="② providingClient&#xa;.ProvideSyncAsync()&#xa;sync HTTP →&#xa;Providing API" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="185" y="80" width="130" height="58" as="geometry" />
+        <mxCell id="s2" value="② ProvideSyncAsync&#xa;sync HTTP →&#xa;Providing API" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="185" y="80" width="130" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="s3" value="③ CustomTaxPosting&#xa;Saver (ByHand)&#xa;sync writer" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
-          <mxGeometry x="330" y="80" width="115" height="48" as="geometry" />
+        <mxCell id="s3" value="③ ByHand проводки&#xa;sync writer" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="330" y="80" width="115" height="35" as="geometry" />
         </mxCell>
         <mxCell id="s4" value="④ ChangeLog&#xa;Kafka (аудит)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="460" y="80" width="90" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="provbox" value="Providing API:&#xa;тот же ProvideAsync()&#xa;(связи, проводки,&#xa;бухсправки, статусы)&#xa;+ ProvidingState lifecycle&#xa;  с try/catch cleanup" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="170" y="150" width="165" height="82" as="geometry" />
+        <mxCell id="provbox" value="Providing API:&#xa;тот же ProvideAsync()&#xa;+ ProvidingState lifecycle&#xa;  с try/catch cleanup" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;align=left;spacingLeft=4;" vertex="1" parent="1">
+          <mxGeometry x="170" y="145" width="165" height="65" as="geometry" />
         </mxCell>
         <mxCell id="ep" edge="1" source="s2" target="provbox" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
-        <mxCell id="f2t" value="Flow 2: массовая — Kafka fan-out" style="text;fontSize=12;fontStyle=1;fontColor=#7B3F9E;" vertex="1" parent="1">
+        <mxCell id="f2t" value="Flow 2: массовая — Kafka, тот же Updater" style="text;fontSize=12;fontStyle=1;fontColor=#7B3F9E;" vertex="1" parent="1">
           <mxGeometry x="610" y="40" width="300" height="16" as="geometry" />
         </mxCell>
         <mxCell id="user2" value="👤 N оп." style="shape=actor;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="610" y="62" width="55" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="kf" value="Kafka fan-out →&#xa;для каждой операции&#xa;→ тот же Updater&#xa;(sync внутри)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
+        <mxCell id="kf" value="Kafka →&#xa;для каждой операции&#xa;→ тот же Updater&#xa;(sync внутри)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="690" y="60" width="140" height="55" as="geometry" />
         </mxCell>
         <mxCell id="ek" edge="1" source="user2" target="kf" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
@@ -129,130 +129,161 @@
         <mxCell id="res" value="200 OK: source-of-truth + проводки + связи записаны sync" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="80" y="360" width="430" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="lg" value="■ зелёный = sync     ■ жёлтый = Kafka (аудит)     ■ фиолетовый = Kafka (fan-out)" style="text;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="130" y="400" width="530" height="16" as="geometry" />
+        <mxCell id="lg" value="■ зелёный = sync     ■ жёлтый = Kafka (аудит)     ■ фиолетовый = Kafka (распределение)" style="text;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="400" width="550" height="16" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="diff" name="3. Разница">
-    <mxGraphModel dx="1500" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="830">
+    <mxGraphModel dx="1500" dy="1050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1050">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="t" value="Разница AS-IS → TO-BE" style="text;html=1;align=center;fontSize=17;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="330" y="5" width="350" height="22" as="geometry" />
+
+        <!-- Glossary -->
+        <mxCell id="gloss" value="" style="rounded=1;fillColor=#F5F5F5;strokeColor=#CCCCCC;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="5" width="1200" height="65" as="geometry" />
         </mxCell>
-        <mxCell id="hw" value="БЫЛО" style="text;align=center;fontSize=13;fontStyle=1;fontColor=#CC0000;" vertex="1" parent="1">
-          <mxGeometry x="20" y="30" width="430" height="16" as="geometry" />
+        <mxCell id="gt" value="Кто есть кто:" style="text;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="12" y="8" width="100" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="hn" value="СТАЛО" style="text;align=center;fontSize=13;fontStyle=1;fontColor=#007700;" vertex="1" parent="1">
-          <mxGeometry x="480" y="30" width="350" height="16" as="geometry" />
+        <mxCell id="g1" value="Пользователь — бухгалтер, который редактирует операцию.     Money API — сохраняет саму операцию.&#xa;Providing — пересчитывает зависимые данные: связи документов, статусы счетов, бухгалтерские и налоговые проводки.&#xa;Source-of-truth — основная запись операции (Accounting_PaymentOrder).     Производные данные — налоговые проводки, связи, бухсправки." style="text;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="12" y="24" width="1180" height="42" as="geometry" />
         </mxCell>
-        <mxCell id="he" value="ЧТО ДАЁТ" style="text;align=center;fontSize=13;fontStyle=1;fontColor=#333399;" vertex="1" parent="1">
-          <mxGeometry x="870" y="30" width="230" height="16" as="geometry" />
+
+        <!-- Headers -->
+        <mxCell id="h1" value="Сценарий пользователя" style="text;align=center;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="78" width="230" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="l1" value="1. PUT → Providing (Auto проводки, связи, бухсправки, статусы)" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="50" width="460" height="14" as="geometry" />
+        <mxCell id="h2" value="Как работает сейчас" style="text;align=center;fontSize=13;fontStyle=1;fontColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="250" y="78" width="280" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="w1" value="👤 PUT → Kafka event → Providing consumer →&#xa;ProvideAsync() (10 шагов, async).&#xa;ProvidingState: set перед event, unset в конце." style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="68" width="445" height="50" as="geometry" />
+        <mxCell id="h3" value="Как будет работать" style="text;align=center;fontSize=13;fontStyle=1;fontColor=#007700;" vertex="1" parent="1">
+          <mxGeometry x="550" y="78" width="300" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="n1" value="👤 PUT → sync HTTP → Providing API →&#xa;тот же ProvideAsync(). Endpoint сам&#xa;управляет ProvidingState + try/catch cleanup.&#xa;IsBadOperationState из OperationState." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="68" width="370" height="50" as="geometry" />
+        <mxCell id="h4" value="Что увидит пользователь" style="text;align=center;fontSize=13;fontStyle=1;fontColor=#333399;" vertex="1" parent="1">
+          <mxGeometry x="870" y="78" width="250" height="16" as="geometry" />
         </mxCell>
-        <mxCell id="e1" value="Проводки и связи&#xa;записаны до 200 OK.&#xa;Таблица актуальна." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="68" width="210" height="50" as="geometry" />
+
+        <!-- Row 1 -->
+        <mxCell id="s1" value="Пользователь меняет&#xa;СНО в одной операции&#xa;и нажимает «Сохранить»" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="100" width="230" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="l2" value="2. PUT → ByHand проводки" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="128" width="300" height="14" as="geometry" />
+        <mxCell id="w1" value="Сама операция сохраняется сразу.&#xa;Пересчёт связей, статусов и&#xa;налоговых проводок запускается&#xa;позже, через очередь сообщений." style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="280" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="w2" value="CustomTaxPostingsSaver → Kafka commands&#xa;(Auto → ранний return, только ByHand)" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="146" width="445" height="35" as="geometry" />
+        <mxCell id="n1" value="Операция сохраняется, и сразу&#xa;после этого синхронно пересчиты-&#xa;ваются связи, статусы и проводки.&#xa;Ответ приходит после всего." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="100" width="300" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="n2" value="ITaxPostingsWriter (sync режим).&#xa;Бизнес-логика остаётся в Saver.&#xa;Parity-тесты обязательны." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="146" width="370" height="35" as="geometry" />
+        <mxCell id="r1" value="После сохранения карточка&#xa;операции и общая таблица&#xa;показывают одно и то же." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="100" width="250" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="e2" value="Ручные проводки&#xa;sync" style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="146" width="210" height="35" as="geometry" />
+
+        <!-- Row 2 -->
+        <mxCell id="s2" value="Пользователь вручную&#xa;задал налоговые проводки" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="168" width="230" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="l3" value="3. Массовая смена СНО" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="192" width="300" height="14" as="geometry" />
+        <mxCell id="w2" value="Ручные проводки сохраняются&#xa;отдельным асинхронным путём." style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="168" width="280" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="w3" value="👤 N оп. → Kafka fan-out → тот же Updater&#xa;(Kafka внутри). Фронт: setTimeout(10000)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="210" width="445" height="35" as="geometry" />
+        <mxCell id="n2" value="Ручные проводки тоже сохраняются&#xa;синхронно в рамках того же запроса." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="168" width="300" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="n3" value="Fan-out без изменений.&#xa;Updater sync внутри.&#xa;Polling вместо таймера." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="210" width="370" height="35" as="geometry" />
+        <mxCell id="r2" value="Ручные проводки видны&#xa;сразу после сохранения." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="168" width="250" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="e3" value="Пользователь знает&#xa;когда завершено" style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="210" width="210" height="35" as="geometry" />
+
+        <!-- Row 3 -->
+        <mxCell id="s3" value="Пользователь меняет СНО&#xa;сразу у нескольких операций" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="222" width="230" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="l4" value="4. SetReserve" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="256" width="300" height="14" as="geometry" />
+        <mxCell id="w3" value="Система разбивает задачу по&#xa;операциям и обрабатывает по одной." style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="222" width="280" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="w4" value="Только Kafka → Providing → PaymentLinksCreator" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="274" width="445" height="25" as="geometry" />
+        <mxCell id="n3" value="Распределение остаётся, но внутри&#xa;каждая операция обрабатывается&#xa;тем же синхронным сценарием." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="222" width="300" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="n4" value="Sync HTTP → Providing API →&#xa;тот же UpdateReserveAsync()" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="274" width="370" height="25" as="geometry" />
+        <mxCell id="r3" value="Логика ручного и массового&#xa;изменения одинаковая." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="222" width="250" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="e4" value="200 OK = резерв&#xa;сохранён" style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="274" width="210" height="25" as="geometry" />
+
+        <!-- Row 4 -->
+        <mxCell id="s4" value="Пользователь меняет&#xa;резерв у операции" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="276" width="230" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="l5" value="5. PaymentToSupplier — TaxationSystemType" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="310" width="350" height="14" as="geometry" />
+        <mxCell id="w4" value="Резерв обновляется отдельным&#xa;асинхронным сценарием." style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="276" width="280" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="w5" value="Фронт отправляет, бэкенд отбрасывает" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="328" width="445" height="22" as="geometry" />
+        <mxCell id="n4" value="Резерв обновляется синхронно&#xa;через новый endpoint." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="276" width="300" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="n5" value="Добавить на все слои + e2e тест.&#xa;SQL подтверждён (Update.sql:27, Select.sql:28)" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="328" width="370" height="22" as="geometry" />
+        <mxCell id="r4" value="После сохранения резерв&#xa;уже актуален." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="276" width="250" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="e5" value="СНО не теряется" style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="328" width="210" height="22" as="geometry" />
+
+        <!-- Row 5 -->
+        <mxCell id="s5" value="Пользователь сохраняет&#xa;платёж поставщику&#xa;с выбранным СНО" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="325" width="230" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="l6" value="6. Fallback null→default" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="362" width="300" height="14" as="geometry" />
+        <mxCell id="w5" value="Поле СНО не проходит через&#xa;backend-цепочку этого сценария.&#xa;SQL-модель поддерживает поле,&#xa;но DTO и мапперы — нет." style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="325" width="280" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="w6" value="Молча подставляет дефолт при null" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="380" width="445" height="22" as="geometry" />
+        <mxCell id="n5" value="Поле СНО будет добавлено&#xa;во все DTO, мапперы и проверки.&#xa;E2e тест по всей цепочке." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="325" width="300" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="n6" value="Убрать или пометить флагом isDefault" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="380" width="370" height="22" as="geometry" />
+        <mxCell id="r5" value="СНО не потеряется&#xa;при сохранении." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="325" width="250" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="e6" value="Реальные данные в UI" style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="380" width="210" height="22" as="geometry" />
+
+        <!-- Row 6 -->
+        <mxCell id="s6" value="У операции нет&#xa;явного значения СНО" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="387" width="230" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="l7" value="7. Контракт PUT" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="414" width="300" height="14" as="geometry" />
+        <mxCell id="w6" value="Система молча подставляет&#xa;значение по умолчанию." style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="387" width="280" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="w7" value="Strict-success: ошибка → ошибка" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="432" width="445" height="22" as="geometry" />
+        <mxCell id="n6" value="Подстановка будет убрана&#xa;или помечена явно." style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="387" width="300" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="n7" value="Без изменений — strict-success" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="432" width="370" height="22" as="geometry" />
+        <mxCell id="r6" value="В интерфейсе видно реальное&#xa;значение, не подстановка." style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="387" width="250" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="e7" value="Контракт не меняем" style="rounded=1;fillColor=#E8E8E8;strokeColor=#999;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="432" width="210" height="22" as="geometry" />
+
+        <!-- Row 7 -->
+        <mxCell id="s7" value="Что считается успешным&#xa;сохранением" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="436" width="230" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="l8" value="8. Аудит-лог" style="text;align=left;fontSize=10;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="5" y="466" width="300" height="14" as="geometry" />
+        <mxCell id="w7" value="Ошибка на любом обязательном&#xa;шаге = сохранение неуспешно." style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="436" width="280" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="w8" value="Kafka → ChangeLog consumer" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="5" y="484" width="445" height="22" as="geometry" />
+        <mxCell id="n7" value="Это правило не меняется." style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="436" width="300" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="n8" value="Без изменений. Нет sync клиента." style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="470" y="484" width="370" height="22" as="geometry" />
+        <mxCell id="r7" value="Система не показывает&#xa;ложный успех." style="rounded=1;fillColor=#E8E8E8;strokeColor=#999;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="436" width="250" height="32" as="geometry" />
         </mxCell>
-        <mxCell id="e8" value="Не влияет на UI" style="rounded=1;fillColor=#E8E8E8;strokeColor=#999;fontSize=9;align=left;spacingLeft=4;" vertex="1" parent="1">
-          <mxGeometry x="860" y="484" width="210" height="22" as="geometry" />
+
+        <!-- Row 8 -->
+        <mxCell id="s8" value="Система пишет запись&#xa;в журнал изменений" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=5;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="5" y="482" width="230" height="32" as="geometry" />
         </mxCell>
+        <mxCell id="w8" value="Журнал пишется асинхронно." style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="250" y="482" width="280" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="Этот путь остаётся асинхронным." style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="482" width="300" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="r8" value="Аудит не тормозит&#xa;интерфейс." style="rounded=1;fillColor=#E8E8E8;strokeColor=#999;fontSize=10;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="870" y="482" width="250" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- Summary -->
         <mxCell id="pb" value="" style="rounded=1;fillColor=#E8E8FF;strokeColor=#6666CC;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="5" y="530" width="1065" height="42" as="geometry" />
+          <mxGeometry x="5" y="535" width="1115" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="px" value="Ключевое: sync Providing facade — новый endpoint, вызывающий тот же ProvideAsync(). ProvidingState lifecycle&#xa;внутри endpoint с try/catch cleanup. IsBadOperationState из OperationState. Kafka — только fan-out и аудит." style="text;align=left;fontSize=10;fontColor=#333399;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="12" y="533" width="1050" height="35" as="geometry" />
+        <mxCell id="px" value="Главное изменение: при ручном сохранении одной операции все зависимые данные (проводки, связи, статусы)&#xa;пересчитываются синхронно до ответа пользователю. Массовые операции распределяются через очередь, но используют ту же логику." style="text;align=left;fontSize=10;fontColor=#333399;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="12" y="538" width="1100" height="33" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
