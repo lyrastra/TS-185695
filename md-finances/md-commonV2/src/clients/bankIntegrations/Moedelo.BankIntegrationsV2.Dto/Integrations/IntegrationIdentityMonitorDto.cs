@@ -1,0 +1,21 @@
+﻿using System.Collections.Generic;
+using Moedelo.Common.Enums.Enums.Integration;
+
+namespace Moedelo.BankIntegrationsV2.Dto.Integrations
+{
+    public class IntegrationIdentityMonitorDto
+    {
+        public string ExternalRequestId { get; set; }
+        public int FirmId { get; set; }
+        public string Login { get; set; }
+        public string Kpp { get; set; }
+        public string Inn { get; set; }
+        public string SettlementNumber { get; set; }
+        public string Bik { get; set; }
+        public int IntegrationPartner { get; set; }
+        /// <summary> Признак Учётки </summary>
+        public bool IsAccounting { get; set; }
+        /// <summary> Дополнительные параметры </summary>
+        public Dictionary<string, object> SpecificParameters { get; set; } = new Dictionary<string, object>();
+    }
+}

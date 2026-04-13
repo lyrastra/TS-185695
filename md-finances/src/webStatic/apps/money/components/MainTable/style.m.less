@@ -1,0 +1,165 @@
+.tableLoader {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loader {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.table {
+    min-height: 220px;
+    padding-top: 15px;
+
+    .tableHead {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        min-height: 38px;
+
+        .priceCell {
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .checkbox__label {
+            color: hsl(0, 0%, 60%);
+        }
+    }
+
+    .cell__action {
+        margin-bottom: -20px;
+        margin-top: -12px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .tableRow {
+        display: flex;
+    }
+
+    .totalCount {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .showMoreButtonPanel {
+        text-align: center;
+        width: 100%;
+    }
+
+    .showMoreButtonPanel + .totalCount {
+        position: absolute;
+    }
+
+    .tableFooter {
+        font-size: 13px;
+        display: flex;
+        justify-content: space-between;
+
+        .block {
+            display: inline-block;
+        }
+    }
+}
+
+.gray {
+    color: hsl(0, 0%, 60%);
+}
+
+.incoming {
+    color: hsl(120, 100%, 30%);
+}
+
+.outgoing {
+    color: hsl(8, 80%, 48%);
+}
+
+.priceCell {
+    text-align: right;
+}
+
+.headerCell:not(.activeSort) {
+    color: hsl(195, 72%, 45%);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px dashed transparent;
+    padding: 0;
+
+    &:hover {
+        border-bottom: 1px dashed hsl(195, 72%, 45%);
+    }
+}
+
+.activeSort {
+    background: hsl(218, 31%, 95%);
+    box-sizing: border-box;
+    padding: 0 0 0 10px;
+    border-radius: 3px 3px 3px 3px;
+    height: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: -10px;
+    top: -4px;
+    outline: none;
+    border: none;
+
+    &.dateHeaderCell,
+    &.kontragentHeaderCell {
+        left: -10px;
+    }
+
+    &.sumHeaderCell {
+        right: -23px;
+    }
+
+    &.asc:after {
+        content: '↑';
+        padding: 0 8px;
+    }
+
+    &.desc:after {
+        content: '↓';
+        padding: 0 8px;
+    }
+}
+
+.checkedCount {
+    white-space: nowrap;
+    color: hsl(0, 0%, 60%);
+}
+
+.sentReportControls {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.beforeSignReport {
+    /* stylelint-disable-next-line */
+    &__block {
+        .title {
+            margin: 5px 0;
+        }
+
+        &:first-child .title {
+            margin-top: 0;
+        }
+    }
+
+    .reportOperation {
+        font-size: 14px;
+        color: hsl(0, 0%, 60%);
+    }
+}
+
+.stickyHeader {
+    background-color: white;
+    z-index: 2;
+}

@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="BudgetaryPayment\Scripts\GetActivePaymentReason.sql" />
+    <EmbeddedResource Include="BudgetaryPayment\Scripts\SetPayerKpp.sql" />
+    <EmbeddedResource Include="BudgetaryPayment\Scripts\GetPayerKpp.sql" />
+    <EmbeddedResource Include="BudgetaryPayment\Scripts\GetBudgetaryTaxPayments.sql" />
+    <EmbeddedResource Include="BudgetaryPayment\Scripts\GetCurrencyInvoiceNdsPayments.sql" />
+    <EmbeddedResource Include="Outsource\Scripts\GetForOutsourceConfirmClickReport.sql" />
+    <EmbeddedResource Include="Outsource\Scripts\GetIsAllOperationApprovedByFirmIds.sql" />
+    <EmbeddedResource Include="Outsource\Scripts\GetIsApprovedByIds.sql" />
+    <EmbeddedResource Include="Outsource\Scripts\TryUnsetIsApproved.sql" />
+    <EmbeddedResource Include="Outsource\Scripts\TrySetIsApproved.sql" />
+    <EmbeddedResource Include="Outsource\Scripts\GetIsApprovedById.sql" />
+    <EmbeddedResource Include="Outsource\Scripts\UpdateOutsourceStateByBaseIds.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\ApproveImported.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\ApplyIgnoreNumber.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\DeleteInvalid.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\Delete.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetBaseIdByType.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetOperationTypeByBaseIds.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\Insert.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetBaseIdById.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetOutgoingNumbers.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetIsPaid.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\Select.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetIsFromImport.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\Update.sql" />
+    <EmbeddedResource Include="RentPeriods\Scripts\Delete.sql" />
+    <EmbeddedResource Include="RentPeriods\Scripts\GetByPaymentIds.sql" />
+    <EmbeddedResource Include="RentPeriods\Scripts\Overwrite.sql" />
+    <EmbeddedResource Include="RentPeriods\Scripts\Select.sql" />
+    <EmbeddedResource Include="WorkerPayments\Scripts\Delete.sql" />
+    <EmbeddedResource Include="WorkerPayments\Scripts\Select.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\CurrencyBalance.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetDocumentsStatus.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-sqldataaccess\src\Moedelo.Common.SqlDataAccess.Abstractions\Moedelo.Common.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-sqldataaccess\src\Moedelo.Infrastructure.SqlDataAccess.Abstractions\Moedelo.Infrastructure.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.PaymentOrders.DataAccess.Abstractions\Moedelo.Money.PaymentOrders.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.PaymentOrders.Domain\Moedelo.Money.PaymentOrders.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

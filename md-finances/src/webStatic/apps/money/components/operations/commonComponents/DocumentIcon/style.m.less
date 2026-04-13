@@ -1,0 +1,119 @@
+@blue: hsl(204,88%,48%);
+@green: hsl(149,52%,51%);
+@red: hsl(8,83%,64%);
+@orange: hsl(40,94%,61%);
+@grey: hsl(0,0%,76%);
+@turquoise: hsl(184,72%,60%);
+
+@lightenHover: 8;
+@lightenActive: @lightenHover + 8;
+@saturateActive: 2;
+
+@circle: hsla(0,0%,20%,0.08);
+
+.hoverIcon(@color){
+  fill: lighten(@color, @lightenHover);
+}
+
+.activeIcon(@color){
+  fill: saturate(lighten(@color, @lightenActive), @saturateActive);
+}
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: @circle;
+  }
+}
+
+.icon{
+  width: 26px;
+  height: 30px;
+}
+
+.icon_blue{
+  fill: @blue;
+
+  .wrapper:hover > &{
+    .hoverIcon(@blue);
+  }
+  .wrapper:active > &{
+    .activeIcon(@blue);
+  }
+}
+
+.icon_green{
+  fill: @green;
+
+  wrapper:hover > &{
+    .hoverIcon(@green);
+  }
+  .wrapper:active > &{
+    .activeIcon(@green);
+  }
+}
+
+.icon_red{
+  fill: @red;
+
+  wrapper:hover > &{
+    .hoverIcon(@red);
+  }
+  .wrapper:active > &{
+    .activeIcon(@red);
+  }
+}
+
+.icon_orange{
+  fill: @orange;
+
+  wrapper:hover > &{
+    .hoverIcon(@orange);
+  }
+  .wrapper:active > &{
+    .activeIcon(@orange);
+  }
+}
+
+.icon_grey{
+  fill: @grey;
+
+  wrapper:hover > &{
+    .hoverIcon(@grey);
+  }
+  .wrapper:active > &{
+    .activeIcon(@grey);
+  }
+}
+
+.icon_turquoise{
+  fill: @turquoise;
+
+  wrapper:hover > &{
+    .hoverIcon(@turquoise);
+  }
+  .wrapper:active > &{
+    .activeIcon(@turquoise);
+  }
+}
+
+.label{
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 10px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: hsl(0,0%,100%);
+  position: absolute;
+  left: 0;
+  top: 12px;
+}

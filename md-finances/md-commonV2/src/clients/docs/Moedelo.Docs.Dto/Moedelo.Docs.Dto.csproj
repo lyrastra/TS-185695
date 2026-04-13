@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{2DE0950C-024A-4C70-B722-2793780DE11C}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>Moedelo.Docs.Dto</AssemblyTitle>
+    <Product>Moedelo.Docs.Dto</Product>
+    <Copyright>Copyright © Моё Дело 2026</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Ukd\UkdReportFileDto.cs" />
+    <Compile Remove="Ukd\UkdSourceKind.cs" />
+  </ItemGroup>
+</Project>

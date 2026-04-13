@@ -1,0 +1,1010 @@
+.customSelectList {
+  left: -8px;
+}
+.customSelectList li i {
+  position: relative;
+  top: 2px;
+}
+input:-moz-placeholder,
+input::-webkit-input-placeholder,
+input::-webkit-input-placeholder,
+textarea:-moz-placeholder,
+textarea::-webkit-input-placeholder {
+  font-size: 13px;
+  font-family: Arial;
+}
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3px 5px;
+}
+textarea.long {
+  width: 420px;
+  height: 40px;
+  min-height: 40px;
+  max-height: 300px;
+}
+.salesDocuments.busyShowing {
+  top: 30px;
+  position: relative;
+}
+.arrowWrapper {
+  border: 1px solid #777777;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+.arrowWrapper .arrow_bottom {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  top: -1px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #777777;
+  border-bottom: 5px solid transparent;
+  position: relative;
+  cursor: pointer;
+}
+.docFormat_list,
+.createDocument_list {
+  left: -8px;
+}
+.docFormat_list li i,
+.createDocument_list li i {
+  position: relative;
+  top: 2px;
+}
+.mdButton[data-mddropdown] .mdDropDownList {
+  left: -1px;
+}
+.createDocument_list {
+  width: 180px;
+}
+.action_links {
+  position: absolute;
+  right: 0;
+  top: 58px;
+  text-align: left;
+  width: 190px;
+  padding: 10px 0 15px 15px;
+  background: #f3f3f3;
+  z-index: 5;
+}
+.action_links .mdDropDownList {
+  min-width: 190px;
+}
+.action_links span.actionLink {
+  border-bottom: 1px dashed #404040;
+  color: #404040;
+  cursor: pointer;
+  display: inline;
+}
+.action_links span.actionLink:hover {
+  border-bottom: none;
+}
+.action_links .download,
+.action_links .createDocument {
+  position: relative;
+}
+.documentForm {
+  position: relative;
+}
+.documentForm.mdContainer input[type=text].short {
+  width: 110px;
+}
+.documentForm input.middle {
+  width: 230px;
+}
+.documentForm input.long {
+  width: 350px;
+}
+.documentForm input.extraShort {
+  width: 60px;
+}
+.documentForm input.sum,
+.documentForm input.sumField {
+  text-align: right;
+  margin-right: 7px;
+}
+.documentForm textarea.short {
+  width: 108px;
+}
+.documentForm textarea.middle {
+  width: 228px;
+}
+.documentForm textarea.long {
+  width: 348px;
+}
+.documentForm select.short {
+  width: 118px;
+}
+.documentForm select.middle {
+  width: 238px;
+}
+.documentForm select.long {
+  width: 358px;
+}
+.documentForm span.link {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  cursor: pointer;
+}
+.documentForm span.link:hover {
+  border-bottom: 0 dashed;
+}
+.documentForm span.link.disabled-link {
+  color: #b2b2b2;
+  cursor: default !important;
+  border-bottom: transparent;
+}
+.documentForm a.extraShort {
+  width: 70px;
+}
+.documentForm a.middle {
+  width: 240px;
+}
+.documentForm .h1 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  min-height: 27px;
+}
+.documentForm .h1 span.input_text {
+  color: #1f85c5;
+  border-bottom: 1px dashed #1f85c5;
+  cursor: pointer;
+}
+.documentForm .h1 span.input_text:hover {
+  border-bottom: 0;
+}
+.documentForm .h1 span.input_text[readonly],
+.documentForm .h1 span.input_text[disabled] {
+  color: #404040;
+  border-bottom: none;
+  cursor: default;
+}
+.documentForm .h1 .input {
+  width: 130px;
+  display: none;
+  position: relative;
+  top: -2px;
+}
+.documentForm .h1 .input.mdDatepicker {
+  z-index: 1000;
+}
+.documentForm .status {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.3em;
+  margin-left: 20px;
+  height: 30px;
+  margin-top: 6px;
+  position: relative;
+  font-weight: normal;
+}
+
+.documentForm .status.hidden{
+  display: none;
+}
+
+.documentForm .status .selected {
+  border-bottom: 1px dashed #777777;
+  color: #777777;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.documentForm .status .selected:hover {
+  border-bottom: 0;
+}
+.documentForm .status .statusList {
+  left: -8px;
+  width: 115px;
+  top: -5px;
+  left: -13px;
+}
+.documentForm .status .statusList li i {
+  position: relative;
+  top: 2px;
+}
+.documentForm .status .statusList.auto-width {
+  width: auto;
+}
+.documentForm .icon {
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+  margin-right: 2px;
+  cursor: default;
+  color: #1f85c5;
+}
+.documentForm .icon.disabled-link {
+  color: #b2b2b2;
+  cursor: default !important;
+  border-bottom: transparent;
+}
+.documentForm .generalFields {
+  width: 960px;
+  display: inline-block;
+}
+.documentForm .generalFields .additionalFieldLink .controls {
+  color: #1f85c5;
+}
+.documentForm .generalFields .additionalFieldLink .controls .link {
+  cursor: pointer;
+}
+.documentForm .generalFields .additionalFieldLink .icon.disabled {
+  color: #b2b2b2;
+}
+.documentForm .mdDocumentsList {
+  position: relative;
+  text-align: left;
+  float: left;
+}
+.documentForm .mdDocumentsList input {
+  margin-right: 7px;
+}
+.documentForm .mdDocumentsList li {
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+.documentForm .mdDocumentsList a.blockLink {
+  margin-right: 7px;
+  display: inline-block;
+}
+.documentForm .mdDocumentsList + .mdAddLinks {
+  float: left;
+  width: 100%;
+}
+.documentForm .mdAddLinks.disabled {
+  color: #b2b2b2;
+}
+.documentForm .mdAddLinks.disabled span,
+.documentForm .mdAddLinks.disabled a,
+.documentForm .mdAddLinks.disabled div,
+.documentForm .mdAddLinks.disabled p {
+  cursor: default;
+  color: #b2b2b2;
+  border-color: transparent;
+}
+.documentForm .field {
+  margin-bottom: 15px;
+}
+.documentForm .field .plateNumber {
+  color: #777777;
+  font-size: 10px;
+  vertical-align: top;
+  position: relative;
+  top: -5px;
+}
+.documentForm .field .title {
+  vertical-align: top;
+  display: inline-block;
+  width: 230px;
+  margin-right: 13px;
+  white-space: normal;
+}
+.documentForm .field .controls {
+  display: inline-block;
+  width: 500px;
+  min-height: 25px;
+}
+.documentForm .field .controls label {
+  margin-bottom: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+.documentForm .field .controls label.radio {
+  display: block;
+}
+.documentForm .field .controls label.radio.disabled {
+  color: #777;
+  cursor: default;
+}
+.documentForm .field .controls textarea {
+  width: 348px;
+  height: 57px;
+}
+.documentForm .field .controls select.loading + .mdSelectText {
+  background: transparent url("../../content/imgs/autocompleteLoading.gif") 98% center no-repeat;
+}
+.documentForm .field .controls input[type=text].loading {
+  background: transparent url("../../content/imgs/autocompleteLoading.gif") 98% center no-repeat;
+}
+.documentForm .field .controls input[type=radio] {
+  margin-left: 0;
+  position: relative;
+  top: 1px;
+}
+.documentForm .field .controls input[type=checkbox] {
+  top: 0;
+  margin-top: 5px;
+  position: relative;
+}
+.documentForm .field .controls input[type=number] {
+  height: 23px;
+}
+.documentForm .field .controls input .short {
+  width: 110px;
+}
+.documentForm .field .controls input .long {
+  width: 350px;
+}
+.documentForm .field .controls .inputWithTopLabel {
+  display: inline-block;
+  position: relative;
+  padding-top: 16px;
+  line-height: 1em;
+  vertical-align: top;
+}
+.documentForm .field .controls .inputWithTopLabel span.label {
+  position: absolute;
+  top: 0;
+}
+.documentForm .field .controls .small_members {
+  font-size: 12px;
+  color: #777777;
+  border-bottom: 1px dashed #777777;
+  cursor: pointer;
+}
+.documentForm .field .hint {
+  font-size: 12px;
+  color: #777777;
+  margin-top: 10px;
+  margin-left: 2px;
+}
+.documentForm .field .hint.hidden {
+  display: none;
+}
+.documentForm .field.kontragentFields .inputWithTopLabel input {
+  width: 230px;
+}
+.documentForm .field.full-length {
+  display: block;
+}
+.documentForm .addItem {
+  border-bottom: 1px dashed #1f85c5;
+  cursor: pointer;
+}
+.documentForm .addItem:hover {
+  border-color: transparent;
+}
+.documentForm .addItem.disabled-link {
+  color: #b2b2b2;
+  cursor: default !important;
+  border-bottom: transparent;
+}
+.documentForm .addOperation {
+  cursor: pointer;
+}
+.documentForm .addOperation.disabled {
+  cursor: default;
+  border: none;
+  color: #8d8d8d;
+}
+.documentForm .buttons {
+  line-height: 80px;
+  background: #f4eddf;
+  position: relative;
+  padding-left: 245px;
+  clear: both;
+}
+.documentForm .buttons.withoutPadding {
+  padding-left: 20px;
+}
+.documentForm .buttons .mdButton,
+.documentForm .buttons .mdDoubleButton {
+  margin-right: 10px;
+}
+.documentForm .buttons .link_block {
+  display: inline-block;
+  position: relative;
+  line-height: normal;
+}
+.documentForm .buttons .link_block a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.documentForm .buttons .link_block a:hover {
+  text-decoration: none;
+}
+.documentForm .buttons .link_block span.link {
+  color: #1f85c5;
+  border-color: #1f85c5;
+}
+.documentForm .buttons .download.button {
+  margin-right: 10px;
+}
+.documentForm .buttons .download.button .docFormat_list {
+  width: 210px;
+  left: 0px;
+  padding: 0px;
+}
+.documentForm .buttons .download.button .docFormat_list li {
+  padding: 2px 10px;
+}
+.documentForm .document_items {
+  margin: 15px 0 50px;
+  display: inline-block;
+}
+.documentForm .document_items .mdTable.sales {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody {
+  width: 100%;
+  display: inline-block;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row {
+  width: 100%;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row div.fields {
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+  float: left;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row div.fields.readOnly {
+  color: #777777;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row div.fields > div {
+  float: left;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  min-height: 24px;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row div.fields .ttDelete {
+  width: 30px;
+  float: right;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row div.fields .ttDelete .delete_link {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 0px;
+  color: #999;
+  position: relative;
+  top: -1px;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row div.fields .ttDelete .delete_link:hover {
+  color: #cb3338;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row div.errorMessageContainer {
+  padding: 0px;
+  font-size: 13px;
+  display: none;
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  min-height: 24px;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .row:hover {
+  background: #fff;
+  cursor: default;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .ttSumm,
+.documentForm .document_items .mdTable.sales .mdTableBody .ttNds {
+  padding-top: 13px;
+  line-height: 1.9em;
+  font-size: 13px;
+}
+.documentForm .document_items .mdTable.sales .mdTableBody .ttSumm .text,
+.documentForm .document_items .mdTable.sales .mdTableBody .ttNds .text {
+  font-size: 13px;
+}
+.documentForm .document_items .mdTable.sales .mdTableHeader {
+  height: 30px;
+}
+.documentForm .document_items .mdTable.sales .mdTableHeader .smallText {
+  padding-top: 2px;
+  font-size: 11px;
+  line-height: 1.2em;
+}
+.documentForm .document_items .mdTable.sales .mdTableHeader div {
+  cursor: default;
+}
+.documentForm .document_items .mdTable.sales .mdTableHeader .ttName {
+  padding-left: 10px;
+  width: 422px;
+}
+.documentForm .document_items .mdTable.sales .mdTableHeader .ttSumm {
+  text-align: right;
+}
+.documentForm .document_items .mdTable.sales .mdTableHeader .mdTableCell.doubleLine {
+  line-height: 12px;
+  padding-top: 3px;
+}
+.documentForm .document_items .mdTable.sales .ttItemType {
+  width: 70px;
+  padding-left: 7px;
+}
+.documentForm .document_items .mdTable.sales .ttItemType > .mdUlSelectorText {
+  line-height: 25px;
+  vertical-align: middle;
+}
+.documentForm .document_items .mdTable.sales .ttItemType + .ttName {
+  padding-left: 0 !important;
+}
+.documentForm .document_items .mdTable.sales .ttName {
+  width: 432px;
+}
+.documentForm .document_items .mdTable.sales .ttName input,
+.documentForm .document_items .mdTable.sales .ttName span {
+  width: 412px;
+}
+.documentForm .document_items .mdTable.sales .ttUnit {
+  width: 90px;
+}
+.documentForm .document_items .mdTable.sales .ttUnit input,
+.documentForm .document_items .mdTable.sales .ttUnit span {
+  width: 70px;
+}
+.documentForm .document_items .mdTable.sales .ttCount,
+.documentForm .document_items .mdTable.sales .ttActualCount {
+  width: 90px;
+}
+.documentForm .document_items .mdTable.sales .ttCount input,
+.documentForm .document_items .mdTable.sales .ttActualCount input {
+  width: 70px;
+}
+.documentForm .document_items .mdTable.sales .ttPrice {
+  width: 105px;
+}
+.documentForm .document_items .mdTable.sales .ttPrice input,
+.documentForm .document_items .mdTable.sales .ttPrice span {
+  width: 77px;
+}
+.documentForm .document_items .mdTable.sales .ttSumm {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: right;
+  padding-right: 16px;
+}
+.documentForm .document_items .mdTable.sales .ttNds {
+  width: 60px;
+  position: relative;
+  overflow: visible;
+}
+.documentForm .document_items .mdTable.sales .ttNds .edit {
+  border-bottom: 1px dashed #494949;
+  cursor: pointer;
+}
+.documentForm .document_items .mdTable.sales .ttNds .edit:hover {
+  border-bottom: none;
+}
+.documentForm .document_items .mdTable.sales .ttNds .edit.disabled-link {
+  cursor: default;
+  border-color: transparent;
+}
+.documentForm .document_items .mdTable.sales .ttNds .ndsTypes {
+  display: none;
+  background: white;
+  z-index: 510;
+  padding: 10px 0;
+  -webkit-box-shadow: 0px 2px 7px #c9c6c6;
+  -moz-box-shadow: 0px 2px 7px #c9c6c6;
+  box-shadow: 0px 2px 7px #c9c6c6;
+  border: 1px solid #bbbbbb;
+  position: absolute;
+  left: -13px;
+  top: 35px;
+  width: 83px;
+}
+.documentForm .document_items .mdTable.sales .ttNds .ndsTypes li {
+  padding: 2px 15px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 51px;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+  white-space: nowrap;
+}
+.documentForm .document_items .mdTable.sales .ttNds .ndsTypes li:hover {
+  background: #f2d7a9;
+}
+.documentForm .document_items .mdTable.sales .ttNds .ndsTypes li.selected {
+  background: #f2d7a9;
+}
+.documentForm .document_items .mdTable.sales .no-items {
+  display: inline-block;
+  width: 100%;
+  padding: 40px 0;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 0;
+}
+.documentForm .document_items .mdTable.sales .no-items a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  display: inline-block;
+}
+.documentForm .document_items .addRow {
+  cursor: pointer;
+  display: inline-block;
+}
+.documentForm .document_items .addItem,
+.documentForm .document_items .addStockProduct {
+  display: inline;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.documentForm .document_items .addItem:hover,
+.documentForm .document_items .addStockProduct:hover {
+  border-bottom: 0 dotted;
+}
+.documentForm .document_items .addItem.disabled-link,
+.documentForm .document_items .addStockProduct.disabled-link {
+  color: #b2b2b2;
+  cursor: default !important;
+  border-bottom: transparent;
+}
+.documentForm .document_items .lastError {
+  padding-top: 10px;
+  display: inline-block;
+}
+.documentForm .document_items .result.ttSumm {
+  display: inline-block;
+  text-align: right;
+  font-style: italic;
+  position: relative;
+  float: right;
+  padding-right: 0;
+}
+.documentForm .ttDelete {
+  width: 30px;
+  float: right;
+}
+.documentForm .ttDelete .deleteLink {
+  display: block;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: normal;
+  color: #999;
+  position: relative;
+}
+.documentForm .ttDelete .deleteLink:hover {
+  color: #cb3338;
+}
+
+.documentForm .pdf i {
+  background-position: 0 -208px;
+}
+.documentForm .xls i {
+  background-position: 0 -192px;
+}
+.documentForm .doc i {
+  background-position: 0px -384px;
+}
+.documentForm .input-icon {
+  color: #929292;
+  position: absolute;
+  width: 10px !important;
+  height: 10px !important;
+  margin-left: -17px;
+  cursor: pointer;
+  margin-top: 7px;
+}
+.documentForm .input-icon.input-addIcon {
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 17px;
+  margin-left: -19px;
+  line-height: 10px;
+  background-color: white;
+  padding: 0px 4px 1px 0px;
+}
+.documentForm .input-icon.input-editIcon {
+  background: url('/App/oldApps/Common/public/stylesheets/img/icons10.png') no-repeat #ffffff;
+  background-position: 0px 0px;
+  padding: 0px 4px 1px 0px;
+}
+.documentForm .mdCustomSelect .mdSelectButton {
+  z-index: auto;
+}
+.documentForm .calculationHint {
+  font-size: 8px;
+  line-height: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #fff6c6;
+  border: 1px solid #e5c200;
+  border-radius: 1px;
+  color: #a58c01;
+  padding: 1px;
+  height: 10px;
+  width: 9px;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 0 0 5px;
+  position: relative;
+  top: -7px;
+}
+.documentForm .invoice {
+  display: inline-block;
+}
+.kontragentSaleAutocomplete .mdSaleAutocomplete-items > li {
+  max-height: 55px;
+  overflow: hidden;
+}
+.kontragentAddDialog {
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  height: auto !important;
+}
+.kontragentAddDialog form {
+  padding: 10px 30px 0px 30px;
+}
+.kontragentAddDialog form .field {
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 100%;
+}
+.kontragentAddDialog form .field .title {
+  float: left;
+  width: 150px;
+  margin-right: 15px;
+}
+.kontragentAddDialog form .field .controls {
+  display: inline-block;
+  width: 400px;
+}
+.kontragentAddDialog form .field .controls textarea {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: -5px;
+  position: relative;
+}
+.kontragentAddDialog form .kontragentTypes span {
+  font-size: 13px;
+  margin: 5px;
+}
+.kontragentAddDialog form .kontragentTypes span.selected {
+  padding: 4px 8px;
+  color: #000;
+  font-weight: bold;
+  background-color: #F4EDDF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.kontragentAddDialog .ui-dialog-content {
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow: hidden;
+}
+.kontragentAddDialog .ui-widget-header {
+  border: 0;
+  background: none;
+  padding: 10px 30px 15px 30px;
+  margin: 0;
+}
+.kontragentAddDialog .ui-widget-header .ui-dialog-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+.kontragentAddDialog .saveButtons {
+  padding-left: 195px;
+}
+.kontragentAddDialog .saveButtons a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #1F85C5;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.kontragentAddDialog .saveButtons a:hover {
+  text-decoration: none;
+}
+.documentDeleteDialog,
+.documentOnlineDialog {
+  position: absolute;
+  background: white;
+  border: 1px solid #BDBDBD;
+  width: 320px;
+  border-radius: 4px;
+  -webkit-box-shadow: #D5D5D5 0px 2px 3px 0px;
+  -moz-box-shadow: #D5D5D5 0px 2px 3px 0px;
+  box-shadow: #D5D5D5 0px 2px 3px 0px;
+  z-index: 300;
+}
+.documentDeleteDialog .mdCloseLink,
+.documentOnlineDialog .mdCloseLink {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+.documentDeleteDialog .ui-dialog-titlebar-close,
+.documentOnlineDialog .ui-dialog-titlebar-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.documentDeleteDialog .dialogContent,
+.documentOnlineDialog .dialogContent {
+  padding: 10px 20px 10px 10px;
+  line-height: 20px;
+}
+.documentDeleteDialog .dialog_buttons,
+.documentOnlineDialog .dialog_buttons {
+  padding: 0;
+  height: 60px;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+.documentDeleteDialog .dialog_buttons .mdButton,
+.documentOnlineDialog .dialog_buttons .mdButton {
+  display: inline-block;
+  position: static;
+  float: none;
+}
+.documentOnlineDialog {
+  width: 356px;
+}
+.documentForm span.documentDeleteDialog-activeLink,
+.action_links span.documentOnlineDialog-activeLink {
+  border: 1px solid #dddddd;
+  float: left;
+  color: #404040;
+  text-decoration: none;
+  background: white;
+  border-bottom: none;
+  font-weight: bold;
+  -webkit-border-radius: 2px 2px 0 0;
+  -moz-border-radius: 2px 2px 0 0;
+  border-radius: 2px 2px 0 0;
+  -webkit-box-shadow: 0 -1px 1px #dddddd;
+  -moz-box-shadow: 0 -1px 1px #dddddd;
+  box-shadow: 0 -1px 1px #dddddd;
+  position: relative;
+  z-index: 301;
+  margin: 0px -10px -7px;
+  padding: 2px 10px 4px;
+}
+.page .documentLoader {
+  margin-top: 70px;
+}
+.page input[type=checkbox] {
+  width: auto;
+  cursor: pointer;
+}
+.page input[type=checkbox][disabled] {
+  cursor: default;
+}
+.page input[type=radio][disabled] {
+  cursor: default;
+}
+.ndsPositionTypeControl {
+  min-height: 35px;
+}
+.ndsPositionTypeControl .ndsPositionTypeSelect {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+.ndsPositionTypeControl .ndsPositionTypeSelect.hidden {
+  display: none;
+}
+.ndsPositionTypeControl input[type=checkbox] {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+.ndsPositionTypeControl div.mdCheckbox label {
+  top: 5px;
+}
+.mdSwitchesChain {
+  margin: 0 0 25px 0;
+  overflow: hidden;
+}
+.mdSwitchesChain .mdSwitchesItem {
+  cursor: pointer;
+  float: left;
+  padding: 0 8px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.mdSwitchesChain .mdSwitchesItem .mdSwitchesLink {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  border-bottom: 1px dashed #1f85c5;
+}
+.mdSwitchesChain .mdSwitchesItem.disabled .mdSwitchesLink {
+  border-bottom: 1px dashed #b2b2b2;
+  color: #b2b2b2;
+}
+.mdSwitchesChain .mdSwitchesItem.selected {
+  background: #f2d7a9;
+}
+.mdSwitchesChain .mdSwitchesItem.selected .mdSwitchesLink {
+  color: #404040;
+  border-color: transparent;
+}
+.mdSwitchesChain .mdSwitchesItem:hover .mdSwitchesLink {
+  border-color: transparent;
+}
+.ie8 .documentForm .generalFields {
+  display: block;
+}
+.checkKontragent__support {
+  position: relative;
+}
+.checkKontragent__support .checkKontragent__icon {
+  right: 158px;
+  padding-right: 4px;
+}
+.checkKontragent__support .mdCloseLink {
+  top: 4px;
+}
+.checkKontragent__support--dialog {
+  position: relative;
+}
+.checkKontragent__support--dialog .checkKontragent__icon {
+  right: 198px;
+}
+.checkKontragent__support--members {
+  position: relative;
+}
+.checkKontragent__support--members .checkKontragent__icon {
+  right: 23px;
+  top: 21px;
+  padding-right: 4px;
+}
+.checkKontragent__support--link {
+  position: inherit;
+}
+.checkKontragent__support--link .checkKontragent__icon {
+  position: relative;
+  top: 1px;
+  left: 2px;
+  padding: 0 4px;
+}
+.middlemanContractControl .checkKontragent__support .checkKontragent__icon {
+  margin-right: -15px;
+}
+
+.datePicker__calendarContainer {
+  position: absolute;
+  left: 0;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 15px 0 rgba(0,0,0,0.15);
+  padding: 20px;
+}
+
+.datePicker__calendarContainer a, .datePicker__calendarContainer a {
+  color: #209AC4;
+}
+
+.documentForm .h1 .datePicker__calendarContainer {
+  font-weight: normal;
+  font-size: inherit;
+  line-height: 1;
+}

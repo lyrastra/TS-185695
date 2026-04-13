@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://regoffice.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://regoffice.org/AbstractTypes" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://regoffice.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://regoffice.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="Authorisation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorisationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorisationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductExportInfoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subjectKeyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kpp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductExportInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductExportInfoListResult" type="tns:ArrayOfProductExportInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductExportInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductExportInfo" nillable="true" type="tns:ProductExportInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductExportInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ShortName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kpp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Patronymic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPeople" type="tns:ArrayOfClientContactPerson" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Guid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubjectKeyId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateEndDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateBeginDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseEndDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TariffInitialDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TariffEndDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TariffName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TariffPrice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfficeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Snils" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Gender" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="BirthPlace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasportSeries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportAddon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportUnit" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassportDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClientContactPerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClientContactPerson" nillable="true" type="tns:ClientContactPerson" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClientContactPerson">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckProductGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckProductGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckProductGuidResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorisationJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthorisationJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorisationJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWord">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWordSession">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWordSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWordSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHtmlCertView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="certData" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHtmlCertViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHtmlCertViewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportCertPrintForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportCertPrintFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportCertPrintFormResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfProductExportInfo" nillable="true" type="tns:ArrayOfProductExportInfo" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema targetNamespace="http://regoffice.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthorisationSoapIn">
+    <wsdl:part name="parameters" element="tns:Authorisation" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorisationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductExportInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductExportInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetProductExportInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductExportInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckProductGuid" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckProductGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthorisationJson" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthorisationJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWord" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWordSession" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWordSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlCertViewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHtmlCertView" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlCertViewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHtmlCertViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportCertPrintFormSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportCertPrintForm" />
+  </wsdl:message>
+  <wsdl:message name="ExportCertPrintFormSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportCertPrintFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="appId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductExportInfoListHttpGetIn">
+    <wsdl:part name="subjectKeyId" type="s:string" />
+    <wsdl:part name="serialNumber" type="s:string" />
+    <wsdl:part name="inn" type="s:string" />
+    <wsdl:part name="kpp" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductExportInfoListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProductExportInfo" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductGuidHttpGetIn">
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductGuidHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationJsonHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationJsonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordHttpGetIn" />
+  <wsdl:message name="HelloWordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordSessionHttpGetIn" />
+  <wsdl:message name="HelloWordSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlCertViewHttpGetIn">
+    <wsdl:part name="certData" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlCertViewHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExportCertPrintFormHttpGetIn">
+    <wsdl:part name="productGuid" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExportCertPrintFormHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="appId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductExportInfoListHttpPostIn">
+    <wsdl:part name="subjectKeyId" type="s:string" />
+    <wsdl:part name="serialNumber" type="s:string" />
+    <wsdl:part name="inn" type="s:string" />
+    <wsdl:part name="kpp" type="s:string" />
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductExportInfoListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProductExportInfo" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductGuidHttpPostIn">
+    <wsdl:part name="guid" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckProductGuidHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationJsonHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthorisationJsonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordHttpPostIn" />
+  <wsdl:message name="HelloWordHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWordSessionHttpPostIn" />
+  <wsdl:message name="HelloWordSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlCertViewHttpPostIn">
+    <wsdl:part name="certData" type="s2:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlCertViewHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ExportCertPrintFormHttpPostIn">
+    <wsdl:part name="productGuid" type="s:string" />
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExportCertPrintFormHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ExternalServiceSoap">
+    <wsdl:operation name="Authorisation">
+      <wsdl:input message="tns:AuthorisationSoapIn" />
+      <wsdl:output message="tns:AuthorisationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductExportInfoList">
+      <wsdl:input message="tns:GetProductExportInfoListSoapIn" />
+      <wsdl:output message="tns:GetProductExportInfoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductGuid">
+      <wsdl:input message="tns:CheckProductGuidSoapIn" />
+      <wsdl:output message="tns:CheckProductGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorisationJson">
+      <wsdl:input message="tns:AuthorisationJsonSoapIn" />
+      <wsdl:output message="tns:AuthorisationJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWord">
+      <wsdl:input message="tns:HelloWordSoapIn" />
+      <wsdl:output message="tns:HelloWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWordSession">
+      <wsdl:input message="tns:HelloWordSessionSoapIn" />
+      <wsdl:output message="tns:HelloWordSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlCertView">
+      <wsdl:input message="tns:GetHtmlCertViewSoapIn" />
+      <wsdl:output message="tns:GetHtmlCertViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportCertPrintForm">
+      <wsdl:input message="tns:ExportCertPrintFormSoapIn" />
+      <wsdl:output message="tns:ExportCertPrintFormSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ExternalServiceHttpGet">
+    <wsdl:operation name="Authorisation">
+      <wsdl:input message="tns:AuthorisationHttpGetIn" />
+      <wsdl:output message="tns:AuthorisationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductExportInfoList">
+      <wsdl:input message="tns:GetProductExportInfoListHttpGetIn" />
+      <wsdl:output message="tns:GetProductExportInfoListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductGuid">
+      <wsdl:input message="tns:CheckProductGuidHttpGetIn" />
+      <wsdl:output message="tns:CheckProductGuidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorisationJson">
+      <wsdl:input message="tns:AuthorisationJsonHttpGetIn" />
+      <wsdl:output message="tns:AuthorisationJsonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWord">
+      <wsdl:input message="tns:HelloWordHttpGetIn" />
+      <wsdl:output message="tns:HelloWordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWordSession">
+      <wsdl:input message="tns:HelloWordSessionHttpGetIn" />
+      <wsdl:output message="tns:HelloWordSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlCertView">
+      <wsdl:input message="tns:GetHtmlCertViewHttpGetIn" />
+      <wsdl:output message="tns:GetHtmlCertViewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportCertPrintForm">
+      <wsdl:input message="tns:ExportCertPrintFormHttpGetIn" />
+      <wsdl:output message="tns:ExportCertPrintFormHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ExternalServiceHttpPost">
+    <wsdl:operation name="Authorisation">
+      <wsdl:input message="tns:AuthorisationHttpPostIn" />
+      <wsdl:output message="tns:AuthorisationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductExportInfoList">
+      <wsdl:input message="tns:GetProductExportInfoListHttpPostIn" />
+      <wsdl:output message="tns:GetProductExportInfoListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductGuid">
+      <wsdl:input message="tns:CheckProductGuidHttpPostIn" />
+      <wsdl:output message="tns:CheckProductGuidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorisationJson">
+      <wsdl:input message="tns:AuthorisationJsonHttpPostIn" />
+      <wsdl:output message="tns:AuthorisationJsonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWord">
+      <wsdl:input message="tns:HelloWordHttpPostIn" />
+      <wsdl:output message="tns:HelloWordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWordSession">
+      <wsdl:input message="tns:HelloWordSessionHttpPostIn" />
+      <wsdl:output message="tns:HelloWordSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlCertView">
+      <wsdl:input message="tns:GetHtmlCertViewHttpPostIn" />
+      <wsdl:output message="tns:GetHtmlCertViewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportCertPrintForm">
+      <wsdl:input message="tns:ExportCertPrintFormHttpPostIn" />
+      <wsdl:output message="tns:ExportCertPrintFormHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExternalServiceSoap" type="tns:ExternalServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authorisation">
+      <soap:operation soapAction="http://regoffice.org/Authorisation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductExportInfoList">
+      <soap:operation soapAction="http://regoffice.org/GetProductExportInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductGuid">
+      <soap:operation soapAction="http://regoffice.org/CheckProductGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorisationJson">
+      <soap:operation soapAction="http://regoffice.org/AuthorisationJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWord">
+      <soap:operation soapAction="http://regoffice.org/HelloWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWordSession">
+      <soap:operation soapAction="http://regoffice.org/HelloWordSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlCertView">
+      <soap:operation soapAction="http://regoffice.org/GetHtmlCertView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportCertPrintForm">
+      <soap:operation soapAction="http://regoffice.org/ExportCertPrintForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExternalServiceSoap12" type="tns:ExternalServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authorisation">
+      <soap12:operation soapAction="http://regoffice.org/Authorisation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductExportInfoList">
+      <soap12:operation soapAction="http://regoffice.org/GetProductExportInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductGuid">
+      <soap12:operation soapAction="http://regoffice.org/CheckProductGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorisationJson">
+      <soap12:operation soapAction="http://regoffice.org/AuthorisationJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWord">
+      <soap12:operation soapAction="http://regoffice.org/HelloWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWordSession">
+      <soap12:operation soapAction="http://regoffice.org/HelloWordSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlCertView">
+      <soap12:operation soapAction="http://regoffice.org/GetHtmlCertView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportCertPrintForm">
+      <soap12:operation soapAction="http://regoffice.org/ExportCertPrintForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExternalServiceHttpGet" type="tns:ExternalServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Authorisation">
+      <http:operation location="/Authorisation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductExportInfoList">
+      <http:operation location="/GetProductExportInfoList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductGuid">
+      <http:operation location="/CheckProductGuid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorisationJson">
+      <http:operation location="/AuthorisationJson" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWord">
+      <http:operation location="/HelloWord" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWordSession">
+      <http:operation location="/HelloWordSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlCertView">
+      <http:operation location="/GetHtmlCertView" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportCertPrintForm">
+      <http:operation location="/ExportCertPrintForm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExternalServiceHttpPost" type="tns:ExternalServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Authorisation">
+      <http:operation location="/Authorisation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductExportInfoList">
+      <http:operation location="/GetProductExportInfoList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProductGuid">
+      <http:operation location="/CheckProductGuid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorisationJson">
+      <http:operation location="/AuthorisationJson" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWord">
+      <http:operation location="/HelloWord" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWordSession">
+      <http:operation location="/HelloWordSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlCertView">
+      <http:operation location="/GetHtmlCertView" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportCertPrintForm">
+      <http:operation location="/ExportCertPrintForm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExternalService">
+    <wsdl:port name="ExternalServiceSoap" binding="tns:ExternalServiceSoap">
+      <soap:address location="https://reg.astralnalog.ru/Services/ExternalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExternalServiceSoap12" binding="tns:ExternalServiceSoap12">
+      <soap12:address location="https://reg.astralnalog.ru/Services/ExternalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExternalServiceHttpGet" binding="tns:ExternalServiceHttpGet">
+      <http:address location="https://reg.astralnalog.ru/Services/ExternalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExternalServiceHttpPost" binding="tns:ExternalServiceHttpPost">
+      <http:address location="https://reg.astralnalog.ru/Services/ExternalService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

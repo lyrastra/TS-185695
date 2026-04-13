@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.PostgreSqlDataAccess.Abstractions", "src\Moedelo.Common.PostgreSqlDataAccess.Abstractions\Moedelo.Common.PostgreSqlDataAccess.Abstractions.csproj", "{E7603CB4-373B-4464-8951-BD3976B4560D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Settings.Abstractions", "..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj", "{177F98DC-6927-4836-995B-482E4BFD3C92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{EB4AB170-DD08-41C1-B487-499D99833E72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{ACCBDA92-4139-4BD9-92D6-13FAE74255E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Audit.Abstractions", "..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj", "{221CC173-AC9D-42A0-A20B-53D197150A5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.PostgreSqlDataAccess.Abstractions", "..\md-infrastructure-core-postgresqldataaccess\src\Moedelo.Infrastructure.PostgreSqlDataAccess.Abstractions\Moedelo.Infrastructure.PostgreSqlDataAccess.Abstractions.csproj", "{9CCAF20D-09A3-4F62-8204-BEE68D7EF955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.PostgreSqlDataAccess.Utils", "src\Moedelo.Common.PostgreSqlDataAccess.Utils\Moedelo.Common.PostgreSqlDataAccess.Utils.csproj", "{13400083-6BB6-42AD-B3D6-26013FAD447B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7603CB4-373B-4464-8951-BD3976B4560D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7603CB4-373B-4464-8951-BD3976B4560D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7603CB4-373B-4464-8951-BD3976B4560D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7603CB4-373B-4464-8951-BD3976B4560D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177F98DC-6927-4836-995B-482E4BFD3C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177F98DC-6927-4836-995B-482E4BFD3C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177F98DC-6927-4836-995B-482E4BFD3C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177F98DC-6927-4836-995B-482E4BFD3C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221CC173-AC9D-42A0-A20B-53D197150A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221CC173-AC9D-42A0-A20B-53D197150A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221CC173-AC9D-42A0-A20B-53D197150A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221CC173-AC9D-42A0-A20B-53D197150A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCAF20D-09A3-4F62-8204-BEE68D7EF955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCAF20D-09A3-4F62-8204-BEE68D7EF955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCAF20D-09A3-4F62-8204-BEE68D7EF955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCAF20D-09A3-4F62-8204-BEE68D7EF955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13400083-6BB6-42AD-B3D6-26013FAD447B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13400083-6BB6-42AD-B3D6-26013FAD447B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13400083-6BB6-42AD-B3D6-26013FAD447B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13400083-6BB6-42AD-B3D6-26013FAD447B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50E8A417-23F2-4D7C-B0DA-CF189A4E19A7}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{177F98DC-6927-4836-995B-482E4BFD3C92} = {ACCBDA92-4139-4BD9-92D6-13FAE74255E9}
+		{221CC173-AC9D-42A0-A20B-53D197150A5B} = {ACCBDA92-4139-4BD9-92D6-13FAE74255E9}
+		{9CCAF20D-09A3-4F62-8204-BEE68D7EF955} = {EB4AB170-DD08-41C1-B487-499D99833E72}
+	EndGlobalSection
+EndGlobal

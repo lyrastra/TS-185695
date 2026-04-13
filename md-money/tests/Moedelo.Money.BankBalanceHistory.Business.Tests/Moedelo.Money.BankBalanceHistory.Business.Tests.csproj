@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="7.2.0" />
+    <PackageReference Include="nunit" Version="4.3.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\md-parsers\src\Moedelo.Parsers.Klto1CParser\Moedelo.Parsers.Klto1CParser.csproj" />
+    <ProjectReference Include="..\..\src\apps\bankBalanceHistory\Moedelo.Money.BankBalanceHistory.Business\Moedelo.Money.BankBalanceHistory.Business.csproj" />
+  </ItemGroup>
+
+</Project>

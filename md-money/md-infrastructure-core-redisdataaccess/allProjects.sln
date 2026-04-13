@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Redis", "src\Moedelo.Infrastructure.Redis\Moedelo.Infrastructure.Redis.csproj", "{D14E8040-3D48-4981-B09B-5B70DA588BC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Redis.Abstractions", "src\Moedelo.Infrastructure.Redis.Abstractions\Moedelo.Infrastructure.Redis.Abstractions.csproj", "{8E4B2DCA-154C-489E-BB09-F3C73353C202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Json", "..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj", "{7BD7F842-8C13-4B3E-8ADF-B820117FD7D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{78DDCEBB-7C63-4A7D-AC9C-F970B5580F9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D14E8040-3D48-4981-B09B-5B70DA588BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14E8040-3D48-4981-B09B-5B70DA588BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14E8040-3D48-4981-B09B-5B70DA588BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14E8040-3D48-4981-B09B-5B70DA588BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4B2DCA-154C-489E-BB09-F3C73353C202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4B2DCA-154C-489E-BB09-F3C73353C202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4B2DCA-154C-489E-BB09-F3C73353C202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4B2DCA-154C-489E-BB09-F3C73353C202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD7F842-8C13-4B3E-8ADF-B820117FD7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD7F842-8C13-4B3E-8ADF-B820117FD7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD7F842-8C13-4B3E-8ADF-B820117FD7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD7F842-8C13-4B3E-8ADF-B820117FD7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DDCEBB-7C63-4A7D-AC9C-F970B5580F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DDCEBB-7C63-4A7D-AC9C-F970B5580F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DDCEBB-7C63-4A7D-AC9C-F970B5580F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DDCEBB-7C63-4A7D-AC9C-F970B5580F9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

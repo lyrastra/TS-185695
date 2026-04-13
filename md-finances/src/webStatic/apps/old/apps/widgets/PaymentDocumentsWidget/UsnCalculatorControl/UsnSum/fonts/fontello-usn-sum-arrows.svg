@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello-usn-sum-arrows" horiz-adv-x="1000" >
+<font-face font-family="fontello-usn-sum-arrows" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="arror_down" unicode="&#x64;" d="M500 850c-275 0-500-225-500-500 0-275 225-500 500-500 275 0 500 225 500 500 0 275-225 500-500 500z m0-742l-333 334 58 58 275-275 275 275 58-58-333-334z" horiz-adv-x="1000" />
+
+<glyph glyph-name="arrow_up" unicode="&#x75;" d="M500 850c-275 0-500-225-500-500 0-275 225-500 500-500 275 0 500 225 500 500 0 275-225 500-500 500z m283-667l-275 275-275-275-58 59 333 333 334-333-59-59z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,16 @@
+<li class="{{css.component}} mdLeftMenuItem">
+    <div class="js-settlement {{css.component__label}} {{#if Selected}}{{css.component__label--selected}}{{/if}}"></div>
+    <div data-bind="CurrentBalance" class="{{css.component__balance}}">{{money CurrentBalance}} р.</div>
+    {{#if ShowDirectionFilter}}
+        <ul class="{{css.component__direction}} direction">
+            <li>
+                <a class="{{css.component__directionLink}} js-incoming">Поступления</a>
+                <span class="arrow"></span>
+            </li>
+            <li>
+                <a class="{{css.component__directionLink}} js-outgoing">Списания</a>
+                <span class="arrow"></span>
+            </li>
+        </ul>
+    {{/if}}
+</li>

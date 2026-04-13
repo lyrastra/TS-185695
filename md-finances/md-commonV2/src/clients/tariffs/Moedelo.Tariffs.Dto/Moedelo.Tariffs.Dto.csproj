@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{4401CECD-BF58-4446-8524-5DEE8ECBEF1D}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>Moedelo.Tariffs.Dto</AssemblyTitle>
+    <Product>Moedelo.Tariffs.Dto</Product>
+    <Copyright>Copyright © Моё Дело 2026</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj" />
+  </ItemGroup>
+</Project>

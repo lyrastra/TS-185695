@@ -1,0 +1,406 @@
+/* Logos */
+
+.big_logo
+{
+    display: inline-block;
+    width: 174px;
+    height: 38px;
+    /*background: transparent url(img/logos.png) no-repeat 0px 0px;*/
+    vertical-align: bottom;
+    font-size: 0px;
+}
+
+.small_logo
+{
+    display: inline-block;
+    width: 60px;
+    height: 14px;
+    /*background: transparent url(img/logos.png) no-repeat 0px -39px;*/
+    font-size: 0px;
+}
+
+/* Page content */
+
+#page_content
+{
+    width: 960px;
+    margin: 0 auto;
+    /*Что бы не поехали старые стили*/
+    text-align: left;
+}
+
+#page_content.table_display {
+	display: table;
+}
+
+/*//////////////////////////////////////////*/
+/*//  Остальная шняга. Стили для контролов  */
+/*//////////////////////////////////////////*/
+
+#page_error_panel, #page_warning_panel
+{
+    margin: 30px 0;
+}
+
+.warning_main_link
+{
+    line-height: 14px;
+}
+
+/*Старые страницы форм, с контролами внутри тега .forms*/
+
+.forms li { margin-bottom: 15px; }
+
+.forms label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.forms .inputContainer { position: relative }
+/*//////////////////////////////////////////*/
+/*//  Диалоги  */
+/*//////////////////////////////////////////*/
+
+#process_dialog
+{
+    position: relative;
+    max-height: 100px;
+    height: 100px !important;
+}
+
+#process_dialog_activity
+{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+#process_dialog_text
+{
+    position: absolute;
+    top: 43px;
+    right: 20px;
+}
+
+/* #table */
+
+#table {
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+
+#table select { padding: 0px 0px 0px 0px; }
+
+#table table {
+    width: 100%;
+    line-height: normal;
+    font-size: .85em;
+    text-align: center;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+#header .consultation {
+  display: inline-block;
+  vertical-align: top;
+  width: 150px;
+  position: relative; }
+.cons {
+  display: inline-block;
+  position:relative;
+  /*background: url(img/sprite.png) 0 -106px no-repeat;*/
+  margin-left: -21px; 
+  padding-left:21px;
+}
+.consunreaded {
+  position:relative;
+  /*background: url(img/sprite.png) 0 -51px no-repeat;*/
+  padding-left:21px;
+}
+
+#table th {
+    font-weight: normal;
+    height: 14px;
+    padding: 11px;
+    background-repeat: no-repeat;
+    background-position: left 9px;
+    text-shadow: 1px 1px #fff;
+}
+
+/** + html #table th { background-image: url(img/accSep.gif); }*/
+
+#table th:first-child {
+    width: 17px;
+    cursor: pointer;
+}
+
+#table th.last div {
+    width: 14px;
+    height: 12px;
+    margin: 0 auto;
+}
+
+#table th .last_th {
+    margin-top: 0px;
+    height: 25px;
+    width: 100%;
+    /*background-image: url(img/th-right-border.png);*/
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-top: 10px;
+}
+
+#table tr.even { background-color: #f7f7f7; }
+
+#table tr.checked { background-color: #fffdae; }
+
+#table td { padding: 10px; }
+
+#table td:first-child { width: 17px; }
+
+/* Autocomplete */
+
+.ac_desc {
+    font-size: 0.89em;
+    padding-bottom: 10px;
+    padding-left: 9px;
+    padding-top: 4px;
+}
+
+.ac_label {
+    padding-top: 10px;
+}
+
+/*//////////////////////////////////////////*/
+/*///                 Таблицы               */
+/*//////////////////////////////////////////*/
+/*КНОПКИ И ССЫЛКИ НАД ФИЛЬТРОМ*/
+
+
+/* КОММЕНТАРИИ К СТРОКЕ В ТАБЛИЦЕ */
+.commBox
+{
+    font-size: .85em;
+    position: absolute;
+    z-index: 1001;
+    display: none;
+}
+.CBd
+{
+    border: 1px solid #97bb20;
+    background: #fff;
+    text-align: right;
+}
+.CBtitle
+{
+    color: #fff;
+    text-shadow: 1px 1px #81a916;
+    background: #97bb20;
+    line-height: normal;
+    height: 14px;
+    padding: 4px 7px 5px;
+    font-size: .91em;
+    position: relative;
+    min-width: 150px;
+    text-align: left;
+}
+.commBox textarea
+{
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 150px;
+    overflow: auto;
+    font-size: 1em;
+    max-width: 500px;
+    max-height: 500px;
+    text-align: left;
+    height: 60px;
+}
+.CBtextC
+{
+    padding: 5px 5px 0;
+    background: #fff;
+}
+.CBclose
+{
+    display: block;
+    float: right;
+    cursor: pointer;
+    padding: 0;
+    width: 10px;
+    height: 11px;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+* + html .CBclose
+{
+    /*background-image: url(.img/commBoxClose.png);*/
+}
+
+
+.commBox .shr, .commBox .shb, .commBox .shbr
+{
+    position: absolute;
+    background: no-repeat;
+}
+* + html .commBox .shr, * + html .commBox .shb, * + html .commBox .shbr
+{
+    /*background-image: url(img/commBoxSH.png);*/
+}
+.commBox .shr
+{
+    width: 3px;
+    top: 0;
+    right: -3px;
+    bottom: 1px;
+    background-position: right top;
+}
+.commBox .shb
+{
+    height: 3px;
+    left: 0;
+    bottom: -3px;
+    right: 1px;
+    background-position: left bottom;
+}
+.commBox .shbr
+{
+    width: 4px;
+    height: 4px;
+    bottom: -3px;
+    right: -3px;
+    background-position: right bottom;
+}
+
+
+.CBokB
+{
+    padding: 2px 5px;
+}
+
+/*
+.commBox .shr, .commBox .shb, .commBox .shbr
+{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAACUVJREFUeNrs3LFqwzAQgOGcIkKGDPYDeOv7P1qnDqUUq6dEhY4NVofC98FxnjX9SOBorZ0AADgmImquPacVxwEAMMU1p0dWCCwAgDluOZecIrAAAOZwgwUAMFmPqyKwAAD+gMACAJisOgIAgOPWdT0vy3Letq2E/2ABABwXES+5XnPePBECAEwmsAAABBYAgMACABBYAAAILAAAgQUAILAAABBYAAACCwBAYAEAILAAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAQWAAAAgsAQGABACCwAAAEFgCAwAIAQGABAAgsAACBBQAgsAAAEFgAAAILAEBgAQAgsAAABBYAgMACAEBgAQAILAAAgQUAgMACABBYAAACCwBAYAEAILAAAAQWAIDAAgBAYAEACCwAAIEFAIDAAgAQWAAAAgsAAIEFACCwAAAEFgCAwAIAQGABAAgsAACBBQCAwAIAEFgAAAILAACBBQAgsAAABBYAgMACAEBgAQAILAAAgQUAgMACABBYAAACCwAAgQUAILAAAAQWAAACCwBAYAEACCwAAIEFAIDAAgAQWAAAAgsAAIEFACCwAAAEFgAAAgsAQGABAAgsAAAEFgCAwAIAEFgAAAILAACBBQAgsAAABBYAAAILAEBgAQAILAAABBYAgMACABBYAAAILAAAgQUAILAAAAQWAAACCwBAYAEACCwAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAEFgAAAgsAQGABAAgsAAAEFgCAwAIAEFgAAAgsAACBBQAgsAAAEFgAAAILAEBgAQAILAAABBYAgMACABBYAAAILAAAgQUAILAAABBYAAACCwBAYAEAILAAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAQWAAAAgsAQGABACCwAAAEFgCAwAIAQGABAAgsAACBBQAgsAAAEFgAAAILAEBgAQAgsAAABBYAgMACAEBgAQAILAAAgQUAILAAABBYAAACCwBAYAEAILAAAAQWAIDAAgBAYAEACCwAAIEFAIDAAgAQWAAAAgsAQGABACCwAAAEFgCAwAIAQGABAAgsAACBBQCAwAIAEFgAAAILAACBBQAgsAAABBYAgMACAEBgAQAILAAAgQUAgMACABBYAAACCwAAgQUAILAAAAQWAAACCwBAYAEACCwAAIEFAIDAAgAQWAAAAgsAAIEFACCwAAAEFgAAAgsAQGABAAgsAACB5QgAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAQWAAAAgsAQGABACCwAAAEFgCAwAIAEFgAAAgsAACBBQAgsAAAEFgAAAILAEBgAQAgsAAABBYAgMACAEBgAQAILAAAgQUAILAAABBYAAACCwBAYAEAILAAAAQWAIDAAgBAYAEACCwAAIEFAIDAAgAQWAAAAgsAQGABACCwAAAEFgCAwAIAQGABAAgsAACBBQCAwAIAEFgAAAILAACBBQAgsAAABBYAgMACAEBgAQAILAAAgQUAgMACABBYAAACCwAAgQUAILAAAAQWAIDAAgBAYAEACCwAAIEFAIDAAgAQWAAAAgsAAIEFACCwAAAEFgAAAgsAQGABAAgsAACBBQCAwAIAEFgAAAILAACBBQAgsAAABBYAAAILAEBgAQAILAAABBYAgMACABBYAAACCwAAgQUAILAAAAQWAAACCwBAYAEACCwAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAEFgAAAgsAQGABAAgsAAAEFgCAwAIAEFgAAAgsAACBBQAgsAAABBYAAAILAEBgAQAILAAABBYAgMACABBYAAAILAAAgQUAILAAABBYAAACCwBAYAEACCwAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAQWAAAAgsAQGABACCwAAAEFgCAwAIAEFgAAAgsAACBBQAgsAAAEFgAAAILAEBgAQAgsAAABBYAgMACAEBgAQAILAAAgQUAILAAABBYAAACCwBAYAEAILAAAAQWAIDAAgBAYAEACCwAAIEFACCwAAAQWAAAAgsAQGABACCwAAAEFgCAwAIAQGABAAgsAACBBQCAwAIAEFgAAAILAEBgAQAgsAAABBYAgMACAEBgAQAILAAAgQUAgMACABBYAAACCwAAgQUAILAAAAQWAIDAAgBAYAEACCwAAIEFAIDAAgAQWAAAAgsAAIEFACCwAAAEFgAAAgsAQGABAAgsAACBBQCAwAIAEFgAAAILAACBBQAgsAAABBYAAAILAEBgAQAILAAAgQUAgMACABBYAAACCwAAgQUAILAAAAQWAAACCwBAYAEACCwAAAQWAIDAAgAQWAAAAgsAAIEFACCwAAAEFgAAAgsAQGABAAgsAAAEFgCAwAIAEFgAAAgsAACBBQAgsAAABBYAAAILAEBgAQAILAAABBYAgMACABBYAAAILAAAgQUAILAAABBYAAACCwBAYAEACCwAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAQWAAAAgsAQGABAAgsRwAAILAAAAQWAIDAAgBAYAEACCwAAIEFAIDAAgAQWAAAAgsAAIEFACCwAAAEFgCAwAIAQGABAAgsAACBBQCAwAIAEFgAAAILAACBBQAgsAAABBYAAAILAEBgAQAILAAAgQUAgMACABBYAAACCwAAgQUAILAAAAQWAAACCwBAYAEACCwAAAQWAIDAAgAQWAAAAgsAAIEFACCwAAAEFgAAAgsAQGABAAgsAAAEFgCAwAIAEFgAAAgsAACBBQAgsAAABBYAAAILAEBgAQAILAAABBYAgMACABBYAAAILAAAgQUAILAAAAQWAAACCwBAYAEACCwAAAQWAIDAAgAQWAAACCwAAIEFACCwAAAQWAAAAgsAQGABAAgsAAAEFgCAwAIAEFgAAAgsAACBBQAgsAAAEFgAAAILAEBgAQAgsAAABBYAgMACABBYAAAILAAAgQUAILAAABBYAAACCwBAYAEAILAAAAQWAIDAAgBAYAEACCwAAIEFACCwAAAQWAAAAgsAQGABACCwAAAEFgCAwAIAQGABAAgsAACBBQAgsAAAEFgAAAILAEBgAQAgsAAABBYAgMACAEBgAQAILACA/+kzZ89pNSJqflxzbmNX5wMA8HRcvY/d4vS4xepRdRnbrRYAwHP2EVcffffA+p7y4xsAgN9rY+5PhF8CDABckx7BS0WfsgAAAABJRU5ErkJggg==);
+}
+*/
+
+
+/* СУММЫ ПОД ТАБЛИЦЕЙ */
+
+
+.under_table_info
+{
+    overflow: hidden;
+}
+.under_table_info .hint
+{
+    width: 360px;
+    padding: 3px 10px;
+    background-color: #fffdae;
+    border-left: 2px solid #dad87b;
+    font-size: .85em;
+    color: #4e4e4e;
+    line-height: 1.64em;
+    float: left;
+}
+
+
+/* ПОСТРАНИЧНАЯ НАВИГАЦИЯ */
+.navigator
+{
+    width: 728px;
+    height: 22px;
+    margin: 0px 0px 10px 0px;
+    text-align: left;
+}
+
+.navigator a
+{
+    color: #000000;
+    width: 24px;
+    height: 15px;
+    margin: 0px 3px 0px 3px;
+    padding: 0px 5px 8px 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+.navigator a.page.selected
+{
+    background-color: #F4EDDF;
+    border-radius: 5px;
+}
+
+
+
+.watermark {color:#666}
+
+/*спец предложения*/
+
+#specialOffersLink
+{
+    display: block;
+    line-height: 100%;
+    position: absolute;
+    right : 37px;
+    top : -5px;    
+}
+
+#specialOffersLink a
+{
+    color: rgb(47,47,47);
+    font-weight: bold;
+}
+
+#specialOffersLink span
+{
+    color: rgb(153,153,153);
+    text-decoration:underline;
+}
+ 
+.commentText{ margin: 5px 10px 15px;;}
+
+/*Стили интеграции*/
+#alpha_export_button, #psbank_export_button, #export_button{
+    display: block !important;
+}
+
+.bank {
+    margin-left: 0!important;
+}
+
+.ui-icon-closethick {
+    width: 18px;
+    height: 18px;
+    display: block;
+    font-size: 18px;
+    color: transparent;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+
+.ui-icon-closethick:hover {
+    border: 1px solid #999999;
+    background: #dadada;
+}
+
+.ui-icon-closethick:after {
+    content: '\D7';
+    position: absolute;
+    color: #333;
+    left: 0;
+    top: 0;
+    font-weight: 800;
+    width: 100%;
+    display: block;
+    text-align: center;
+    line-height: 1;
+}

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{25560801-7B2C-4C13-8AD7-956F0120E5E8}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Moedelo.Changelog.Shared.Kafka.Framework</RootNamespace>
+        <AssemblyName>Moedelo.Changelog.Shared.Kafka.Framework</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Commands\EntityStateSaveCommand.cs" />
+        <Compile Include="Commands\ExplicitChangesSaveCommand.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Writers\ChangeLogCommandWriter.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj">
+        <Project>{6f8df367-5802-4c58-8701-9fdec6dd0a6e}</Project>
+        <Name>Moedelo.Common.Types</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\md-commonV2\src\clients\executionContext\Moedelo.ExecutionContext.Client\Moedelo.ExecutionContext.Client.csproj">
+        <Project>{079581e8-2d94-4daf-91f4-6874ffb328b0}</Project>
+        <Name>Moedelo.ExecutionContext.Client</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+        <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+        <Name>Moedelo.InfrastructureV2.Domain</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Moedelo.Changelog.Shared.Kafka.Abstractions\Moedelo.Changelog.Shared.Kafka.Abstractions.csproj">
+        <Project>{ae56df52-55c5-45c9-9e3c-2fa43f6bbc33}</Project>
+        <Name>Moedelo.Changelog.Shared.Kafka.Abstractions</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

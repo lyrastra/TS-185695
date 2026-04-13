@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB620627-0E4B-4978-AD2A-C661559C4BDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Docs.Client</RootNamespace>
+    <AssemblyName>Moedelo.Docs.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocsBills\IDocsBillsApiClient.cs" />
+    <Compile Include="DocsBills\DocsBillsApiClient.cs" />
+    <Compile Include="DocsInvoices\DocsInvoicesApiClient.cs" />
+    <Compile Include="DocsInvoices\IDocsInvoicesApiClient.cs" />
+    <Compile Include="DocsMiddlemanReports\DocsMiddlemanReportsApiClient.cs" />
+    <Compile Include="DocsUpds\DocsUpdsApiClient.cs" />
+    <Compile Include="DocsUpds\IDocsWaybillsApiClient.cs" />
+    <Compile Include="DocsWaybills\DocsWaybillsApiClient.cs" />
+    <Compile Include="DocsWaybills\IDocsWaybillsApiClient.cs" />
+    <Compile Include="DocsStatements\DocsStatementsApiClient.cs" />
+    <Compile Include="DocsStatements\IDocsStatementsApiClient.cs" />
+    <Compile Include="DocsTemplates\DocsTemplatesApiClient.cs" />
+    <Compile Include="DocsTemplates\IDocsTemplatesApiClient.cs" />
+    <Compile Include="Docs\ForgottenDocumentApiClient.cs" />
+    <Compile Include="Docs\IForgottenDocumentApiClient.cs" />
+    <Compile Include="Docs\ServicesApiClient.cs" />
+    <Compile Include="Docs\DocsApiClient.cs" />
+    <Compile Include="Docs\DocsKontragentsApiClient.cs" />
+    <Compile Include="Docs\IServicesApiClient.cs" />
+    <Compile Include="Docs\IDocsApiClient.cs" />
+    <Compile Include="Docs\IDocsKontragentsApiClient.cs" />
+    <Compile Include="NdsAdjustment\INdsAdjustmentApiClient.cs" />
+    <Compile Include="NdsAdjustment\NdsAdjustmentApiClient.cs" />
+    <Compile Include="ProductIncomes\IProductIncomeClient.cs" />
+    <Compile Include="ProductIncomes\ProductIncomeClient.cs" />
+    <Compile Include="ProductsTrace\IProductTraceApiClient.cs" />
+    <Compile Include="ProductsTrace\ProductTraceApiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchasesCommissionAgentReports\CommissionAgentReportByBaseIdsRequestDto.cs" />
+    <Compile Include="PurchasesCommissionAgentReports\IPurchasesCommissionAgentReportsApiClient.cs" />
+    <Compile Include="PurchasesCommissionAgentReports\PurchasesCommissionAgentReportsApiClient.cs" />
+    <Compile Include="PurchasesCommissionAgentReports\SalesBook\CommissionAgentReportSalesBookApiClient.cs" />
+    <Compile Include="PurchasesCommissionAgentReports\SalesBook\ICommissionAgentReportSalesBookApiClient.cs" />
+    <Compile Include="PurchasesCurrencyInvoices\IPurchasesCurrencyInvoicesApiClient.cs" />
+    <Compile Include="PurchasesCurrencyInvoices\PurchasesCurrencyInvoicesApiClient.cs" />
+    <Compile Include="SalesBills\ISalesBillsApiClient.cs" />
+    <Compile Include="SalesBills\SalesBillsApiClient.cs" />
+    <Compile Include="SalesCurrencyInvoices\ISalesCurrencyInvoicesApiClient.cs" />
+    <Compile Include="SalesCurrencyInvoices\SalesCurrencyInvoicesApiClient.cs" />
+    <Compile Include="DocsMiddlemanReports\IDocsMiddlemanReportsApiClient.cs" />
+    <Compile Include="SalesWaybills\ISalesWaybillsApiClient.cs" />
+    <Compile Include="SalesWaybills\SalesWaybillsApiClient.cs" />
+    <Compile Include="SalesStatements\ISalesStatementsApiClient.cs" />
+    <Compile Include="SalesStatements\SalesStatementsApiClient.cs" />
+    <Compile Include="PurchasesWaybills\IPurchasesWaybillsApiClient.cs" />
+    <Compile Include="PurchasesWaybills\PurchasesWaybillsApiClient.cs" />
+    <Compile Include="PurchasesStatements\IPurchasesStatementsApiClient.cs" />
+    <Compile Include="PurchasesStatements\PurchasesStatementsApiClient.cs" />
+    <Compile Include="PurchasesUpd\IPurchasesUpdRestApiClient.cs" />
+    <Compile Include="PurchasesUpd\PurchaseUpdRestApiClient.cs" />
+    <Compile Include="RetailRefunds\IRetailRefundApiClient.cs" />
+    <Compile Include="RetailRefunds\RetailRefundApiClient.cs" />
+    <Compile Include="SalesUpd\ISalesUpdApiClient.cs" />
+    <Compile Include="SalesUpd\ISalesUpdBaseInfoApiClient.cs" />
+    <Compile Include="SalesUpd\ISalesUpdRestApiClient.cs" />
+    <Compile Include="SalesUpd\SalesUpdApiClient.cs" />
+    <Compile Include="SalesUpd\SalesUpdBaseInfoApiClient.cs" />
+    <Compile Include="SalesUpd\SalesUpdRestApiClient.cs" />
+    <Compile Include="Ukds\IUkdApiClient.cs" />
+    <Compile Include="Ukds\UkdApiClient.cs" />
+    <Compile Include="Upd\IUpdProductUnionApiClient.cs" />
+    <Compile Include="Upd\IUpdApiClient.cs" />
+    <Compile Include="Upd\IUpdAutoCompleteApiClient.cs" />
+    <Compile Include="Upd\IUpdBaseInfoApiClient.cs" />
+    <Compile Include="Upd\IUpdProvideApiClient.cs" />
+    <Compile Include="Upd\UpdProductUnionApiClient.cs" />
+    <Compile Include="Upd\UpdApiClient.cs" />
+    <Compile Include="Upd\UpdAutoCompleteApiClient.cs" />
+    <Compile Include="Upd\UpdBaseInfoApiClient.cs" />
+    <Compile Include="Upd\UpdProvideApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{D75DDFA4-BF4C-410C-A6AF-9F0D5F2582D9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.Docs.Dto\Moedelo.Docs.Dto.csproj">
+      <Project>{2DE0950C-024A-4C70-B722-2793780DE11C}</Project>
+      <Name>Moedelo.Docs.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

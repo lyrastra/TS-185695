@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj" />
+    <ProjectReference Include="..\Moedelo.Common.Logging.ExtraLog.Abstractions\Moedelo.Common.Logging.ExtraLog.Abstractions.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Ben.Demystifier" Version="0.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+</Project>

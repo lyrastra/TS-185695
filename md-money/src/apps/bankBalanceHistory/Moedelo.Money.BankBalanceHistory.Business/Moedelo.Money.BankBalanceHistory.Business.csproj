@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accounts-shared\Moedelo.Accounts.ApiClient.Abstractions\Moedelo.Accounts.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-parsers\src\Moedelo.Parsers.Klto1CParser\Moedelo.Parsers.Klto1CParser.csproj" />
+    <ProjectReference Include="..\..\..\..\md-paymentImport-shared\src\Moedelo.PaymentOrderImport.ApiClient.Abstractions\Moedelo.PaymentOrderImport.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.ApiClient.Abstractions\Moedelo.Requisites.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.BankBalanceHistory.Business.Abstractions\Moedelo.Money.BankBalanceHistory.Business.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.BankBalanceHistory.DataAccess.Abstractions\Moedelo.Money.BankBalanceHistory.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.BankBalanceHistory.DataAccess\Moedelo.Money.BankBalanceHistory.DataAccess.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.BankBalanceHistory.Domain\Moedelo.Money.BankBalanceHistory.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

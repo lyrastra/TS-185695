@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj" />
+      <ProjectReference Include="..\..\..\md-docs-shared\src\Moedelo.Docs.Enums\Moedelo.Docs.Enums.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj" />
+      <ProjectReference Include="..\Moedelo.Stock.Enums\Moedelo.Stock.Enums.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="legacy\Dto\FifoSelfCost\Inventories\" />
+    </ItemGroup>
+
+</Project>

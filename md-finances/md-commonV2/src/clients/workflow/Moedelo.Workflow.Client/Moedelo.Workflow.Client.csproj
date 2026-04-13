@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+      <ProjectReference Include="..\..\outsource\Moedelo.Outsource.Dto\Moedelo.Outsource.Dto.csproj" />
+      <ProjectReference Include="..\Moedelo.Workflow.Dto\Moedelo.Workflow.Dto.csproj" />
+    </ItemGroup>
+
+</Project>

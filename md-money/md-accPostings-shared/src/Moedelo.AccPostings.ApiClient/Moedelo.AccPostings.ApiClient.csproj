@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-http\src\Moedelo.Common.Http.Abstractions\Moedelo.Common.Http.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-extensions\src\Moedelo.Infrastructure.System.Extensions\Moedelo.Infrastructure.System.Extensions.csproj" />
+      <ProjectReference Include="..\Moedelo.AccPostings.ApiClient.Abstractions\Moedelo.AccPostings.ApiClient.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

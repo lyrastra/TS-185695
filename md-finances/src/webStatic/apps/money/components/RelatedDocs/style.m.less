@@ -1,0 +1,152 @@
+@green: #62b251;
+@red: #DE3318;
+@blue: #1d8ab0;
+@lightBlue: #209ac4;
+@gray: #999999;
+
+.hideDropdownListCheckedIcon() {
+    div ul li > div {
+        display: none;
+    }
+}
+
+.relatedDocs {
+    text-align: center;
+    position: relative;
+    outline: none;
+    height: 100%;
+
+    &__loader {
+        width: 35px;
+        height: 32px;
+    }
+
+    &__dropdown {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        top: 70%;
+        right: -70%;
+        max-height: 300px;
+        position: absolute;
+        z-index: 100;
+        text-align: left;
+
+        .hideDropdownListCheckedIcon()
+    }
+
+    &__dropdown__loader {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        top: 70%;
+        position: absolute;
+        right: -70%;
+        max-height: 300px;
+        z-index: 6;
+        text-align: center;
+        width: 130px;
+        height: 75px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    &__header {
+        padding: 13px 20px 12px;
+        white-space: nowrap;
+        cursor: default;
+        color: @red;
+        line-height: 1.3;
+    }
+
+    &__item {
+        display: block;
+        padding: 13px 20px 12px;
+        background: #ffffff;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: background 175ms;
+
+        &:hover {
+            background: #F8F8F8;
+        }
+    }
+
+    &__title {
+        font-size: 15px;
+        color: #333333;
+    }
+
+    &__date {
+        padding-top: 2px;
+        font-size: 13px;
+        color: #999999;
+    }
+}
+
+.relatedDocs__button {
+    color: @gray;
+    fill: @gray;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:active {
+        color: @lightBlue;
+    }
+
+    &.fullyPaid,
+    &.fullyPaid:hover,
+    &.fullyPaid:active {
+        color: @green;
+    }
+
+    &.unPaid,
+    &.unPaid:hover,
+    &.unPaid:active {
+        color: @red;
+    }
+}
+
+.relatedDocs__icon {
+    &:hover,
+    &:active {
+        svg {
+            fill: @lightBlue !important;
+        }
+    }
+
+    &.valid {
+        svg {
+            fill: @green !important;
+        }
+    }
+
+    &.invalid {
+        svg {
+            fill: @red !important;
+        }
+    }
+}
+
+.fade {
+    transition: all 200ms linear;
+}
+
+.fade-entering {
+    opacity: 0;
+}
+
+.fade-entered {
+    opacity: 1;
+}
+
+.fade-exiting {
+    opacity: 0;
+}
+
+.fade-exited {
+    opacity: 0;
+}

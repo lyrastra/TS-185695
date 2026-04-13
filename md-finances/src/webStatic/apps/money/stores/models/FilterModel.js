@@ -1,0 +1,20 @@
+export default {
+    approvedCondition: false,
+    budgetaryType: ``,
+    closingDocumentsCondition: 0,
+    direction: 0,
+    endDate: ``,
+    kontragentType: 0,
+    kontragentId: 0,
+    operationType: null,
+    patentId: false,
+    provideInTax: 0,
+    sourceId: 0,
+    sourceType: 0,
+    startDate: ``,
+    sum: ``,
+    sumCondition: 0,
+    sumFrom: ``,
+    sumTo: ``,
+    taxationSystemType: false
+};

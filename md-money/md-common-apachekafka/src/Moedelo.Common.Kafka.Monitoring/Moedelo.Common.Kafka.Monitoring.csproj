@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-consul\src\Moedelo.Common.Consul.Abstractions\Moedelo.Common.Consul.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-common-consul\src\Moedelo.Common.Consul.ServiceDiscovery\Moedelo.Common.Consul.ServiceDiscovery.csproj" />
+      <ProjectReference Include="..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka.Abstractions\Moedelo.Infrastructure.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj" />
+    </ItemGroup>
+
+</Project>

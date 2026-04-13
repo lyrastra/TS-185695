@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{964CCAC0-A7BD-4FD5-8AB9-976318DF71DE}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>Moedelo.CommonV2.WhiteLabel</AssemblyTitle>
+    <Product>Moedelo.CommonV2.WhiteLabel</Product>
+    <Copyright>Copyright © Моё Дело 2018-2025</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\usercontext\Moedelo.CommonV2.UserContext.Domain\Moedelo.CommonV2.UserContext.Domain.csproj" />
+    <ProjectReference Include="..\utils\Moedelo.CommonV2.Extensions.System\Moedelo.CommonV2.Extensions.System.csproj" />
+    <ProjectReference Include="..\utils\Moedelo.CommonV2.Utils\Moedelo.CommonV2.Utils.csproj" />
+  </ItemGroup>
+</Project>

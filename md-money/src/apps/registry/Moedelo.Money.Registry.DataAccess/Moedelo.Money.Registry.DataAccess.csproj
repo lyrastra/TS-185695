@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="OperationTypeSumByPeriod\Scripts\Get.sql" />
+    <EmbeddedResource Include="Scripts\GetOutgoingPaymentsForTaxWidgets.sql" />
+    <EmbeddedResource Include="Scripts\Get.sql" />
+    <EmbeddedResource Include="Scripts\GetBankSelfCostPayments.sql" />
+    <EmbeddedResource Include="Scripts\GetCashSelfCostPayments.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-sqldataaccess\src\Moedelo.Common.SqlDataAccess.Abstractions\Moedelo.Common.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-sqldataaccess\src\Moedelo.Infrastructure.SqlDataAccess.Abstractions\Moedelo.Infrastructure.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Registry.DataAccess.Abstractions\Moedelo.Money.Registry.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Registry.Domain\Moedelo.Money.Registry.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

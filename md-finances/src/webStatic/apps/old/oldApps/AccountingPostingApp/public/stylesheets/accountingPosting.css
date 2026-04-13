@@ -1,0 +1,59 @@
+.postingDiv {
+    min-width: 540px;
+    margin-top: 15px;
+}
+
+.postings .triangle,
+.postings .debit,
+.postings .credit,
+.postings .sum,
+.postings .description {
+    display: inline-block;
+    padding: 0 3px;
+}
+
+.postings .debit,
+.postings .credit {
+    width: 70px;
+}
+
+.postings .debit,
+.postings .sum {
+    text-align: right;
+}
+
+.postings .credit,
+.postings .description {
+    text-align: left;
+}
+
+.postings .sum {
+    width: 70px;
+}
+
+.postings .description {
+    width: 240px;
+    vertical-align: top;
+}
+
+.postings .empty {
+    width: 100%;
+}
+
+.postings .empty > div {
+    text-align: center;
+}
+
+.postings > li {
+    margin-bottom: 0!important;
+}
+
+.postings .triangle {
+    color: #C8C8C8;
+}
+
+.showPostings {
+    color: #1f85c5;
+    border-bottom: 1px dashed #1f85c5;
+    cursor: pointer;
+}

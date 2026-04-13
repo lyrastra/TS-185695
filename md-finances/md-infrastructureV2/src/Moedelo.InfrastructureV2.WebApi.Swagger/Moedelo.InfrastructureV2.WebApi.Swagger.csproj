@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{5FB02DFE-7F4F-4FAF-9B54-544F50661B53}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>Moedelo.InfrastructureV2.Web.Swagger</AssemblyTitle>
+    <Product>Moedelo.InfrastructureV2.Web.Swagger</Product>
+    <Copyright>Copyright © Моё Дело 2025</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <LangVersion>default</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle" Version="5.4.0" />
+    <PackageReference Include="WebActivatorEx" Version="2.2.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.Abstractions\Moedelo.Common.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\Moedelo.Money.Enums\Moedelo.Money.Enums.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="BankBalanceHistory\Events\" />
+    </ItemGroup>
+
+</Project>

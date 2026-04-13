@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IsExternalInit" Version="1.0.3">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+</Project>

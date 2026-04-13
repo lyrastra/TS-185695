@@ -1,0 +1,271 @@
+.cashOperation, .bankOperation{
+
+    a {
+        color: #1F85C5;
+        outline: none;
+    }
+
+    a.externalLink {
+        border-bottom: none !important;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a img {
+        border: 0;
+    }
+
+    img {
+        border: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    input::-ms-clear {
+        display: none;
+    }
+
+    //input[type=text], textarea, input[type=password], input[type=number] {
+    //    padding: 1px 4px;
+    //    display: inline-block;
+    //    font-size: 13px;
+    //    font-family: Arial;
+    //    color: #404040;
+    //    width: 400px;
+    //    height: 23px;
+    //    border: 1px solid;
+    //    -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    //    -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    //    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    //    border-color: #6A6A6A #939393 #ADADAD;
+    //    outline: none;
+    //}
+
+    input[type=text][readonly],
+    input[type=text][disabled],
+    input[type=number][readonly],
+    input[type=number][disabled],
+    textarea[readonly] {
+        background: white;
+        opacity: 0.4;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+    }
+
+    input[type=text]:-ms-input-placeholder,
+    textarea:-ms-input-placeholder,
+    input[type=password]:-ms-input-placeholder,
+    input[type=number]:-ms-input-placeholder {
+        color: #B2B2B2;
+    }
+
+    textarea {
+        height: 75px;
+    }
+
+    input[type=file] {
+        width: 250px;
+        float: left;
+        display: inline-block;
+        border: none;
+        margin: 12px 0 0 0;
+    }
+
+    input[type=checkbox] {
+        font-size: 14px;
+        vertical-align: bottom;
+        margin: 0px 0px 0px 0px;
+        border: none;
+        left: 0px;
+        padding: 0px;
+        text-align: left;
+        width: 20px;
+        display: block;
+    }
+
+    //input[type=checkbox] + label, .checkboxLabel {
+    //    display: inline-block;
+    //    cursor: pointer;
+    //    margin-left: 5px;
+    //}
+
+    input.error, textarea.error, select.error {
+        border-color: #B13033;
+    }
+
+    input.greyHintText {
+        color: #aaa;
+    }
+
+    span.required, div.required {
+        position: absolute;
+        font-size: 18px;
+        color: #B13033;
+        left: -15px;
+        bottom: -2px;
+        font-family: Arial;
+    }
+
+    label.error {
+        color: #B13033;
+    }
+
+    .radio {
+        display: block;
+    }
+
+    .radio label {
+        display: inline;
+        padding-left: 15px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table td, table th {
+        padding: 0;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    h1, h2, h3 {
+        font-weight: normal;
+    }
+
+    .custom-select {
+        position: relative;
+        display: inline-block;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid;
+        border-color: #6a6a6a #939393 #adadad;
+        -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+        -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+        box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+        line-height: 1em;
+        vertical-align: middle;
+    }
+
+    .custom-select.disabled {
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+    }
+
+    .custom-select select {
+        position: relative;
+        z-index: 999;
+        height: 18px;
+        margin: 3px 0 2px 0;
+        opacity: 0;
+        width: 290px;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+    }
+
+    .ui-dialog-content .custom-select select {
+        position: relative;
+        height: 25px;
+        margin: 0 -1px;
+        opacity: 0;
+        padding: 7px 0;
+        cursor: pointer;
+        z-index: 3333333;
+        width: 100%;
+        min-height: 26px;
+    }
+
+    .custom-select__value {
+        position: absolute;
+        left: 6px;
+        right: 25px;
+        top: -1px;
+        z-index: 1;
+        width: auto;
+        height: 25px;
+        line-height: 26px;
+        white-space: nowrap;
+        overflow: hidden;
+        background: transparent;
+        font-size: 14px;
+    }
+
+    .custom-select__button {
+        position: absolute;
+        right: 3px;
+        top: 2px;
+        width: 20px;
+        height: 22px;
+        background: #fff url(/App/oldApps/Common/public/stylesheets/img/custom-select-button.png) no-repeat center center;
+    }
+
+    .long__loading {
+        position: absolute;
+        display: inline-block;
+        top: 8px;
+        left: 165px;
+    }
+
+    .ui-dialog-content .custom-select {
+        width: auto;
+        min-width: 100px;
+    }
+
+    .ionlist-date {
+        width: 86px;
+        min-width: inherit !important;
+        background-color: white;
+        margin-left: 4px;
+    }
+
+    .selected_text_button {
+        color: #444444;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+        padding: 6px 8px;
+        background-color: #F4EDDF;
+    }
+
+    .javascript_link {
+        color: #1F85C5;
+        border-bottom: 1px dotted #1F85C5;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .javascript_link:hover {
+        border-bottom: none !important;
+    }
+
+    .hover > .javascript_link {
+        border-bottom: none !important;
+    }
+
+    span.span_link:hover {
+        text-decoration: none !important;
+    }
+
+    .gray_block {
+        background-color: #f5f5f5;
+        padding: 10px;
+    }
+
+    .empty_block {
+        width: 100%;
+        height: 30px;
+    }
+}
+
+.hidden {
+    display: none;
+}

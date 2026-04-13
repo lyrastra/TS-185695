@@ -1,0 +1,90 @@
+.linkRow > a {
+    text-decoration: none;
+}
+
+.row {
+    display: flex;
+    cursor: pointer;
+    font-size: 15px;
+
+    .link {
+        text-decoration: none;
+    }
+
+    .taxList {
+        margin-top: 7px;
+    }
+
+    .tax {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+        margin-top: 3px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .cell {
+        display: inline-block;
+        vertical-align: middle;
+
+        &Right {
+            text-align: right;
+        }
+    }
+
+    .wideCheckbox {
+        label {
+            padding-left: 30%;
+            margin-left: -30%;
+            height: 30px;
+        }
+    }
+
+    .date {
+        font-size: 15px;
+        color: hsl(0, 0%, 20%);
+    }
+
+    .number {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .kontragentName {
+        max-height: 35px;
+        overflow: hidden;
+        margin-bottom: 5px;
+    }
+
+    .operationType {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .description {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+        word-wrap: break-word;
+    }
+
+    .priceCell {
+        position: relative;
+        text-align: right;
+        color: hsl(0, 0%, 20%);
+
+        &.incoming {
+            color: hsl(120, 100%, 30%);
+        }
+
+        &.outgoing {
+            color: hsl(8, 80%, 48%);
+        }
+    }
+
+    .currencyIcon {
+        position: absolute;
+        right: -5px;
+    }
+}

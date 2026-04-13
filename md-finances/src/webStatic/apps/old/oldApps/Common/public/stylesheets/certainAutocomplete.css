@@ -1,0 +1,15 @@
+.mdSaleAutocomplete .mdSaleAutocomplete-items {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.mdSaleAutocomplete .mdSaleAutocomplete-items .mdAutocomplete-selectedTerm {
+  font-weight: bold;
+}
+.mdSaleAutocomplete .mdSaleAutocomplete-items .ac_desc {
+  font-size: 12px;
+}
+.mdSaleAutocomplete.activityCategoryAutoComplete .mdSaleAutocomplete-items {
+  max-height: 200px;
+  line-height: 18px;
+}

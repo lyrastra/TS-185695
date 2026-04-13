@@ -1,0 +1,54 @@
+﻿<PaymentOrder xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Payer>
+    <Name>Гномик</Name>
+    <Inn>5837004553</Inn>
+    <Kpp>111111111</Kpp>
+    <SettlementNumber>40702810320090001124</SettlementNumber>
+    <BankName>СЕВЕРО-ЗАПАДНЫЙ ФИЛИАЛ АО "БАНК ИНТЕЗА"</BankName>
+    <BankBik>044030710</BankBik>
+    <BankCorrespondentAccount>30101810100000000710</BankCorrespondentAccount>
+    <BankCity>САНКТ-ПЕТЕРБУРГ</BankCity>
+    <IsOoo>true</IsOoo>
+    <KontragentType xsi:nil="true" />
+    <Address />
+    <Okato />
+  </Payer>
+  <Recipient>
+    <Name>Управление Федерального казначейства по г. Москве (ИФНС России №15 по г.Москве)</Name>
+    <Inn>7720143220</Inn>
+    <Kpp>772001001</Kpp>
+    <SettlementNumber>40101810800000010041</SettlementNumber>
+    <BankName>ОТДЕЛЕНИЕ 1 МОСКВА</BankName>
+    <BankBik>044583001</BankBik>
+    <BankCorrespondentAccount />
+    <BankCity>МОСКВА 705</BankCity>
+    <IsOoo>true</IsOoo>
+    <KontragentType xsi:nil="true" />
+    <Address>,111141,Москва г,,,,Зеленый пр-кт,7а,,</Address>
+    <Okato>45263555000</Okato>
+    <Oktmo>45280574</Oktmo>
+  </Recipient>
+  <PaymentNumber>1</PaymentNumber>
+  <OrderDate>2018-04-21T00:00:00</OrderDate>
+  <Sum>11000</Sum>
+  <Direction>Outgoing</Direction>
+  <Purpose>Страховые взносы на обязательное пенсионное страхование, зачисляемые в ПФР, за апрель 2018 г. Регистрационный номер в ПФР 123-465-812345. НДС не облагается</Purpose>
+  <PaymentPriority>Fifth</PaymentPriority>
+  <BudgetaryPayerStatus>Company</BudgetaryPayerStatus>
+  <Kbk>18210202010061010160</Kbk>
+  <BudgetaryOkato>45280574</BudgetaryOkato>
+  <BudgetaryPaymentBase>CurrentPayment</BudgetaryPaymentBase>
+  <BudgetaryPeriod>
+    <Date xsi:nil="true" />
+    <Type>Month</Type>
+    <Number>4</Number>
+    <Year>2018</Year>
+  </BudgetaryPeriod>
+  <BudgetaryDocNumber>0</BudgetaryDocNumber>
+  <BudgetaryDocDate xsi:nil="true" />
+  <BudgetaryPaymentType>Other</BudgetaryPaymentType>
+  <NumberTop>0401060</NumberTop>
+  <BankDocType>NotDefine</BankDocType>
+  <CodeUin>0</CodeUin>
+  <OrderType>PaymentOrder</OrderType>
+</PaymentOrder>

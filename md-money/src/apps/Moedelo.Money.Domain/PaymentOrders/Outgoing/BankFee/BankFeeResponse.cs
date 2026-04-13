@@ -1,0 +1,40 @@
+using Moedelo.Money.Enums;
+using System;
+
+namespace Moedelo.Money.Domain.PaymentOrders.Outgoing.BankFee
+{
+    public class BankFeeResponse : IAccessorPropsResponse
+    {
+        public long DocumentBaseId { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public string Number { get; set; }
+
+        public decimal Sum { get; set; }
+
+        public string Description { get; set; }
+
+        public int SettlementAccountId { get; set; }
+
+        public TaxationSystemType? TaxationSystemType { get; set; }
+
+        public bool ProvideInAccounting { get; set; }
+
+        public bool TaxPostingsInManualMode { get; set; }
+
+        public string BankName { get; set; }
+
+        public bool IsReadOnly { get; set; }
+
+        public long? DuplicateId { get; set; }
+
+        public OperationState OperationState { get; set; }
+
+        public OutsourceState? OutsourceState { get; set; }
+
+        public long? PatentId { get; set; }
+
+        public bool IsFromImport { get; set; }
+    }
+}

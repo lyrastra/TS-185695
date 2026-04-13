@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.Abstractions\Moedelo.Common.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka.Abstractions\Moedelo.Infrastructure.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj" />
+    <ProjectReference Include="..\Moedelo.AccPostings.Kafka.Abstractions\Moedelo.AccPostings.Kafka.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

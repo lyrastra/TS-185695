@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3C59862-1871-405F-A903-1F5FDC5EE20E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Address.ApiClient.NetFramework</RootNamespace>
+    <AssemblyName>Moedelo.Address.ApiClient.NetFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AddressAutocompleteV2ApiClient.cs" />
+    <Compile Include="AddressSuggestionFiasFormatClient.cs" />
+    <Compile Include="Address\AddressApiClient.cs" />
+    <Compile Include="Address\FirmAddressApiClient.cs" />
+    <Compile Include="Suggestion\AddressSuggestionApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.Address.ApiClient.Abstractions\Moedelo.Address.ApiClient.Abstractions.csproj">
+      <Project>{f4d16719-8c39-4f30-ad44-80203756015b}</Project>
+      <Name>Moedelo.Address.ApiClient.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.Address.Enums\Moedelo.Address.Enums.csproj">
+      <Project>{613CA162-3DBE-4589-8400-6E87351EF253}</Project>
+      <Name>Moedelo.Address.Enums</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

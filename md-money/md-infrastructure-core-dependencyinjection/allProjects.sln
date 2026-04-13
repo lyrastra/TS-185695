@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{D2346000-0C3E-4703-AB67-8957C095D82D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.DependencyInjection", "src\Moedelo.Infrastructure.DependencyInjection\Moedelo.Infrastructure.DependencyInjection.csproj", "{A035F225-BDBA-4DE3-A353-916934BAACC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BC9320E5-65C2-4E9E-A31A-EB65C4BF97B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.DependencyInjection.Warmup", "src\Moedelo.Infrastructure.DependencyInjection.Warmup\Moedelo.Infrastructure.DependencyInjection.Warmup.csproj", "{F59965B4-DCF5-45C2-A79E-981E262B313B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.DependencyInjection.Tests", "tests\Moedelo.Infrastructure.DependencyInjection.Tests\Moedelo.Infrastructure.DependencyInjection.Tests.csproj", "{8FE01453-D521-4FFF-97E9-4FDBA557D453}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2346000-0C3E-4703-AB67-8957C095D82D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2346000-0C3E-4703-AB67-8957C095D82D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2346000-0C3E-4703-AB67-8957C095D82D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2346000-0C3E-4703-AB67-8957C095D82D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A035F225-BDBA-4DE3-A353-916934BAACC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A035F225-BDBA-4DE3-A353-916934BAACC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A035F225-BDBA-4DE3-A353-916934BAACC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A035F225-BDBA-4DE3-A353-916934BAACC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F59965B4-DCF5-45C2-A79E-981E262B313B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F59965B4-DCF5-45C2-A79E-981E262B313B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F59965B4-DCF5-45C2-A79E-981E262B313B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F59965B4-DCF5-45C2-A79E-981E262B313B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE01453-D521-4FFF-97E9-4FDBA557D453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE01453-D521-4FFF-97E9-4FDBA557D453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE01453-D521-4FFF-97E9-4FDBA557D453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE01453-D521-4FFF-97E9-4FDBA557D453}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FE01453-D521-4FFF-97E9-4FDBA557D453} = {BC9320E5-65C2-4E9E-A31A-EB65C4BF97B2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DADAA539-7691-4FAA-90DA-FF3BB7D007F8}
+	EndGlobalSection
+EndGlobal

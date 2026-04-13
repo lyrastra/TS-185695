@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Aspose.Word", "src\Moedelo.Infrastructure.Aspose.Word\Moedelo.Infrastructure.Aspose.Word.csproj", "{E26F906B-B212-4C50-8E1C-8ED37FDEE497}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Aspose.Cells.Abstraction", "src\Moedelo.Infrastructure.Aspose.Cells.Abstraction\Moedelo.Infrastructure.Aspose.Cells.Abstraction.csproj", "{418195AE-8185-4996-8974-3C74BD2807AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Aspose.Cells", "src\Moedelo.Infrastructure.Aspose.Cells\Moedelo.Infrastructure.Aspose.Cells.csproj", "{C595AEAA-D8FC-45D4-A9EC-F8EB396F9340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.System.Extensions", "..\md-infrastructure-core-extensions\src\Moedelo.Infrastructure.System.Extensions\Moedelo.Infrastructure.System.Extensions.csproj", "{249A3687-98AC-47B9-9A5F-8DE108CA6822}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E26F906B-B212-4C50-8E1C-8ED37FDEE497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E26F906B-B212-4C50-8E1C-8ED37FDEE497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E26F906B-B212-4C50-8E1C-8ED37FDEE497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E26F906B-B212-4C50-8E1C-8ED37FDEE497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{418195AE-8185-4996-8974-3C74BD2807AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{418195AE-8185-4996-8974-3C74BD2807AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{418195AE-8185-4996-8974-3C74BD2807AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{418195AE-8185-4996-8974-3C74BD2807AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C595AEAA-D8FC-45D4-A9EC-F8EB396F9340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C595AEAA-D8FC-45D4-A9EC-F8EB396F9340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C595AEAA-D8FC-45D4-A9EC-F8EB396F9340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C595AEAA-D8FC-45D4-A9EC-F8EB396F9340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249A3687-98AC-47B9-9A5F-8DE108CA6822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249A3687-98AC-47B9-9A5F-8DE108CA6822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249A3687-98AC-47B9-9A5F-8DE108CA6822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249A3687-98AC-47B9-9A5F-8DE108CA6822}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,67 @@
+.mdSaleAutocomplete {
+  position: absolute;
+  z-index: 1003;
+  -webkit-box-shadow: 0px 2px 7px #c9c6c6;
+  -moz-box-shadow: 0px 2px 7px #c9c6c6;
+  box-shadow: 0px 2px 7px #c9c6c6;
+  border: 1px solid #939393;
+  background: #fff;
+  color: #000;
+  display: none;
+  max-width: 540px;
+}
+.mdSaleAutocomplete li {
+  padding: 0px;
+  margin: 0px;
+}
+.mdSaleAutocomplete li a {
+  padding: 3px 10px;
+  position: relative;
+  cursor: pointer;
+  color: #000;
+  display: block;
+  width: 100%;
+}
+.mdSaleAutocomplete .mdSaleAutocomplete-hover {
+  background: #F4EDDE;
+}
+.mdSaleAutocomplete .mdSaleAutocomplete-addItem {
+  cursor: pointer;
+  padding: 3px 10px;
+  border-top: 1px #ddd solid;
+}
+.mdSaleAutocomplete .mdSaleAutocomplete-addItem a {
+  color: #000;
+  display: inline-block;
+  width: 100%;
+}
+.mdSaleAutocomplete .mdSaleAutocomplete-addItem .plus-icon {
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+  margin-right: 2px;
+}
+.mdSaleAutocomplete-loading {
+  background: transparent url("../../content/imgs/autocompleteLoading.gif") 98% center no-repeat;
+}
+.mdAutocomplete-closeIcon {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 18px;
+  color: #c2c2c2;
+  position: absolute;
+  text-decoration: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  vertical-align: baseline;
+  margin-left: -26px;
+  margin-top: 3px;
+  padding: 0 7px;
+  background: #fff;
+  height: 23px;
+}
+.mdAutocomplete-closeIcon:after {
+  content: '×';
+}

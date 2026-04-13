@@ -1,0 +1,81 @@
+.mdBreadcrumb .cell {
+  float: left;
+  font-size: 13px;
+  width: 400px;
+}
+.mdBreadcrumb .cell a {
+  border: medium none;
+  margin-left: 12px;
+  text-decoration: underline;
+}
+.mdBreadcrumb .cell .selected {
+  background: none repeat scroll 0 0 #F1D6A9;
+  border-radius: 0 0 0 0;
+  padding: 3px 8px;
+  color: black;
+  cursor: default;
+  font-weight: bold;
+}
+.mdBreadcrumb .cell .c_guides {
+  line-height: 13px;
+  margin-bottom: 10px;
+}
+.mdBreadcrumb .cell .c_guides a {
+  margin-left: 15px;
+}
+.mdBreadcrumb .cell .c_guides a i {
+  background: url(/App/oldApps/Common/public/stylesheets/img/icons16.png) no-repeat scroll 0 -1255px transparent;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+.mdBreadcrumb .cell .c_guides a.serverprevious {
+  margin-left: 0;
+}
+.mdBreadcrumb .cell .c_guides a.serverprevious i {
+  background: none repeat scroll 0 0 transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 9px solid #1F85C5;
+  border-top: 6px solid transparent;
+  height: 0;
+  margin-right: 5px;
+  width: 0;
+}
+.mdBreadcrumb .cell .c_guides a.serverprevious.disabled i {
+  background: url(/App/oldApps/Common/public/stylesheets/img/icons16.png) no-repeat scroll 0 -1255px transparent;
+  border: medium none;
+  height: 12px;
+  width: 12px;
+}
+.mdBreadcrumb .cell .c_guides a.servernext i {
+  background: none repeat scroll 0 0 transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 9px solid #1F85C5;
+  border-top: 6px solid transparent;
+  height: 0;
+  margin-left: 5px;
+  width: 0;
+}
+.mdBreadcrumb .cell .c_guides a.servernext.disabled i {
+  background: url("/App/oldApps/Common/public/stylesheets/img/icons16.png") no-repeat scroll 0 -1271px transparent;
+  border: medium none;
+  height: 12px;
+  width: 12px;
+}
+.mdBreadcrumb .cell .c_guides a.disabled {
+  color: #B2B2B2;
+  cursor: default;
+}
+.mdBreadcrumb .cell .c_guides a.disabled i {
+  opacity: 0.6;
+}
+.mdBreadcrumb .serverhowmany {
+  color: #777777;
+  float: right;
+}
+.mdBreadcrumb .serverhowmany select {
+  width: 57px;
+}
+.mdBreadcrumb .serverhowmany span {
+  color: #494949;
+}

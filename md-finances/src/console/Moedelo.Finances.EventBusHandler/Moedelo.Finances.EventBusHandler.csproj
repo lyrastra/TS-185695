@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2B474FA0-D117-4FE0-8B97-8670A751A065}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Finances.EventBusHandler</RootNamespace>
+    <AssemblyName>Moedelo.Finances.EventBusHandler</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Moedelo.Finances.EventBusHandler.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=3.3.154.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Topshelf.3.3.1\lib\net40-full\Topshelf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventBusHandler.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-commonV2\src\audit\Moedelo.CommonV2.Audit.Implementations\Moedelo.CommonV2.Audit.Implementations.csproj">
+      <Project>{8cb7bf00-5681-4d00-9548-9692e7248552}</Project>
+      <Name>Moedelo.CommonV2.Audit.Implementations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\audit\Moedelo.CommonV2.Audit\Moedelo.CommonV2.Audit.csproj">
+      <Project>{4bc034b5-5cd6-473c-b2fa-20bfa3ca2bff}</Project>
+      <Name>Moedelo.CommonV2.Audit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\account\Moedelo.AccountV2.Client\Moedelo.AccountV2.Client.csproj">
+      <Project>{5B469921-1F8A-477B-80AD-62F6B527BFA0}</Project>
+      <Name>Moedelo.AccountV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\account\Moedelo.AccountV2.Dto\Moedelo.AccountV2.Dto.csproj">
+      <Project>{4d3249bf-2a7f-41e5-8f89-0757c592d7f2}</Project>
+      <Name>Moedelo.AccountV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\finances\Moedelo.Finances.Client\Moedelo.Finances.Client.csproj">
+      <Project>{A0850A91-0D48-4A4A-B958-CAE96A278B02}</Project>
+      <Name>Moedelo.Finances.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\finances\Moedelo.Finances.Dto\Moedelo.Finances.Dto.csproj">
+      <Project>{B469BE94-EFE2-4096-9DBC-344BFDB631E6}</Project>
+      <Name>Moedelo.Finances.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\Moedelo.CommonV2.EventBus\Moedelo.CommonV2.EventBus.csproj">
+      <Project>{e72a28d6-8a5e-4825-9167-ec01854707d1}</Project>
+      <Name>Moedelo.CommonV2.EventBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\Moedelo.CommonV2.Models\Moedelo.CommonV2.Models.csproj">
+      <Project>{a05214f2-9330-4707-b94b-f0c8d05c299f}</Project>
+      <Name>Moedelo.CommonV2.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52bbdd20-fe18-48d1-a6d6-03daced1421d}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-consul\src\Moedelo.Infrastructure.Consul.NetFramework\Moedelo.Infrastructure.Consul.NetFramework.csproj">
+      <Project>{29fc73bf-a880-4f27-b7ba-05c87b19f71e}</Project>
+      <Name>Moedelo.Infrastructure.Consul.NetFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-consul\src\Moedelo.Infrastructure.Consul\Moedelo.Infrastructure.Consul.csproj">
+      <Project>{2e1df8c4-0a7b-488d-a4e7-321183bd8ed6}</Project>
+      <Name>Moedelo.Infrastructure.Consul</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj">
+      <Project>{84b69459-5116-4921-b37f-10be7f76a43f}</Project>
+      <Name>Moedelo.Infrastructure.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-redisdataaccess\src\Moedelo.Infrastructure.Redis.Abstractions\Moedelo.Infrastructure.Redis.Abstractions.csproj">
+      <Project>{b12b37a4-ba76-4ae4-9c0f-1edbc065d3a9}</Project>
+      <Name>Moedelo.Infrastructure.Redis.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-redisdataaccess\src\Moedelo.Infrastructure.Redis\Moedelo.Infrastructure.Redis.csproj">
+      <Project>{605e1cec-0916-44dd-aff7-b5a93a7bf37e}</Project>
+      <Name>Moedelo.Infrastructure.Redis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.ApiClient\Moedelo.InfrastructureV2.ApiClient.csproj">
+      <Project>{ce0520ec-a932-4080-ab6a-96c219cb693b}</Project>
+      <Name>Moedelo.InfrastructureV2.ApiClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Audit\Moedelo.InfrastructureV2.Audit.csproj">
+      <Project>{ad6c7d22-ab92-431a-989c-418f083c5ad6}</Project>
+      <Name>Moedelo.InfrastructureV2.Audit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Consul\Moedelo.InfrastructureV2.Consul.csproj">
+      <Project>{41a2e519-2071-42ba-a4e8-42abe96f32c5}</Project>
+      <Name>Moedelo.InfrastructureV2.Consul</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.DataAccess\Moedelo.InfrastructureV2.DataAccess.csproj">
+      <Project>{25c631ad-d8ae-4d72-94fe-7c236aec9da6}</Project>
+      <Name>Moedelo.InfrastructureV2.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.EventBus\Moedelo.InfrastructureV2.EventBus.csproj">
+      <Project>{e21516a1-f821-497d-a9f0-ceec934d3628}</Project>
+      <Name>Moedelo.InfrastructureV2.EventBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Injection.LightInject.Web\Moedelo.InfrastructureV2.Injection.LightInject.Web.csproj">
+      <Project>{01A76FB8-5901-44FA-B17C-2F4B0125285C}</Project>
+      <Name>Moedelo.InfrastructureV2.Injection.LightInject.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Injection.LightInject\Moedelo.InfrastructureV2.Injection.LightInject.csproj">
+      <Project>{5b1feb52-9a42-4fa5-a098-d7471eac49b1}</Project>
+      <Name>Moedelo.InfrastructureV2.Injection.LightInject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Json\Moedelo.InfrastructureV2.Json.csproj">
+      <Project>{83524410-19D8-4330-BF4D-8D963CDE2E8C}</Project>
+      <Name>Moedelo.InfrastructureV2.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Logging\Moedelo.InfrastructureV2.Logging.csproj">
+      <Project>{ab793fc0-0f0a-433a-8c26-77fc9100d047}</Project>
+      <Name>Moedelo.InfrastructureV2.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.RedisDataAccess\Moedelo.InfrastructureV2.RedisDataAccess.csproj">
+      <Project>{800e344a-2243-4d61-b8b9-a3d4c3892c00}</Project>
+      <Name>Moedelo.InfrastructureV2.RedisDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Setting\Moedelo.InfrastructureV2.Setting.csproj">
+      <Project>{85d946bb-3cc5-498d-a3df-a7663240aef0}</Project>
+      <Name>Moedelo.InfrastructureV2.Setting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

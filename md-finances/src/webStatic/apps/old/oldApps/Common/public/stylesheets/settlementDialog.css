@@ -1,0 +1,27 @@
+.mdDialog .settlementForm {
+  font-size: 13px;
+}
+.mdDialog .settlementForm .mdDialogWrap .mdDialogContent ul li .mdDialogRowTitle {
+  width: 130px;
+}
+.mdDialog .settlementForm .mdDialogWrap .mdDialogContent ul li .mdDialogRowControll {
+  width: 410px;
+}
+.mdDialog .settlementForm .mdDialogWrap .mdDialogContent ul li .mdDialogRowControll .input-validation-error {
+  border-color: #f93d3d;
+}
+.mdDialog .settlementForm .mdDialogWrap .mdDialogContent ul li .mdDialogRowControll .field-validation-error {
+  display: inline-block;
+  width: 100%;
+}
+.mdDialog .settlementForm .mdDialogWrap .mdDialogContent span.link {
+  color: #1f85c5;
+  cursor: pointer;
+  border-bottom: 1px dotted  #1f85c5;
+}
+.mdDialog .settlementForm .mdDialogWrap .mdDialogContent span.link:hover {
+  border-bottom: 0px dotted;
+}
+.mdDialog .settlementForm .mdDialogFooter {
+  padding-left: 150px;
+}

@@ -1,0 +1,78 @@
+#logo_balance_cell.active .balance_red, #logo_balance_cell.active .balance_green, #logo_balance_cell.active .balance_black {
+    text-decoration: none;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    cursor: pointer;
+}
+
+#logo_balance_ballon {
+    display: none;
+    position: absolute;
+    left: -20px;
+    z-index: 2;
+    width: 427px;
+}
+
+.line_balance_item {
+    border-top: 1px solid #606060;
+    height: 1px;
+    margin: 5px 0 0;
+}
+
+.logo_balance_cell_selected #logo_balance_ballon {
+    display: block;
+}
+
+#logo_balance_ballon_body {
+    background: transparent url(../img/balance.png) no-repeat 0px -12px;
+}
+
+#logo_balance_ballon_top {
+    height: 12px;
+    background: transparent url(../img/balance.png) no-repeat 0px 0px;
+}
+
+#logo_balance_ballon_bottom {
+    height: 5px;
+    background: transparent url(../img/balance.png) repeat-y 0px 5px;
+}
+
+#logo_balance_ballon_body .balance_item {
+    background-color: White;
+    margin: 0px 4px 0px 4px;
+    padding: 5px 10px 0px 10px;
+    font-size: 13px;
+}
+
+#logo_balance_ballon_body .balance_item.first_item {
+    height: 3px;
+}
+
+#logo_balance_ballon_body .balance_item.last_item {
+    height: 12px;
+}
+
+#logo_balance_ballon_body .balance_item .balance_item_name {
+    display: inline-block;
+}
+
+#logo_balance_ballon_body .balance_item .balance_item_name.deleted {
+    color: #aaa;
+}
+
+#logo_balance_ballon_body .balance_item .balance_item_value {
+    display: inline-block;
+    float: right;
+    border-style: none;
+}
+
+.qtip_balance_span {
+    background: url("../img/icons16_2.png") no-repeat scroll 0 -64px transparent;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: -3px;
+}

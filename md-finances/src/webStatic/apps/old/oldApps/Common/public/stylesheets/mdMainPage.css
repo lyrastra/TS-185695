@@ -1,0 +1,116 @@
+.mdLayoutHeader {
+  margin-bottom: 25px;
+  width: 100%;
+}
+.mdLayoutLeftCol {
+  width: 215px;
+  display: inline-block;
+}
+.mdLayoutLeftCol .mdLayoutBody {
+  position: relative;
+  margin-top: 26px;
+}
+.mdLayoutMainCol {
+  float: right;
+  width: 728px;
+}
+.mdLayoutMainCol .mdLayoutHeader {
+  display: inline-block;
+}
+.mdTopFilter {
+  float: right;
+}
+/**  left menu **/
+.mdLeftMenu {
+  font-size: 12px;
+  line-height: 20px;
+}
+.mdLeftMenu .mdLeftMenuItem {
+  padding: 0;
+  margin-bottom: 10px;
+}
+.mdLeftMenu .mdLeftMenuItem .mdLeftMenuItemHeader {
+  padding: 5px 10px;
+  cursor: pointer;
+  padding: 2px 10px;
+}
+.mdLeftMenu .mdLeftMenuItem .mdLeftMenuItemHeader .Name {
+  border-bottom: 1px dashed #1F85C5;
+}
+.mdLeftMenu .mdLeftMenuItem .mdLeftMenuItemHeader a {
+  font-size: 14px;
+}
+.mdLeftMenu .mdLeftMenuItem .currentBalance {
+  padding-left: 10px;
+  color: #777777;
+}
+.mdLeftMenu .mdLeftMenuItem .direction {
+  display: none;
+  font-size: 12px;
+  padding-left: 20px;
+  margin-bottom: 3px;
+}
+.mdLeftMenu .mdLeftMenuItem .direction li {
+  padding: 2px 0;
+}
+.mdLeftMenu .mdLeftMenuItem .direction li .directionLink {
+  cursor: pointer;
+  border-bottom: 1px dashed #1F85C5;
+}
+.mdLeftMenu .mdLeftMenuItem.selected .mdLeftMenuItemHeader {
+  background: none repeat scroll 0 0 #F1D6A9;
+  padding: 2px 10px 2px;
+}
+.mdLeftMenu .mdLeftMenuItem.selected .mdLeftMenuItemHeader .Name {
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+.mdLeftMenu .mdLeftMenuItem.selected .mdLeftMenuItemHeader a {
+  color: #404040;
+  cursor: default;
+  font-size: 13px;
+  font-weight: bold;
+  border: none;
+}
+.mdLeftMenu .mdLeftMenuItem.selected .direction {
+  display: block;
+  margin-top: 3px;
+}
+.mdLeftMenu .mdLeftMenuItem.active .direction {
+  margin-top: 1px;
+  display: block;
+}
+.mdLeftMenu .mdLeftMenuItem.active .direction .directionLink.selected {
+  cursor: default;
+  font-weight: bold;
+  padding: 3px 5px;
+  position: relative;
+  left: -5px;
+  background: #f1d6a9;
+  color: #404040;
+  border: none;
+}
+.mdUnderTableInfo {
+  color: #777777;
+  font-style: italic;
+  background: none repeat scroll 0 0 #F4EDDF;
+  padding: 8px 15px;
+  margin-top: 15px;
+  line-height: 18px;
+}
+.mdUnderTableInfo .firstCol {
+  float: left;
+  width: 150px;
+}
+.mdUnderTableInfo .secondCol {
+  text-align: right;
+  padding-left: 170px;
+  width: 106px;
+}
+.busyShowingHG {
+  margin-top: 70px;
+  width: 100%;
+  position: relative;
+  min-height: 50px;
+}

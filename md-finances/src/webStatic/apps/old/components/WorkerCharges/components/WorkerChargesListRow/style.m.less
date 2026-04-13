@@ -1,0 +1,88 @@
+.row {
+    margin-bottom: 7px;
+}
+
+.row__input {
+    border-color: #c7c7c7 !important;
+    height: 27px !important;
+
+    &:global(.md-input--invalid) {
+        border-color: #cb3338 !important;
+    }
+
+    + :global(.md-input__invalid-msg) {
+        color: #cb3338 !important;
+    }
+}
+
+.row__loader {
+    height: 20px;
+    margin-top: 12px;
+}
+
+.row__selectSection {
+    width: 398px;
+    float: left;
+    padding-right: 15px;
+}
+
+.row__select {
+    :global {
+        .md-select__body--box .list__body {
+            padding: 0;
+        }
+
+        .md-select__list {
+            border-color: #c7c7c7
+        }
+
+        .md-select__item {
+            border-color: #c7c7c7;
+            height: 27px;
+            line-height: 25px;
+            padding-left: 5px;
+        }
+
+        .md-selectListItem {
+            line-height: 25px;
+
+            &:hover {
+                background-color: #F4EDDE;
+            }
+        }
+
+        .md-selectListItem--withCheck {
+            padding-left: 22px;
+            height: 27px;
+        }
+
+        .md-selectListItem--withCheck {
+            background-color: transparent;
+        }
+
+        .md-selectListItem__check {
+            height: 6px;
+            width: 3px;
+            left: 10px;
+            top: 7px;
+        }
+
+        .md-select__caret {
+            height: 6px;
+            width: 6px;
+            border-width: 0 1px 1px 0;
+            right: 17px;
+        }
+
+        .scrollbar-inner {
+            max-height: 100px;
+        }
+    }
+}
+
+.row__remove {
+    background: transparent !important;
+    position: relative;
+    top: 1px;
+    font-size: 9px;
+}

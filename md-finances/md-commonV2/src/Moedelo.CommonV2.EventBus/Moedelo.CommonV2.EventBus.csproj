@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{E72A28D6-8A5E-4825-9167-EC01854707D1}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyTitle>Moedelo.CommonV2.EventBus</AssemblyTitle>
+    <Product>Moedelo.CommonV2.EventBus</Product>
+    <Copyright>Copyright © Моё Дело 2017-2026</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\usercontext\Moedelo.CommonV2.UserContext.Domain\Moedelo.CommonV2.UserContext.Domain.csproj" />
+  </ItemGroup>
+</Project>

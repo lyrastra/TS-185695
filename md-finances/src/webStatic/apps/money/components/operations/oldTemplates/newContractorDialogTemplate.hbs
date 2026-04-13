@@ -1,0 +1,66 @@
+<script type="text/template" id="components-mdKontragentDialogContent">
+    <div class="mdContainer">
+        <div class="mdRow">
+            <span class="js-formSelect"></span>
+            <section class="mdKontragentDialog__section">
+                <span class="js-typeSelect"></span>
+
+                <div class="field-validation-error hidden js-typeSelectValidation">Выберите тип</div>
+            </section>
+        </div>
+        <div class="mdRow">
+            <section class="mdKontragentDialog__section--short js-innSection">
+                <label for="mdKontragentDialog__inn" class="mdKontragentDialog__label">ИНН</label>
+
+                <div class="mdInput-group clearfix">
+                    <input type="text" id="mdKontragentDialog__inn"
+                           class="mdKontragentDialog__shortInput js-numberField js-innField"
+                           maxlength="12" data-bind="Inn">
+                </div>
+            </section>
+            <section class="mdKontragentDialog__section--short js-paxPayerSection hidden">
+                <label for="mdKontragentDialog__paxPayerNumber" class="mdKontragentDialog__label">№
+                    налогоплательщика</label>
+                <input type="text" id="mdKontragentDialog__paxPayerNumber"
+                       class="mdKontragentDialog__shortInput"
+                       data-bind="TaxpayerNumber">
+            </section>
+            <section class="mdKontragentDialog__section js-kppSection">
+                <label for="mdKontragentDialog__kpp" class="mdKontragentDialog__label">КПП</label>
+                <input type="text" id="mdKontragentDialog__kpp"
+                       class="mdKontragentDialog__shortInput js-numberField js-fieldForLoad js-kppField" maxlength="9"
+                       data-bind="Kpp">
+            </section>
+        </div>
+        <div class="mdRow">
+            <label for="mdKontragentDialog__name" class="mdKontragentDialog__label js-nameLabel">Краткое
+                наименование</label>
+            <input type="text" id="mdKontragentDialog__name"
+                   class="mdKontragentDialog__name js-fieldForLoad js-nameField" maxlength="256" data-bind="Name">
+        </div>
+        <div class="mdRow">
+            <label for="mdKontragentDialog__address" class="mdKontragentDialog__label">Адрес</label>
+            <textarea id="mdKontragentDialog__address" class="mdKontragentDialog__addressArea js-fieldForLoad js-addressField"
+                      maxlength="512"
+                      data-bind="Address"></textarea>
+        </div>
+        <div class="mdRow">
+            <section class="mdKontragentDialog__section--short">
+                <label for="mdKontragentDialog__bill" class="mdKontragentDialog__label">Счет</label>
+                <input type="text" id="mdKontragentDialog__bill"
+                       class="mdKontragentDialog__shortInput js-settlement js-numberField"
+                       maxlength="20" data-bind="SettlementAccountNumber">
+            </section>
+            <section class="mdKontragentDialog__section js-bankSection">
+                <label for="mdKontragentDialog__bank" class="mdKontragentDialog__label">Банк</label>
+                <input type="text" id="mdKontragentDialog__bank" class="mdKontragentDialog__bank js-bankField"
+                       data-bind="BankName">
+            </section>
+            <section class="mdKontragentDialog__section js-nrBankSection hidden">
+                <label for="mdKontragentDialog__nonResidentBankName" class="mdKontragentDialog__label">Банк</label>
+                <input type="text" id="mdKontragentDialog__nonResidentBankName" class="mdKontragentDialog__bank"
+                       data-bind="NonResidentBankName">
+            </section>
+        </div>
+    </div>
+</script>

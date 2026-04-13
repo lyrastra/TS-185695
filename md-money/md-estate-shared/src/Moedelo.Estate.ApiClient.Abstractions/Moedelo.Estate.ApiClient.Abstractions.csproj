@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.Enums\Moedelo.AccPostings.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj" />
+  </ItemGroup>
+
+</Project>

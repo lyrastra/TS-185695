@@ -1,0 +1,66 @@
+﻿using Microsoft.Extensions.Logging;
+using Moedelo.Infrastructure.DependencyInjection.Abstractions;
+using Moedelo.Money.Business.Abstractions.Events;
+using Moedelo.Money.Business.Abstractions.Exceptions;
+using Moedelo.Money.Business.Abstractions.PaymentOrders;
+using Moedelo.Money.Enums;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
+
+namespace Moedelo.Money.Business.PaymentOrders
+{
+    [InjectAsSingleton(typeof(IPaymentOrderTaxationSystemUpdater))]
+    internal class PaymentOrderTaxationSystemUpdater : IPaymentOrderTaxationSystemUpdater
+    {
+        private readonly ILogger logger;
+        private readonly IPaymentOrderGetter paymentOrderGetter;
+        private readonly ITaxationSystemChangedEventWriter eventWriter;
+        private readonly Dictionary<OperationType, IConcreteTaxationSystemUpdater> updaters;
+
+        public PaymentOrderTaxationSystemUpdater(
+            ILogger<PaymentOrderTaxationSystemUpdater> logger,
+            IPaymentOrderGetter paymentOrderGetter,
+            IEnumerable<IConcreteTaxationSystemUpdater> updaters,
+            ITaxationSystemChangedEventWriter eventWriter)
+        {
+            this.logger = logger;
+            this.paymentOrderGetter = paymentOrderGetter;
+            this.eventWriter = eventWriter;
+            this.updaters = updaters.Select(x =>
+                 new
+                 {
+                     x.GetType().GetCustomAttribute<OperationTypeAttribute>().OperationType,
+                     Updater = x
+                 })
+                .ToDictionary(x => x.OperationType, x => x.Updater);
+        }
+
+        public async Task UpdateAsync(long documentBaseId, TaxationSystemType taxationSystemType, Guid guid)
+        {
+            try
+            {
+                var operationType = await paymentOrderGetter.GetOperationTypeAsync(documentBaseId);
+                if (updaters.TryGetValue(operationType, out var updater) == false)
+                {
+                    throw new NotImplementedException($"Implementation of IConcreteTaxationSystemUpdater for opration type {operationType} ({(int)operationType}) is not found");
+                }
+                await updater.UpdateAsync(documentBaseId, taxationSystemType);
+            }
+            catch (OperationNotFoundException)
+            {
+                logger.LogWarning($"Unable to change taxation system for payment order with DocumentBaseId = {documentBaseId}. Operation not found");
+            }
+
+            var taxationSystemChangedEvent = new TaxationSystemChangedEvent
+            {
+                DocumentBaseId = documentBaseId,
+                TaxationSystemType = taxationSystemType,
+                Guid = guid
+            };
+            await eventWriter.WriteAsync(taxationSystemChangedEvent);
+        }
+    }
+}

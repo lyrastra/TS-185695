@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{70ABCF66-15B4-4259-B268-05F845349D7B}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>Moedelo.CommonV2.Auth.WebApi.Private.NoAuth</AssemblyTitle>
+    <Product>Moedelo.CommonV2.Auth.WebApi.Private.NoAuth</Product>
+    <Copyright>Copyright ©  2025</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <LangVersion>default</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.AuditWebApi\Moedelo.InfrastructureV2.AuditWebApi.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Injection.LightInject.WebApi\Moedelo.InfrastructureV2.Injection.LightInject.WebApi.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Injection.LightInject.Web\Moedelo.InfrastructureV2.Injection.LightInject.Web.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.WebApi\Moedelo.InfrastructureV2.WebApi.csproj" />
+  </ItemGroup>
+</Project>

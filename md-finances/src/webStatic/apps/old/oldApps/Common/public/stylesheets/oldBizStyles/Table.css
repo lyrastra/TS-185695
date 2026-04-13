@@ -1,0 +1,252 @@
+.table_tool_controls {
+    padding: 8px 0px 0px 10px;
+    background-color: #E3E3E3;
+}
+
+.table_tool_controls ul {
+    list-style: none;
+}
+
+.table_tool_controls ul li {
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.table_tool_controls .tools_gray_button_center_left_img {
+    font-size: 11px;
+}
+
+/* Кнопки */
+.tools_gray_button {
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    color: #444444;
+    display: inline-block;
+}
+
+.tools_gray_button_img {
+    position: absolute;
+    right: 2px;
+    left: 2px;
+    top: 4px;
+    bottom: 7px;
+}
+
+.tools_gray_button a {
+    text-decoration: none;
+    color: #444444;
+}
+
+.tools_gray_button div {
+    position: absolute;
+    background-image: url(/App/oldApps/Common/public/stylesheets/img/menu_and_buttons.png);
+    background-color: transparent;
+}
+
+.tools_gray_button_left {
+    background-position: 0px -712px;
+    background-repeat: no-repeat;
+    width: 3px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.tools_gray_button_left_img {
+    background-position: 0px -762px;
+    background-repeat: repeat-x;
+    left: 3px;
+    top: 0px;
+    bottom: 0px;
+    width: 20px;
+}
+
+.tools_gray_button_right {
+    background-position: 0px -737px;
+    background-repeat: no-repeat;
+    width: 3px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.tools_gray_button_right_img {
+    background-position: 0px -762px;
+    background-repeat: repeat-x;
+    right: 3px;
+    top: 0px;
+    bottom: 0px;
+    width: 20px;
+}
+
+.tools_gray_button_center {
+    background-position: 0px -762px;
+    background-repeat: repeat-x;
+    left: 3px;
+    right: 3px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.tools_gray_button_center_left_img {
+    background-position: 0px -762px;
+    background-repeat: repeat-x;
+    left: 23px;
+    right: 3px;
+    top: 0px;
+    bottom: 0px;
+}
+
+.tools_gray_button_center_right_img {
+    background-position: 0px -762px;
+    background-repeat: repeat-x;
+    left: 3px;
+    right: 23px;
+    top: 0px;
+    bottom: 0px;
+}
+
+
+/*ТАБЛИЦА*/
+
+
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    padding: 0;
+}
+
+.table_control, .simple_table {
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+
+.table_control thead {
+    height: 36px;
+}
+
+.table_control, .simple_table {
+    background-image: url(/App/oldApps/Common/public/stylesheets/img/TableSprite.png);
+    background-position: left -58px;
+    background-repeat: no-repeat;
+}
+
+.table_control th {
+    cursor: pointer;
+}
+
+.table_control th.disabled {
+    color: #8D8D8D;
+}
+
+.table_control tr.highlighted {
+    background-color: #fbfce7 !important;
+}
+
+.table_control tbody tr {
+    cursor: pointer;
+}
+
+.table_control select {
+    padding: 0px 0px 0px 0px;
+}
+
+.table_control table, .simple_table table {
+    width: 100%;
+    line-height: normal;
+    font-size: .85em;
+    text-align: center;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.table_control th, .simple_table th {
+    font-weight: normal;
+    font: 11px Arial, Helvetica, sans-serif;
+    color: #606060;
+    height: 14px;
+    padding: 11px;
+    background: url(/App/oldApps/Common/public/stylesheets/img/TableSprite.png) right 2px no-repeat;
+    text-shadow: 1px 1px #fff;
+}
+
+.table_control th.last, .simple_table th.last {
+    background: url(/App/oldApps/Common/public/stylesheets/img/TableSprite.png) right -58px no-repeat;
+}
+
+.table_control th:first-child {
+    width: 17px;
+    cursor: pointer;
+}
+
+.table_control th.last div {
+    width: 14px;
+    height: 12px;
+    margin: 0 auto;
+}
+
+.table_control th .last_th {
+    margin-top: 0px;
+    height: 25px;
+    width: 100%;
+    background-image: url(/App/oldApps/Common/public/stylesheets/img/th-right-border.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-top: 10px;
+}
+
+.table_control tr.even, .simple_table tr.even {
+    background-color: #f7f7f7;
+}
+
+.table_control tr.checked {
+    background-color: #fffdae;
+}
+
+.table_control td, .simple_table td {
+    padding: 10px;
+}
+
+.table_control td:first-child {
+    width: 17px;
+}
+
+.table_control .client {
+    text-align: left;
+    width: 317px;
+}
+
+.table_control a.payed, .table_control a.covered {
+    color: #81a607;
+}
+
+.table_control a.notpayed, .table_control a.notcovered {
+    color: #e83538;
+}
+
+.table_control .nocomments, .table_control .hascomment {
+    display: block;
+    width: 14px;
+    height: 12px;
+    margin: 0 auto;
+}
+
+.table_control td.withAjax a {
+    text-decoration: none;
+    border-bottom: dashed 1px;
+}
+
+.table_control td.withAjax a:hover {
+    border-bottom: none;
+}
+
+/* ПУСТАЯ ЯЧЕЙКА */
+.table_control td.empty, .simple_table td.empty {
+    width: auto;
+    height: 120px;
+    font-size: 1.27em;
+}

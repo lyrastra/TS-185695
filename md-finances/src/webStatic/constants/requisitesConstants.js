@@ -1,0 +1,11 @@
+export const VALID_KPP_LENGTH = 9;
+export const VALID_RU_SETTLEMENT_NUMBER_LENGTH = 20;
+export const VALID_KBK_LENGTH = 20;
+export const VALID_INN_LENGTH_LIST = [8, 10, 12];
+
+export default {
+    VALID_KPP_LENGTH,
+    VALID_RU_SETTLEMENT_NUMBER_LENGTH,
+    VALID_INN_LENGTH_LIST,
+    VALID_KBK_LENGTH
+};

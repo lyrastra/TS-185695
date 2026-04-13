@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Jwt.Abstractions", "src\Moedelo.Common.Jwt.Abstractions\Moedelo.Common.Jwt.Abstractions.csproj", "{4AB108BF-87C7-4370-A305-48934BBFB818}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Jwt", "src\Moedelo.Common.Jwt\Moedelo.Common.Jwt.csproj", "{C61E6CCC-6069-457D-885B-1EABE8D2AF10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{F919D6E6-203E-4904-ABD5-BDEAD8BCE977}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{D7B8E41B-EB83-48D8-8D4C-481AAF4F12B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Settings.Abstractions", "..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj", "{C2B7ECAB-B3B8-4B8E-9CF4-9C1030457A07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{165DE328-E147-40A4-ACCB-EB1220B62295}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AB108BF-87C7-4370-A305-48934BBFB818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB108BF-87C7-4370-A305-48934BBFB818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB108BF-87C7-4370-A305-48934BBFB818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB108BF-87C7-4370-A305-48934BBFB818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61E6CCC-6069-457D-885B-1EABE8D2AF10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61E6CCC-6069-457D-885B-1EABE8D2AF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61E6CCC-6069-457D-885B-1EABE8D2AF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61E6CCC-6069-457D-885B-1EABE8D2AF10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B7ECAB-B3B8-4B8E-9CF4-9C1030457A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B7ECAB-B3B8-4B8E-9CF4-9C1030457A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B7ECAB-B3B8-4B8E-9CF4-9C1030457A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B7ECAB-B3B8-4B8E-9CF4-9C1030457A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165DE328-E147-40A4-ACCB-EB1220B62295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165DE328-E147-40A4-ACCB-EB1220B62295}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165DE328-E147-40A4-ACCB-EB1220B62295}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165DE328-E147-40A4-ACCB-EB1220B62295}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2B7ECAB-B3B8-4B8E-9CF4-9C1030457A07} = {D7B8E41B-EB83-48D8-8D4C-481AAF4F12B6}
+		{165DE328-E147-40A4-ACCB-EB1220B62295} = {F919D6E6-203E-4904-ABD5-BDEAD8BCE977}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D29C8CF-0675-4750-8FA7-42928434AF48}
+	EndGlobalSection
+EndGlobal

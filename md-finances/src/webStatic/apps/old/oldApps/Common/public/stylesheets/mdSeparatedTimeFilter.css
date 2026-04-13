@@ -1,0 +1,164 @@
+.mdSeparatedTimeFilter {
+  width: 215px;
+  display: none;
+  margin-top: 2px;
+}
+.mdSeparatedTimeFilter div {
+  display: inline-block;
+  *display: inline;
+}
+.mdSeparatedTimeFilter a {
+  color: #579eda;
+  text-decoration: none;
+  border-bottom: 1px dashed #579eda;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.mdSeparatedTimeFilter a:hover {
+  border: none;
+}
+.mdSeparatedTimeFilter .current {
+  font-size: 14px;
+  color: #777;
+  display: inline-block;
+  *display: inline;
+  width: 100%;
+}
+.mdSeparatedTimeFilter .current span {
+  border-bottom: 1px dashed #777;
+}
+.mdSeparatedTimeFilter .current span.selectedPeriod {
+  position: relative;
+  top: -1px;
+  cursor: pointer;
+}
+.mdSeparatedTimeFilter .current span.selectedPeriodOld {
+  display: none;
+}
+.mdSeparatedTimeFilter .current span.controls {
+  border: none;
+  float: right;
+  line-height: 16px;
+  position: relative;
+  top: 6px;
+}
+.mdSeparatedTimeFilter .current span.controls a {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(/App/oldApps/Common/public/stylesheets/img/icons16.png) 0px -1255px no-repeat;
+  margin: 0 6px 0 13px;
+  border: none;
+}
+.mdSeparatedTimeFilter .current span.controls a.next {
+  background-position: 0 -1271px;
+  margin: 0 2px 0 0;
+}
+.mdSeparatedTimeFilter .current span.controls a.disabled {
+  opacity: 0.3;
+}
+.mdSeparatedTimeFilter .current.active {
+  line-height: 26px;
+  width: auto;
+}
+.mdSeparatedTimeFilter .current.active .controls {
+  float: none;
+  top: 0;
+}
+.mdSeparatedTimeFilter .today {
+  float: right;
+  line-height: 15px;
+  position: relative;
+  top: 4px;
+  display: none;
+}
+.mdSeparatedTimeFilter .close {
+  display: none;
+  float: right;
+  line-height: 15px;
+  position: relative;
+  top: 4px;
+}
+.mdSeparatedTimeFilter section {
+  display: none;
+}
+.mdSeparatedTimeFilter section .customList {
+  width: 80px;
+  display: inline-block;
+  *display: inline;
+  margin: 8px 0 0 0;
+}
+.mdSeparatedTimeFilter section .customList li a.selected {
+  color: black;
+  border: none;
+  font-weight: bold;
+  cursor: default;
+}
+.mdSeparatedTimeFilter section .customList li a.selected[data-type=all] {
+  cursor: pointer;
+  border-bottom: 1px dashed black;
+}
+.mdSeparatedTimeFilter section .calendar {
+  position: relative;
+  width: 107px;
+  margin: 9px 0 0 24px;
+  vertical-align: top;
+  display: inline-block;
+  line-height: 20px;
+  right: -3px;
+}
+.mdSeparatedTimeFilter section .calendar a {
+  display: inline-block;
+  width: 33px;
+  text-align: center;
+  border: none;
+  color: black;
+  line-height: 22px;
+  letter-spacing: normal;
+}
+.mdSeparatedTimeFilter section .calendar a.selected {
+  background: #F2D7A9;
+}
+.mdSeparatedTimeFilter section .calendar a.disabled {
+  background: none;
+  cursor: default;
+  color: #bbb;
+}
+.mdSeparatedTimeFilter section .calendar.quarter {
+  display: none;
+  width: 105px;
+  margin: 20px 0 0 25px;
+}
+.mdSeparatedTimeFilter section .calendar.quarter a {
+  width: auto;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+.mdSeparatedTimeFilter section .calendar.year {
+  display: none;
+  width: 111px;
+  margin-left: 20px;
+}
+.mdSeparatedTimeFilter section .calendar.year a {
+  padding: 1px 2px;
+}
+.mdSeparatedTimeFilter section .calendar.custom {
+  display: none;
+  width: 110px;
+  margin: 4px 0 0 20px;
+}
+.mdSeparatedTimeFilter section .calendar.custom label {
+  line-height: 13px;
+  margin: 3px 0 0 0;
+}
+.mdSeparatedTimeFilter section .calendar.custom label input {
+  margin: 2px 0 5px 0;
+  width: 100px;
+}
+.mdSeparatedTimeFilter section .calendar.custom label input.no-valid {
+  border-color: red;
+}
+.mdSeparatedTimeFilter section .calendar.custom label input.fcFinalDate {
+  margin-bottom: 0;
+}

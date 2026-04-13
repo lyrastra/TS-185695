@@ -1,0 +1,126 @@
+.postingTable {
+  display: inline-block;
+}
+.postingTable .mdPostingTable {
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+  float: left;
+}
+.postingTable .mdPostingTable.mdPostingTableBody {
+  margin: 0;
+}
+.postingTable .mdPostingTable li {
+  line-height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0;
+}
+.postingTable .mdPostingTable li:hover {
+  background: #f3f3f3;
+}
+.postingTable .mdPostingTable li.header {
+  border-bottom: 1px solid #dddddd;
+  cursor: default;
+  color: #777777;
+  font-weight: bold;
+}
+.postingTable .mdPostingTable li.header:hover {
+  background: none;
+}
+.postingTable .mdPostingTable li > div {
+  display: inline-block;
+  vertical-align: top;
+}
+.postingTable .mdPostingTable li > div:first-child {
+  padding-left: 10px;
+}
+.postingTable .mdPostingTable li > div.number {
+  width: 70px;
+  padding-right: 8px;
+}
+.postingTable .mdPostingTable li > div.date {
+  width: 114px;
+}
+.postingTable .mdPostingTable li > div.kontragent {
+  width: 300px;
+  padding-right: 39px;
+}
+.postingTable .mdPostingTable li i {
+  display: block;
+  font-style: normal;
+  color: #B2B2B2;
+  font-weight: bold;
+  font-size: 18px;
+  vertical-align: top;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.postingTable .mdPostingTable.postings {
+  font-size: 12px;
+}
+.postingTable .mdPostingTable.postings li {
+  cursor: default;
+}
+.postingTable .mdPostingTable.postings li:hover {
+  background: transparent;
+}
+.postingTable .mdPostingTable.postings li .date {
+  width: 70px;
+}
+.postingTable .mdPostingTable.postings li .debit {
+  width: 50px;
+  text-align: right;
+}
+.postingTable .mdPostingTable.postings li .debitAccounting,
+.postingTable .mdPostingTable.postings li .kreditAccounting {
+  padding: 0 5px 0 8px;
+  width: 133px;
+}
+.postingTable .mdPostingTable.postings li .kredit {
+  width: 45px;
+  text-align: right;
+}
+.postingTable .mdPostingTable.postings li .sum {
+  width: 90px;
+  text-align: right;
+}
+.postingTable .mdPostingTable.postings li .comment {
+  width: 160px;
+  padding: 0 10px;
+}
+.showPostingLink {
+  cursor: pointer;
+}
+.showPostingLink i {
+  width: 0;
+  height: 0;
+  position: relative;
+  border-left: 5px solid #404040;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin-right: 3px;
+  display: inline-block;
+  background: none;
+}
+.showPostingLink a {
+  line-height: 17px;
+  color: #404040;
+  vertical-align: top;
+  width: 170px;
+  display: inline-block;
+  margin-top: 3px;
+}
+.showPostingLink a span {
+  border-bottom: 1px dashed #404040;
+}
+.showPostingLink.active i {
+  top: 2px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #404040;
+  margin-right: 5px;
+}

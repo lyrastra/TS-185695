@@ -1,0 +1,287 @@
+.bankForm .mdRow {
+  margin-bottom: 24px;
+  padding-bottom: 0;
+}
+.bankForm .mdRow.operationRegion {
+  margin-bottom: 0px;
+}
+.bankForm .mdRow .bank-totalAmount {
+  float: left;
+  width: 160px;
+}
+.bankForm .mdRow .bank-withNdsField {
+  float: left;
+  margin-top: 25px;
+}
+.bankForm .mdRow select.sz-xx-large {
+  width: 342px;
+}
+.bankForm .mdRow input[type=text].sz-xx-large {
+  width: 334px;
+}
+.bankForm .mdRow textarea.sz-xx-large {
+  width: 332px;
+}
+.bankForm .mdRow input[type=text].sz-medium {
+  width: 210px;
+}
+.bankForm .mdRow select.sz-medium {
+  width: 164px;
+}
+.bankForm .mdRow input[type=text].sz-small {
+  width: 118px;
+}
+.bankForm .mdRow .mdCustomSelectWrap {
+  float: left;
+  height: 25px;
+}
+.bankForm .mdRow .mdCol-8 {
+  width: 348px;
+}
+.bankForm .mdRow .mdCol-2 {
+  width: 82px;
+}
+.bankForm .mdRow.down-row-message {
+  width: 485px;
+  line-height: 18px;
+  margin-top: -12px;
+}
+.bankForm .bank-radio {
+  vertical-align: middle;
+  color: #404040;
+  margin-right: 7px;
+}
+.bankForm .bank-radio input[type=radio],
+.bankForm .bank-radio input[type=checkbox] {
+  margin: 0 5px 0 0;
+  position: relative;
+  top: 2px;
+}
+.bankForm .bank-radio input[type=checkbox] {
+  float: left;
+  top: 6px;
+}
+.newWave .mdButton {
+  height: 26px;
+  padding: 1px 15px;
+}
+.newWave [data-mddropdown-link]:after {
+  content: 'v';
+  font-family: 'fontello';
+  font-size: 5px;
+  position: absolute;
+}
+.newWave .status {
+  top: 1px;
+}
+.newWave .actions {
+  float: right;
+  margin-right: 20px;
+}
+.newWave .actions [data-mddropdown-link]:after {
+  top: 2px;
+  margin-left: 4px;
+}
+.newWave .actions .mdDropDownList {
+  width: 90px;
+}
+.newWave .actionsBlock {
+  padding-top: 9px;
+}
+.newWave span[data-bind=DocumentsSum] + span {
+  right: 0;
+}
+.newWave .mdPostingsAndTaxControl .mdTableHeader {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 3px 0;
+  color: #8e8e8e;
+  font-size: 13px;
+}
+.newWave .mdPostingsAndTaxControl .explainigMessage {
+  border-top: 0px solid #ddd;
+}
+.newWave .mdPostingsAndTaxControl .tabHeader {
+  border: 0px none;
+  margin-bottom: 0px;
+}
+.paymentOrderDialog .newWave .mdContainer {
+  width: auto;
+}
+.purse-bankTable .ttSumm .incoming:after,
+.purse-bankTable .ttSumm .outgoing:after {
+  position: relative;
+  top: -2px;
+  right: -2px;
+  margin: 0 -7px 0 0;
+}
+.purse-bankTable .ttSumm .incoming:after {
+  content: '↓';
+}
+.purse-bankTable .ttSumm .outgoing:after {
+  content: '↑';
+}
+.purse-bankTable .ttKlient {
+  position: relative;
+  overflow: visible;
+}
+.purse-bankTable .kontragentDetails {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #bbb;
+  padding: 20px;
+  max-height: 80px;
+  overflow-y: auto;
+  background: #fff;
+  overflow-x: hidden;
+  width: 190px;
+  margin-top: 3px;
+  box-shadow: 0 2px 7px #c6c6c6;
+}
+.purse-bankTable .kontragentDetails div:not(:last-child) {
+  margin-bottom: 10px;
+}
+.purse-bankTable .ttRelated .relatedListWrapper .relatedList {
+  left: -50%;
+  position: relative;
+}
+.purse-bankTable .summary .pageSizeBlock {
+  float: right;
+}
+.purse-bankTable .summary .pageSizeBlock select {
+  width: 67px;
+}
+.purse-bankTable .summary .pageSizeBlock label {
+  position: relative;
+  top: -9px;
+  display: inline-block;
+}
+.purse-bankTable .summary a:not(.nonactive) {
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+}
+.purse-bankTable .summary a:not(.nonactive):hover {
+  text-decoration: none;
+}
+.purse-bankTable .summary .previous {
+  margin-left: 13px;
+  position: relative;
+  margin-right: 15px;
+}
+.purse-bankTable .summary .previous:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 7px solid #1f85c5;
+  position: absolute;
+  top: 3px;
+  left: -16px;
+}
+.purse-bankTable .summary .next {
+  margin-right: 13px;
+  position: relative;
+}
+.purse-bankTable .summary .next:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #1f85c5;
+  position: absolute;
+  top: 3px;
+  right: -16px;
+}
+.purse-bankTable .summary .nonactive {
+  color: #8e8e8e;
+  border: 0px none;
+  cursor: default;
+}
+.purse-bankTable .summary .nonactive:before {
+  border-right-color: #8e8e8e;
+}
+.purse-bankTable .summary .nonactive:after {
+  border-left-color: #8e8e8e;
+}
+.purse-bankTable .summary .pagination {
+  margin: 10px 0 15px;
+}
+.purse-bankTable .summary .pagination a {
+  margin: 0px 7px;
+}
+.purse-bankTable .summary .pagination a.current {
+  border-bottom: 0px;
+  padding: 3px 8px 4px;
+  margin: 0px;
+  color: #404040;
+  background: #f1d6a9;
+  text-decoration: none;
+  cursor: default;
+}
+.payers td {
+  vertical-align: top;
+}
+.mdTableCell.sort.sort--asc:after {
+  content: '↓';
+}
+.mdTableCell.sort.sort--desc:after {
+  content: '↑';
+}
+.bankForm--purse .linkedDocuments {
+  width: 720px;
+}
+.mdSelectUlWrap .mdSelectDropDownList {
+  min-width: 65px;
+}
+.mdSaleAutocomplete.nowrap a {
+  white-space: nowrap;
+}
+.bankIntegrationButton {
+  display: inline-block;
+}
+.bankIntegrationButton button.md-button__body {
+  line-height: 23px;
+  height: 27px;
+  border: 1px solid #BDBDBD;
+}
+.bankIntegrationButton button.md-button__body:hover {
+  border-color: #888888;
+}
+.bankIntegrationButton button.md-button__body .md-button__title i {
+  position: relative;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+.bankIntegrationButton button.md-button__body .md-button__title span {
+  position: relative;
+  top: 1px;
+}
+.bankIntegrationButton--paymentOrder button.md-button__body {
+  height: 26px;
+  border: 1px solid #dddddd;
+}
+.bankIntegrationButton--paymentOrder button.md-button__body:hover {
+  border-color: #dddddd;
+}
+.bankIntegrationButton--hidden {
+  display: none;
+}
+
+.mdHeader.mdHeader-underHead.mdHeader-underHead--office {
+  font-family: Arial;
+  color: #404040;
+}
+
+.headerOneMoneyContainer {
+  max-width: 960px;
+  margin: 0 auto;
+}

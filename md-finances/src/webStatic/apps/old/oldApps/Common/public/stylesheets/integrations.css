@@ -1,0 +1,18 @@
+input.smsCodeInput {
+  width: 190px;
+  margin-right: 15px;
+}
+.mdDialogWrap .mdDialogHeader.smsCodeHeader {
+  font-size: 16px;
+}
+.smsCodeError {
+  margin: 0px;
+  color: red;
+}
+.authrizationError {
+  font-weight: bold;
+  margin-left: 25px;
+}
+.authrizationWarning {
+  font-size: 12px;
+}

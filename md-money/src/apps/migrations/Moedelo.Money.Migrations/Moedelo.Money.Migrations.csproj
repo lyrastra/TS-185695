@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Mg20240212131620_AD_2027_numeration.sql" />
+    <EmbeddedResource Include="Scripts\Mg20200911130000_BP_9055_init.sql" />
+    <EmbeddedResource Include="Scripts\Mg20201001183300_alter_bank_balance_date_type.sql" />
+    <EmbeddedResource Include="Scripts\Mg20231211182610_add_bank_balance_update_timestamp.sql" />
+    <EmbeddedResource Include="Scripts\Mg20251124150101_AD_4592_add_is_manual_flag.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentMigrator" Version="3.2.1" />
+  </ItemGroup>
+
+</Project>

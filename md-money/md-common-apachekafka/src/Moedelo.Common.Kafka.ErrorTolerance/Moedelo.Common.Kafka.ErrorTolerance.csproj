@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka.ErrorTolerance\Moedelo.Infrastructure.Kafka.ErrorTolerance.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka\Moedelo.Infrastructure.Kafka.csproj" />
+      <ProjectReference Include="..\Moedelo.Common.Kafka.Abstractions\Moedelo.Common.Kafka.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

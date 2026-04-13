@@ -1,0 +1,69 @@
+div.mdWizard div.title h1 {
+  font-size: 21px;
+  margin: 0 0 25px 0;
+}
+div.mdWizard div.wizardContent {
+  min-height: 300px;
+}
+div.mdWizard div.wizardContent div.stepsMenu {
+  width: 215px;
+  display: inline-block;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step {
+  padding: 0 0 0 10px;
+  cursor: pointer;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step.selected {
+  background: none repeat scroll 0 0 #f2d7a9;
+  cursor: default;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step.current a.stepName {
+  text-decoration: none;
+  color: #404040;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step.future {
+  color: #b2b2b2;
+  cursor: default;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step.future a.stepName {
+  text-decoration: none;
+  color: #b2b2b2;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step.done span.number {
+  display: none;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step.done span.doneIcon {
+  display: inline-block;
+  margin-right: 10px;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step span.number {
+  vertical-align: top;
+  margin-right: 10px;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step span.doneIcon {
+  background: url('../stylesheets/img/completedTransparency.png') no-repeat left 3px;
+  width: 13px;
+  height: 13px;
+}
+div.mdWizard div.wizardContent div.stepsMenu ul.steps li.step a.stepName {
+  display: inline-block;
+  width: 177px;
+  text-decoration: underline;
+}
+div.mdWizard div.wizardContent div.stepContent {
+  float: right;
+  width: 728px;
+  margin-bottom: 20px;
+}
+div.mdWizard div.buttonPanel {
+  width: 708px;
+  float: right;
+  padding: 17px 20px;
+  background: none repeat scroll 0 0 #f4eddf;
+  clear: both;
+  position: relative;
+  display: block;
+}
+div.mdWizard div.buttonPanel div.mdButton.nextStep {
+  margin-right: 20px;
+}

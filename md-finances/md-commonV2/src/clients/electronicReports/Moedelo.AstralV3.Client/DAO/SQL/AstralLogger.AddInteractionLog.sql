@@ -1,0 +1,24 @@
+﻿insert into moedelo_logs.dbo.AstralInteractionLog
+(
+	MethodId,
+	FirmId,
+	UserId,
+	EventDateTime,
+	EventType,
+	ExceptionMessage,
+	Request,
+	Response,
+	Duration
+)
+values
+(
+	@MethodId,
+	@FirmId,
+	@UserId,
+	@EventDateTime,
+	@EventType,
+	@ExceptionMessage,
+	@Request,
+	@Response,
+	@Duration
+);

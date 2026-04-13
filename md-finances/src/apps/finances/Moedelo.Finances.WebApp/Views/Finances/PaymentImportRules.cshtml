@@ -1,0 +1,17 @@
+﻿@using Moedelo.CommonV2.Webpack
+@{
+    Layout = "~/Views/Shared/_LayoutPaymentImportRules.cshtml";
+    ViewBag.Title = "Правила импорта − интернет-бухгалтерия Моё дело";
+}
+
+<div id="content"></div>
+
+@section header
+{
+    @Html.Raw(WebpackInitializer.RenderCss("paymentImportRules"))
+}
+
+@section scripts
+{
+    @Html.Raw(WebpackInitializer.RenderJs("paymentImportRules"))
+}

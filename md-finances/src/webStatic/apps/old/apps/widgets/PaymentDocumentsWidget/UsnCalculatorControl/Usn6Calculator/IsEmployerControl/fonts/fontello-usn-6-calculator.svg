@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello-usn-6-calculator" horiz-adv-x="1000" >
+<font-face font-family="fontello-usn-6-calculator" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="info_icon" unicode="&#x69;" d="M500 850c-275 0-500-225-500-500 0-275 225-500 500-500 275 0 500 225 500 500 0 275-225 500-500 500z m-8-833h-117l92 416h116l-91-416z m108 500h-108l33 141h117l-42-141z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

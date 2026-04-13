@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-accounting-shared\src\Moedelo.Accounting.ApiClient.Abstractions\Moedelo.Accounting.ApiClient.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-accounting-shared\src\Moedelo.Accounting.Domain.Shared\Moedelo.Accounting.Domain.Shared.csproj" />    
+    <ProjectReference Include="..\..\..\md-accounts-shared\Moedelo.Accounts.ApiClient.Abstractions\Moedelo.Accounts.ApiClient.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.ApiClient.Abstractions\Moedelo.AccPostings.ApiClient.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.Kafka.Abstractions\Moedelo.AccPostings.Kafka.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-authorities-shared\src\Moedelo.Authorities.ApiClient.Abstractions\Moedelo.Authorities.ApiClient.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-billing-shared\Moedelo.Billing.ApiClient.Abstractions\Moedelo.Billing.ApiClient.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-catalog-shared\src\Moedelo.Catalog.ApiClient.Abstractions\Moedelo.Catalog.ApiClient.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-commissionAgents-shared\src\Moedelo.CommissionAgents.ApiClient.Abstractions\Moedelo.CommissionAgents.ApiClient.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-common-accessrules\src\Moedelo.Common.AccessRules.Abstractions\Moedelo.Common.AccessRules.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj" />    
+    <ProjectReference Include="..\..\..\md-common-http\src\Moedelo.Common.Http.Abstractions\Moedelo.Common.Http.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-common-logging\src\Moedelo.Common.Logging\Moedelo.Common.Logging.csproj" />
+    <ProjectReference Include="..\..\..\md-common-redisdataaccess\src\Moedelo.Common.Redis.Abstractions\Moedelo.Common.Redis.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-commonApi-shared\src\Moedelo.CommonApi.ApiClient.Abstractions\Moedelo.CommonApi.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-contracts-shared\src\Moedelo.Contracts.ApiClient\Moedelo.Contracts.ApiClient.csproj" />
+    <ProjectReference Include="..\..\..\md-docs-shared\src\Moedelo.Docs.ApiClient.Abstractions\Moedelo.Docs.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-estate-shared\src\Moedelo.Estate.ApiClient.Abstractions\Moedelo.Estate.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-aspnet\src\Moedelo.Infrastructure.AspNetCore.Abstractions\Moedelo.Infrastructure.AspNetCore.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-aspnet\src\Moedelo.Infrastructure.AspNetCore.Xss\Moedelo.Infrastructure.AspNetCore.Xss.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-extensions\src\Moedelo.Infrastructure.System.Net6.Extensions\Moedelo.Infrastructure.System.Net6.Extensions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj" />
+    <ProjectReference Include="..\..\..\md-kontragents-shared\src\Moedelo.Konragents.ApiClient.Abstractions\Moedelo.Konragents.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-linkedDocuments-shared\src\Moedelo.LinkedDocuments.ApiClient.Abstractions\Moedelo.LinkedDocuments.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-money-shared\src\Moedelo.Money.ApiClient.Abstractions\Moedelo.Money.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-money-shared\src\Moedelo.Money.Enums\Moedelo.Money.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-money-shared\src\Moedelo.Money.Kafka.Abstractions\Moedelo.Money.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-paymentImport-shared\src\Moedelo.PaymentOrderImport.ApiClient.Abstractions\Moedelo.PaymentOrderImport.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-paymentImport-shared\src\Moedelo.PaymentOrderImport.Kafka.Abstractions\Moedelo.PaymentOrderImport.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-payroll-shared\src\Moedelo.Payroll.ApiClient.Abstractions\Moedelo.Payroll.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-providing-shared\src\Moedelo.Providing.ApiClient.Abstractions\Moedelo.Providing.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-requisites-shared\src\Moedelo.Requisites.ApiClient.Abstractions\Moedelo.Requisites.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-requisites-shared\src\Moedelo.Requisites.Enums\Moedelo.Requisites.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-spam-shared\Moedelo.Spam.ApiClient.Abastractions\Moedelo.Spam.ApiClient.Abastractions.csproj" />
+    <ProjectReference Include="..\..\..\md-taxPostings-shared\src\Moedelo.TaxPostings.ApiClient.Abstractions\Moedelo.TaxPostings.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-taxPostings-shared\src\Moedelo.TaxPostings.Kafka.Abstractions\Moedelo.TaxPostings.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\cashOrders\Moedelo.Money.CashOrders.Dto\Moedelo.Money.CashOrders.Dto.csproj" />
+    <ProjectReference Include="..\common\Moedelo.Money.Common.Domain\Moedelo.Money.Common.Domain.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Business.Abstractions\Moedelo.Money.Business.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Domain\Moedelo.Money.Domain.csproj" />
+    <ProjectReference Include="..\paymentOrders\Moedelo.Money.PaymentOrders.Domain\Moedelo.Money.PaymentOrders.Domain.csproj" />
+    <ProjectReference Include="..\paymentOrders\Moedelo.Money.PaymentOrders.Dto\Moedelo.Money.PaymentOrders.Dto.csproj" />
+    <ProjectReference Include="..\purseOperations\Moedelo.Money.PurseOperations.Dto\Moedelo.Money.PurseOperations.Dto.csproj" />
+    <ProjectReference Include="..\registry\Moedelo.Money.Registry.Dto\Moedelo.Money.Registry.Dto.csproj" />
+  </ItemGroup>
+
+</Project>

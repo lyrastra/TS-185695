@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>default</LangVersion>
+    <AssemblyTitle>Moedelo.Common.Enums</AssemblyTitle>
+    <Product>Moedelo.Common.Enums</Product>
+    <Copyright>Copyright © Моё Дело 2014-2026</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Enums\HeaderUseCase.cs" />
+    <Compile Remove="Enums\Banks\BankIntegrationStatus.cs" />
+  </ItemGroup>
+</Project>

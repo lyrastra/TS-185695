@@ -1,0 +1,235 @@
+@colorred: hsl(8, 80%, 48%);
+
+@colorblue: hsl(202, 72%, 56%);
+
+@colorgray: hsl(0, 0%, 60%);
+
+@colorgreen: hsl(122, 37%, 52%);
+
+.colFlex {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container {
+    padding: 9px 0 40px;
+
+    &Item {
+        margin-top: 29px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        .operationsCount {
+            margin: 0 6px;
+            font-size: 10px;
+            padding: 1px 5px;
+            line-height: 13px;
+            border-radius: 50px;
+
+            &Insert,
+            &SalaryInsert {
+                color: @colorblue;
+                border: 1px solid @colorblue;
+            }
+
+            &Delete,
+            &SalaryDelete {
+                color: @colorred;
+                border: 1px solid @colorred;
+            }
+        }
+    }
+}
+
+.dropDownLink {
+    &:hover {
+        cursor: pointer;
+    }
+
+    &Insert,
+    &SalaryInsert {
+        fill: @colorblue;
+    }
+
+    &Delete,
+    &SalaryDelete {
+        fill: @colorred;
+    }
+}
+
+.operationsContainer {
+    position: relative;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 175ms ease-in-out;
+
+    &entered {
+        overflow: auto;
+        max-height: 250px;
+    }
+
+    &Description {
+        padding: 16px 40px;
+        color: @colorgray;
+    }
+}
+
+.operationsList {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+
+    & > li:before,
+    li:after {
+        content: none;
+    }
+
+    .operation {
+        display: flex;
+
+        &Delete {
+            text-align: center;
+        }
+
+        &Kontragent,
+        &Description {
+            max-height: 38px;
+            overflow: hidden;
+        }
+
+        &Description {
+            color: @colorgray;
+        }
+
+        &DeleteIcon {
+            width: 15px;
+            height: 15px;
+            fill: @colorgray;
+
+            &:hover {
+                fill: @colorred;
+            }
+        }
+
+        &Sum {
+            text-align: right;
+
+            &Green {
+                color: hsl(120, 100%, 30%);
+            }
+
+            &Red {
+                color: @colorred;
+            }
+        }
+
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.subtext {
+    color: @colorgray;
+    font-size: 15px;
+    line-height: 20px;
+    min-height: 20px;
+}
+
+.reconciliationHeader {
+    padding: 35px 40px 0;
+}
+
+.reconciliationButton {
+    justify-content: flex-end;
+}
+
+.instruction {
+    width: fit-content;
+}
+
+.instructionContent {
+    padding: 21px 40px;
+}
+
+.controlLink,
+.textResult {
+    padding-left: 40px;
+}
+
+.tabGroupContainer {
+    align-items: flex-end;
+}
+
+.controls {
+    padding: 40px 40px 0;
+}
+
+.loaderContainer {
+    text-align: center;
+}
+
+.downloadXlsLinkIcon {
+    color: @colorgreen;
+    border: 1px solid @colorgreen;
+    border-radius: 4px;
+    padding: 1px 3px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.downloadLinkContainer {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+    padding-bottom: 8px;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        border-bottom: 1px solid hsl(0, 0%, 90%);
+        bottom: -1px;
+        left: -10px;
+    }
+}
+
+.downloadXlsLink {
+    color: @colorgray;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:hover .downloadXlsLinkIcon {
+        background: @colorgreen;
+        color: hsl(0, 0%, 100%);
+    }
+}
+
+.withLabelWrapper {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 40px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.iconWrapper {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: hsl(0, 0%, 60%);
+
+    &.tooltipIcon {
+        position: absolute;
+        top: 3px;
+    }
+}

@@ -1,0 +1,48 @@
+.tile {
+    padding: 10px;
+    min-width: 120px;
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    border-radius: 4px;
+
+    &.turnedOn {
+        background-color: hsla(210, 20%, 94%, 1);
+    }
+}
+
+.fake__button {
+    pointer-events: none;
+}
+
+.bank__info {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    &.disabled {
+        filter: grayscale(1);
+    }
+}
+
+.bank__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.turnedOn__icon {
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    fill: hsla(0, 0%, 36%, 1);
+}
+
+.bank__name {
+    max-width: 100%;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* autoprefixer: off */
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+}

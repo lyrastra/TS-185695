@@ -1,0 +1,118 @@
+.component {
+    width: 296px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+
+    .period {
+        font-size: 15px;
+        text-align: center;
+        margin: 16px 0 11px;
+
+        .label {
+            vertical-align: middle;
+            display: inline-block;
+            text-align: center;
+            width: 45px;
+        }
+    }
+
+    .calendar {
+        display: flex;
+        flex-wrap: wrap;
+
+        .cell {
+            flex-grow: 1;
+            min-width: 45px;
+            text-align: center;
+            flex-basis: 20%;
+            cursor: pointer;
+
+            &.active {
+                background: #FFFFCC;
+            }
+        }
+
+        .quarter {
+            .cell();
+            padding-right: 21px;
+            white-space: nowrap;
+
+            &:after {
+                content: '';
+                margin-right: 10px;
+                display: inline-block;
+                height: 100%;
+                width: 10px;
+                vertical-align: middle;
+                border-right: 1px solid #ddd;
+            }
+
+            span {
+                padding: 10px 0;
+                display: inline-block;
+                width: 100%;
+            }
+
+            &.disabled {
+                color: #BFCBD9;
+            }
+
+            &.active span {
+                background: #FCF4B3;
+            }
+
+            &:not(.active):not(.disabled) span:hover {
+                background: #F8F8F8;
+            }
+        }
+
+        .month {
+            padding: 10px 0;
+            .cell();
+
+            &.disabled {
+                color: #BFCBD9;
+            }
+
+            &:not(.active):not(.disabled):hover {
+                background: #F8F8F8;
+            }
+        }
+    }
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        transition: all 175ms;
+        box-sizing: border-box;
+        padding: 7px;
+        vertical-align: middle;
+        cursor: pointer;
+        fill: #999999;
+
+        &:hover {
+            fill: #209AC4;
+        }
+
+        &.disabled {
+            fill: #BFCBD9;
+            cursor: default;
+        }
+    }
+
+    .left {
+        .icon();
+        transform: rotate(90deg);
+    }
+
+    .right {
+        .icon();
+        transform: rotate(-90deg);
+    }
+
+    .errorMessage {
+        font:       13px/18px Roboto;
+        margin-top: 7px;
+        color: hsl(8, 83%, 64%);
+    }
+}

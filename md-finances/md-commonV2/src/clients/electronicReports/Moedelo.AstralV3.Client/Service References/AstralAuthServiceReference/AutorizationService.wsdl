@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="tns" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="spyne.model.primitive" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="https://iotchet.ru/namespases" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xop="http://www.w3.org/2004/08/xop/include" name="AutorizationService" targetNamespace="tns" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://iotchet.ru/namespases">
+      <xs:simpleType name="GUID">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="36" />
+          <xs:pattern value="[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}|\w{0}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SKID">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="40" />
+          <xs:pattern value="[A-Z0-9]{40}|\w{0}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Sessionkey">
+        <xs:restriction base="xs:string">
+          <xs:length value="32" />
+          <xs:pattern value="[a-z0-9]{32}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SysName">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="32" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="spyne.model.primitive">
+      <xs:simpleType name="Extra">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="256" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="tns">
+      <xs:import namespace="https://iotchet.ru/namespases" />
+      <xs:import namespace="spyne.model.primitive" />
+      <xs:complexType name="GetPasswordBySkidResponse" />
+      <xs:complexType name="GetPasswordResponse" />
+      <xs:complexType name="DropSessionKeyResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetEncryptedSessionkeyResponse">
+        <xs:sequence>
+          <xs:element name="Sessionkey" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Encrypted session key</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sysname" type="s1:SysName">
+            <xs:annotation>
+              <xs:documentation>System Name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="sessionkey" type="s1:Sessionkey">
+            <xs:annotation>
+              <xs:documentation>Session identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DropSessionKey">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Sessionkey" type="s1:Sessionkey">
+            <xs:annotation>
+              <xs:documentation>Session identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetEncryptedSessionkey">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" nillable="true" type="s1:GUID">
+            <xs:annotation>
+              <xs:documentation>Abonent identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SKID" nillable="true" type="s1:SKID">
+            <xs:annotation>
+              <xs:documentation>Subject Key Identifier of certificate</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" nillable="true" type="s1:GUID">
+            <xs:annotation>
+              <xs:documentation>Abonent identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetPasswordBySkid">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" nillable="true" type="s1:GUID">
+            <xs:annotation>
+              <xs:documentation>Abonent identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SKID" nillable="true" type="s1:SKID">
+            <xs:annotation>
+              <xs:documentation>Subject Key Identifier of certificate</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSessionkeyByCert">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Signature" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Signature</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GUID" nillable="true" type="s1:GUID">
+            <xs:annotation>
+              <xs:documentation>Abonent identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSessionkeyByCertResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Sessionkey" type="s1:Sessionkey">
+            <xs:annotation>
+              <xs:documentation>Session identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSessionkeyBySMS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" nillable="true" type="s1:GUID">
+            <xs:annotation>
+              <xs:documentation>Abonent identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Password" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Password</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetSessionkeyBySMSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Sessionkey" type="s1:Sessionkey">
+            <xs:annotation>
+              <xs:documentation>Session identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AutorizationHeaderWithExtra">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:RequestHeader">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="extra" nillable="true" type="s0:Extra" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="GetPasswordBySkidResponse" type="tns:GetPasswordBySkidResponse" />
+      <xs:element name="GetPasswordResponse" type="tns:GetPasswordResponse" />
+      <xs:element name="DropSessionKeyResponse" type="tns:DropSessionKeyResponse" />
+      <xs:element name="GetEncryptedSessionkeyResponse" type="tns:GetEncryptedSessionkeyResponse" />
+      <xs:element name="RequestHeader" type="tns:RequestHeader" />
+      <xs:element name="DropSessionKey" type="tns:DropSessionKey" />
+      <xs:element name="GetEncryptedSessionkey" type="tns:GetEncryptedSessionkey" />
+      <xs:element name="GetPassword" type="tns:GetPassword" />
+      <xs:element name="GetPasswordBySkid" type="tns:GetPasswordBySkid" />
+      <xs:element name="GetSessionkeyByCert" type="tns:GetSessionkeyByCert" />
+      <xs:element name="GetSessionkeyByCertResponse" type="tns:GetSessionkeyByCertResponse" />
+      <xs:element name="GetSessionkeyBySMS" type="tns:GetSessionkeyBySMS" />
+      <xs:element name="GetSessionkeyBySMSResponse" type="tns:GetSessionkeyBySMSResponse" />
+      <xs:element name="AutorizationHeaderWithExtra" type="tns:AutorizationHeaderWithExtra" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPassword">
+    <wsdl:part name="GetPassword" element="tns:GetPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetPasswordResponse">
+    <wsdl:part name="GetPasswordResponse" element="tns:GetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizationHeaderWithExtra">
+    <wsdl:part name="AutorizationHeaderWithExtra" element="tns:AutorizationHeaderWithExtra" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionkeyByCert">
+    <wsdl:part name="GetSessionkeyByCert" element="tns:GetSessionkeyByCert" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionkeyByCertResponse">
+    <wsdl:part name="GetSessionkeyByCertResponse" element="tns:GetSessionkeyByCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEncryptedSessionkey">
+    <wsdl:part name="GetEncryptedSessionkey" element="tns:GetEncryptedSessionkey" />
+  </wsdl:message>
+  <wsdl:message name="GetEncryptedSessionkeyResponse">
+    <wsdl:part name="GetEncryptedSessionkeyResponse" element="tns:GetEncryptedSessionkeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPasswordBySkid">
+    <wsdl:part name="GetPasswordBySkid" element="tns:GetPasswordBySkid" />
+  </wsdl:message>
+  <wsdl:message name="GetPasswordBySkidResponse">
+    <wsdl:part name="GetPasswordBySkidResponse" element="tns:GetPasswordBySkidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionkeyBySMS">
+    <wsdl:part name="GetSessionkeyBySMS" element="tns:GetSessionkeyBySMS" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionkeyBySMSResponse">
+    <wsdl:part name="GetSessionkeyBySMSResponse" element="tns:GetSessionkeyBySMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="DropSessionKey">
+    <wsdl:part name="DropSessionKey" element="tns:DropSessionKey" />
+  </wsdl:message>
+  <wsdl:message name="DropSessionKeyResponse">
+    <wsdl:part name="DropSessionKeyResponse" element="tns:DropSessionKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="RequestHeader" element="tns:RequestHeader" />
+  </wsdl:message>
+  <wsdl:portType name="AutorizationService">
+    <wsdl:operation name="GetPassword" parameterOrder="GetPassword">
+      <wsdl:documentation> Get password in SMS for authentification </wsdl:documentation>
+      <wsdl:input name="GetPassword" message="tns:GetPassword" />
+      <wsdl:output name="GetPasswordResponse" message="tns:GetPasswordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionkeyByCert" parameterOrder="GetSessionkeyByCert">
+      <wsdl:documentation>Get sessionkey for abonent by certificate</wsdl:documentation>
+      <wsdl:input name="GetSessionkeyByCert" message="tns:GetSessionkeyByCert" />
+      <wsdl:output name="GetSessionkeyByCertResponse" message="tns:GetSessionkeyByCertResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncryptedSessionkey" parameterOrder="GetEncryptedSessionkey">
+      <wsdl:documentation>Get encrypted sessionkey for abonent</wsdl:documentation>
+      <wsdl:input name="GetEncryptedSessionkey" message="tns:GetEncryptedSessionkey" />
+      <wsdl:output name="GetEncryptedSessionkeyResponse" message="tns:GetEncryptedSessionkeyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPasswordBySkid" parameterOrder="GetPasswordBySkid">
+      <wsdl:input name="GetPasswordBySkid" message="tns:GetPasswordBySkid" />
+      <wsdl:output name="GetPasswordBySkidResponse" message="tns:GetPasswordBySkidResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionkeyBySMS" parameterOrder="GetSessionkeyBySMS">
+      <wsdl:documentation>Get sessionkey for abonent by passwort from SMS</wsdl:documentation>
+      <wsdl:input name="GetSessionkeyBySMS" message="tns:GetSessionkeyBySMS" />
+      <wsdl:output name="GetSessionkeyBySMSResponse" message="tns:GetSessionkeyBySMSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DropSessionKey" parameterOrder="DropSessionKey">
+      <wsdl:documentation>Drop sessionkey for abonent</wsdl:documentation>
+      <wsdl:input name="DropSessionKey" message="tns:DropSessionKey" />
+      <wsdl:output name="DropSessionKeyResponse" message="tns:DropSessionKeyResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutorizationService" type="tns:AutorizationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPassword">
+      <soap:operation soapAction="GetPassword" style="document" />
+      <wsdl:input name="GetPassword">
+        <soap:body use="literal" />
+        <soap:header message="tns:AutorizationHeaderWithExtra" part="AutorizationHeaderWithExtra" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPasswordResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionkeyByCert">
+      <soap:operation soapAction="GetSessionkeyByCert" style="document" />
+      <wsdl:input name="GetSessionkeyByCert">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSessionkeyByCertResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEncryptedSessionkey">
+      <soap:operation soapAction="GetEncryptedSessionkey" style="document" />
+      <wsdl:input name="GetEncryptedSessionkey">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetEncryptedSessionkeyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPasswordBySkid">
+      <soap:operation soapAction="GetPasswordBySkid" style="document" />
+      <wsdl:input name="GetPasswordBySkid">
+        <soap:body use="literal" />
+        <soap:header message="tns:AutorizationHeaderWithExtra" part="AutorizationHeaderWithExtra" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPasswordBySkidResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionkeyBySMS">
+      <soap:operation soapAction="GetSessionkeyBySMS" style="document" />
+      <wsdl:input name="GetSessionkeyBySMS">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetSessionkeyBySMSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DropSessionKey">
+      <soap:operation soapAction="DropSessionKey" style="document" />
+      <wsdl:input name="DropSessionKey">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DropSessionKeyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutorizationService">
+    <wsdl:port name="AutorizationService" binding="tns:AutorizationService">
+      <soap:address location="http://iotchet.ru/api/autorization" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

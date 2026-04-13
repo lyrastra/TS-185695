@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="tns" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="https://iotchet.ru/namespases" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xop="http://www.w3.org/2004/08/xop/include" name="FlkService" targetNamespace="tns" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://iotchet.ru/namespases">
+      <xs:complexType name="FLKResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" type="xs:string" />
+          <xs:element name="protocol" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Protocol</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Filename">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="255" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="File">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="filename" nillable="true" type="s0:Filename">
+            <xs:annotation>
+              <xs:documentation>Filename</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="content" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Content</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FileArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="s0:File" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FLKResult" type="s0:FLKResult" />
+      <xs:element name="File" type="s0:File" />
+      <xs:element name="FileArray" type="s0:FileArray" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="tns">
+      <xs:import namespace="https://iotchet.ru/namespases" />
+      <xs:complexType name="CheckFilesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="s0:FLKResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CheckFiles">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" nillable="true" type="s0:FileArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CheckFilesResponse" type="tns:CheckFilesResponse" />
+      <xs:element name="CheckFiles" type="tns:CheckFiles" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckFiles">
+    <wsdl:part name="CheckFiles" element="tns:CheckFiles" />
+  </wsdl:message>
+  <wsdl:message name="CheckFilesResponse">
+    <wsdl:part name="CheckFilesResponse" element="tns:CheckFilesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FlkService">
+    <wsdl:operation name="CheckFiles" parameterOrder="CheckFiles">
+      <wsdl:documentation>Check files</wsdl:documentation>
+      <wsdl:input name="CheckFiles" message="tns:CheckFiles" />
+      <wsdl:output name="CheckFilesResponse" message="tns:CheckFilesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FlkService" type="tns:FlkService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckFiles">
+      <soap:operation soapAction="CheckFiles" style="document" />
+      <wsdl:input name="CheckFiles">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="CheckFilesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FlkService">
+    <wsdl:port name="FlkService" binding="tns:FlkService">
+      <soap:address location="http://iotchet.ru/api/flk" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

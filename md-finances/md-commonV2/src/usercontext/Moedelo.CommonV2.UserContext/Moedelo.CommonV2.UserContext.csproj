@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{DF2DB0C5-6AE9-4964-911A-EBDBF2CEBED1}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyTitle>Moedelo.CommonV2.UserContext</AssemblyTitle>
+    <Product>Moedelo.CommonV2.UserContext</Product>
+    <Copyright>Copyright © Моё Дело 2016-2025</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\..\auth\Moedelo.CommonV2.Auth.Domain\Moedelo.CommonV2.Auth.Domain.csproj" />
+    <ProjectReference Include="..\..\clients\account\Moedelo.AccountV2.Client\Moedelo.AccountV2.Client.csproj" />
+    <ProjectReference Include="..\..\clients\account\Moedelo.AccountV2.Dto\Moedelo.AccountV2.Dto.csproj" />
+    <ProjectReference Include="..\..\clients\authorization\Moedelo.Authorization.Client\Moedelo.Authorization.Client.csproj" />
+    <ProjectReference Include="..\..\clients\authorization\Moedelo.Authorization.Dto\Moedelo.Authorization.Dto.csproj" />
+    <ProjectReference Include="..\..\clients\billing\Moedelo.BillingV2.Client\Moedelo.BillingV2.Client.csproj" />
+    <ProjectReference Include="..\..\clients\billing\Moedelo.BillingV2.Dto\Moedelo.BillingV2.Dto.csproj" />
+    <ProjectReference Include="..\Moedelo.CommonV2.UserContext.Domain\Moedelo.CommonV2.UserContext.Domain.csproj" />
+  </ItemGroup>
+</Project>

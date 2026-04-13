@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Balances\Scripts\GetSettlementAccountBalances.sql" />
+    <EmbeddedResource Include="Reconciliation\Scripts\GetSettlementAccountReconciliation.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-common-sqldataaccess\src\Moedelo.Common.SqlDataAccess.Abstractions\Moedelo.Common.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-sqldataaccess\src\Moedelo.Infrastructure.SqlDataAccess\Moedelo.Infrastructure.SqlDataAccess.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.Enums\Moedelo.Money.Enums.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Reports.DataAccess.Abstractions\Moedelo.Money.Reports.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Reports.Domain\Moedelo.Money.Reports.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

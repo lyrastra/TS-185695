@@ -1,0 +1,21 @@
+.mdSpanTransformer {
+  display: inline-block;
+}
+.mdSpanTransformer .mdSpanTransformerText {
+  color: #1f85c5;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 25px;
+}
+.mdSpanTransformer .mdSpanTransformerText:hover {
+  text-decoration: none;
+}
+.mdSpanTransformer .mdSpanTransformerText.mdSpanTransformerText--readOnly {
+  cursor: default;
+  color: #404040;
+  text-decoration: none;
+}
+.mdSpanTransformer .mdSpanTransformerClose {
+  left: 0;
+}

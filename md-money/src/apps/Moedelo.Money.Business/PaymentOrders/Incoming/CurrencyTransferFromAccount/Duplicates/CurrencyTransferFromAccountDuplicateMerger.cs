@@ -1,0 +1,38 @@
+using Moedelo.Infrastructure.DependencyInjection.Abstractions;
+using Moedelo.Money.Business.Abstractions.PaymentOrders.Incoming.CurrencyTransferFromAccount;
+using Moedelo.Money.Business.PaymentOrders.Duplicates;
+using Moedelo.Money.Domain.PaymentOrders.Duplicates;
+using Moedelo.Money.Enums;
+using System.Threading.Tasks;
+
+namespace Moedelo.Money.Business.PaymentOrders.Incoming.CurrencyTransferFromAccount.Duplicates
+{
+    [OperationType(OperationType.PaymentOrderIncomingCurrencyTransferFromAccount)]
+    [InjectAsSingleton(typeof(IConcreteDuplicateMerger))]
+    internal sealed class CurrencyTransferFromAccountDuplicateMerger : IConcreteDuplicateMerger
+    {
+        private readonly ICurrencyTransferFromAccountReader reader;
+        private readonly ICurrencyTransferFromAccountUpdater updater;
+
+        public CurrencyTransferFromAccountDuplicateMerger(
+            ICurrencyTransferFromAccountReader reader,
+            ICurrencyTransferFromAccountUpdater updater)
+        {
+            this.reader = reader;
+            this.updater = updater;
+        }
+
+        public async Task MergeAsync(PaymentOrderDuplicateMergeRequest request)
+        {
+            var response = await reader.GetByBaseIdAsync(request.DocumentBaseId).ConfigureAwait(false);
+            if (response.Date == request.Date)
+            {
+                return;
+            }
+            var saveRequest = CurrencyTransferFromAccountMapper.MapToSaveRequest(response);
+            saveRequest.Date = request.Date;
+            saveRequest.ProvideInAccounting = true;
+            await updater.UpdateAsync(saveRequest).ConfigureAwait(false);
+        }
+    }
+}

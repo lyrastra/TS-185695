@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-postgresqldataaccess\src\Moedelo.Common.PostgreSQLDataAccess.Abstractions\Moedelo.Common.PostgreSQLDataAccess.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka.Abstractions\Moedelo.Infrastructure.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka.ErrorTolerance\Moedelo.Infrastructure.Kafka.ErrorTolerance.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ZstdSharp.Port" Version="0.7.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Internals\Dao\Sql\Get.sql" />
+      <EmbeddedResource Include="Internals\Dao\Sql\Save.sql" />
+    </ItemGroup>
+
+</Project>

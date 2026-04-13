@@ -1,0 +1,42 @@
+[submodule "md-enums"]
+	path = md-enums
+	url = https://gitlab.mdtest.org/development/infra/md-enums.git
+[submodule "md-commonV2"]
+	path = md-commonV2
+	url = https://gitlab.mdtest.org/development/infra/md-commonV2.git
+[submodule "md-infrastructureV2"]
+	path = md-infrastructureV2
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructureV2.git
+[submodule "md-parsers"]
+	path = md-parsers
+	url = https://gitlab.mdtest.org/development/md-parsers.git
+[submodule "md-bankIntegrations-shared"]
+	path = md-bankIntegrations-shared
+	url = https://gitlab.mdtest.org/development/md-bankIntegrations-shared.git
+[submodule "md-infrastructure-core-consul"]
+	path = md-infrastructure-core-consul
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-consul.git
+[submodule "md-infrastructure-core-dependencyinjection"]
+	path = md-infrastructure-core-dependencyinjection
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-dependencyinjection.git
+[submodule "md-infrastructure-core-json"]
+	path = md-infrastructure-core-json
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-json.git
+[submodule "md-infrastructure-core-redisdataaccess"]
+	path = md-infrastructure-core-redisdataaccess
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-redisdataaccess.git
+[submodule "md-paymentImport-shared"]
+	path = md-paymentImport-shared
+	url = https://gitlab.mdtest.org/development/md-paymentImport-shared.git
+[submodule "md-finances-shared"]
+	path = md-finances-shared
+	url = https://gitlab.mdtest.org/development/md-finances-shared.git
+[submodule "md-common-types"]
+	path = md-common-types
+	url = https://gitlab.mdtest.org/development/infra/md-common-types.git
+[submodule "md-common-archive"]
+	path = md-common-archive
+	url = https://gitlab.mdtest.org/development/infra/md-common-archive.git
+[submodule "md-accounting-shared"]
+	path = md-accounting-shared
+	url = https://gitlab.mdtest.org/development/md-accounting-shared.git

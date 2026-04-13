@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9740C60C-31BA-4941-9118-1143D5030FA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.ReceiptStatement.Client</RootNamespace>
+    <AssemblyName>Moedelo.ReceiptStatement.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\IReceiptStatementApiClient.cs" />
+    <Compile Include="Clients\ReceiptStatementApiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{D75DDFA4-BF4C-410C-A6AF-9F0D5F2582D9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\auth\Moedelo.CommonV2.Auth.OAuth2\Moedelo.CommonV2.Auth.OAuth2.csproj">
+      <Project>{793E8D98-6C22-4EAB-8C5E-44463EB4CC45}</Project>
+      <Name>Moedelo.CommonV2.Auth.OAuth2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\usercontext\Moedelo.CommonV2.UserContext.Domain\Moedelo.CommonV2.UserContext.Domain.csproj">
+      <Project>{168785EC-8B24-452C-B2FB-63BCD0E36FB6}</Project>
+      <Name>Moedelo.CommonV2.UserContext.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.ReceiptStatement.Dto\Moedelo.ReceiptStatement.Dto.csproj">
+      <Project>{FAB19FEA-E312-48AE-9244-AA7C31D243B6}</Project>
+      <Name>Moedelo.ReceiptStatement.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

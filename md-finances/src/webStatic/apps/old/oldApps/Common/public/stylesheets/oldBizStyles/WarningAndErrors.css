@@ -1,0 +1,102 @@
+.status_panel
+{    
+    line-height: 140%;
+    padding: 4px 10px 4px 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-raduis: 10px;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.status_warning {
+    background-color: #fff6c6;
+    border-color: #e5c200;
+}
+
+.marginBottom-15 {
+    margin-bottom: 15px
+}
+
+.status_message
+{
+    background-color: #c6f6f0;
+    border-color: #00c2e5;
+}
+
+.status_info
+{
+    background-color: #feea9a;
+    border-color: #f2d7a9;
+}
+
+.status_error
+{
+    background-color: #ffe5e5;
+    border-color: #f93d3d;
+}
+
+.status_error label
+{
+    margin-bottom: 0px;
+}
+
+.status_info_yellow
+{
+    background-color: #fbfdb2;
+    border: 1px solid #e3cc0e;
+}
+
+.status_info_gray
+{
+    background-color: #F6F6F6;
+    border: 1px solid #BDBDBD;
+}
+
+.status_info_green
+{
+    background-color: #EEFFEE;
+    border: 1px solid #9BC217;
+}
+ 
+/*Закрывающиеся баблы*/
+.closeablePanel {
+    padding-right: 25px
+}
+ 
+.icon24 {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+ 
+.closePanelButton:hover {
+    background-position: 0 -217px;
+}
+ 
+.closePanelButton {
+    background-position: 0 -234px;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    display: block;
+    cursor: pointer;
+}
+ 
+.closePanelButton:hover {
+     background-position: 0 -217px
+}
+ 
+.closeablePanel {
+padding-right: 25px;
+}
+ 
+ 
+.status_panel {
+border-radius: 3px;
+}
+
+      

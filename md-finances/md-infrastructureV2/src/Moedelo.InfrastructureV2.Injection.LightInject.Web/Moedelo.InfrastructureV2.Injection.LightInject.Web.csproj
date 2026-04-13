@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{01A76FB8-5901-44FA-B17C-2F4B0125285C}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>default</LangVersion>
+    <AssemblyTitle>Moedelo.InfrastructureV2.Injection.LightInject.Web</AssemblyTitle>
+    <Product>Moedelo.InfrastructureV2.Injection.LightInject.Web</Product>
+    <Copyright>Copyright © Моё Дело 2021-2026</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="LightInject" Version="7.0.1" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.Linq.Expressions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\Moedelo.InfrastructureV2.Injection.LightInject\Moedelo.InfrastructureV2.Injection.LightInject.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,4 @@
+{
+  "main": "OutgoingCurrencyBankFee.js",
+  "description": "Для валютного счета Списание → Списана Комиссия Банка"
+}

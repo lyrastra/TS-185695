@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="PaymentOrders\Scripts\Save.sql" />
+    <EmbeddedResource Include="PaymentOrders\Scripts\GetLast.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-common-postgresqldataaccess\src\Moedelo.Common.PostgreSQLDataAccess.Abstractions\Moedelo.Common.PostgreSQLDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-sqldataaccess\src\Moedelo.Infrastructure.SqlDataAccess.Abstractions\Moedelo.Infrastructure.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Numeration.DataAccess.Abstractions\Moedelo.Money.Numeration.DataAccess.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

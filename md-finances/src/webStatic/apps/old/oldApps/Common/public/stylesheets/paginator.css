@@ -1,0 +1,140 @@
+.mdContainer .paginator,
+.paginator {
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+.mdContainer .paginator aside:after,
+.paginator aside:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.mdContainer .paginator .cell,
+.paginator .cell {
+  float: left;
+}
+.mdContainer .paginator .cell a,
+.paginator .cell a {
+  text-decoration: underline;
+  border: none;
+}
+.mdContainer .paginator .cell .selected,
+.paginator .cell .selected {
+  background: #F1D6A9;
+  padding: 3px 8px;
+}
+.mdContainer .paginator .cell .page,
+.paginator .cell .page {
+  cursor: pointer;
+  text-decoration: underline;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding: 3px 8px;
+}
+.mdContainer .paginator .cell .page.selected,
+.paginator .cell .page.selected {
+  background: #f1d6a9;
+  color: #777;
+  text-decoration: none;
+}
+.mdContainer .paginator .cell .c_guides,
+.paginator .cell .c_guides {
+  line-height: 13px;
+  margin-bottom: 10px;
+}
+.mdContainer .paginator .cell .c_guides a,
+.paginator .cell .c_guides a {
+  margin-left: 15px;
+}
+.mdContainer .paginator .cell .c_guides a i,
+.paginator .cell .c_guides a i {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  background: url(/App/oldApps/Common/public/stylesheets/img/icons16.png) 0px -1255px no-repeat;
+}
+.mdContainer .paginator .cell .c_guides a.serverprevious,
+.paginator .cell .c_guides a.serverprevious {
+  margin-left: 0;
+  cursor: pointer;
+}
+.mdContainer .paginator .cell .c_guides a.serverprevious i,
+.paginator .cell .c_guides a.serverprevious i {
+  width: 0;
+  height: 0;
+  border-right: 9px solid #1F85C5;
+  border-top: 6px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin-right: 5px;
+  background: none;
+}
+.mdContainer .paginator .cell .c_guides a.serverprevious.disabled,
+.paginator .cell .c_guides a.serverprevious.disabled {
+  cursor: default;
+}
+.mdContainer .paginator .cell .c_guides a.serverprevious.disabled i,
+.paginator .cell .c_guides a.serverprevious.disabled i {
+  border: none;
+  width: 12px;
+  height: 12px;
+  background: url(/App/oldApps/Common/public/stylesheets/img/icons16.png) 0px -1255px no-repeat;
+}
+.mdContainer .paginator .cell .c_guides a.servernext,
+.paginator .cell .c_guides a.servernext {
+  cursor: pointer;
+}
+.mdContainer .paginator .cell .c_guides a.servernext i,
+.paginator .cell .c_guides a.servernext i {
+  width: 0;
+  height: 0;
+  border-left: 9px solid #1F85C5;
+  border-top: 6px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin-left: 5px;
+  background: none;
+}
+.mdContainer .paginator .cell .c_guides a.servernext.disabled,
+.paginator .cell .c_guides a.servernext.disabled {
+  cursor: default;
+}
+.mdContainer .paginator .cell .c_guides a.servernext.disabled i,
+.paginator .cell .c_guides a.servernext.disabled i {
+  border: none;
+  width: 12px;
+  height: 12px;
+  background: url(/App/oldApps/Common/public/stylesheets/img/icons16.png) 0px -1271px no-repeat;
+}
+.mdContainer .paginator .cell .c_guides a.disabled,
+.paginator .cell .c_guides a.disabled {
+  cursor: default;
+  color: #B2B2B2;
+}
+.mdContainer .paginator .cell .c_guides a.disabled i,
+.paginator .cell .c_guides a.disabled i {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+}
+.mdContainer .paginator .serverhowmany,
+.paginator .serverhowmany {
+  color: #777777;
+  float: right;
+}
+.mdContainer .paginator .serverhowmany select,
+.paginator .serverhowmany select {
+  width: 57px;
+}
+.mdContainer .paginator .serverhowmany span,
+.paginator .serverhowmany span {
+  color: #494949;
+}
+aside.paginator:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}

@@ -1,0 +1,1109 @@
+@font-face {
+    font-family: 'rouble';
+    src: url('/App/oldApps/MoneyTransferApp/public/fonts/rouble/rouble.eot');
+    src: url('/App/oldApps/MoneyTransferApp/public/fonts/rouble/rouble.eot#iefix') format('embedded-opentype'),
+    url('/App/oldApps/MoneyTransferApp/public/fonts/rouble/rouble.woff') format('woff'),
+    url('/App/oldApps/MoneyTransferApp/public/fonts/rouble/rouble.ttf') format('truetype'),
+    url('/App/oldApps/MoneyTransferApp/public/fonts/rouble/rouble.svg#rouble') format('svg');
+}
+
+
+/*SimpleModal*/
+/* Overlay */
+
+::-webkit-input-placeholder {
+    color: #999 !important;
+}
+
+:-moz-placeholder {
+    color: #999 !important;
+}
+
+input:-ms-input-placeholder {
+    color: #999 !important;
+}
+
+#simplemodal-overlay { background-color: #AAAAAA; }
+
+/* Container */
+#simplemodal-container {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #AAAAAA;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px 4px 4px 4px;
+    overflow: hidden; }
+
+#simplemodal-container a.modalCloseImg {
+    position: absolute;
+    top: 16px;
+    right: 8px;
+    cursor: pointer;
+    border-radius: 4px 4px 4px 4px;
+    height: 16px;
+    width: 16px;
+    /*background: url("../stylesheets/img/ui-icons_222222_256x240.png") -96px -128px;*/
+    float: right;
+}
+
+#simplemodal-container a.modalCloseImg:hover {
+    /*background: url("../stylesheets/img/ui-icons_454545_256x240.png") -96px -128px #E4E4E4;*/
+    border: 1px solid #999999; color: #212121; font-weight: normal; }
+
+.dialogTitle { font-size: 24px; margin: 0.4em 16px 16px 0; }
+
+.simplemodal-wrap { overflow: hidden; }
+
+#moneyDialog #transferMenu {
+    padding-left: 30px;
+    padding-bottom: 40px;
+    font-size: 0.9em
+}
+
+#transferMenu input[type="radio"] { margin-left: 10px; }
+
+#transferMenu label { cursor: pointer; padding-left: 7px; display: inline; font-size: 14px; margin-left: 0; margin-bottom: 10px; }
+
+#transferMenu td.operationNameTd { width: 150px; font-style: italic; font-size: 14px; }
+
+#moneyDialog #transferMenu li { min-height: 20px; }
+
+.radioGroupHeader { color: #000; font-weight: bold; margin: 8px 0; }
+
+.moneyButtons { width: 100%; height: 45px; margin-top: 20px; padding-top: 18px; position: relative; }
+
+.moneyButtons a { outline: none; }
+
+.moneyButtons .dialog-backLink { margin-left: 35px; }
+
+.validateInfoBlock { margin-top: 15px; height: 20px; }
+
+.saveBlock { float: right; margin-right: 15px; }
+
+.nextBlock { float: right; margin-right: 20px; }
+
+.backBlock { margin-left: 15px; }
+
+.cancelButton { background-position: 0 -158px; }
+
+.doneButton { background-position: 0 -1046px; padding-right: 30px !important; }
+
+.shotArrowButton { background-position: 0 -868px; margin-left: 20px; }
+
+.saveButton { background-position: 0 -79px; }
+
+#moneyDialog {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible;
+    line-height: 25px;
+}
+
+#moneyDialog * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#moneyDialog .qtip_balance_span {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: -3px;
+}
+
+#moneyDialog .qtip_tax_reporting_span {
+    cursor: pointer;
+    width: 13px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    position: relative;
+    top: -3px;
+}
+
+#moneyDialog input[type=text],
+#moneyDialog textarea {
+    border: 1px solid;
+    -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    border-color: #6A6A6A #939393 #ADADAD;
+    outline: none;
+}
+
+#moneyDialog input[type=radio] {
+    padding-left: 0;
+}
+
+.moneyDialog .radioBoxes label[disabled] {
+    color: #DDD;
+    cursor: default;
+}
+
+.moneyDialog input[type=radio][disabled] {
+    cursor: default;
+}
+
+#moneyDialog,
+#moneyDialog input,
+#moneyDialog a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+#moneyDialog input[type=text] { display: inline; font-size: 13px; padding: 2px; }
+
+#moneyDialog input[type=text], .moneyDialog textarea { width: 405px; }
+
+#moneyDialog .additionalLink a { color: #8D8D8D; font-family: Arial, Helvetica, sans-serif; font-size: 11px; }
+
+.linkDescription {
+    font-style: italic;
+    color: #8D8D8D;
+}
+
+#moneyDialog select {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#moneyDialog label { display: inline; margin-left: 0; position: relative; }
+
+#moneyDialog .bigLabel { line-height: 15px; top: -5px; }
+
+#moneyDialog .main { padding: 0 0 10px 35px; }
+
+#moneyDialog .main select { width: 410px; }
+
+#moneyDialog .main input[type="radio"] { width: 10px; position: relative; margin-left: 0; margin-right: 5px; }
+
+#moneyDialog .main .title { position: relative; top: 0; float: left; width: 200px; }
+
+#moneyDialog .main table { float: left; }
+
+#moneyDialog .main .typeLink { margin: 0; position: relative; }
+
+#moneyDialog .main .proofLink { top: -2px; }
+
+#moneyDialog .main .createdDocument { margin-left: 200px; margin-top: 10px; margin-bottom: 20px; padding-top: 5px; }
+
+#moneyDialog .main .createdDocument input { width: 80px; margin-right: 3px; }
+
+#moneyDialog .main .selectorCombo { margin: 0; width: 410px; }
+
+#moneyDialog .main .settlementDiv { margin-left: 200px; margin-bottom: 10px; }
+
+#moneyDialog .main .purseDiv { margin-left: 200px; margin-bottom: 10px; }
+
+#moneyDialog .accountList td { padding-left: 20px; padding-right: 20px; }
+
+#moneyDialog .radioBoxes span label { padding-left: 5px; cursor: pointer; }
+
+#moneyDialog .usn { margin: 0 0 0 0; padding: 10px 15px 20px 30px; background-color: #addfad; overflow: visible }
+
+#moneyDialog .usn .title { position: static; float: left; width: 200px; height: 20px; }
+
+#moneyDialog .usn .title label { vertical-align: bottom; }
+
+#moneyDialog .usnHeader { font-weight: bold; font-size: 14px; margin-bottom: 20px; }
+
+#moneyDialog .buttons { width: 100%; margin: 0; padding: 0; }
+
+#moneyDialog .buttons div {
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #fff;
+    overflow: hidden;
+    margin: 0 10px;
+    height: 29px;
+    background: #fff none;
+}
+
+#moneyDialog .buttons input {
+    height: 30px;
+    width: 116px;
+    margin: 15px 25px;
+    padding: 3px 0 8px 15px;
+}
+
+#moneyDialog .header {
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 auto;
+    /*background: url('../../img/libraryIcons.gif') no-repeat left 4px;*/
+    padding: 0 0 0 0;
+}
+
+#moneyDialog .radioLabel { display: inline; left: 5px; position: relative; top: -1px; }
+
+.moneyDialog li {
+    clear: both;
+    margin: 3px 0 0 0;
+    min-height: 40px;
+}
+
+/* меня заставили */
+.moneyDialog .usnSumQtip {
+    top: -22px;
+    left: -25px;
+}
+
+.maskedDatepicker { width: 385px !important; }
+
+.smallMaskedDatepicker { width: 65px !important; }
+
+#moneyDialog .main .createdDocument label { padding-right: 5px; padding-left: 3px; }
+
+#createAnother { margin-left: 235px; font-size: 14px; }
+
+#createAnother input[type=checkbox] { display: inline; }
+
+#createAnotherHref { top: 5px; position: relative; color: Black; text-decoration: none; }
+
+#createAnotherHref:hover, #createAnotherHref:focus { border-bottom: 1px dashed; }
+
+#savedNotice { position: absolute; left: 300px; background-color: #FBFDB2; display: none; padding: 0 10px 0 10px; border-radius: 4px; }
+
+#errorNotice { position: absolute; left: 190px; background-color: #FFE5E5; display: none; padding: 0 10px 0 10px; border-radius: 4px; }
+
+#saveErrorNotice { position: absolute; left: 260px; background-color: #FFE5E5; display: none; padding: 0 10px 0 10px; border-radius: 4px; }
+
+#dialog_input_warning { margin: 0 0 10px 205px; color: #CB3338; display: none; font-size: 0.81em; }
+
+.info_block,
+.infoBlock {
+    background-color: #addfac;
+    margin: 0 0 -5px 0;
+    padding: 7px 30px 7px 30px;
+}
+
+.warningBlock {
+    background-color: #FFF6C6;
+    margin: 0 0 -5px 0;
+    padding: 7px 30px 7px 30px;
+}
+
+.hintHead { color: #367ac2; border-bottom-width: 1px; border-bottom-style: dashed; cursor: pointer; }
+
+label.hiddenError { display: none !important; }
+
+input.hiddenError { border: solid 1px #FF9191; }
+
+.waybillHint {
+    color: #777;
+    font-size: .75em;
+    padding-bottom: 15px;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.waybillHint .icon16 {
+    top: -3px;
+    position: relative;
+    margin-right: 3px;
+}
+
+#workerPaymentsTable {
+    width: auto;
+}
+
+#workerPaymentsTable td.deadlineTd {
+    width: 70px;
+}
+
+#workerPaymentsTable td.paymentTypeTd {
+    width: 450px;
+}
+
+#workerPaymentsTable td {
+    padding: 5px 0;
+}
+
+#workerPaymentsTable td.showAllTd {
+    padding: 20px 0 0;
+}
+
+#workerPaymentsTable td.paymentSumTd {
+    text-align: right;
+}
+
+#workerPaymentsTable a {
+    text-decoration: underline;
+    border-bottom: none;
+    color: #1F85C5;
+}
+
+#workerPaymentsTable tr.delayed td.deadlineTd {
+    color: #CB3338;
+}
+
+/*-------------------------------------------------------------------------*/
+input[type=radio], label { cursor: pointer; }
+
+input[type=number] {
+    height: 25px; width: 400px;
+    padding: 0 4px;
+    display: inline-block;
+    font-size: 14px;
+    color: black;
+    border: 1px solid;
+    -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.23);
+    border-color: #6A6A6A #939393 #ADADAD;
+}
+
+input.hidden { display: none !important; }
+
+input.input-validation-error, textarea.input-validation-error { border-color: #CB3338; }
+
+#outgoingMenu { padding-left: 30px; padding-bottom: 20px; font-size: 0.9em; }
+
+.money-ui-dialog {
+    overflow: visible;
+}
+
+.money-ui-dialog .hidden {
+    display: none !important;
+}
+
+.money-ui-dialog .ui-widget-content a { color: #1F85C5; outline: none; }
+
+.money-ui-dialog .ui-dialog-titlebar { padding: 10px 30px 15px 30px; margin: 0; }
+
+.money-ui-dialog .ui-dialog-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    padding: 0;
+}
+
+.money-ui-dialog .ui-dialog-titlebar-close { right: 10px; top: 25px; }
+
+.money-ui-dialog .ui-widget-header { border: 0; background: none; }
+
+.money-ui-dialog__content {
+    margin-left: 30px;
+    margin-bottom: 40px;
+    padding-right: 10px;
+    max-height: 740px;
+}
+
+#moneyDialog ul {
+    list-style: none;
+    padding: 0;
+}
+
+#moneyDialog .form {
+    padding: 10px 30px 0 30px;
+}
+
+#moneyDialog .form--noPadding {
+    padding: 0;
+}
+
+#moneyDialog .form--section {
+    padding-top: 0;
+}
+
+#moneyDialog .usn ul.form { padding: 0; width: 650px; }
+
+#moneyDialog ul.form li { margin-bottom: 15px; min-height: 30px; }
+
+#moneyDialog ul.form label { margin-bottom: 0; }
+
+#moneyDialog ul.form label span.title { position: relative; top: 5px; float: left; width: 215px; line-height: 1.3em; }
+
+#moneyDialog ul.form input[type=text],
+#moneyDialog ul.form input[type=number] { width: 130px; height: 20px; line-height: 1.6em; padding: 3px 5px; }
+
+#moneyDialog ul.form input.long { width: 348px; }
+
+#moneyDialog ul.form input.medium { width: 178px; }
+
+#moneyDialog ul.form input.short { width: 84px; vertical-align: middle; }
+
+#moneyDialog ul.form input.numberShort { width: 45px; }
+
+#moneyDialog ul.form select.long { width: 360px; }
+
+#moneyDialog ul.form select[disabled] { cursor: default; }
+
+#moneyDialog ul.form textarea { height: auto; font-size: 13px; font-family: 'Segoe UI', 'Arial', sans-serif; max-width: 420px; max-height: 100px; margin: 0 0 -5px 0; }
+
+.money-ui-dialog .dialog_buttons {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: -7px;
+    padding: 0;
+    background-color: #F4EDDF;
+    line-height: 60px;
+}
+
+.money-ui-dialog .dialog-backLink {
+    color: #1F85C5;
+    float: left;
+    position: relative;
+    margin-left: 30px;
+}
+
+.money-ui-dialog .dialog-backArrow {
+    color: #1F85C5;
+    position: absolute;
+    left: -20px;
+    text-align: right;
+    font-family: 'Times New Roman';
+    font-size: 16px;
+}
+
+.money-ui-dialog .recipient_title {
+    margin: 0 0 0 215px;
+    width: 360px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.money-ui-dialog .dialog_buttons #cancelButton:hover { text-decoration: none !important; }
+
+.money-ui-dialog .saveButtons { position: absolute; left: 245px; display: inline-block; }
+
+.money-ui-dialog .saveButtons .dialog-nextBtn { float: left; margin: 0; display: inline-block; margin-right: 15px; }
+
+.money-ui-dialog .saveButtons .mdButton {
+    line-height: 16px;
+    vertical-align: middle;
+}
+
+.money-ui-dialog .saveButtons .buttonWrapper {
+    display: inline-block;
+}
+
+.money-ui-dialog .sliderButton li {
+    min-height: inherit;
+    margin-top: 0;
+}
+
+.money-ui-dialog span.link { font-family: 'Segoe UI', 'Arial', sans-serif; font-size: 14px; color: #1F85C5; text-decoration: underline; cursor: pointer; }
+
+.money-ui-dialog span.link:hover { text-decoration: none; border: none; }
+
+.money-ui-dialog .field-validation-error { color: #CB3338; display: inline-block; width: 360px; margin-left: 215px; font-size: .95em; }
+
+.money-ui-dialog .field-validation-custom span { display: none; }
+
+.money-ui-dialog .field-validation-error span { padding: 0 0 10px; display: inline-block; }
+
+.money-ui-dialog .field-validation-error.field-validation-custom {
+    display: none;
+}
+
+.money-ui-dialog .field-validation-valid { display: none; }
+
+.money-ui-dialog .field-validation-warning {
+    color: #CB3338;
+    display: inline-block;
+    width: 360px;
+    margin-left: 215px;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.money-ui-dialog p.subtitle { margin: 10px 0 0 0; padding: 0; font-weight: bold; color: #333; }
+
+.money-ui-dialog p.subtitle.top { margin-top: 0; }
+
+.money-ui-dialog .ui-dialog-content { height: auto !important; }
+
+.money-ui-dialog ul.form .radioBoxes { width: 360px; display: inline-block; margin-top: 5px; }
+
+.money-ui-dialog ul.form .radioBoxes input[type=radio] { outline: none; margin-left: 0; }
+
+#moneyDialog ul.form .radioBoxes label { width: 100%; display: inline-block; margin: 0; line-height: 1.6em; }
+
+.money-ui-dialog ul.form .documentCollection { display: inline-block; margin-top: 5px; }
+
+.money-ui-dialog ul.form .documentCollection span.link { text-decoration: none; border-bottom: 1px dotted #1F85C5; }
+
+.money-ui-dialog ul.form .documentCollection span.link:hover { border: none; }
+
+.money-ui-dialog .textBlock { cursor: default; display: inline-block; width: 433px; }
+
+.btn-income-arrow { color: #98BD1F; right: 10px; top: 0; }
+
+.btn-outgo-arrow { color: #CB3338; right: 10px; top: 0; }
+
+.money-ui-dialog .ui-autocomplete {
+    border-radius: 0;
+    padding: 1px;
+}
+
+.money-ui-dialog .ui-autocomplete a {
+    border-radius: 0;
+    font-size: 13px;
+}
+
+.money-ui-dialog .ui-menu-item {
+    background: none;
+}
+
+.money-ui-dialog .ui-autocomplete .ui-state-focus {
+    background-color: #f2d7a9 !important;
+    background-image: none;
+    border: 1px solid #f1d6a9;
+}
+
+/*------------------------------- Серые кнопки ------------------------------------*/
+.gray-button {
+    border: 1px solid #BDBDBD;
+    -webkit-box-shadow: #DDDDDD 0 1px 1px;
+    -moz-box-shadow: #DDDDDD 0 1px 1px;
+    box-shadow: #DDDDDD 0 1px 1px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: black !important;
+    font-style: normal;
+    zoom: 1;
+    display: inline-block;
+    *display: inline;
+    line-height: 26px;
+}
+
+.gray-button.disabled input {
+    color: #8D8D8D;
+}
+
+.gray-button.with-icon input {
+    padding-right: 25px;
+    *padding-right: 17px;
+}
+
+.gray-button:hover { border-color: #888888; }
+
+.gray-button.disabled-button:hover { border-color: #BDBDBD; }
+
+.gray-button:active { -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
+.gray-button.disabled-button:active { -webkit-box-shadow: #DDDDDD 0 1px 1px; -moz-box-shadow: #DDDDDD 0 1px 1px; box-shadow: #DDDDDD 0 1px 1px; }
+
+.gray-button.disabled-button input {
+    cursor: default;
+}
+
+.gray-button.disabled-button input[type=button]:active {
+    -webkit-box-shadow: #F9F9F9 0 0 3px;
+    -moz-box-shadow: #F9F9F9 0 0 3px;
+    box-shadow: inset #F9F9F9 0 0 3px;
+    background: #F3F3F3;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#F3F3F3), to(#E3E3E3));
+    background-image: -o-linear-gradient(#F3F3F3, #E3E3E3);
+    background-image: -moz-linear-gradient(#F3F3F3, #E3E3E3);
+    background-image: -ms-linear-gradient(#F3F3F3, #E3E3E3);
+    background-image: linear-gradient(#F3F3F3, #E3E3E3);
+}
+
+.gray-button input {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: #F9F9F9 0 0 3px;
+    -moz-box-shadow: #F9F9F9 0 0 3px;
+    box-shadow: inset #F9F9F9 0 0 3px;
+    background: #F3F3F3;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#F3F3F3), to(#E3E3E3));
+    background-image: -o-linear-gradient(#F3F3F3, #E3E3E3);
+    background-image: -moz-linear-gradient(#F3F3F3, #E3E3E3);
+    background-image: -ms-linear-gradient(#F3F3F3, #E3E3E3);
+    background-image: linear-gradient(#F3F3F3, #E3E3E3);
+    padding: 0 15px;
+    height: 26px;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    font-size: 13px;
+}
+
+.gray-button input::-moz-focus-inner {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.gray-button input[type=button]:active {
+    -webkit-box-shadow: inset #CDCDCD 0 1px 1px;
+    -moz-box-shadow: inset #CDCDCD 0 1px 1px;
+    box-shadow: inset #CDCDCD 0 1px 1px;
+    background: #E7E7E7;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#E7E7E7), to(#D9D9D9));
+    background: -webkit-linear-gradient(#E7E7E7, #D9D9D9);
+    background: -moz-linear-gradient(#E7E7E7, #D9D9D9);
+    background: -ms-linear-gradient(#E7E7E7, #D9D9D9);
+    background: -o-linear-gradient(#E7E7E7, #D9D9D9);
+    background: linear-gradient(#E7E7E7, #D9D9D9);
+}
+
+.rightMargin { margin-right: 10px; }
+
+.money-qtip-yellow {
+    background-color: #FFF6C6;
+    border: 1px solid #E5C200;
+    border-radius: 2px 2px 2px 2px;
+    font-family: Arial;
+}
+
+.money-qtip-yellow .ui-tooltip-content {
+    background-color: #FFF6C6;
+    border: 1px solid #E5C200;
+    border: none !important;
+    color: #000000;
+    font-size: 1.15em;
+    padding: 7px;
+}
+
+.money-qtip-yellow .ui-tooltip-tip { display: none !important; }
+
+.money-dialog-tooltip { line-height: 1.4em; }
+
+/*------------------------ автокомплит -----------------------*/
+.money-autocomplete { max-width: 500px; }
+
+/*.ui-autocomplete-loading { background: transparent url("/App/oldApps/Common/public/stylesheets/img/autocomplete_loading.gif") 98% center no-repeat; }*/
+
+.money-autocomplete.ui-corner-all,
+.money-autocomplete.ui-corner-bottom,
+.money-autocomplete.ui-corner-right,
+.money-autocomplete.ui-corner-br {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    border-radius: 0;
+    border: 1px solid #939393;
+    -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    text-decoration: none;
+    color: black !important;
+}
+
+.money-autocomplete .ui-menu-item .ui-corner-all { border-radius: 0; }
+
+.money-autocomplete .ui-menu-item span.date { float: right; padding-left: 10px; }
+
+/*-----------------------------------------------------------------------*/
+#menuDialogForm .documentCollection { display: inline-block; margin-top: 0; }
+
+#menuDialogForm .patentCollection {
+    display: inline-block;
+    overflow: auto;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    max-height: 100px;
+    width: 380px;
+    padding: 5px 0;
+}
+
+#menuDialogForm .patentCollection table {
+    width: 100%;
+}
+
+#menuDialogForm .patentCollection input[type=radio] {
+    position: relative;
+    top: 2px;
+    margin-left: 0;
+}
+
+#menuDialogForm .patentCollection .ttShortName {
+    width: 180px;
+}
+
+#menuDialogForm .patentCollection .patentEmptyRow {
+    height: 100px;
+    text-align: center;
+}
+
+#moneyDialog .documentCollection ul { }
+
+#moneyDialog .documentCollection ul li { margin-bottom: 0; min-height: 0; }
+
+#moneyDialog .documentCollection ul li span.ContractNumber { display: inline-block; width: 100px; }
+
+#moneyDialog .documentCollection ul li span.ContractDate { display: inline-block; width: 80px; }
+
+#moneyDialog .documentCollection ul li span.AdvanceStatementNumber { display: inline-block; width: 100px; }
+
+#moneyDialog .documentCollection ul li span.AdvanceStatementDate { display: inline-block; width: 80px; }
+
+#moneyDialog .documentCollection ul li span.AdvanceStatementSum { display: inline-block; margin-right: 5px; }
+
+#moneyDialog .documentCollection .container { margin-bottom: 10px; }
+
+#moneyDialog .documentCollection input.short { margin-right: 5px; }
+
+#moneyDialog .documentCollection input.numberShort { margin-left: 5px; }
+
+#moneyDialog .documentCollection input.ConfirmingOverheadSum,
+#moneyDialog .documentCollection input.ConfirmingActSum { margin-right: 0; }
+
+#moneyDialog .delete_link {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 3px;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1em;
+    color: #999;
+    position: relative;
+    top: 3px;
+}
+
+#moneyDialog .delete_link:hover {
+    color: #CB3338;
+}
+
+.subTypeSwitcher {
+    display: inline-block;
+    left: -10px;
+    position: relative;
+}
+
+.typeOperation {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+}
+
+.subTypeSwitcher span { }
+
+
+.subTypeSwitcher .qtip_balance_span {
+    vertical-align: middle;
+    padding: 0;
+    margin: 0 !important;
+}
+
+.subTypeSwitcher .subTypeSwitcher__itemWrapper {
+    display: inline-block;
+}
+
+.typeOperation span, .subTypeSwitcher span {
+    display: inline-block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 2px 5px;
+}
+
+.subTypeSwitcher span:hover { background-color: #FAF6ED; }
+
+.subTypeSwitcher.disabled span:hover { background-color: transparent; }
+
+.subTypeSwitcher span.active,
+.subTypeSwitcher.disabled span.active {
+    background-color: #F4EDDF;
+}
+
+.subTypeSwitcher.disabled a { border-bottom-color: transparent; }
+
+.subTypeSwitcher a { cursor: pointer; text-decoration: none; border-bottom: 1px dotted #1F85C5; }
+
+.subTypeSwitcher span.active a { font-weight: bold; color: black; text-decoration: none; border-bottom: none; cursor: default; }
+
+.li { clear: both; margin: 12px 0 0; }
+
+.wayBillItemContainer { display: none; }
+
+.wayBillItem { clear: both; display: block; margin: 10px 0; overflow: hidden; }
+
+.wayBillItem .delete_link { margin-left: 5px; }
+
+.wayBillItems { width: 400px; display: inline-block; }
+
+#addWaybillItem { margin-left: 200px; }
+
+.menuDialog #workerPaymentsTable { margin: 0 30px 20px 30px; width: 650px; }
+
+.menuDialog .showAllLink { margin: 0 0 30px 30px; float: left; }
+
+.subContent { position: relative; }
+
+.whiteLine { display: inline-block; height: 18px; }
+
+.documentCollection .add { position: relative; top: 1px; }
+
+#PrimaryDocumentInputContainer span.title { position: relative; top: 4px !important; }
+
+.dialog-backLin, .dialog-backArrow { cursor: pointer !important; }
+
+.confirm-ui-dialog .ui-dialog-content { font-family: Arial, Helvetica, sans-serif; font-size: 13px; padding: 0 !important; margin: 0 !important; }
+
+.confirm-ui-dialog .ui-dialog-content .content { margin: 10px 30px; width: 440px; }
+
+.confirm-ui-dialog input, .confirm-ui-dialog a { font-family: Arial, Helvetica, sans-serif; font-size: 13px; }
+
+.confirm-ui-dialog.money-ui-dialog .saveButtons { right: 30px; left: auto; }
+
+.disableDialogDiv { width: 0 !important; height: 0 !important; }
+
+.disableDialogDiv .ui-widget-overlay { background: #fff; opacity: .30; }
+
+.confirmingDocumentsWarning { font-size: 11px; color: #777; line-height: 1.3em; margin-top: -10px; }
+
+.confirmingDocumentsWarning .icon16 { margin: -1px 8px 0 0; background-position: 0 -783px; float: left; }
+
+.disableDialogDiv .ui-widget-overlay { background: #fff; opacity: .30; }
+
+.dialogYellowInfo { display: block; margin-left: 25px !important; width: 85% !important; height: 70px !important; }
+
+#moneyDialog #Date { background-image: none !important; }
+
+a.paymentDescription:hover { text-decoration: none !important; }
+
+#moneyDialog .tabsContent { position: relative; top: -13px; }
+
+.ui-autocomplete-term { font-weight: bold; }
+
+.ui-autocomplete-term { font-weight: bold; }
+
+.money-ui-dialog .ui-widget-content a.disabled-link {
+    text-decoration: none; border-bottom: 0; color: #545454; cursor: default; border-top: 20px;
+}
+
+.inline-region {
+    display: inline-block;
+}
+
+.f-date-separator {
+    padding: 3px;
+}
+
+.employeeBlock .field-validation-error {
+    margin-left: 0;
+}
+
+.employeeBlock .employeeBlock-list {
+    width: 365px;
+}
+
+.employeeBlock .employeeBlock-list > li {
+    margin: 0 0 5px 0 !important;
+}
+
+.employeeBlock .l-local {
+    border-bottom: 1px dashed #1F85C5;
+    cursor: pointer;
+}
+
+.employeeBlock .l-local:hover {
+    border-bottom-color: transparent;
+}
+
+.employeeBlock .eb-name {
+    width: 200px !important; /* вот именно поэтому нельзя писать стили через id */
+    margin-right: 10px;
+}
+
+.employeeBlock .eb-sum {
+    width: 90px !important; /* вот именно поэтому нельзя писать стили через id */
+}
+
+.fakeDocsList > li {
+    margin-top: 15px;
+    line-height: 20px;
+}
+
+.fakeDocsList > li:first-child {
+    margin-top: 0;
+}
+
+.fakeDocsList a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.fakeDocsList a:hover {
+    text-decoration: none;
+}
+
+.unimportant {
+    color: #8e8e8e;
+}
+
+.downloadKudirDialog .l-local {
+    border-bottom: 1px solid #1F85C5;
+    cursor: pointer;
+}
+
+.downloadKudirDialog .l-local:hover {
+    border-bottom-color: transparent;
+}
+
+.downloadKudirDialog .sliderButton {
+    padding: 5px 15px 5px 11px;
+}
+
+.downloadKudirDialog .mdDropDownList {
+    top: 26px;
+    min-width: 100%;
+}
+
+.downloadKudirDialog .mdDropDownList li {
+    min-height: 0;
+    margin: 0;
+}
+
+.downloadKudirDialog .mdDropDownList li a {
+    color: #404040;
+    font-size: 12px;
+}
+
+#IsNds {
+    display: inline-block;
+    position: relative;
+    top: -8px;
+}
+
+#moneyDialog label.ndsBlock__label {
+    display: inline-block;
+    margin: 0 0 0 215px;
+}
+
+#moneyDialog ul.form input[type=text].ndsBlock__ndsSum {
+    height: 24px;
+    position: relative;
+    top: 1px;
+}
+
+.primaryDocumentSum {
+    display: inline-block;
+    width: 215px;
+    vertical-align: top;
+}
+
+.primaryDocumentSum span.field-validation-error {
+    margin-left: 0;
+    width: 215px;
+}
+
+.ndsBlock__isNds {
+    display: inline-block;
+}
+
+.qtip_nds_sum_span {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 0 0 2px;
+    position: relative;
+    top: -3px;
+}
+
+.qtip_worker_span {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 0 0 2px;
+    position: relative;
+    top: -3px;
+}
+
+#moneyDialog .mdSelect--tradingObjects input {
+    font-size: 14px;
+}
+
+#moneyDialog .mdSelect--tradingObjects .mdDropdown-menu li {
+    margin: 0;
+}
+
+#moneyDialog .mdSelect--tradingObjects .mdDropdown-menu li a {
+    color: #404040;
+    font-size: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 30px;
+    height: 30px;
+}
+
+.money-ui-dialog .usnAsMaterial__checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0;
+}
+
+.money-ui-dialog .tallField {
+    height: 24px !important;
+}
+
+.money-ui-dialog .validation--periodDate {
+    margin-left: 320px;
+}
+
+.moneyDialog__relativeSection {
+    position: relative;
+    display: inline-block;
+}
+
+.moneyDialog__relativeSection > input[type=text] {
+    margin-top: 0;
+    vertical-align: top;
+}
+
+.moneyDialog__currencyBlock {
+    position: absolute;
+    padding-left: 5px;
+    right: 5px;
+    background: white;
+    line-height: 23px;
+    top: 2px;
+    color: #b2b2b2;
+    cursor: default;
+}
+
+.moneyDialog__inlineSection {
+    display: inline-block;
+}
+
+.moneyDialog__menuItem {
+    display: block;
+}
+
+.roubleSymbol:after {
+    font-style: normal;
+    font-family: 'rouble';
+    vertical-align: middle;
+    content: 'a';
+}
+
+.movement__noSettlementsMessage {
+    color: #cb3338;
+}
+
+.moneyDialog__subSection {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.moneyDialog__subSection .field-validation-error {
+    display: block;
+    margin-left: 0;
+    width: 120px;
+}
+
+.acquiring__totalRow {
+    color: #b2b2b2;
+}
+
+.stealthRow:empty {
+    display: none;
+}

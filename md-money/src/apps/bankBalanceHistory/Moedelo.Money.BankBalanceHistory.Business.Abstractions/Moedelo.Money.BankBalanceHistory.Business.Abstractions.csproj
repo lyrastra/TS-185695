@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.Kafka.Abstractions\Moedelo.BankIntegrations.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.Abstractions\Moedelo.Common.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.Kafka.Abstractions\Moedelo.Money.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-parsers\src\Moedelo.Parsers.Klto1CParser\Moedelo.Parsers.Klto1CParser.csproj" />
+    <ProjectReference Include="..\..\..\..\md-paymentImport-shared\src\Moedelo.PaymentOrderImport.Kafka.Abstractions\Moedelo.PaymentOrderImport.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.BankBalanceHistory.Domain\Moedelo.Money.BankBalanceHistory.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

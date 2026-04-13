@@ -1,0 +1,60 @@
+// IP-3550 По желанию директора
+.dropdown {
+    border: 1px solid hsla(0, 0%, 84%, 1) !important;
+    border-radius: 4px;
+    padding: 1px 16px;
+
+    // Простите меня
+    // Трюк призван достать до дочернего .inputRow и запретить ему показывать синюю полосу
+    * * * * > {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.name {
+    display: inline-block;
+    width: 170px;
+    vertical-align: middle;
+    margin-right: 10px;
+
+    .title {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 12px;
+        color: hsl(0, 0%, 60%);
+    }
+}
+
+.sum {
+    display: inline-block;
+    width: 130px;
+    vertical-align: middle;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    transition: all 175ms;
+    box-sizing: border-box;
+    padding: 7px;
+    vertical-align: middle;
+    cursor: pointer;
+    fill: hsl(0, 0%, 60%);
+    transform: rotate(-90deg);
+}
+
+.item:hover .arrow {
+    fill: hsl(195, 72%, 45%);
+}

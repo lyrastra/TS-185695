@@ -1,0 +1,17 @@
+namespace Moedelo.Address.ApiClient.Abstractions.legacy.Dto
+{
+    public class AddressSaveDto
+    {
+        public long? Id { get; set; }
+        public int FirmId { get; set; }
+        public string Code { get; set; }
+        public string House { get; set; }
+        public string HouseName { get; set; }
+        public string Building { get; set; }
+        public string BuildingName { get; set; }
+        public string Flat { get; set; }
+        public string FlatName { get; set; }
+        public string PostIndex { get; set; }
+        public string AdditionalInfo { get; set; }
+    }
+}

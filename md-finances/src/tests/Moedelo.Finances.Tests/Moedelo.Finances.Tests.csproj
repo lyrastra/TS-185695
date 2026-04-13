@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{9014B26C-4D15-4F3C-A22D-727D084D89AA}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>Moedelo.Finances.Tests</AssemblyTitle>
+    <Product>Moedelo.Finances.Tests</Product>
+    <Copyright>Copyright © Моё Дело 2018-2026</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+    <PackageReference Include="Fare" Version="2.1.1" />
+    <PackageReference Include="FluentAssertions" Version="7.2.0" />
+    <PackageReference Include="Microsoft.CodeCoverage" Version="17.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="Moq" Version="4.5.0" />
+    <PackageReference Include="NUnit" Version="4.4.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.ApiClient.Dto\Moedelo.BankIntegrations.ApiClient.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.ApiClient.Framework.Abstractions\Moedelo.BankIntegrations.ApiClient.Framework.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.Enums\Moedelo.BankIntegrations.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.IntegrationPartnersInfo\Moedelo.BankIntegrations.IntegrationPartnersInfo.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\accounting\Moedelo.AccountingV2.Client\Moedelo.AccountingV2.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\accounting\Moedelo.AccountingV2.Dto\Moedelo.AccountingV2.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\bankIntegrations\Moedelo.BankIntegrationsV2.Client\Moedelo.BankIntegrationsV2.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\bankIntegrations\Moedelo.BankIntegrationsV2.Dto\Moedelo.BankIntegrationsV2.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\cash\Moedelo.CashV2.Client\Moedelo.CashV2.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\catalog\Moedelo.CatalogV2.Client\Moedelo.CatalogV2.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\catalog\Moedelo.CatalogV2.Dto\Moedelo.CatalogV2.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\kontragents\Moedelo.KontragentsV2.Client\Moedelo.KontragentsV2.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\kontragents\Moedelo.KontragentsV2.Dto\Moedelo.KontragentsV2.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\money\Moedelo.Money.Client\Moedelo.Money.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\paymentImport\Moedelo.PaymentImport.Client\Moedelo.PaymentImport.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\paymentImport\Moedelo.PaymentImport.Dto\Moedelo.PaymentImport.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\payroll\Moedelo.PayrollV2.Client\Moedelo.PayrollV2.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\payroll\Moedelo.PayrollV2.Dto\Moedelo.PayrollV2.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\requisites\Moedelo.RequisitesV2.Client\Moedelo.RequisitesV2.Client.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\requisites\Moedelo.RequisitesV2.Dto\Moedelo.RequisitesV2.Dto.csproj" />
+    <ProjectReference Include="..\..\..\md-commonV2\src\usercontext\Moedelo.CommonV2.UserContext.Domain\Moedelo.CommonV2.UserContext.Domain.csproj" />
+    <ProjectReference Include="..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\..\..\md-parsers\src\Moedelo.Parsers.Klto1CParser\Moedelo.Parsers.Klto1CParser.csproj" />
+    <ProjectReference Include="..\..\apps\finances\Moedelo.Finances.Business\Moedelo.Finances.Business.csproj" />
+    <ProjectReference Include="..\..\apps\finances\Moedelo.Finances.Domain\Moedelo.Finances.Domain.csproj" />
+  </ItemGroup>
+</Project>

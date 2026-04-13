@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.Enums\Moedelo.AccPostings.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-historicalLogs-shared\src\Moedelo.HistoricalLogs.Kafka.Abstractions\Moedelo.HistoricalLogs.Kafka.Abstractions\Moedelo.HistoricalLogs.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-money-shared\src\Moedelo.Money.Kafka.Abstractions\Moedelo.Money.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\md-paymentImport-shared\src\Moedelo.PaymentOrderImport.Kafka.Abstractions\Moedelo.PaymentOrderImport.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\common\Moedelo.Money.Common.Domain\Moedelo.Money.Common.Domain.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Domain\Moedelo.Money.Domain.csproj" />
+    <ProjectReference Include="..\paymentOrders\Moedelo.Money.PaymentOrders.Domain\Moedelo.Money.PaymentOrders.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

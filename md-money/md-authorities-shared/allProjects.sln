@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{709AAE4C-1BD0-41B4-B8A9-B0AF0A1B4966}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Http.Abstractions", "..\md-common-http\src\Moedelo.Common.Http.Abstractions\Moedelo.Common.Http.Abstractions.csproj", "{6DEB56C7-8996-4813-A91C-A85B355DCF62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Audit.Abstractions", "..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj", "{59AB9EC1-D734-47B1-869A-EB5A2C42CF13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.ExecutionContext.Abstractions", "..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj", "{E991C83E-E7AA-4163-9105-D349C1EF1AB0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Settings.Abstractions", "..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj", "{2F8C4068-2AA7-4CE3-82E5-B15107B77086}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{7998B363-1AAD-4B32-A09F-1E72E1AF13DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{6CC242A9-2A8A-4B23-9513-18E984BCC519}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.Http.Abstractions", "..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj", "{59B51E23-5B49-4DA6-B71C-BDB20F32F215}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.Json", "..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj", "{BC2A9AA3-118A-40F1-A622-F20C69A595F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.Consul.Abstraction", "..\md-infrastructure-core-consul\src\Moedelo.Infrastructure.Consul.Abstraction\Moedelo.Infrastructure.Consul.Abstraction.csproj", "{AC55CB1F-3828-4846-A179-E2511FA46F1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Authorities.ApiClient.Abstractions", "src\Moedelo.Authorities.ApiClient.Abstractions\Moedelo.Authorities.ApiClient.Abstractions.csproj", "{409218AA-453E-4BAD-98E3-DB0597128AA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Authorities.ApiClient", "src\Moedelo.Authorities.ApiClient\Moedelo.Authorities.ApiClient.csproj", "{370084CC-A7E8-47C1-9F39-5D9F9974FBE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Authorities.ApiClient.NetFramework", "src\Moedelo.Authorities.ApiClient.NetFramework\Moedelo.Authorities.ApiClient.NetFramework.csproj", "{F578B275-AE98-438F-AE11-2D1E46EFED51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DEB56C7-8996-4813-A91C-A85B355DCF62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DEB56C7-8996-4813-A91C-A85B355DCF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DEB56C7-8996-4813-A91C-A85B355DCF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DEB56C7-8996-4813-A91C-A85B355DCF62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59AB9EC1-D734-47B1-869A-EB5A2C42CF13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59AB9EC1-D734-47B1-869A-EB5A2C42CF13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59AB9EC1-D734-47B1-869A-EB5A2C42CF13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59AB9EC1-D734-47B1-869A-EB5A2C42CF13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E991C83E-E7AA-4163-9105-D349C1EF1AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E991C83E-E7AA-4163-9105-D349C1EF1AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E991C83E-E7AA-4163-9105-D349C1EF1AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E991C83E-E7AA-4163-9105-D349C1EF1AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8C4068-2AA7-4CE3-82E5-B15107B77086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8C4068-2AA7-4CE3-82E5-B15107B77086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8C4068-2AA7-4CE3-82E5-B15107B77086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8C4068-2AA7-4CE3-82E5-B15107B77086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC242A9-2A8A-4B23-9513-18E984BCC519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC242A9-2A8A-4B23-9513-18E984BCC519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC242A9-2A8A-4B23-9513-18E984BCC519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC242A9-2A8A-4B23-9513-18E984BCC519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B51E23-5B49-4DA6-B71C-BDB20F32F215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B51E23-5B49-4DA6-B71C-BDB20F32F215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B51E23-5B49-4DA6-B71C-BDB20F32F215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B51E23-5B49-4DA6-B71C-BDB20F32F215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2A9AA3-118A-40F1-A622-F20C69A595F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2A9AA3-118A-40F1-A622-F20C69A595F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2A9AA3-118A-40F1-A622-F20C69A595F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2A9AA3-118A-40F1-A622-F20C69A595F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC55CB1F-3828-4846-A179-E2511FA46F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC55CB1F-3828-4846-A179-E2511FA46F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC55CB1F-3828-4846-A179-E2511FA46F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC55CB1F-3828-4846-A179-E2511FA46F1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{409218AA-453E-4BAD-98E3-DB0597128AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{409218AA-453E-4BAD-98E3-DB0597128AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{409218AA-453E-4BAD-98E3-DB0597128AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{409218AA-453E-4BAD-98E3-DB0597128AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370084CC-A7E8-47C1-9F39-5D9F9974FBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370084CC-A7E8-47C1-9F39-5D9F9974FBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370084CC-A7E8-47C1-9F39-5D9F9974FBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370084CC-A7E8-47C1-9F39-5D9F9974FBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F578B275-AE98-438F-AE11-2D1E46EFED51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F578B275-AE98-438F-AE11-2D1E46EFED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F578B275-AE98-438F-AE11-2D1E46EFED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F578B275-AE98-438F-AE11-2D1E46EFED51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6DEB56C7-8996-4813-A91C-A85B355DCF62} = {709AAE4C-1BD0-41B4-B8A9-B0AF0A1B4966}
+		{59AB9EC1-D734-47B1-869A-EB5A2C42CF13} = {709AAE4C-1BD0-41B4-B8A9-B0AF0A1B4966}
+		{E991C83E-E7AA-4163-9105-D349C1EF1AB0} = {709AAE4C-1BD0-41B4-B8A9-B0AF0A1B4966}
+		{2F8C4068-2AA7-4CE3-82E5-B15107B77086} = {709AAE4C-1BD0-41B4-B8A9-B0AF0A1B4966}
+		{6CC242A9-2A8A-4B23-9513-18E984BCC519} = {7998B363-1AAD-4B32-A09F-1E72E1AF13DF}
+		{59B51E23-5B49-4DA6-B71C-BDB20F32F215} = {7998B363-1AAD-4B32-A09F-1E72E1AF13DF}
+		{BC2A9AA3-118A-40F1-A622-F20C69A595F6} = {7998B363-1AAD-4B32-A09F-1E72E1AF13DF}
+		{AC55CB1F-3828-4846-A179-E2511FA46F1F} = {7998B363-1AAD-4B32-A09F-1E72E1AF13DF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19FA19AB-8073-444B-9A08-FA9268EE85BA}
+	EndGlobalSection
+EndGlobal

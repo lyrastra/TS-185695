@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../../../oldApps/Core/content/fonts/fontello.eot');
+  src: url('../../../oldApps/Core/content/fonts/fontello.eot?#iefix') format('embedded-opentype'), url('../../../oldApps/Core/content/fonts/fontello.woff') format('woff'), url('../../../oldApps/Core/content/fonts/fontello.ttf') format('truetype'), url('../../../oldApps/Core/content/fonts/fontello.svg#fontello') format('svg');
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.newWave table thead th,
+.newWave table thead td {
+  border-bottom: 1px solid #c7c7c7;
+  color: #8e8e8e;
+}
+.newWave table tbody tr:first-child td {
+  padding-top: 10px;
+}
+.newWave table tbody td {
+  padding: 5px 0 10px;
+}
+.newWave table tfoot tr:first-child td {
+  border-top: 1px solid #c7c7c7;
+}

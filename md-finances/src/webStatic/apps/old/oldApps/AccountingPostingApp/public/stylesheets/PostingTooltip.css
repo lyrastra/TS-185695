@@ -1,0 +1,126 @@
+.md-posting-tooltip {
+  position: absolute;
+  width: 600px;
+  padding: 10px 20px;
+  background: white;
+  z-index: 10;
+  -webkit-box-shadow: 0px 2px 7px #dddddd;
+  -moz-box-shadow: 0px 2px 7px #dddddd;
+  box-shadow: 0px 2px 7px #dddddd;
+  border: 1px solid #bbbbbb;
+  cursor: default;
+}
+.md-posting-tooltip .postingsHeader {
+  color: #777777;
+  border-bottom: 1px solid #C8C8C8;
+  font-weight: bold;
+}
+.md-posting-tooltip .postings {
+  margin: 10px 0;
+}
+.md-posting-tooltip ul li > div {
+  display: inline-block;
+  vertical-align: top;
+}
+.md-posting-tooltip ul li > div.debit {
+  width: 50px;
+  text-align: left;
+  padding: 0px;
+}
+.md-posting-tooltip ul li > div.credit {
+  width: 50px;
+  text-align: left;
+  padding: 0px 10px;
+}
+.md-posting-tooltip ul li > div.sum {
+  padding: 0px 10px;
+  width: 85px;
+  text-align: right;
+}
+.md-posting-tooltip ul li > div.comment {
+  width: 335px;
+  padding: 0px 10px;
+}
+.md-tax-posting-tooltip {
+  position: absolute;
+  width: 600px;
+  padding: 10px 20px;
+  background: white;
+  z-index: 10;
+  -webkit-box-shadow: 0px 2px 7px #dddddd;
+  -moz-box-shadow: 0px 2px 7px #dddddd;
+  box-shadow: 0px 2px 7px #dddddd;
+  border: 1px solid #bbbbbb;
+  cursor: default;
+}
+.md-tax-posting-tooltip ul.taxPostingsHeader {
+  color: #777777;
+  border-bottom: 1px solid #C8C8C8;
+  font-weight: bold;
+}
+.md-tax-posting-tooltip ul.taxPostingsHeader .incoming,
+.md-tax-posting-tooltip ul.taxPostingsHeader .outgoing {
+  color: #777777;
+}
+.md-tax-posting-tooltip .linkDoc {
+  color: #777777;
+}
+.md-tax-posting-tooltip .linkDoc .greyLine {
+  border-bottom: 1px solid #dddddd;
+  display: inline-block;
+  height: 15px;
+  margin-left: 10px;
+  vertical-align: top;
+  width: 424px;
+}
+.md-tax-posting-tooltip .taxPostings {
+  margin-top: 10px;
+}
+.md-tax-posting-tooltip li > div {
+  padding: 0px;
+  display: inline-block;
+  vertical-align: top;
+}
+.md-tax-posting-tooltip li > div.date {
+  width: 80px;
+}
+.md-tax-posting-tooltip li > div.incoming {
+  color: #0b5901;
+  padding: 0px 10px;
+  width: 85px;
+  text-align: right;
+}
+.md-tax-posting-tooltip li > div.outgoing {
+  padding: 0px 10px;
+  width: 85px;
+  text-align: right;
+}
+.md-tax-posting-tooltip li > div.destination {
+  padding: 0px 10px;
+  width: 260px;
+}
+.md-tax-posting-tooltip.osnoTooltip li > div {
+  overflow: hidden;
+  max-height: 70px;
+}
+.md-tax-posting-tooltip.osnoTooltip li > div.date {
+  width: 74px;
+}
+.md-tax-posting-tooltip.osnoTooltip li > div.incoming {
+  padding: 0px 5px;
+}
+.md-tax-posting-tooltip.osnoTooltip li > div.outgoing {
+  padding: 0px 5px;
+}
+.md-tax-posting-tooltip.osnoTooltip li > div.type {
+  padding: 0px 5px 0 0;
+  width: 123px;
+}
+.md-tax-posting-tooltip.osnoTooltip li > div.kind {
+  padding: 0px 5px 0 0;
+  width: 87px;
+}
+.md-tax-posting-tooltip.osnoTooltip li > div.normalizedCostType {
+  padding: 0px;
+  width: 95px;
+}

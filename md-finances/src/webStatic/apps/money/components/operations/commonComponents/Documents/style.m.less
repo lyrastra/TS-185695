@@ -1,0 +1,85 @@
+.documentsWrapper {
+    position: relative;
+    flex-direction: column;
+}
+
+.documentsHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: bold;
+    color: hsl(0, 0%, 20%);
+}
+
+.documentsList {
+    padding: 20px 0;
+}
+
+.documentRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 15px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.documentsTotalSum {
+    text-align: right;
+}
+
+.documentsControls {
+    position: relative;
+}
+
+.documentCol {
+    margin-left: 20px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.documentNumber {
+    width: 265px;
+}
+
+.documentDate {
+    width: 90px;
+}
+
+.documentSum {
+    width: 80px;
+    text-align: right;
+}
+
+.currency {
+    &:after {
+        top: 6px;
+    }
+}
+
+.documentPaid {
+    width: 100px;
+    text-align: right;
+}
+
+.documentToPay {
+    width: 90px;
+    text-align: right;
+}
+
+.remove {
+    width: 20px;
+    text-align: right;
+}
+
+.error {
+    color: #ef6b57;
+    margin: 0 59px 0 0;
+    text-align: right;
+}

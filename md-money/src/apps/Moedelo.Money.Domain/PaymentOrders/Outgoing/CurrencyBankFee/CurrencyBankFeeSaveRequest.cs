@@ -1,0 +1,47 @@
+using System;
+using Moedelo.Money.Domain.TaxPostings;
+using Moedelo.Money.Enums;
+
+namespace Moedelo.Money.Domain.PaymentOrders.Outgoing.CurrencyBankFee
+{
+    public class CurrencyBankFeeSaveRequest : IPaymentOrderOutsourceSaveRequest
+    {
+        public long DocumentBaseId { get; set; }
+        
+        public DateTime Date { get; set; }
+
+        public string Number { get; set; }
+
+        public int SettlementAccountId { get; set; }
+
+        public decimal Sum { get; set; }
+
+        public string Description { get; set; }
+
+        public decimal TotalSum { get; set; }
+
+        public bool ProvideInAccounting { get; set; }
+
+        public TaxPostingsData TaxPostings { get; set; }
+
+        public string SourceFileId { get; set; }
+
+        public long? DuplicateId { get; set; }
+
+        public OperationState OperationState { get; set; }
+
+        public OutsourceState? OutsourceState { get; set; }
+
+        public bool IsSaveNumeration { get; set; }
+
+        /// <summary>
+        /// Идентификаторы применённых правил импорта
+        /// </summary>
+        public int[] ImportRuleIds { get; set; }
+
+        /// <summary>
+        /// Идентификатор лога импорта
+        /// </summary>
+        public int? ImportLogId { get; set; }
+    }
+}

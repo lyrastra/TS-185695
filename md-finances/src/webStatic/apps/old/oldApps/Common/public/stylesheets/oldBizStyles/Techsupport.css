@@ -1,0 +1,92 @@
+#logo_techsupport_ballon
+{
+    display: none;
+    top: 34px;
+    right: 12px;
+    position: absolute;
+    height: 127px;
+    z-index: 2;
+}
+
+#logo_techsupport_cell_head
+{
+    display: none;
+    position: absolute;
+    width: 142px;
+    /*background: transparent url(img/tech_support_baloon.png) no-repeat -268px 0px;*/
+    height: 34px;
+    top: 2px;
+    right: 12px;
+    z-index: 2;
+}
+
+#logo_techsupport_ballon_body
+{
+    position: relative;
+    width: 410px;
+}
+
+#logo_techsupport_ballon_body_top
+{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 410px;
+    height: 127px;
+    overflow: hidden;
+}
+
+#logo_techsupport_ballon_body_top div
+{
+    /*background: transparent url(img/tech_support_baloon.png) no-repeat 0px -34px;*/
+    height: 127px;
+    width: 410px;
+}
+
+.logo_techsupport_cell_selected span
+{
+    color: #000000;
+    border-bottom: 1px dotted #000000;
+    margin-top: 20px;
+}
+
+.logo_techsupport_cell_selected #logo_techsupport_ballon
+{
+    display: block;
+}
+
+.logo_techsupport_cell_selected #logo_techsupport_cell_head
+{
+    display: block;
+}
+
+#logo_techsupport_ballon_body_body
+{
+    position: relative;
+    z-index: 4;
+}
+
+#logo_techsupport_ballon_body_body div
+{
+    z-index: 4;
+    margin-right: 14px;
+    float: right;
+}
+
+.logo_techsupport_ballon_big_text
+{
+    line-height: 100%;
+    margin-top: 12px;
+    font-size: 3.5em;
+}
+
+.ballon_firstline
+{
+    margin-top: 16px;
+}
+
+.logo_techsupport_ballon_small_text
+{
+    margin-bottom: 8px;
+    line-height: 100%;
+}

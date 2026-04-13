@@ -1,0 +1,66 @@
+{
+  "name": "md-finances",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "yarn && yarn static:build",
+    "start:prod": "yarn install --production && yarn static:build",
+    "start:watch": "yarn && yarn static:watch",
+    "static:watch": "yarn static:build -- --watch",
+    "static:build": "webpack-build",
+    "test": "yarn && yarn mdJest --isReact",
+    "test:prod": "yarn test",
+    "test:watch": "yarn test --watch",
+    "lint": "eslint src/webStatic/apps/money/**/*.js src/webStatic/enums/**/*.js  src/webStatic/resources/**/*.js src/webStatic/services/**/*.js",
+    "u:core-react": "yarn upgrade @moedelo/frontend-core-react --latest",
+    "u:webpack": "yarn upgrade @moedelo/frontend-webpackbuild --latest",
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ],
+    "*.less": [
+      "stylelint"
+    ]
+  },
+  "config": {
+    "appName": "FinancesV1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moedelo/md-finances.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/moedelo/md-finances/issues"
+  },
+  "homepage": "https://github.com/moedelo/md-finances#readme",
+  "devDependencies": {
+    "@moedelo/eslint-config-md": "2.56.0",
+    "@moedelo/stylelint-config": "^1.5.0",
+    "husky": "^1.0.1",
+    "lint-staged": "8.1.0"
+  },
+  "dependencies": {
+    "@moedelo/chatbot": "0.256.0",
+    "@moedelo/frontend-common": "0.488.0",
+    "@moedelo/frontend-common-v2": "2.512.0",
+    "@moedelo/frontend-core-react": "0.476.0",
+    "@moedelo/frontend-core-v2": "3.224.0",
+    "@moedelo/frontend-enums": "0.124.0",
+    "@moedelo/frontend-header": "1.684.0",
+    "@moedelo/frontend-jest-config": "^1.13.0",
+    "@moedelo/frontend-webpackbuild": "4.135.0",
+    "@moedelo/md-frontendcore": "0.170.0",
+    "react-sticky-el": "^1.0.13"
+  },
+  "publishConfig": {
+    "registry": "https://nexus.moedelo.org/repository/npm-hosted"
+  }
+}

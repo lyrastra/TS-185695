@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <AppCore Include="Moedelo.Money.Api">
+            <PrjPath>src\apps\Moedelo.Money.Api\Moedelo.Money.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/Money</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.Handler">
+            <PrjPath>src\apps\Moedelo.Money.Handler\Moedelo.Money.Handler.csproj</PrjPath>
+            <PublishPath>org.moedelo.private/MoneyHandler</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.ChangeLog">
+            <PrjPath>src\apps\Moedelo.Money.ChangeLog\Moedelo.Money.ChangeLog.csproj</PrjPath>
+            <PublishPath>org.moedelo.private/MoneyChangeLog</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.PaymentOrders.Api">
+            <PrjPath>src\apps\paymentOrders\Moedelo.Money.PaymentOrders.Api\Moedelo.Money.PaymentOrders.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyPaymentOrders</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.CashOrders.Api">
+            <PrjPath>src\apps\cashOrders\Moedelo.Money.CashOrders.Api\Moedelo.Money.CashOrders.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyCashOrders</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.PurseOperations.Api">
+            <PrjPath>src\apps\purseOperations\Moedelo.Money.PurseOperations.Api\Moedelo.Money.PurseOperations.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyPurseOperations</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.Registry.Api">
+            <PrjPath>src\apps\registry\Moedelo.Money.Registry.Api\Moedelo.Money.Registry.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyRegistry</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.Providing.Api">
+            <PrjPath>src\apps\providing\Moedelo.Money.Providing.Api\Moedelo.Money.Providing.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyProviding</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.BankBalanceHistory.Api">
+            <PrjPath>src\apps\bankBalanceHistory\Moedelo.Money.BankBalanceHistory.Api\Moedelo.Money.BankBalanceHistory.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyBankBalanceHistory</PublishPath>
+        </AppCore>
+        <AppCore Include="Moedelo.Money.Reports.Api">
+            <PrjPath>src\apps\reports\Moedelo.Money.Reports.Api\Moedelo.Money.Reports.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyReports</PublishPath>
+        </AppCore>
+		<AppCore Include="Moedelo.Money.Import.Api">
+            <PrjPath>src\apps\import\Moedelo.Money.Import.Api\Moedelo.Money.Import.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyImport</PublishPath>
+        </AppCore>
+		<AppCore Include="Moedelo.Money.Numeration.Api">
+            <PrjPath>src\apps\numeration\Moedelo.Money.Numeration.Api\Moedelo.Money.Numeration.Api.csproj</PrjPath>
+            <PublishPath>org.moedelo.restapi/MoneyNumeration</PublishPath>
+        </AppCore>
+        <Database Include="money">
+            <PrjPath>src\apps\migrations\Moedelo.Money.Migrations\Moedelo.Money.Migrations.csproj</PrjPath>
+            <FluentMigratorProvider>postgres</FluentMigratorProvider>
+        </Database>
+    </ItemGroup>
+</Project>

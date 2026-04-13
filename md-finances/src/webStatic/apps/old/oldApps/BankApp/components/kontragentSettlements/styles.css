@@ -1,0 +1,7 @@
+.kontragentSettlements {
+  position: relative;
+  height: 52px;
+}
+.kontragentSettlements .kontragentSettlements__select {
+  max-width: 220px;
+}

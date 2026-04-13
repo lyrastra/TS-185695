@@ -1,0 +1,348 @@
+.master_title {
+    color: #888888;
+    font-size: 2em;
+    line-height: 25px;
+    padding-bottom: 0;
+    margin-bottom: 30px;
+}
+
+.master_title.solidTitle {
+    color: #000;
+}
+
+.master_menu
+{
+    float: left;
+    font-size: 0.92em;
+    width: 260px;
+}
+
+.master_menu ol
+{
+    margin-top: 0;
+}
+
+.master_menu li
+{
+    position: relative;
+    padding-left: 40px;
+    margin-left: -40px;
+    margin-bottom: 8px;
+    list-style: none outside none;
+}
+
+.master_content
+{
+    float: right;
+    width: 650px;
+}
+
+.master_step_title
+{
+    font-size: 1.24em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.master_step_subtitle
+{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.master_menu_done
+{
+    list-style: none outside none;
+    position: relative;
+}
+
+.master_menu_current
+{
+    background-color: #F4EDDF;
+    border-radius: 4px;
+    list-style: none outside none;
+    position: relative;
+}
+
+.master_menu_number
+{
+    position: absolute;
+    left: 14px;
+    top: 5px;
+    height: 16px;
+    width: 16px;
+    line-height: 14px;
+}
+
+.master_menu_icon
+{
+    position: absolute;
+    left: 8px;
+    top: 3px;
+    height: 16px;
+    width: 16px;
+    line-height: 14px;
+    background: transparent url("/App/oldApps/Common/public/stylesheets/img/icons16.png") no-repeat;
+}
+
+.master_menu_done .master_menu_icon { background-position: 0 -912px; }
+
+.master_menu_current .master_menu_icon { background-position: 0 -926px; }
+
+.master_menu_enabled_step
+{
+    cursor: pointer;
+    border-bottom: 1px dotted;
+    color: #2089C6;
+}
+
+.master_menu_disabled_step
+{
+    text-decoration: none;
+    color: Gray;
+}
+
+.master_menu_submenu_current
+{
+    background-position: 12px -100px;
+    background-repeat: no-repeat;
+    margin-left: -30px;
+    padding-left: 30px;
+}
+
+.master_menu_submenu
+{
+    margin-left: 15px;
+}
+
+.master_buttons_panel
+{
+    margin-top: 30px;
+    height: 70px;
+    background-color: #F4EDDF;
+    border-radius: 3px;
+    position: relative;
+}
+
+.master_button
+{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.master_button_block
+{
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 23px;
+}
+
+.button2{
+    display: block;
+    position: relative;
+    width: 150px;
+    float: left;
+    margin-left: 10px;
+}
+
+.master_button_left_block
+{
+    vertical-align: middle;
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    top: 23px;
+}
+
+.master_button_generate_document_button
+{
+    width: 200px !important;
+}
+
+.master_buttons_right_link
+{
+    position: absolute;
+    right: 20px;
+    top: 28px;
+    line-height: 14px;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.master_buttons_link
+{
+    position: absolute;
+    left: 20px;
+    top: 28px;
+    line-height: 14px;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.master_document_block
+{
+    width: 400px;
+}
+
+.master_document_block_document
+{
+    height: 60px;
+    position: relative;
+    margin: 10px 0px
+}
+
+.master_document_block_name
+{
+    position: absolute;
+    top: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 350px;
+}
+
+.master_document_block_file
+{
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    width: 32px;
+    height: 44px;
+    text-decoration: none;
+}
+
+.master_document_block_file span
+{
+    margin-left: 8px;
+    text-decoration: underline;
+    line-height: 12px;
+    font-size: 0.92em;
+}
+
+.master_document_block_filetype1
+{
+    right: 10px;
+}
+
+.master_document_block_filetype2
+{
+    right: 44px;
+}
+
+.master_document_block_filetype3
+{
+    right: 78px;
+}
+
+.master_document_block_filetype4
+{
+    right: 112px;
+}
+
+.master_options_panel
+{
+    background: none repeat scroll 0 0 #FEFAF2;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.master_options_panel label
+{
+    display: inline;
+    cursor:pointer;
+}
+
+.master_table
+{
+    background: none repeat scroll 0 0 #F0F9F0;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.master_table thead
+{
+    background: none repeat scroll 0 0 #C9E9C9;
+}
+
+.master_table tr.head
+{
+     width: 70px;
+    height: auto;
+}
+
+.master_table tr td
+{
+    margin: 5px;
+    padding: 8px;
+    text-align: left;
+}
+
+.master_table td input
+{
+    width: 70px;
+}
+
+.master_table td input.name
+{
+    width: 400px;
+}
+
+.master_table td input.typ
+{
+    width: auto;
+}
+
+
+.master_table_resume
+{
+    font-weight: bold;
+}
+
+.master_sum_value
+{
+    color: #339900;
+    font-weight: bold;
+}
+
+.master_select_option
+{
+    background: none repeat scroll 0 0 #FEFAF2;
+    clear: both;
+    margin-top: 10px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.master_select_option label
+{
+    cursor: pointer;
+    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.master_select_option p
+{
+    clear: both;
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 0 0 29px;
+}
+
+.master_select_option_selected
+{
+    background: none repeat scroll 0 0 #FFF4DB;
+    cursor: inherit;
+}
+
+.master_select_option_highlighted
+{
+    background: none repeat scroll 0 0 #FFF4DB;
+}
+
+.integratedBankList li {
+    margin-top: 20px;
+}

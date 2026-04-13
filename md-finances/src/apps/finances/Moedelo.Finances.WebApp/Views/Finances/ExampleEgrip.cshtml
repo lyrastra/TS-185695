@@ -1,0 +1,29 @@
+﻿@using Moedelo.CommonV2.Webpack
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Пример страницы − интернет-бухгалтерия Моё дело";
+}
+
+<div id="regme-app">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="account-loader">
+                <p>Форма загружается</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        window.customer = 'moedelo';
+        window.inn = '@ViewBag.Inn';
+        window.contactEmail = '@ViewBag.Email';
+        window.phone = '@ViewBag.Phone';
+        window.redirectUrl = 'https://www.moedelo.org/Finances/Example';
+        window.regmeBaseUrl = 'https//staging.regme.online';
+        window.regmeAuthorization = '@ViewBag.UserGuid';
+    </script>
+    <script src="https://staging.regme.online/frontend/js/egripChanges.js"></script>
+}

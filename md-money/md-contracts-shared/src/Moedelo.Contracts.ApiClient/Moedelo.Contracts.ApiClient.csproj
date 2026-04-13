@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-http\src\Moedelo.Common.Http.Abstractions\Moedelo.Common.Http.Abstractions.csproj" />
+      <ProjectReference Include="..\Moedelo.Contracts.ApiClient.Abstractions\Moedelo.Contracts.ApiClient.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

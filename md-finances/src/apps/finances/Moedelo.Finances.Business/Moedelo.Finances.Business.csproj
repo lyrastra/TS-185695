@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9399929-5DBC-4A65-BFAB-7D584BA85BC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Finances.Business</RootNamespace>
+    <AssemblyName>Moedelo.Finances.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.6.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Aspose.Cells.7.6.1\lib\net40-client\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\..\..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncLazy.cs" />
+    <Compile Include="Helpers\Integration\IntegrationErrorsHelper.cs" />
+    <Compile Include="Helpers\Money\PurseIntegrationHelper.cs" />
+    <Compile Include="Mappers\Integrations\PaymentOrderMapper.cs" />
+    <Compile Include="Models\UserContext\UserContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Templates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Templates.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AccountBalances\AccountBalanceService.cs" />
+    <Compile Include="Services\Balances\BalanceMasterService.cs" />
+    <Compile Include="Services\ClosedCashGroup\CloseCashGroupService.cs" />
+    <Compile Include="Services\ClosedPeriods\ClosedPeriodsService.cs" />
+    <Compile Include="Services\ClosedPeriods\MoneyClosedPeriodsDataReader.cs" />
+    <Compile Include="Services\Integrations\Exceptions\BankNotFoundException.cs" />
+    <Compile Include="Services\Integrations\Exceptions\IntegrationNotFoundException.cs" />
+    <Compile Include="Services\Integrations\Exceptions\KontragentNotFoundException.cs" />
+    <Compile Include="Services\Integrations\Exceptions\PurseNotFoundException.cs" />
+    <Compile Include="Services\Integrations\Exceptions\SettlementAccountNotFound.cs" />
+    <Compile Include="Services\Integrations\Models\BankStatement.cs" />
+    <Compile Include="Services\Integrations\Models\OrderWithGuid.cs" />
+    <Compile Include="Services\Integrations\Models\SettlementAccountIntegrationInfo.cs" />
+    <Compile Include="Services\Integrations\Models\SendPaymentOrdersContext.cs" />
+    <Compile Include="Services\Integrations\PaymentOrderCreators\IIntegrationAccPaymentOrderCreator.cs" />
+    <Compile Include="Services\Integrations\PaymentOrderCreators\IIntegrationBizPaymentOrderCreator.cs" />
+    <Compile Include="Services\Integrations\PaymentOrderCreators\IIntegrationPaymentOrderCreator.cs" />
+    <Compile Include="Services\Integrations\PaymentOrderCreators\IntegrationAccPaymentOrderCreator.cs" />
+    <Compile Include="Services\Integrations\IntegrationErrorsService.cs" />
+    <Compile Include="Services\Integrations\IntegrationPaymentOrderSender.cs" />
+    <Compile Include="Services\Integrations\PaymentOrderCreators\IntegrationBizPaymentOrderCreator.cs" />
+    <Compile Include="Services\Integrations\StatementRequestService.cs" />
+    <Compile Include="Services\Money\Balances\AccMoneyBalancesReader.cs" />
+    <Compile Include="Services\Money\Balances\BizMoneyBalancesReader.cs" />
+    <Compile Include="Services\Kontragents\MoneyContractorsService.cs" />
+    <Compile Include="Services\Money\FinancialOperationsDuplicatesReader.cs" />
+    <Compile Include="Services\Money\Balances\MoneyBalancesReader.cs" />
+    <Compile Include="Services\Money\Mappers\EmployeePaymentsMapper.cs" />
+    <Compile Include="Services\SettlementAccounts\SettlementAccountsReader.cs" />
+    <Compile Include="Services\SettlementAccounts\SettlementAccountsMapper.cs" />
+    <Compile Include="Services\Money\Mappers\SourceBankMapper.cs" />
+    <Compile Include="Services\Money\Operations\CanSendToBankReader.cs" />
+    <Compile Include="Services\Money\Operations\Duplicates\DuplicateDetector.cs" />
+    <Compile Include="Services\Money\Operations\Duplicates\IncomingOperationsDuplicateDetector.cs" />
+    <Compile Include="Services\Money\Operations\Duplicates\OperationsDuplicatesComparer.cs" />
+    <Compile Include="Services\Money\Operations\Duplicates\OutgoingOperationsDuplicateDetector.cs" />
+    <Compile Include="Services\Money\Operations\MoneyOperationAccountingPostingsReader.cs" />
+    <Compile Include="Services\Money\Operations\Exceptions\MoneyOperationNotFound.cs" />
+    <Compile Include="Services\Money\Operations\MoneyOperationLinkedDocumentsReader.cs" />
+    <Compile Include="Services\Money\Operations\MoneyOperationRemover.cs" />
+    <Compile Include="Services\Money\Operations\MoneyOperationReader.cs" />
+    <Compile Include="Services\Money\Operations\MoneyOperationSalaryChargePaymentsReader.cs" />
+    <Compile Include="Services\Money\Operations\MoneyOperationsDuplicatesQualifier.cs" />
+    <Compile Include="Services\Money\Operations\PaymentOrders\PaymentOrderOperationUpdater.cs" />
+    <Compile Include="Services\Money\Reconciliation\ForUser\ReconciliationLimitator.cs" />
+    <Compile Include="Services\Money\Reconciliation\ReconcilationFinishedIndicator.cs" />
+    <Compile Include="Services\Money\Sources\MoneySourceReader.cs" />
+    <Compile Include="Services\Money\MoneyTableReader.cs" />
+    <Compile Include="Services\Money\Operations\MoneyOperationTaxPostingsReader.cs" />
+    <Compile Include="Services\Money\Operations\MoneyTransfers\MoneyTransfersOperationReader.cs" />
+    <Compile Include="Services\Money\Operations\MoneyTransfers\MoneyTransfersOperationRemover.cs" />
+    <Compile Include="Services\Money\Operations\MoneyTransfers\MoneyTransfersOperationUpdater.cs" />
+    <Compile Include="Services\Money\Operations\PaymentOrders\PaymentOrderOperationReader.cs" />
+    <Compile Include="Services\Money\Operations\PaymentOrders\PaymentOrderOperationRemover.cs" />
+    <Compile Include="Services\Money\Operations\PaymentsForReport.cs" />
+    <Compile Include="Services\Money\Operations\PaymentsForReportGetter.cs" />
+    <Compile Include="Services\Money\PaymentAutocompleteService.cs" />
+    <Compile Include="Services\Money\Reconciliation\ForUser\DocumentTypeApiClient.cs" />
+    <Compile Include="Services\Money\Reconciliation\ForUser\IDocumentTypeApiClient.cs" />
+    <Compile Include="Services\Money\Reconciliation\ReconciliationComparer.cs" />
+    <Compile Include="Services\Money\Reconciliation\ReconciliationMovementListReader.cs" />
+    <Compile Include="Services\Money\Reconciliation\ReconciliationForBackofficeService.cs" />
+    <Compile Include="Services\Money\Reconciliation\ForUser\ReconciliationForUserInitiator.cs" />
+    <Compile Include="Services\Money\Reconciliation\ForUser\ReconciliationForUserProcessor.cs" />
+    <Compile Include="Services\Money\Reconciliation\ReconciliationNotificationSender.cs" />
+    <Compile Include="Services\Money\Reconciliation\ReconciliationReportService.cs" />
+    <Compile Include="Services\Money\Reconciliation\ReconciliationService.cs" />
+    <Compile Include="Services\Money\Sources\Readers\BankDataReader.cs" />
+    <Compile Include="Services\Money\Sources\Readers\BankIntegrationDataReader.cs" />
+    <Compile Include="Services\Money\Sources\Readers\ReconciliationDataReader.cs" />
+    <Compile Include="Services\Money\Sources\Readers\YandexKassaDataIntegrationDataReader.cs" />
+    <Compile Include="Services\Money\Surf\PaymentOrderTo1cDocumentConfirmer.cs" />
+    <Compile Include="Services\PaymentOrders\PaymentExportService.cs" />
+    <Compile Include="Services\PaymentOrders\PaymentImportService.cs" />
+    <Compile Include="Services\PaymentOrders\Events\ImportForUserKafkaEvent.cs" />
+    <Compile Include="Services\PaymentOrders\Topics\ImportTopics.cs" />
+    <Compile Include="Services\Data\SetupDataService.cs" />
+    <Compile Include="Services\PaymentOrders\PaymentOrdersDuplicatesReader.cs" />
+    <Compile Include="Services\Reports\PatentIncome\PatentIncomeReportService.cs" />
+    <Compile Include="Services\Reports\PatentIncome\PatentIncomeReportMaker.cs" />
+    <Compile Include="Services\Reports\ReconciliationReportForUserService.cs" />
+    <Compile Include="Services\Reports\UsnIncomeExpense\UsnIncomeExpenseReportMaker.cs" />
+    <Compile Include="Services\Reports\UsnIncomeExpense\IncomeExpenseUsnReportService.cs" />
+    <Compile Include="Services\Reports\ReconciliationReportService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accounting-shared\src\Moedelo.Accounting.Domain.Shared\Moedelo.Accounting.Domain.Shared.csproj">
+      <Project>{4c146933-bfed-4b5b-863b-54cdee40a62a}</Project>
+      <Name>Moedelo.Accounting.Domain.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.ApiClient.Dto\Moedelo.BankIntegrations.ApiClient.Dto.csproj">
+      <Project>{df650150-49bf-4641-b18b-d67ff1773bb8}</Project>
+      <Name>Moedelo.BankIntegrations.ApiClient.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.ApiClient.Framework.Abstractions\Moedelo.BankIntegrations.ApiClient.Framework.Abstractions.csproj">
+      <Project>{d29b6e54-2fec-42a0-af0f-504f18d9198b}</Project>
+      <Name>Moedelo.BankIntegrations.ApiClient.Framework.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.ApiClient.Framework\Moedelo.BankIntegrations.ApiClient.Framework.csproj">
+      <Project>{1023982a-c96e-483b-804d-a3be205b5571}</Project>
+      <Name>Moedelo.BankIntegrations.ApiClient.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.Enums\Moedelo.BankIntegrations.Enums.csproj">
+      <Project>{96d8bc39-791b-4baf-9e97-c854f8c06d06}</Project>
+      <Name>Moedelo.BankIntegrations.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.IntegrationPartnersInfo\Moedelo.BankIntegrations.IntegrationPartnersInfo.csproj">
+      <Project>{19EF73A8-6CA8-408D-B9E3-2B22BCCF48FE}</Project>
+      <Name>Moedelo.BankIntegrations.IntegrationPartnersInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-bankIntegrations-shared\src\Moedelo.BankIntegrations.Models\Moedelo.BankIntegrations.Models.csproj">
+      <Project>{d40ae37d-04d1-40fd-8c29-0f41354fe386}</Project>
+      <Name>Moedelo.BankIntegrations.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-common-archive\src\Moedelo.Common.Archive\Moedelo.Common.Archive.csproj">
+      <Project>{307099b9-c8cc-4064-956c-e28c5fe130d8}</Project>
+      <Name>Moedelo.Common.Archive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\aspose\Moedelo.CommonV2.Cells\Moedelo.CommonV2.Cells.csproj">
+      <Project>{E4EF8386-2F4E-4036-BA16-E9A96DF1CEC5}</Project>
+      <Name>Moedelo.CommonV2.Cells</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\accounting\Moedelo.AccountingV2.Client\Moedelo.AccountingV2.Client.csproj">
+      <Project>{a8420913-6305-4104-9862-82f092a777a7}</Project>
+      <Name>Moedelo.AccountingV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\accounting\Moedelo.AccountingV2.Dto\Moedelo.AccountingV2.Dto.csproj">
+      <Project>{512d07b8-f24b-4158-9dc0-0961a3e265e5}</Project>
+      <Name>Moedelo.AccountingV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\accountmanagement\Moedelo.AccountManagement.Client\Moedelo.AccountManagement.Client.csproj">
+      <Project>{219bfbd5-bb84-4141-8af4-126c50634eff}</Project>
+      <Name>Moedelo.AccountManagement.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\accountmanagement\Moedelo.AccountManagement.Dto\Moedelo.AccountManagement.Dto.csproj">
+      <Project>{6dd52806-f605-4b15-ba9b-9d87a274deb0}</Project>
+      <Name>Moedelo.AccountManagement.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\account\Moedelo.AccountV2.Client\Moedelo.AccountV2.Client.csproj">
+      <Project>{5B469921-1F8A-477B-80AD-62F6B527BFA0}</Project>
+      <Name>Moedelo.AccountV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\accPostings\Moedelo.AccPostings.Client\Moedelo.AccPostings.Client.csproj">
+      <Project>{17ae9d8b-e240-4ee3-85b8-62dba585672a}</Project>
+      <Name>Moedelo.AccPostings.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\accPostings\Moedelo.AccPostings.Dto\Moedelo.AccPostings.Dto.csproj">
+      <Project>{183b9792-f10b-4627-a94b-58a219ec4bee}</Project>
+      <Name>Moedelo.AccPostings.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\address\Moedelo.Address.Client\Moedelo.Address.Client.csproj">
+      <Project>{D0A9CA22-D2B5-4BD5-8571-50AFCADA1814}</Project>
+      <Name>Moedelo.Address.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\address\Moedelo.Address.Dto\Moedelo.Address.Dto.csproj">
+      <Project>{E88B4CA9-BA90-4BE1-8FE5-7EA01DE5EE3D}</Project>
+      <Name>Moedelo.Address.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\bankIntegrations\Moedelo.BankIntegrationsV2.Client\Moedelo.BankIntegrationsV2.Client.csproj">
+      <Project>{85fcbc95-a219-46c6-a992-09d865b1b08e}</Project>
+      <Name>Moedelo.BankIntegrationsV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\bankIntegrations\Moedelo.BankIntegrationsV2.Dto\Moedelo.BankIntegrationsV2.Dto.csproj">
+      <Project>{af51ac18-021b-4083-9498-51b83f8d15c2}</Project>
+      <Name>Moedelo.BankIntegrationsV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\billing\Moedelo.BillingV2.Client\Moedelo.BillingV2.Client.csproj">
+      <Project>{1a3fa489-8bc2-4345-a3cb-6a86af0f9185}</Project>
+      <Name>Moedelo.BillingV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\billing\Moedelo.BillingV2.Dto\Moedelo.BillingV2.Dto.csproj">
+      <Project>{c1a1ff60-acd5-417b-9f17-7d2d326bb927}</Project>
+      <Name>Moedelo.BillingV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\cash\Moedelo.CashV2.Client\Moedelo.CashV2.Client.csproj">
+      <Project>{FA671DDD-30FB-45A0-9D47-D43C4AA7979C}</Project>
+      <Name>Moedelo.CashV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\cash\Moedelo.CashV2.Dto\Moedelo.CashV2.Dto.csproj">
+      <Project>{37FF0A26-B654-43A1-9FF0-1EAC258B374D}</Project>
+      <Name>Moedelo.CashV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\catalog\Moedelo.CatalogV2.Client\Moedelo.CatalogV2.Client.csproj">
+      <Project>{6fc4acf8-066e-42dc-8081-fff810aecdfe}</Project>
+      <Name>Moedelo.CatalogV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\catalog\Moedelo.CatalogV2.Dto\Moedelo.CatalogV2.Dto.csproj">
+      <Project>{615989a3-cd89-4728-99d3-6ef990c72618}</Project>
+      <Name>Moedelo.CatalogV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\commonApi\Moedelo.CommonApiV2.Client\Moedelo.CommonApiV2.Client.csproj">
+      <Project>{2F985DB7-07D3-4BBB-859D-25DD01AD30AA}</Project>
+      <Name>Moedelo.CommonApiV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\commonApi\Moedelo.CommonApiV2.Dto\Moedelo.CommonApiV2.Dto.csproj">
+      <Project>{8767B9E1-69B6-4E97-B8FA-03EC282B8E73}</Project>
+      <Name>Moedelo.CommonApiV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\contracts\Moedelo.ContractsV2.Client\Moedelo.ContractsV2.Client.csproj">
+      <Project>{69703A1F-997A-4621-BFB1-24580BFA423B}</Project>
+      <Name>Moedelo.ContractsV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\contracts\Moedelo.ContractsV2.Dto\Moedelo.ContractsV2.Dto.csproj">
+      <Project>{4E7B53DE-E5F1-4311-A20B-201F6D88EE5F}</Project>
+      <Name>Moedelo.ContractsV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\finances\Moedelo.Finances.Dto\Moedelo.Finances.Dto.csproj">
+      <Project>{b469be94-efe2-4096-9dbc-344bfdb631e6}</Project>
+      <Name>Moedelo.Finances.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\historicalLogs\Moedelo.HistoricalLogsV2.Client\Moedelo.HistoricalLogsV2.Client.csproj">
+      <Project>{B5D54468-0F90-4255-90B4-0C801836F140}</Project>
+      <Name>Moedelo.HistoricalLogsV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\historicalLogs\Moedelo.HistoricalLogsV2.Dto\Moedelo.HistoricalLogsV2.Dto.csproj">
+      <Project>{9BA966C0-ED1E-48ED-8AC7-A334B4889235}</Project>
+      <Name>Moedelo.HistoricalLogsV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\kontragents\Moedelo.KontragentsV2.Client\Moedelo.KontragentsV2.Client.csproj">
+      <Project>{4F342184-81BB-43E7-891C-EC76518CBB68}</Project>
+      <Name>Moedelo.KontragentsV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\kontragents\Moedelo.KontragentsV2.Dto\Moedelo.KontragentsV2.Dto.csproj">
+      <Project>{191C33FA-39D5-4E42-BA27-29E534A729AA}</Project>
+      <Name>Moedelo.KontragentsV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\kudirOsno\Moedelo.KudirOsno.Client\Moedelo.KudirOsno.Client.csproj">
+      <Project>{41d15010-43f8-49b4-ac99-3b1168952c09}</Project>
+      <Name>Moedelo.KudirOsno.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\money\Moedelo.Money.Client\Moedelo.Money.Client.csproj">
+      <Project>{3acd91a2-4715-4f69-881b-7d0e07079ccf}</Project>
+      <Name>Moedelo.Money.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\money\Moedelo.Money.Dto\Moedelo.Money.Dto.csproj">
+      <Project>{3c1d288f-4c6d-4aa6-9f36-ad937df3f384}</Project>
+      <Name>Moedelo.Money.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\paymentImport\Moedelo.PaymentImport.Client\Moedelo.PaymentImport.Client.csproj">
+      <Project>{1EDC8846-522E-4E4E-B6B6-E1055A9FBEBC}</Project>
+      <Name>Moedelo.PaymentImport.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\paymentImport\Moedelo.PaymentImport.Dto\Moedelo.PaymentImport.Dto.csproj">
+      <Project>{98066e77-d217-4365-b4d5-cdaab34311fe}</Project>
+      <Name>Moedelo.PaymentImport.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\payroll\Moedelo.PayrollV2.Client\Moedelo.PayrollV2.Client.csproj">
+      <Project>{404930af-1f06-4ab0-9c06-31d408e5073d}</Project>
+      <Name>Moedelo.PayrollV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\payroll\Moedelo.PayrollV2.Dto\Moedelo.PayrollV2.Dto.csproj">
+      <Project>{c51165cb-ed93-4c55-8673-1a81b6b31279}</Project>
+      <Name>Moedelo.PayrollV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\postings\Moedelo.Postings.Client\Moedelo.Postings.Client.csproj">
+      <Project>{1ca4cd4f-3ce1-41b2-a97d-140fbfdc6803}</Project>
+      <Name>Moedelo.Postings.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\postings\Moedelo.Postings.Dto\Moedelo.Postings.Dto.csproj">
+      <Project>{d79850da-60e0-4073-866c-02d6f51816a9}</Project>
+      <Name>Moedelo.Postings.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\requisites\Moedelo.RequisitesV2.Client\Moedelo.RequisitesV2.Client.csproj">
+      <Project>{c90d8050-9f70-4cf3-9bf4-03e150688cfd}</Project>
+      <Name>Moedelo.RequisitesV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\requisites\Moedelo.RequisitesV2.Dto\Moedelo.RequisitesV2.Dto.csproj">
+      <Project>{d353b066-a0af-43a6-9e1b-174437e32140}</Project>
+      <Name>Moedelo.RequisitesV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\spam\Moedelo.SpamV2.Client\Moedelo.SpamV2.Client.csproj">
+      <Project>{49561515-94C0-413C-AA1F-E095C2A80754}</Project>
+      <Name>Moedelo.SpamV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\spam\Moedelo.SpamV2.Dto\Moedelo.SpamV2.Dto.csproj">
+      <Project>{87A28B52-6E6E-4A69-B5A3-263A894C6381}</Project>
+      <Name>Moedelo.SpamV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\taxPostings\Moedelo.TaxPostings.Client\Moedelo.TaxPostings.Client.csproj">
+      <Project>{0c4c6578-908d-4629-b517-86cfe858d50b}</Project>
+      <Name>Moedelo.TaxPostings.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\taxPostings\Moedelo.TaxPostings.Dto\Moedelo.TaxPostings.Dto.csproj">
+      <Project>{b2819d53-bda8-4cbe-a162-fd7041c612da}</Project>
+      <Name>Moedelo.TaxPostings.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\Moedelo.CommonV2.EventBus\Moedelo.CommonV2.EventBus.csproj">
+      <Project>{E72A28D6-8A5E-4825-9167-EC01854707D1}</Project>
+      <Name>Moedelo.CommonV2.EventBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\Moedelo.CommonV2.Models\Moedelo.CommonV2.Models.csproj">
+      <Project>{A05214F2-9330-4707-B94B-F0C8D05C299F}</Project>
+      <Name>Moedelo.CommonV2.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\usercontext\Moedelo.CommonV2.UserContext.Domain\Moedelo.CommonV2.UserContext.Domain.csproj">
+      <Project>{168785EC-8B24-452C-B2FB-63BCD0E36FB6}</Project>
+      <Name>Moedelo.CommonV2.UserContext.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\usercontext\Moedelo.CommonV2.UserContext\Moedelo.CommonV2.UserContext.csproj">
+      <Project>{DF2DB0C5-6AE9-4964-911A-EBDBF2CEBED1}</Project>
+      <Name>Moedelo.CommonV2.UserContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\utils\Moedelo.CommonV2.Extensions.System\Moedelo.CommonV2.Extensions.System.csproj">
+      <Project>{C5CBB4F1-A2EB-421B-B98F-94626EB172BD}</Project>
+      <Name>Moedelo.CommonV2.Extensions.System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\utils\Moedelo.CommonV2.Utils\Moedelo.CommonV2.Utils.csproj">
+      <Project>{9A5590CD-3ED9-40C1-B796-AA1DE54FA210}</Project>
+      <Name>Moedelo.CommonV2.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.AuditWebApi\Moedelo.InfrastructureV2.AuditWebApi.csproj">
+      <Project>{45b24d94-a32b-4809-bc0b-e5d2da6358b4}</Project>
+      <Name>Moedelo.InfrastructureV2.AuditWebApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{D75DDFA4-BF4C-410C-A6AF-9F0D5F2582D9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Json\Moedelo.InfrastructureV2.Json.csproj">
+      <Project>{83524410-19D8-4330-BF4D-8D963CDE2E8C}</Project>
+      <Name>Moedelo.InfrastructureV2.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.System.Extensions\Moedelo.InfrastructureV2.System.Extensions.csproj">
+      <Project>{2ea83bf3-4694-41ac-abb3-e6f00a12349e}</Project>
+      <Name>Moedelo.InfrastructureV2.System.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-parsers\src\Moedelo.Parsers.Klto1CParser\Moedelo.Parsers.Klto1CParser.csproj">
+      <Project>{4B95B698-37DE-4E3C-95F7-0609182084A4}</Project>
+      <Name>Moedelo.Parsers.Klto1CParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-paymentImport-shared\src\Moedelo.PaymentOrderImport.Enums\Moedelo.PaymentOrderImport.Enums.csproj">
+      <Project>{68e0b14c-404c-4769-b9b0-27884541a6e8}</Project>
+      <Name>Moedelo.PaymentOrderImport.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.Finances.Domain\Moedelo.Finances.Domain.csproj">
+      <Project>{A1E42218-9079-44C4-A8BB-76E82FB05C7F}</Project>
+      <Name>Moedelo.Finances.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\executionContext\Moedelo.ExecutionContext.Client\Moedelo.ExecutionContext.Client.csproj">
+      <Project>{079581E8-2D94-4DAF-91F4-6874FFB328B0}</Project>
+      <Name>Moedelo.ExecutionContext.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\Reports\IncomePatentReportTemplate.xlsx" />
+    <None Include="Resources\Reports\IncomeExpenseUsnReportTemplate.xlsx" />
+    <None Include="Resources\Reports\ReconciliationReportTemplate.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Templates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Templates.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports\ReconciliationReportUserTemplate.xlsx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

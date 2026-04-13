@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Http.Abstractions", "src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj", "{3786D47E-352C-495C-BE7C-E262294EC48B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{82FB9588-152B-4824-A13B-5F18068F3F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Http", "src\Moedelo.Infrastructure.Http\Moedelo.Infrastructure.Http.csproj", "{931D02C3-43A4-4215-ADF8-A544A284FA1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{78041C9E-CB14-46FF-A664-BCBF827571D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3786D47E-352C-495C-BE7C-E262294EC48B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3786D47E-352C-495C-BE7C-E262294EC48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3786D47E-352C-495C-BE7C-E262294EC48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3786D47E-352C-495C-BE7C-E262294EC48B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82FB9588-152B-4824-A13B-5F18068F3F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82FB9588-152B-4824-A13B-5F18068F3F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82FB9588-152B-4824-A13B-5F18068F3F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82FB9588-152B-4824-A13B-5F18068F3F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{931D02C3-43A4-4215-ADF8-A544A284FA1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931D02C3-43A4-4215-ADF8-A544A284FA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931D02C3-43A4-4215-ADF8-A544A284FA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931D02C3-43A4-4215-ADF8-A544A284FA1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82FB9588-152B-4824-A13B-5F18068F3F7B} = {78041C9E-CB14-46FF-A664-BCBF827571D8}
+	EndGlobalSection
+EndGlobal

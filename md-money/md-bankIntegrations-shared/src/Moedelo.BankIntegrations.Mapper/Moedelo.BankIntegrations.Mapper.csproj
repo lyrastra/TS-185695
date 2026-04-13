@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Moedelo.BankIntegrations.ApiClient.Dto\Moedelo.BankIntegrations.ApiClient.Dto.csproj" />
+    <ProjectReference Include="..\Moedelo.BankIntegrations.Models\Moedelo.BankIntegrations.Models.csproj" />
+  </ItemGroup>
+
+</Project>

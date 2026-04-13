@@ -1,0 +1,38 @@
+.openClosedPeriod {
+  font-family: Arial;
+}
+.openClosedPeriod .mdDialogHeader {
+  height: 70px;
+}
+.openClosedPeriod .mdDialogHeader h2 {
+  display: inline-block;
+  margin: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.openClosedPeriod .mdDialogHeader .mdDialogCloseButton {
+  top: 15px;
+  line-height: 13px;
+  right: 15px;
+}
+.openClosedPeriod .mdDialogWrap {
+  padding: 0px 30px 10px;
+  font-size: 13px;
+}
+.openClosedPeriod .mdDialogFooter {
+  padding-left: 30px;
+}
+.openClosedPeriod .mdDialogFooter .cancel {
+  font-size: 13px;
+  color: #1f85c5;
+  text-decoration: underline;
+  border-bottom: 0;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.openClosedPeriod .mdDialogFooter .cancel:hover {
+  text-decoration: none;
+}
+.documentForm .buttons .openPeriod {
+  color: #1f85c5;
+}

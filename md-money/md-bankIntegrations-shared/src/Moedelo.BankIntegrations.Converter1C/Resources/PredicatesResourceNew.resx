@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Agent" xml:space="preserve">
+    <value>агент</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>КонечныйОстаток</value>
+  </data>
+  <data name="BankWarrant" xml:space="preserve">
+    <value>Банковский ордер</value>
+  </data>
+  <data name="BudgetaryDocDate" xml:space="preserve">
+    <value>ПоказательДаты</value>
+  </data>
+  <data name="BudgetaryDocNumber" xml:space="preserve">
+    <value>ПоказательНомера</value>
+  </data>
+  <data name="BudgetaryPayerStatus" xml:space="preserve">
+    <value>СтатусСоставителя</value>
+  </data>
+  <data name="BudgetaryPaymentBase" xml:space="preserve">
+    <value>ПоказательОснования</value>
+  </data>
+  <data name="BudgetaryPaymentType" xml:space="preserve">
+    <value>ПоказательТипа</value>
+  </data>
+  <data name="CashPayment" xml:space="preserve">
+    <value>объявление на взнос наличными</value>
+  </data>
+  <data name="CodeUin" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="Comission" xml:space="preserve">
+    <value>комиссия</value>
+  </data>
+  <data name="Comission2" xml:space="preserve">
+    <value>комис.</value>
+  </data>
+  <data name="DividendPayment" xml:space="preserve">
+    <value>дивиденд</value>
+  </data>
+  <data name="DocDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="DocumentNumber" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="DonationToCharterCapital" xml:space="preserve">
+    <value>взнос в ук</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>ДатаКонца</value>
+  </data>
+  <data name="EndDocumentSection" xml:space="preserve">
+    <value>КонецДокумента</value>
+  </data>
+  <data name="IncomingDate" xml:space="preserve">
+    <value>ДатаПоступило</value>
+  </data>
+  <data name="IndicatorKbk" xml:space="preserve">
+    <value>ПоказательКБК</value>
+  </data>
+  <data name="InpaymentToIpAccount" xml:space="preserve">
+    <value>взнос на счет ип</value>
+  </data>
+  <data name="LoanParent1" xml:space="preserve">
+    <value>займ учредителя</value>
+  </data>
+  <data name="LoanParent2" xml:space="preserve">
+    <value>займ от учредителя</value>
+  </data>
+  <data name="LoanParent3" xml:space="preserve">
+    <value>б/п займ</value>
+  </data>
+  <data name="LoanParent4" xml:space="preserve">
+    <value>беспроцентный займ</value>
+  </data>
+  <data name="LoanParent5" xml:space="preserve">
+    <value>без % займ</value>
+  </data>
+  <data name="LoanParent6" xml:space="preserve">
+    <value>б/п  займ</value>
+  </data>
+  <data name="LoanParent7" xml:space="preserve">
+    <value>договору бе спроцентного займа</value>
+  </data>
+  <data name="MemorialWarrant" xml:space="preserve">
+    <value>Мемориальный ордер</value>
+  </data>
+  <data name="MemorialWarrantIncomingFromCash" xml:space="preserve">
+    <value>Объявление на взнос наличными</value>
+  </data>
+  <data name="MoneyOrder" xml:space="preserve">
+    <value>Денежный чек</value>
+  </data>
+  <data name="MovementFromCashToSettlement" xml:space="preserve">
+    <value>Объявление на взнос наличными</value>
+  </data>
+  <data name="MovementFromSettlementToCash" xml:space="preserve">
+    <value>Денежный чек</value>
+  </data>
+  <data name="MovementFromSettlementToSettlement" xml:space="preserve">
+    <value>Платежное поручение</value>
+  </data>
+  <data name="Okato" xml:space="preserve">
+    <value>ОКАТО</value>
+  </data>
+  <data name="OutgoingDate" xml:space="preserve">
+    <value>ДатаСписано</value>
+  </data>
+  <data name="Own" xml:space="preserve">
+    <value>собствен</value>
+  </data>
+  <data name="Payer" xml:space="preserve">
+    <value>Плательщик</value>
+  </data>
+  <data name="Payer1" xml:space="preserve">
+    <value>Плательщик1</value>
+  </data>
+  <data name="PayerAccount" xml:space="preserve">
+    <value>ПлательщикСчет</value>
+  </data>
+  <data name="PayerBankName" xml:space="preserve">
+    <value>ПлательщикБанк1</value>
+  </data>
+  <data name="PayerBik" xml:space="preserve">
+    <value>ПлательщикБИК</value>
+  </data>
+  <data name="PayerCorrespondentAccount" xml:space="preserve">
+    <value>ПлательщикКорсчет</value>
+  </data>
+  <data name="PayerInn" xml:space="preserve">
+    <value>ПлательщикИНН</value>
+  </data>
+  <data name="PayerKpp" xml:space="preserve">
+    <value>ПлательщикКПП</value>
+  </data>
+  <data name="PaymentKind" xml:space="preserve">
+    <value>ВидОплаты</value>
+  </data>
+  <data name="PaymentPriority" xml:space="preserve">
+    <value>Очередность</value>
+  </data>
+  <data name="PaymentPurpose" xml:space="preserve">
+    <value>НазначениеПлатежа</value>
+  </data>
+  <data name="PaymentTurn" xml:space="preserve">
+    <value>Очередность</value>
+  </data>
+  <data name="Period" xml:space="preserve">
+    <value>ПоказательПериода</value>
+  </data>
+  <data name="Recipient" xml:space="preserve">
+    <value>Получатель</value>
+  </data>
+  <data name="Recipient1" xml:space="preserve">
+    <value>Получатель1</value>
+  </data>
+  <data name="RecipientAccount" xml:space="preserve">
+    <value>ПолучательСчет</value>
+  </data>
+  <data name="RecipientBankName" xml:space="preserve">
+    <value>ПолучательБанк1</value>
+  </data>
+  <data name="RecipientBik" xml:space="preserve">
+    <value>ПолучательБИК</value>
+  </data>
+  <data name="RecipientCorrespondentAccount" xml:space="preserve">
+    <value>ПолучательКорсчет</value>
+  </data>
+  <data name="RecipientInn" xml:space="preserve">
+    <value>ПолучательИНН</value>
+  </data>
+  <data name="RecipientKpp" xml:space="preserve">
+    <value>ПолучательКПП</value>
+  </data>
+  <data name="removingTheProfit" xml:space="preserve">
+    <value>снятие прибыли</value>
+  </data>
+  <data name="removingTheProfit10" xml:space="preserve">
+    <value>пополнение личного счета</value>
+  </data>
+  <data name="removingTheProfit2" xml:space="preserve">
+    <value>собственных средств</value>
+  </data>
+  <data name="removingTheProfit3" xml:space="preserve">
+    <value>перевод личных средств на карту</value>
+  </data>
+  <data name="removingTheProfit4" xml:space="preserve">
+    <value>получение личных средств</value>
+  </data>
+  <data name="removingTheProfit5" xml:space="preserve">
+    <value>перечисление дохода от предпринимательской деятельности</value>
+  </data>
+  <data name="removingTheProfit6" xml:space="preserve">
+    <value>вывод личных средств</value>
+  </data>
+  <data name="removingTheProfit7" xml:space="preserve">
+    <value>перевод денежных средств от предпринимательской деятельности</value>
+  </data>
+  <data name="removingTheProfit8" xml:space="preserve">
+    <value>пополнение личного счёта</value>
+  </data>
+  <data name="removingTheProfit9" xml:space="preserve">
+    <value>собственные средства</value>
+  </data>
+  <data name="SalaryProjectPayment1" xml:space="preserve">
+    <value>на счета работников</value>
+  </data>
+  <data name="SalaryProjectPayment2" xml:space="preserve">
+    <value>на счета сотрудников</value>
+  </data>
+  <data name="SalaryProjectPayment3" xml:space="preserve">
+    <value>реестр</value>
+  </data>
+  <data name="SectionName" xml:space="preserve">
+    <value>СекцияДокумент</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>услуг</value>
+  </data>
+  <data name="Settlement" xml:space="preserve">
+    <value>РасчСчет</value>
+  </data>
+  <data name="StartBalance" xml:space="preserve">
+    <value>НачальныйОстаток</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>ДатаНачала</value>
+  </data>
+  <data name="StartDocumentSection" xml:space="preserve">
+    <value>СекцияДокумент</value>
+  </data>
+  <data name="Sum" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Неизвестный</value>
+  </data>
+  <data name="WorkerPay1" xml:space="preserve">
+    <value>зарплат</value>
+  </data>
+  <data name="WorkerPay2" xml:space="preserve">
+    <value>заработн</value>
+  </data>
+  <data name="PaymentPurposeCode" xml:space="preserve">
+    <value>КодНазПлатежа</value>
+  </data>
+</root>

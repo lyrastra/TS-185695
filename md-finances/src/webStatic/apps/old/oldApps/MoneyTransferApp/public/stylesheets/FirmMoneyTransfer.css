@@ -1,0 +1,262 @@
+#transferPage { padding-left: 18px; }
+#transferPage h1 { font-weight: bold;font-size: 1.77em;color: #3e3e3e;margin-bottom: 15px; }
+
+#underTable { overflow: hidden; }
+#underTable .hint {width: 300px;padding: 3px 10px;background-color: #fffdae;border-left: 2px solid #dad87b;font-size: .85em;color: #4e4e4e;line-height: 1.64em;float: left; }
+#pagination {float: right;height: 60px; }
+#pagination li { display: inline; }
+#pagination a { padding: 2px 7px; }
+#pagination .current a {background-color: #a1cb0c;color: #fff;text-decoration: none;font-weight: bold;font-size: 1.15em; }
+#pagination .previous, #pagination .next {position: relative;display: inline-block; }
+*+html #pagination .previous, *+html #pagination .next {display: inline; zoom: 1; }
+#pagination .previous { margin-right: 10px; }
+#pagination .next { margin-left: 5px; }
+#pagination .previous a, #pagination .next a{color: #6e6e6e; }
+#pagination .first, #pagination .last {font-size: .78em;display: block;position: absolute;left: 0;top: 100%;z-index: 1000; }
+#pagination .first { right: 0; left: auto; }
+#transferTable th {cursor:pointer}
+#transferTable tr.highlighted {background-color:#fbfce7 !important }
+#transferTable tbody tr {cursor:pointer}
+#transferTable tr.justsaved {background-color:#FFFDAE !important }
+.ui-dialog {padding:0px !important; margin:0px !important; }
+div.dialog {padding:0px !important; margin:0px !important; }
+div.dialog, div.dialog input,div.dialog a  { font-family:'Segoe UI', 'Arial', sans-serif; }
+div.dialog .type { padding:10px 10px 10px 25px; }
+div.dialog .type label { padding-left:7px; cursor:pointer; }
+div.dialog .type .radioGroupHeader { color:#555; font-weight:bold; }
+div.dialog .type table td { padding-left:30px; }
+div.dialog input { display:inline; height:17px; font-size:13px; padding:2px; }
+#outgoingInfoDiv a { border: none; text-decoration:underline; }
+#outgoingInfoDiv a:hover { border: none; text-decoration:none; }
+div.dialog input[type=button] 
+{ display:inline-block;
+  margin-right:0px;
+ }
+
+div.dialog input[type=text], div.dialog textarea {width:405px;}
+
+div.dialog input[type="radio"] { height:13px; padding:0; padding-top:2px; }
+div.dialog a { text-decoration:none; border:none; border-bottom-style:dotted; border-bottom-width:1px; padding:0px; color:#76A5E2; font-size:13px; }
+div.dialog a:hover { border:none; }
+div.dialog select { display:inline; font-size:13px; padding:2px; }
+div.dialog label { display:inline; margin-left:0px; position:relative; top:-2px; }
+div.dialog .bigLabel {line-height:15px;top:-5px;}
+div.dialog .dialogContent { }
+div.dialog .main { padding: 10px 10px 10px 25px; padding-top:0px; }
+/*div.dialog .main input { width:250px;  }
+div.dialog .main textarea { width:250px; }*/
+div.dialog .main select {width:410px;}
+div.dialog .main input[type="radio"] { width:10px; position:relative; }
+
+div.dialog .main .title { position:relative; top:0; float:left; width:200px; }
+
+div.dialog .main table{ float:left; }
+div.dialog .main .typeLink{ margin:0px; position:relative; }
+div.dialog .main .proofLink{top:-2px; }
+div.dialog .main .createdDocument { margin-left:200px; margin-top:10px; margin-bottom:20px; padding-top:5px; }
+div.dialog .main .createdDocument input { width:80px; margin-right:3px; }
+div.dialog .main .selectorCombo { margin:0px; width:410px; }
+div.dialog .main .settlementDiv { margin-left:200px; margin-bottom:10px; }
+div.dialog .main .purseDiv { margin-left:200px; margin-bottom:10px; }
+div.dialog .accountList td { padding-left:20px; padding-right:20px; }
+div.dialog .radioBoxes label{padding-left:5px; cursor:pointer;}
+div.dialog .usn { margin-top:10px; padding:10px 15px 10px 25px; margin-left:0px; padding-bottom:20px; background-color:#addfad; overflow:visible }
+div.dialog .usn .title { position:static; float:left;width:200px; height:20px; }
+div.dialog .usn .title label { vertical-align:bottom; }
+div.dialog .usnHeader {font-weight:bold; font-size:16px; margin-bottom:15px; }
+#errorDialog .dialogContent, #addKontragentDialog .dialogContent, #updateDialog .dialogContent {padding:10px 10px 10px 25px}
+
+/*div.dialog .usn input, div.dialog .usn textarea { width:420px; }*/
+div.dialog .buttons { width:100%; margin:0px; padding:0px; }
+div.dialog .buttons div 
+{
+    
+    cursor:pointer;
+    border-style:solid;border-width:2px;
+    position:relative;
+    border-color:#fff;
+    background:none;
+    overflow:hidden;
+    background-color:#fff;
+    margin:0px 10px;
+    height:29px;
+    background-image:none;
+}
+
+div.dialog .buttons div.highlighted {}
+
+div.dialog .buttons input  
+{
+    height:30px;
+    width:116px;
+    margin:15px 25px;
+    padding:3px 0px 8px 15px;
+}
+
+div.dialog .buttons .cancel,div.dialog .buttons .back {float:left;}
+
+div.dialog .buttons .next{float:right;}
+div.dialog .buttons .save{float:right;}
+div.dialog .buttons .ok{float:right;}
+
+.robo_dialog {
+    position: fixed;
+}
+
+div.dialog .header 
+{
+    width:120px;
+    text-align:center;
+    margin-bottom:20px;
+    font-weight:bold;
+    margin:0px auto;
+    /*background:url('./../../public/stylesheets/img/libraryIcons.gif') no-repeat left 4px;*/
+    padding:0px 0px 0px 0px 5px;
+}
+div.dialog .radioLabel { display:inline; left:5px; position:relative; top:-1px; }
+div.dialog li { clear:both; margin:0;margin-top:3px; min-height:40px; }
+.modal_class .ui-dialog-titlebar  
+{
+    font-family:'Segoe UI', 'Arial', sans-serif;
+    font-style:normal;
+    font-weight:normal; 
+    font-size:24px;
+    background-image:none;
+    background-color:#fff;
+    border:none;
+    margin-right:5px; 
+    padding: 0.3em 0px 0.3em 1em !important;
+    width:100%;
+    -moz-border-radius:0px 0px 0px 0px !important;
+    border-bottom-left-radius: 0px 0px;
+    border-bottom-right-radius: 0px 0px;
+    border-top-left-radius: 0px 0px;
+    border-top-right-radius: 0px 0px;
+
+    
+}
+.modal_class .ui-dialog-titlebar-close {right:30px; top:25px;}
+
+#inOutBookLinkPDF, #inOutBookLinkExcel { height:16px; text-decoration:none; vertical-align:middle; margin-bottom:1px; outline:none }
+
+
+.dialog_input_warning {margin-left:210px; color:Red; font-size:0.87em;}
+#cashFormerLinkDiv {display:inline-block; margin:0px; padding:0px;}
+.linkPanel {float:right; display:inline-block; top:-30px;position:absolute; right:0px; overflow:visible}
+
+.totalSumm
+{
+     margin: 0 0 1em;
+}
+
+/*info-block*/
+.dialogContent .info_block 
+{
+    background-color:#addfac;
+    margin:0px 0px 12px 0px;
+    padding:7px 5px 7px 25px;
+    color:Black;
+}
+.ui-datepicker-trigger{cursor:pointer;}
+#createNextDiv{margin-left:25px;}
+#createNextDiv .checkLabel{top:3px;}
+
+#odincExt {position: relative}
+#odincExt ul {overflow: hidden; height: 23px; position: relative; margin: 0; padding: 0}
+#odincExt ul li {height: 23px}
+#odincExtControls {height: 35px; position: absolute; right: 15px; top: 4px}
+#odincExt-nextbtn {cursor: pointer}
+#odincExt-nextbtn-disabled {color: #aea51a; display: none}
+#odincExt-prevbtn {cursor: pointer; display: none}
+#odincExt-prevbtn-disabled {color: #aea51a}
+
+.table_control td {color:#494949}
+#intOutBookLinkYear {
+    width: 92px;
+}
+
+.importdatapicker {
+    width: 160px !important;
+    margin-right: 8px;
+    background: url("../img/calendar.png") no-repeat scroll 95% 3px transparent !important;
+    cursor: pointer !important;
+}
+
+.importDialogClose {
+    text-decoration: underline;
+    font-family: 'Segoe UI','Arial',sans-serif;
+    cursor: pointer;
+    font-size: 12.9667px;
+    margin-left: 20px;
+}
+
+.importDialogSend {
+    left: 180px !important;
+    width: 140px !important;
+}
+
+.importButtonText {
+    line-height: 26px !important;
+}
+
+.navigator
+{
+    width: 728px;
+    height: 22px;
+    margin: 0px 0px 10px 0px;
+    text-align: left;
+}
+
+.navigator span {
+    margin: 0px 3px 0px 3px;
+    padding: 0px 0px 8px 0px;
+    height: 15px;
+    display: inline-block;
+}
+
+.span_link {
+    border-bottom: 1px dotted #2089C6;
+    height: 13px !important;
+}
+
+.span_link:hover {
+    border-bottom: none;
+}
+.navigator a
+{
+    color: #1F85C5;
+    width: 24px;
+    height: 15px;
+    margin: 0px 0px 0px 3px;
+    padding: 0px 6px 8px 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.navigator a.page.selected
+{
+    background-color: #F4EDDF;
+    color: black;
+    cursor: default;
+}
+
+.typeOperation span{padding: 5px;}
+.typeOperation span a:hover{border: none;}
+.typeOperation span.selected{background-color: #F4EDDF;}
+.typeOperation span a{ text-decoration: none;border-bottom: 1px dotted #1F85C5;cursor: pointer;}
+.typeOperation span.selected a{ border: none;color: black;cursor: default;font-weight: bold;}
+
+.contractBlock{ display: inline-block;}
+.contractBlock span{ float: left; margin-right: 25px;}
+
+#moneyDialog ul.form textarea {width: 348px;padding: 3px 5px;display: inline;}
+
+
+
+/*
+ .ui-tooltip {
+     z-index: 3000 !important;
+     display: block !important;
+    }
+*/

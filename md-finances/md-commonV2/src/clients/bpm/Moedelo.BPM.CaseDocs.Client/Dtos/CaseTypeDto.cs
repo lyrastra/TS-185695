@@ -1,0 +1,30 @@
+﻿namespace Moedelo.BPM.CaseDocs.Client.Dtos
+{
+    public enum CaseTypeDto
+    {
+        Outsourcing,
+        Consulting,
+        JuridicalConsulting,
+        User,
+        Consultations,
+        Technical_Support,
+        Report,
+        Administration,
+        Service,
+        Service_Admission,
+        MDDepartments,
+        Unsort,
+        AutoAnswer,
+        Training,
+        ExitFirst,
+        OneTime,
+        Salary,
+        Bank,
+        Cachier,
+        Sellings,
+        Hard,
+        Sales,
+        BusinessAssistant,
+        OnlyPrimary
+    }
+}

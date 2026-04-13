@@ -1,0 +1,26 @@
+.linkedDocuments {
+  margin: 10px 0;
+}
+.linkedDocuments input[data-type=date] {
+  min-width: 90px;
+}
+.linkedDocuments td {
+  vertical-align: top;
+}
+.linkedDocuments td > div {
+  position: relative;
+}
+.linkedDocuments td.tdSum,
+.linkedDocuments td.tdDelete {
+  text-align: right;
+}
+.linkedDocuments td.tdSum input,
+.linkedDocuments td.tdDelete input {
+  text-align: right;
+}
+.linkedDocuments .input-validation-error {
+  display: inline-block;
+}
+.linkedDocuments input[data-bind=Documents_Sum] + .field-validation-error {
+  right: 0px;
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Parsers.Klto1CParser", "src\Moedelo.Parsers.Klto1CParser\Moedelo.Parsers.Klto1CParser.csproj", "{4B95B698-37DE-4E3C-95F7-0609182084A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Parsers.Klto1CParser.Tests", "tests\Moedelo.Parsers.Klto1CParser.Tests\Moedelo.Parsers.Klto1CParser.Tests.csproj", "{5F5E9DBF-34DC-4070-AD95-B85CD3A90875}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B95B698-37DE-4E3C-95F7-0609182084A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B95B698-37DE-4E3C-95F7-0609182084A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B95B698-37DE-4E3C-95F7-0609182084A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B95B698-37DE-4E3C-95F7-0609182084A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5E9DBF-34DC-4070-AD95-B85CD3A90875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5E9DBF-34DC-4070-AD95-B85CD3A90875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5E9DBF-34DC-4070-AD95-B85CD3A90875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5E9DBF-34DC-4070-AD95-B85CD3A90875}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F8C5D63-52C8-48D8-9073-102C4B2E3D40}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,262 @@
+.mdTableWrap .mdTableControls {
+  background-color: #E3E3E3;
+  padding-left: 10px;
+  line-height: 42px;
+}
+.mdTableWrap .mdTableControls .mdButton {
+  margin-right: 2px;
+}
+.mdTableWrap .mdTableControls .mdButton .mdDropDownList {
+  top: 23px;
+  min-width: 100%;
+}
+.mdTable {
+  border-bottom: 1px solid #dddddd;
+  color: #404040;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 16px;
+  /* Со временем будет устранено (Don't use it) */
+  /*******************************/
+}
+.mdTable.autoWidth {
+  display: inline-block;
+  width: auto;
+}
+.mdTable.autoWidth .mdTableHeader {
+  width: auto;
+}
+.mdTable.autoWidth .mdTableBody {
+  display: inline-block;
+  width: auto;
+}
+.mdTable.autoWidth .mdTableBody .mdTableRow {
+  width: auto;
+}
+.mdTable .mdTableBody .noPointerCursor {
+  cursor: default;
+}
+.mdTable .mdTableBody .noPointerCursor div {
+  cursor: default;
+}
+.mdTable.noHighlight .mdTableRow {
+  cursor: default;
+}
+.mdTable.noHighlight .mdTableRow:hover {
+  background: white;
+}
+.mdTable.noHighlight .mdTableCell {
+  cursor: default;
+}
+.mdTable.lowHeight {
+  border-bottom: none;
+}
+.mdTable.lowHeight .mdTableCell {
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+.mdTable .mdTableCell {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  letter-spacing: normal;
+  vertical-align: top;
+  min-height: 24px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  word-spacing: normal;
+}
+.mdTable .mdTableCell.positive {
+  color: #0b5901;
+}
+.mdTable .mdTableCell.positive span {
+  color: #0b5901;
+}
+.mdTable .mdTableCell > .mdTableCell {
+  display: block;
+}
+.mdTable .mdTableHeader {
+  overflow: hidden;
+  color: #404040;
+  line-height: 24px;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #dddddd;
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f6f6f6), to(#e3e3e3));
+  background: -webkit-linear-gradient(#f6f6f6, #e3e3e3);
+  background: -moz-linear-gradient(#f6f6f6, #e3e3e3);
+  background: -ms-linear-gradient(#f6f6f6, #e3e3e3);
+  background: -o-linear-gradient(#f6f6f6, #e3e3e3);
+  background: linear-gradient(#f6f6f6, #e3e3e3);
+  word-spacing: -0.36em;
+  white-space: nowrap;
+  display: table;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  -moz-box-sizing: border-box;
+  /*Firefox 1-3*/
+  box-sizing: border-box;
+}
+.mdTable .mdTableHeader div,
+.mdTable .mdTableHeader span,
+.mdTable .mdTableHeader b,
+.mdTable .mdTableHeader strong,
+.mdTable .mdTableHeader section,
+.mdTable .mdTableHeader ol,
+.mdTable .mdTableHeader ul,
+.mdTable .mdTableHeader li,
+.mdTable .mdTableHeader article,
+.mdTable .mdTableHeader p,
+.mdTable .mdTableHeader em,
+.mdTable .mdTableHeader i,
+.mdTable .mdTableHeader table,
+.mdTable .mdTableHeader caption,
+.mdTable .mdTableHeader tbody,
+.mdTable .mdTableHeader tfoot,
+.mdTable .mdTableHeader thead,
+.mdTable .mdTableHeader tr,
+.mdTable .mdTableHeader th,
+.mdTable .mdTableHeader td {
+  white-space: normal;
+  word-spacing: normal;
+}
+.mdTable .mdTableHeader .qTip {
+  position: absolute;
+  top: 5px;
+  right: -10px;
+}
+.mdTable .mdTableHeader .mdTableCell {
+  padding: 0;
+  line-height: 28px;
+  cursor: default;
+  white-space: normal;
+  overflow: visible;
+}
+.mdTable .mdTableHeader .mdTableCell[data-sorter],
+.mdTable .mdTableHeader .mdTableCell[orderby] {
+  cursor: pointer;
+}
+.mdTable .mdTableHeader .mdTableCell .sorterRouter {
+  position: relative;
+  left: 3px;
+  margin-right: -6px;
+}
+.mdTable .mdTableHeader .mdTableCell.doubleLine {
+  line-height: 13px;
+  padding-top: 1px;
+}
+.mdTable .mdTableHeader input[type=checkbox] {
+  top: 7px;
+}
+.mdTable .mdTableBody .noElements {
+  word-spacing: normal;
+  float: none;
+  text-align: center;
+  line-height: 118px;
+  height: 120px;
+  font-size: 14px;
+  background-color: #F7F7F7;
+}
+.mdTable .mdTableBody .noElements.notPaid,
+.mdTable .mdTableBody .noElements.noAccess {
+  display: none;
+}
+.mdTable .mdTableBody .noElements a {
+  display: inline;
+}
+.mdTable .mdTableRow {
+  cursor: pointer;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  white-space: nowrap;
+  word-spacing: -0.36em;
+  display: table;
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  -moz-box-sizing: border-box;
+  /*Firefox 1-3*/
+  box-sizing: border-box;
+  width: 100%;
+}
+.mdTable .mdTableRow div,
+.mdTable .mdTableRow span,
+.mdTable .mdTableRow b,
+.mdTable .mdTableRow strong,
+.mdTable .mdTableRow section,
+.mdTable .mdTableRow ol,
+.mdTable .mdTableRow ul,
+.mdTable .mdTableRow li,
+.mdTable .mdTableRow article,
+.mdTable .mdTableRow p,
+.mdTable .mdTableRow em,
+.mdTable .mdTableRow i,
+.mdTable .mdTableRow table,
+.mdTable .mdTableRow caption,
+.mdTable .mdTableRow tbody,
+.mdTable .mdTableRow tfoot,
+.mdTable .mdTableRow thead,
+.mdTable .mdTableRow tr,
+.mdTable .mdTableRow th,
+.mdTable .mdTableRow td {
+  white-space: normal;
+  word-spacing: normal;
+}
+.mdTable .mdTableRow .mdTableCell {
+  vertical-align: top;
+}
+.mdTable .mdTableRow:hover {
+  background: #f1f1f1;
+}
+.mdTable .mdTableRow.selected {
+  background: #fff8c1;
+}
+.mdTable .mdTableRow.blocked {
+  background: #E2E2E2;
+  cursor: default;
+  cursor: not-allowed;
+}
+.mdTable .mdTableRow.blocked label,
+.mdTable .mdTableRow.blocked a {
+  color: #969696;
+  cursor: default;
+  text-decoration: none;
+}
+.mdTable .mdTableRow.even {
+  background: #F7F7F7;
+}
+.mdTable input[type=checkbox] {
+  position: relative;
+  top: 2px;
+  left: 13px;
+  cursor: pointer;
+}
+.mdTable .mdTableCleaner {
+  float: none;
+  clear: both;
+  padding: 0;
+  line-height: 0;
+  height: 0;
+}
+.mdTable .r-align {
+  text-align: right;
+}
+.mdTable .l-align {
+  text-align: left;
+}
+.mdTable .c-align {
+  text-align: center;
+}
+.mdTable .plusIcon {
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+  margin-right: 2px;
+  cursor: default;
+  color: #1f85c5;
+}

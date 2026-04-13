@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE15E266-9E10-4371-9EB9-979C428499D7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Moedelo.Finances.CollectorForMachineLearning</RootNamespace>
+    <AssemblyName>Moedelo.Finances.CollectorForMachineLearning</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Console.cs" />
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\account\Moedelo.AccountV2.Client\Moedelo.AccountV2.Client.csproj">
+      <Project>{5B469921-1F8A-477B-80AD-62F6B527BFA0}</Project>
+      <Name>Moedelo.AccountV2.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-commonV2\src\clients\account\Moedelo.AccountV2.Dto\Moedelo.AccountV2.Dto.csproj">
+      <Project>{4D3249BF-2A7F-41E5-8F89-0757C592D7F2}</Project>
+      <Name>Moedelo.AccountV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52bbdd20-fe18-48d1-a6d6-03daced1421d}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.ApiClient\Moedelo.InfrastructureV2.ApiClient.csproj">
+      <Project>{ce0520ec-a932-4080-ab6a-96c219cb693b}</Project>
+      <Name>Moedelo.InfrastructureV2.ApiClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Audit\Moedelo.InfrastructureV2.Audit.csproj">
+      <Project>{ad6c7d22-ab92-431a-989c-418f083c5ad6}</Project>
+      <Name>Moedelo.InfrastructureV2.Audit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.DataAccess\Moedelo.InfrastructureV2.DataAccess.csproj">
+      <Project>{25c631ad-d8ae-4d72-94fe-7c236aec9da6}</Project>
+      <Name>Moedelo.InfrastructureV2.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.DistributedFileSystem\Moedelo.InfrastructureV2.DistributedFileSystem.csproj">
+      <Project>{8d11dc04-a905-40ed-9575-9061e05658d8}</Project>
+      <Name>Moedelo.InfrastructureV2.DistributedFileSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Injection\Moedelo.InfrastructureV2.Injection.csproj">
+      <Project>{98ede96d-645a-49fe-adad-5a4357bad003}</Project>
+      <Name>Moedelo.InfrastructureV2.Injection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Logging\Moedelo.InfrastructureV2.Logging.csproj">
+      <Project>{ab793fc0-0f0a-433a-8c26-77fc9100d047}</Project>
+      <Name>Moedelo.InfrastructureV2.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Setting\Moedelo.InfrastructureV2.Setting.csproj">
+      <Project>{85d946bb-3cc5-498d-a3df-a7663240aef0}</Project>
+      <Name>Moedelo.InfrastructureV2.Setting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\apps\finances\Moedelo.Finances.Business\Moedelo.Finances.Business.csproj">
+      <Project>{b9399929-5dbc-4a65-bfab-7d584ba85bc4}</Project>
+      <Name>Moedelo.Finances.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\apps\finances\Moedelo.Finances.DataAccess\Moedelo.Finances.DataAccess.csproj">
+      <Project>{143f4b84-6b5c-49da-b1a9-81f643ccd4a8}</Project>
+      <Name>Moedelo.Finances.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\apps\finances\Moedelo.Finances.Domain\Moedelo.Finances.Domain.csproj">
+      <Project>{A1E42218-9079-44C4-A8BB-76E82FB05C7F}</Project>
+      <Name>Moedelo.Finances.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

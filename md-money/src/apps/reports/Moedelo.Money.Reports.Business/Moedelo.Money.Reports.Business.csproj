@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="BankAndServiceBalanceReport\Templates\BankAndServiceBalanceReport.xls" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accounting-shared\src\Moedelo.Accounting.ApiClient.Abstractions\Moedelo.Accounting.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-accounts-shared\Moedelo.Accounts.ApiClient.Abstractions\Moedelo.Accounts.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-billing-shared\Moedelo.Billing.ApiClient.Abstractions\Moedelo.Billing.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-catalog-shared\src\Moedelo.Catalog.ApiClient.Abstractions\Moedelo.Catalog.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-aspose\src\Moedelo.Infrastructure.Aspose.Cells.Abstraction\Moedelo.Infrastructure.Aspose.Cells.Abstraction.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-aspose\src\Moedelo.Infrastructure.Aspose.Cells\Moedelo.Infrastructure.Aspose.Cells.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.ApiClient.Abstractions\Moedelo.Money.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.ApiClient.Abstractions\Moedelo.Requisites.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-spam-shared\Moedelo.Spam.ApiClient.Abastractions\Moedelo.Spam.ApiClient.Abastractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Reports.Business.Abstractions\Moedelo.Money.Reports.Business.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Reports.DataAccess.Abstractions\Moedelo.Money.Reports.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Reports.Domain\Moedelo.Money.Reports.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

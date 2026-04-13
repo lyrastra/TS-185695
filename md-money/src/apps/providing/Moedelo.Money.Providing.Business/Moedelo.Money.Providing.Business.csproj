@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accounting-shared\src\Moedelo.Accounting.ApiClient.Abstractions\Moedelo.Accounting.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-accountingStatements-shared\src\Moedelo.AccountingStatements.ApiClient.Abstractions\Moedelo.AccountingStatements.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.ApiClient.Abstractions\Moedelo.AccPostings.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.Enums\Moedelo.AccPostings.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-http\src\Moedelo.Common.Http.Abstractions\Moedelo.Common.Http.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-contracts-shared\src\Moedelo.Contracts.ApiClient.Abstractions\Moedelo.Contracts.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-docs-shared\src\Moedelo.Docs.ApiClient.Abstractions\Moedelo.Docs.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-estate-shared\src\Moedelo.Estate.ApiClient.Abstractions\Moedelo.Estate.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-extensions\src\Moedelo.Infrastructure.System.Net6.Extensions\Moedelo.Infrastructure.System.Net6.Extensions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-kontragents-shared\src\Moedelo.Konragents.ApiClient.Abstractions\Moedelo.Konragents.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-linkedDocuments-shared\src\Moedelo.LinkedDocuments.ApiClient.Abstractions\Moedelo.LinkedDocuments.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-linkedDocuments-shared\src\Moedelo.LinkedDocuments.Kafka.Abstractions\Moedelo.LinkedDocuments.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.Enums\Moedelo.Money.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-providing-shared\src\Moedelo.Providing.ApiClient.Abstractions\Moedelo.Providing.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-receiptStatement-shared\src\Moedelo.ReceiptStatement.ApiClient.Abstractions\Moedelo.ReceiptStatement.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-receiptStatement-shared\src\Moedelo.ReceiptStatement.Kafka.Abstractions\Moedelo.ReceiptStatement.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.ApiClient.Abstractions\Moedelo.Requisites.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.Enums\Moedelo.Requisites.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-stock-shared\src\Moedelo.Stock.ApiClient.Abstractions\Moedelo.Stock.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-stock-shared\src\Moedelo.Stock.Enums\Moedelo.Stock.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-taxPostings-shared\src\Moedelo.TaxPostings.ApiClient.Abstractions\Moedelo.TaxPostings.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-taxPostings-shared\src\Moedelo.TaxPostings.Enums\Moedelo.TaxPostings.Enums.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Providing.Business.Abstractions\Moedelo.Money.Providing.Business.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

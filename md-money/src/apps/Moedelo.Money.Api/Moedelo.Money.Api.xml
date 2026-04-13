@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Moedelo.Money.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Moedelo.Money.Api.HostedServices.BillAndPaymentChangeLinkEventsReadHostedService">
+            <summary>
+            Перерасчет статуса счета (обработка изменения связей счет-платеж)
+            Эти события должен обрабатывать счет, но на данный момент нет соответствующего приложения 
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.AccountingPostingsSaveDto.KontragentAccountCode">
+            <summary>
+            Счёт контрагента (бухгалтерский)
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.AccountingPostingsSaveDto.ProvideInAccounting">
+            <summary>
+            Признак: нужно ли проводить в бухгалтерском учете
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.PaymentDto.Nds">
+            <summary> В том числе НДС </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.PaymentDto.Mediation">
+            <summary> Признак посредничества (на УСН) </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.IncomingPaymentFromCustomerSaveDto.Nds">
+            <summary>
+            В том числе НДС
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.IncomingPaymentFromCustomerSaveDto.Mediation">
+            <summary>
+            Признак посредничества (на УСН)
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.IncomingPaymentFromCustomerSaveDto.AccountingPostings">
+            <summary>
+            Параметры бухгалтерского учёта (если не указать, применятся параметры по умолчанию)
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.IncomingPaymentFromCustomerSaveDto.TaxPostings">
+            <summary>
+            Параметры налогового учёта (если не указать, применятся параметры по умолчанию)
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.Banks.MediationDto.CommissionSum">
+            <summary>
+            Вознаграждение посредника
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.NdsDto.Type">
+            <summary>
+            Ставка НДС
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.NdsDto.Sum">
+            <summary>
+            Сумма НДС
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.TaxPostings.OsnoTaxPostingDto.Type">
+            <summary>
+            Источник дохода/расхода (только для ОСНО)
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.TaxPostings.OsnoTaxPostingDto.Kind">
+            <summary>
+            Вид дохода/расхода (только для ОСНО)
+            </summary>
+        </member>
+        <member name="P:Moedelo.Money.Api.Models.TaxPostings.OsnoTaxPostingDto.NormalizedCostType">
+            <summary>
+            Тип нормируемого расхода (только для ОСНО)
+            </summary>
+        </member>
+    </members>
+</doc>

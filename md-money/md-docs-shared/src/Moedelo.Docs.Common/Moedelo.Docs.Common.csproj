@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+      <ProjectReference Include="..\Moedelo.Docs.ApiClient.Abstractions\Moedelo.Docs.ApiClient.Abstractions.csproj" />
+      <ProjectReference Include="..\Moedelo.Docs.Kafka.Abstractions\Moedelo.Docs.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\Moedelo.Docs.Shared.Kafka.Abstractions\Moedelo.Docs.Shared.Kafka.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

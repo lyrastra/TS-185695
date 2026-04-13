@@ -1,0 +1,19 @@
+﻿namespace Moedelo.Money.Kafka.Abstractions.Topics
+{
+    public static partial class MoneyTopics
+    {
+        public static partial class CashOrders
+        {
+            public static class MediationFee
+            {
+                public const string EntityName = nameof(MediationFee);
+
+                public static class Event
+                {
+                    public static readonly string Topic = $"{Domain}.{Subdomain}.Event.{EntityName}";
+                }
+            }
+        }
+    }
+    
+}

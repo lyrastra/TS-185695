@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\Moedelo.Money.Common.Domain\Moedelo.Money.Common.Domain.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.PurseOperations.Domain\Moedelo.Money.PurseOperations.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

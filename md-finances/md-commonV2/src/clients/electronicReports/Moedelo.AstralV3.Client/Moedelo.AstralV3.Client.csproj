@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87EC8061-1468-4B5A-9A4F-E6957DC46CE2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.AstralV3.Client</RootNamespace>
+    <AssemblyName>Moedelo.AstralV3.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\Build</SolutionDir>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage|AnyCPU'">
+    <OutputPath>bin\Stage\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Moedelo.Astral.Client.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'QA|AnyCPU' ">
+    <OutputPath>bin\Alpha\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Moedelo.Astral.Client.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Demo|AnyCPU'">
+    <OutputPath>bin\Demo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AstralClientNullCredentialsException.cs" />
+    <Compile Include="AstralClientsFactory\AstralClientsFactory.cs" />
+    <Compile Include="AstralClientsFactory\IAstralClientsFactory.cs" />
+    <Compile Include="AstralClient\AstralClient.digitalSignature.cs" />
+    <Compile Include="AstralClient\AstralClient.filesTransfer.cs" />
+    <Compile Include="AstralClient\AstralClient.flc.cs" />
+    <Compile Include="AstralClient\AstralClient.loggingDecorator.cs" />
+    <Compile Include="AstralClient\AstralClient.private.cs" />
+    <Compile Include="AstralInteractionsLogger\CachingInteractionMethodsSettingsGetter.cs" />
+    <Compile Include="AstralInteractionsLogger\Enums\EventType.cs" />
+    <Compile Include="AstralInteractionsLogger\Enums\MethodLoggingMode.cs" />
+    <Compile Include="AstralInteractionsLogger\LogsWriter.cs" />
+    <Compile Include="AstralInteractionsLogger\Interfaces\ILogsWriter.cs" />
+    <Compile Include="AstralInteractionsLogger\Interfaces\IInteractionMethodsSettingsGetter.cs" />
+    <Compile Include="AstralInteractionsLogger\EventToLog.cs" />
+    <Compile Include="AstralInteractionsLogger\MessagesInspector\IMessagesInspector.cs" />
+    <Compile Include="AstralInteractionsLogger\MessagesInspector\MessagesInspector.cs" />
+    <Compile Include="DAO\AstralInteractionLogsDao.cs" />
+    <Compile Include="DAO\AstralInteractionMethodsDao.cs" />
+    <Compile Include="DAO\DbObjects\AstralInteractionLogRecord.cs" />
+    <Compile Include="DAO\DbObjects\AstralInteractionMethod.cs" />
+    <Compile Include="DAO\Interfaces\IAstralInteractionLogsDao.cs" />
+    <Compile Include="DAO\Interfaces\IAstralInteractionMethodsDao.cs" />
+    <Compile Include="DAO\SQL\SqlScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SqlScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Enum\AnswerType.cs" />
+    <Compile Include="Data\ResponseTransfer.cs" />
+    <Compile Include="Extensions\BasicHttpBindingEx.cs" />
+    <Compile Include="FunctionResult.cs" />
+    <Compile Include="Content\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AstralFileObjectBuilder.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Helpers\AstralMapper.cs" />
+    <Compile Include="interfaces\IAstralClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AstralAuthServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AstralExternalServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AstralFlcServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AstralRegServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AstralTransferService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BankArchiveService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Types\FileObject.cs" />
+    <Compile Include="Types\FlcResult.cs" />
+    <Compile Include="Types\UidWithListReceivers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\AutorizationService.wsdl" />
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.DropSessionKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.DropSessionKeyResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetEncryptedSessionkeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetEncryptedSessionkeyResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetPasswordBySkidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetPasswordBySkidResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetPasswordResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetSessionkeyByCertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetSessionkeyByCertResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetSessionkeyBySMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralAuthServiceReference\Moedelo.AstralV3.Client.AstralAuthServiceReference.GetSessionkeyBySMSResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralExternalServiceReference\ExternalService.wsdl" />
+    <None Include="Service References\AstralExternalServiceReference\Moedelo.AstralV3.Client.AstralExternalServiceReference.GetHtmlCertViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralExternalServiceReference\Moedelo.AstralV3.Client.AstralExternalServiceReference.ProductExportInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralFlcServiceReference\FlkService.wsdl" />
+    <None Include="Service References\AstralFlcServiceReference\Moedelo.AstralV3.Client.AstralFlcServiceReference.CheckFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralFlcServiceReference\Moedelo.AstralV3.Client.AstralFlcServiceReference.CheckFilesResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralRegServiceRef\regservice.wsdl" />
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.ConfirmFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.ConfirmFileResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.ConfirmShippingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.ConfirmShippingResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.GetFilesByUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.GetFilesByUIDResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.GetNewUIDsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.GetNewUIDsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesAISResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesAISResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesFNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesFNSResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesFSSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesFSSResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesPFRResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesPFRResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesRARResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesRARResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesRPNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesRPNResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesStatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendFilesStatResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendReviseFNSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\Moedelo.AstralV3.Client.AstralTransferService.SendReviseFNSResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AstralTransferService\WorkflowService.wsdl" />
+    <None Include="Service References\BankArchiveService\Moedelo.AstralV3.Client.BankArchiveService.GetFilesWithUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BankArchiveService\Moedelo.AstralV3.Client.BankArchiveService.GetFilesWithUIDResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BankArchiveService\ZipService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AstralAuthServiceReference\" />
+    <WCFMetadataStorage Include="Service References\AstralExternalServiceReference\" />
+    <WCFMetadataStorage Include="Service References\AstralFlcServiceReference\" />
+    <WCFMetadataStorage Include="Service References\AstralRegServiceRef\" />
+    <WCFMetadataStorage Include="Service References\AstralTransferService\" />
+    <WCFMetadataStorage Include="Service References\BankArchiveService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\SQL\SqlScripts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SqlScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52bbdd20-fe18-48d1-a6d6-03daced1421d}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.DataAccess\Moedelo.InfrastructureV2.DataAccess.csproj">
+      <Project>{25c631ad-d8ae-4d72-94fe-7c236aec9da6}</Project>
+      <Name>Moedelo.InfrastructureV2.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{D75DDFA4-BF4C-410C-A6AF-9F0D5F2582D9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Moedelo.CommonV2.Models\Moedelo.CommonV2.Models.csproj">
+      <Project>{A05214F2-9330-4707-B94B-F0C8D05C299F}</Project>
+      <Name>Moedelo.CommonV2.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\utils\Moedelo.CommonV2.Extensions.System\Moedelo.CommonV2.Extensions.System.csproj">
+      <Project>{C5CBB4F1-A2EB-421B-B98F-94626EB172BD}</Project>
+      <Name>Moedelo.CommonV2.Extensions.System</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralRegServiceRef\regservice.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralRegServiceRef\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralRegServiceRef\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralRegServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralExternalServiceReference\ExternalService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralExternalServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralExternalServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralExternalServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralAuthServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralAuthServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AstralAuthServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAO\SQL\AstralLogger.AddInteractionLog.sql" />
+    <Content Include="DAO\SQL\AstralLogger.AddInteractionMethod.sql" />
+    <Content Include="DAO\SQL\AstralLogger.GetInteractionMethodsByIds.sql" />
+    <Content Include="DAO\SQL\AstralLogger.GetInteractionMethodsByNames.sql" />
+    <Content Include="DAO\SQL\AstralLogger.RemoveInteractionLogs.sql" />
+    <None Include="Service References\BankArchiveService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BankArchiveService\configuration.svcinfo" />
+    <None Include="Service References\BankArchiveService\configuration91.svcinfo" />
+    <None Include="Service References\AstralTransferService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AstralTransferService\configuration.svcinfo" />
+    <None Include="Service References\AstralTransferService\configuration91.svcinfo" />
+    <None Include="Service References\AstralFlcServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AstralFlcServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AstralFlcServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

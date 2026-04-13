@@ -1,0 +1,16 @@
+<ul class="postingsHeader">
+    <li>
+        <div class="debit">Дебет</div>
+        <div class="credit">Кредит</div>
+        <div class="sum">Сумма</div>
+        <div class="comment">Комментарий</div>
+    </li>
+</ul>
+<ul class="postings" data-bind="List">
+    <li>
+        <div class="debit" data-bind="Debit"></div>
+        <div class="credit" data-bind="Credit"></div>
+        <div class="sum" ><span data-bind="Sum"></span></div>
+        <div class="comment" data-bind="Description"></div>
+    </li>
+</ul>

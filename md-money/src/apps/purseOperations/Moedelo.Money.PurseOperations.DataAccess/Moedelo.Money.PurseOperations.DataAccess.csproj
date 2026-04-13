@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="PurseOperations\Scripts\Select.sql" />
+    <EmbeddedResource Include="PurseOperations\Scripts\GetDocumentsStatusByBaseIds.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-sqldataaccess\src\Moedelo.Common.SqlDataAccess.Abstractions\Moedelo.Common.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\common\Moedelo.Money.Common.Domain\Moedelo.Money.Common.Domain.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.PurseOperations.DataAccess.Abstractions\Moedelo.Money.PurseOperations.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.PurseOperations.Domain\Moedelo.Money.PurseOperations.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

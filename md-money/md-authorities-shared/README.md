@@ -1,0 +1,1 @@
+# md-authorities-shared

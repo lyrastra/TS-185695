@@ -1,0 +1,50 @@
+@md-breakpoint: 1366px;
+@xs-breakpoint: 768px;
+
+.advancedSearch {
+    z-index: 8;
+    width: 300px;
+    right: 0;
+    font-size: 15px;
+    position: absolute;
+    background: hsl(0, 0%, 100%);
+    padding: 16px 30px 30px 30px;
+    border: 1px solid hsl(0, 0%, 89%);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    transform: translate(-131px, -172px);
+
+    @media (max-width: @md-breakpoint) {
+        transform: scale(0.8);
+        transform-origin: -283px -857px;
+    }
+}
+
+.buttons {
+    margin-top: 20px;
+
+    .button {
+        margin-right: 20px;
+    }
+}
+
+.delimiter {
+    border-bottom: 1px solid hsl(0, 0%, 89%);
+    margin: 30px 0;
+}
+
+.row {
+    margin: 17px 0 0 0;
+
+    .input {
+        margin-bottom: 10px;
+    }
+
+    label {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+}
+
+.input {
+    margin: 6px 0 0 0;
+}

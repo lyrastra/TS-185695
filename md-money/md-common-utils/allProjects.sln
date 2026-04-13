@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Utils", "src\Moedelo.Common.Utils\Moedelo.Common.Utils.csproj", "{5834804A-BDAA-4CFA-801D-D00D23415663}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{0F2F1889-1E6A-4931-AB3C-0DD54E090942}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{7326CC30-D5A2-4BDC-9153-9A13FAE03EC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Settings.Abstractions", "..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj", "{49803386-3F86-44F7-8EEC-496BC8A28678}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BA7D42F4-B5C7-49D0-B674-66E8FC891168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Utils.Tests", "src\tests\Moedelo.Common.Utils.Tests\Moedelo.Common.Utils.Tests.csproj", "{6AF58B7F-9C07-4006-B210-706C583E1800}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5834804A-BDAA-4CFA-801D-D00D23415663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5834804A-BDAA-4CFA-801D-D00D23415663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5834804A-BDAA-4CFA-801D-D00D23415663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5834804A-BDAA-4CFA-801D-D00D23415663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7326CC30-D5A2-4BDC-9153-9A13FAE03EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7326CC30-D5A2-4BDC-9153-9A13FAE03EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7326CC30-D5A2-4BDC-9153-9A13FAE03EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7326CC30-D5A2-4BDC-9153-9A13FAE03EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49803386-3F86-44F7-8EEC-496BC8A28678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49803386-3F86-44F7-8EEC-496BC8A28678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49803386-3F86-44F7-8EEC-496BC8A28678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49803386-3F86-44F7-8EEC-496BC8A28678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AF58B7F-9C07-4006-B210-706C583E1800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF58B7F-9C07-4006-B210-706C583E1800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF58B7F-9C07-4006-B210-706C583E1800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF58B7F-9C07-4006-B210-706C583E1800}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7326CC30-D5A2-4BDC-9153-9A13FAE03EC0} = {0F2F1889-1E6A-4931-AB3C-0DD54E090942}
+		{49803386-3F86-44F7-8EEC-496BC8A28678} = {0F2F1889-1E6A-4931-AB3C-0DD54E090942}
+		{6AF58B7F-9C07-4006-B210-706C583E1800} = {BA7D42F4-B5C7-49D0-B674-66E8FC891168}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {759E9740-7405-4293-915C-1FA5D2835853}
+	EndGlobalSection
+EndGlobal

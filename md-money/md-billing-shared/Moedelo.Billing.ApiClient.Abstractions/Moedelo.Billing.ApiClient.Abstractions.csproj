@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>Moedelo.Billing.Abstractions</RootNamespace>
+        <LangVersion>latest</LangVersion>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\md-common-accessrules\src\Moedelo.Common.AccessRules.Abstractions\Moedelo.Common.AccessRules.Abstractions.csproj" />
+        <ProjectReference Include="..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj" />
+        <ProjectReference Include="..\..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj" />
+        <ProjectReference Include="..\Moedelo.Billing.Shared.Enums\Moedelo.Billing.Shared.Enums.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+</Project>

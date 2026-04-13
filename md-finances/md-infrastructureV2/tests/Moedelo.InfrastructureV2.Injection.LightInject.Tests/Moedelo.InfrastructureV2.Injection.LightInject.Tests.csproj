@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>{706D244F-61AB-402D-B275-25DB275FF9B8}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>default</LangVersion>
+    <RootNamespace>Moedelo.InfrastructureV2.Injection.LightInject.Tests</RootNamespace>
+    <AssemblyName>Moedelo.InfrastructureV2.Injection.LightInject.Tests</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <AssemblyTitle>Moedelo.InfrastructureV2.Injection.LightInject.Tests</AssemblyTitle>
+    <Product>Moedelo.InfrastructureV2.Injection.LightInject.Tests</Product>
+    <Copyright>Copyright © Моё Дело 2023-2026</Copyright>
+    <Version>1.0.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="5.1.1" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.CodeCoverage" Version="17.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="NUnit" Version="4.1.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Moedelo.InfrastructureV2.Injection.LightInject\Moedelo.InfrastructureV2.Injection.LightInject.csproj" />
+  </ItemGroup>
+
+</Project>

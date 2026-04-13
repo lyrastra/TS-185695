@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\Moedelo.Money.Numeration.Api.xml</DocumentationFile>
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>1591;1701;1702</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accounting-shared\src\Moedelo.Accounting.ApiClient.Abstractions\Moedelo.Accounting.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-accounting-shared\src\Moedelo.Accounting.ApiClient\Moedelo.Accounting.ApiClient.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-accessrules\src\Moedelo.Common.AccessRules.Authorization\Moedelo.Common.AccessRules.Authorization.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-accessrules\src\Moedelo.Common.AccessRules\Moedelo.Common.AccessRules.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.ErrorTolerance.PostgreSql\Moedelo.Common.Kafka.ErrorTolerance.PostgreSql.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.ErrorTolerance\Moedelo.Common.Kafka.ErrorTolerance.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.Monitoring\Moedelo.Common.Kafka.Monitoring.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka\Moedelo.Common.Kafka.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-aspnet\src\Moedelo.Common.AspNet.Mvc\Moedelo.Common.AspNet.Mvc.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-audit\src\Moedelo.Common.Audit.EmptyMock\Moedelo.Common.Audit.EmptyMock.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-audit\src\Moedelo.Common.Audit.Middleware\Moedelo.Common.Audit.Middleware.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-audit\src\Moedelo.Common.Audit\Moedelo.Common.Audit.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-consul\src\Moedelo.Common.Consul.AspNetCore\Moedelo.Common.Consul.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-consul\src\Moedelo.Common.Consul.ServiceDiscovery\Moedelo.Common.Consul.ServiceDiscovery.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-consul\src\Moedelo.Common.Consul\Moedelo.Common.Consul.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Auth\Moedelo.Common.ExecutionContext.Auth.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Middleware\Moedelo.Common.ExecutionContext.Middleware.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext\Moedelo.Common.ExecutionContext.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-jwt\src\Moedelo.Common.Jwt\Moedelo.Common.Jwt.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-logging\src\Moedelo.Common.Logging.ExtraLog.Audit\Moedelo.Common.Logging.ExtraLog.Audit.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-logging\src\Moedelo.Common.Logging.ExtraLog.ExecutionContext\Moedelo.Common.Logging.ExtraLog.ExecutionContext.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-logging\src\Moedelo.Common.Logging.ExtraLog.ExtraData\Moedelo.Common.Logging.ExtraLog.ExtraData.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-logging\src\Moedelo.Common.Logging.ExtraLog.HttpContext\Moedelo.Common.Logging.ExtraLog.HttpContext.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-logging\src\Moedelo.Common.Logging\Moedelo.Common.Logging.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-settings\src\Moedelo.Common.Settings\Moedelo.Common.Settings.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj" />
+    <ProjectReference Include="..\..\..\..\md-commonApi-shared\src\Moedelo.CommonApi.ApiClient\Moedelo.CommonApi.ApiClient.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka.ErrorTolerance\Moedelo.Infrastructure.Kafka.ErrorTolerance.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka\Moedelo.Infrastructure.Kafka.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-aspnet\src\Moedelo.Infrastructure.AspNetCore.Mvc\Moedelo.Infrastructure.AspNetCore.Mvc.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-aspnet\src\Moedelo.Infrastructure.AspNetCore.Swagger\Moedelo.Infrastructure.AspNetCore.Swagger.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-aspnet\src\Moedelo.Infrastructure.AspNetCore\Moedelo.Infrastructure.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-aspose\src\Moedelo.Infrastructure.Aspose.Cells\Moedelo.Infrastructure.Aspose.Cells.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-consul\src\Moedelo.Infrastructure.Consul.Net5\Moedelo.Infrastructure.Consul.Net5.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-consul\src\Moedelo.Infrastructure.Consul\Moedelo.Infrastructure.Consul.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Warmup\Moedelo.Infrastructure.DependencyInjection.Warmup.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection\Moedelo.Infrastructure.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-extensions\src\Moedelo.Infrastructure.System.Net6.Extensions\Moedelo.Infrastructure.System.Net6.Extensions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http\Moedelo.Infrastructure.Http.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-postgresqldataaccess\src\Moedelo.Infrastructure.PostgreSqlDataAccess\Moedelo.Infrastructure.PostgreSqlDataAccess.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-redisdataaccess\src\Moedelo.Infrastructure.Redis\Moedelo.Infrastructure.Redis.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.ApiClient\Moedelo.Money.ApiClient.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.Kafka.Abstractions\Moedelo.Money.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.Kafka\Moedelo.Money.Kafka.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Numeration.Business.Abstractions\Moedelo.Money.Numeration.Business.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Numeration.Business\Moedelo.Money.Numeration.Business.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Numeration.DataAccess\Moedelo.Money.Numeration.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

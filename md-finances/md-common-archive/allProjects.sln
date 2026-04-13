@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Archive", "src\Moedelo.Common.Archive\Moedelo.Common.Archive.csproj", "{A0955873-2C51-4655-A1B1-6A2FA3D123FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Archive.Tests", "src\Moedelo.Common.Archive.Tests\Moedelo.Common.Archive.Tests.csproj", "{20D5D561-86C4-4739-B697-EA2BA2D72207}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0955873-2C51-4655-A1B1-6A2FA3D123FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0955873-2C51-4655-A1B1-6A2FA3D123FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0955873-2C51-4655-A1B1-6A2FA3D123FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0955873-2C51-4655-A1B1-6A2FA3D123FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D5D561-86C4-4739-B697-EA2BA2D72207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D5D561-86C4-4739-B697-EA2BA2D72207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D5D561-86C4-4739-B697-EA2BA2D72207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D5D561-86C4-4739-B697-EA2BA2D72207}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

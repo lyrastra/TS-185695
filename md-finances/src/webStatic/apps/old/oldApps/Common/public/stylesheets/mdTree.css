@@ -1,0 +1,153 @@
+#nomenclatureTree .mdTree {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  color: #404040;
+  font-size: 13px;
+  position: relative;
+}
+#nomenclatureTree .mdTree ul {
+  float: left;
+}
+#nomenclatureTree .mdTree li {
+  width: 100%;
+  float: left;
+  line-height: 27px;
+  margin-bottom: 0 !important;
+}
+#nomenclatureTree .mdTree .mdTreeItem {
+  padding: 3px 5px 3px 5px;
+  cursor: pointer;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  min-height: 17px;
+  line-height: 1.5;
+  position: relative;
+}
+#nomenclatureTree .mdTree .mdTreeItem:hover:not(.mdDisableItem):not(.mdSelectedItem) {
+  background-color: #f1f1f1;
+}
+#nomenclatureTree .mdTree .mdTreeItem:hover:not(.mdDisableItem):not(.mdSelectedItem) span {
+  border-bottom: 1px solid transparent;
+}
+#nomenclatureTree .mdTree .mdTreeItem.mdSelectedItem {
+  background-color: #f1d6a9;
+}
+#nomenclatureTree .mdTree .mdTreeItem.mdSelectedItem span {
+  border-bottom: 1px solid transparent;
+  color: #404040;
+  font-size: 13px;
+}
+#nomenclatureTree .mdTree .mdTreeItem .mdTreeText {
+  width: 75%;
+  float: left;
+}
+#nomenclatureTree .mdTree ul.secondLevel {
+  width: 100%;
+}
+#nomenclatureTree .mdTree ul.secondLevel li .mdTreeText {
+  padding-left: 25px;
+}
+#nomenclatureTree .mdTree ul.thirdLevel {
+  width: 100%;
+}
+#nomenclatureTree .mdTree ul.thirdLevel li .mdTreeText {
+  padding-left: 45px;
+}
+#nomenclatureTree .mdTree ul.fourthLevel {
+  width: 100%;
+}
+#nomenclatureTree .mdTree ul.fourthLevel li .mdTreeText {
+  padding-left: 65px;
+}
+#nomenclatureTree .mdTree .contextMenuElement {
+  float: right;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#nomenclatureTree .mdTree .contextMenuElement .contextMenuButton {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  color: #bdbdbd;
+  font-size: 20px;
+  text-align: center;
+  line-height: 15px;
+}
+#nomenclatureTree .mdTree.firstLevel .contextAdd {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #bdbdbd;
+}
+#nomenclatureTree .mdTree.firstLevel .contextAdd:hover {
+  border-color: #888888;
+}
+#nomenclatureTree .mdTree.firstLevel .contextAdd:hover .contextMenuButton {
+  color: #404040;
+  font-weight: bold;
+}
+#nomenclatureTree .mdTree.firstLevel .contextAdd:active {
+  outline: none;
+  border-color: #BDBDBD;
+}
+#nomenclatureTree .mdTree .secondLevel .mdTreeItem:hover .contextMenuElement,
+#nomenclatureTree .mdTree .thirdLevel .mdTreeItem:hover .contextMenuElement,
+#nomenclatureTree .mdTree .fourthLevel .mdTreeItem:hover .contextMenuElement {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 18px;
+  height: 18px;
+  border: 1px solid transparent;
+  position: relative;
+  float: right;
+}
+#nomenclatureTree .mdTree .secondLevel .mdTreeItem:hover .contextMenuElement:hover,
+#nomenclatureTree .mdTree .thirdLevel .mdTreeItem:hover .contextMenuElement:hover,
+#nomenclatureTree .mdTree .fourthLevel .mdTreeItem:hover .contextMenuElement:hover {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #888888;
+  background-color: #fff;
+}
+#nomenclatureTree .mdTree .secondLevel .mdTreeItem:hover .contextMenuElement:hover .contextMenuButton,
+#nomenclatureTree .mdTree .thirdLevel .mdTreeItem:hover .contextMenuElement:hover .contextMenuButton,
+#nomenclatureTree .mdTree .fourthLevel .mdTreeItem:hover .contextMenuElement:hover .contextMenuButton {
+  border-color: #000 transparent transparent transparent;
+}
+#nomenclatureTree .mdTree .secondLevel .mdTreeItem:hover .contextMenuElement:active,
+#nomenclatureTree .mdTree .thirdLevel .mdTreeItem:hover .contextMenuElement:active,
+#nomenclatureTree .mdTree .fourthLevel .mdTreeItem:hover .contextMenuElement:active {
+  outline: none;
+  border-color: #BDBDBD;
+}
+#nomenclatureTree .mdTree .secondLevel .mdTreeItem:hover .contextMenuElement .contextMenuButton,
+#nomenclatureTree .mdTree .thirdLevel .mdTreeItem:hover .contextMenuElement .contextMenuButton,
+#nomenclatureTree .mdTree .fourthLevel .mdTreeItem:hover .contextMenuElement .contextMenuButton {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 7px 4px 0 4px;
+  border-color: #9a9a9a transparent transparent transparent;
+}

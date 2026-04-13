@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.Enums\Moedelo.AccPostings.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-linkedDocuments-shared\src\Moedelo.LinkedDocuments.Enums\Moedelo.LinkedDocuments.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.Enums\Moedelo.Money.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.Enums\Moedelo.Requisites.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-taxPostings-shared\src\Moedelo.TaxPostings.Enums\Moedelo.TaxPostings.Enums.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{816EFE7D-CF4D-4ABC-B0C3-AF1312C44199}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyTitle>Moedelo.CommonV2.Auth.WebApi.Public</AssemblyTitle>
+    <Product>Moedelo.CommonV2.Auth.WebApi.Public</Product>
+    <Copyright>Copyright © Моё Дело 2025</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <LangVersion>default</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\xss\Moedelo.CommonV2.Xss.WebApi\Moedelo.CommonV2.Xss.WebApi.csproj" />
+    <ProjectReference Include="..\Moedelo.CommonV2.Auth.OAuth2\Moedelo.CommonV2.Auth.OAuth2.csproj" />
+    <ProjectReference Include="..\Moedelo.CommonV2.Auth.WebApi\Moedelo.CommonV2.Auth.WebApi.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" />
+  </ItemGroup>
+</Project>

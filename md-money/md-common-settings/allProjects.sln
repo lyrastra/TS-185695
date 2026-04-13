@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Settings", "src\Moedelo.Common.Settings\Moedelo.Common.Settings.csproj", "{88B61538-65E9-4610-9A76-243C561EF5B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Common.Settings.Abstractions", "src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj", "{B9C68053-20BB-4100-B002-6BF0397D9560}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{01274C98-4997-4396-A1B1-D6F756B06320}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moedelo.Infrastructure.Consul.Abstraction", "..\md-infrastructure-core-consul\src\Moedelo.Infrastructure.Consul.Abstraction\Moedelo.Infrastructure.Consul.Abstraction.csproj", "{75FA3EDE-7B81-498F-BA17-951F4A95B5ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.ExecutionContext.Abstractions", "..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj", "{9BB675EE-4359-45FE-9F8F-381089E62CEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Json", "..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj", "{6775880F-5850-4B3D-8C8A-5D653F39FA72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Types", "..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj", "{5635C949-843D-4160-BD8F-2DD0E4BA515B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.AccessRules.Abstractions", "..\md-common-accessrules\src\Moedelo.Common.AccessRules.Abstractions\Moedelo.Common.AccessRules.Abstractions.csproj", "{7DB0C965-9013-42B7-88F8-45AE29835A91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{90CC7ED9-655A-40AC-840E-1DADC1E3C504}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{30E2DC05-DB7F-44B9-9737-601E2C1DEFDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88B61538-65E9-4610-9A76-243C561EF5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B61538-65E9-4610-9A76-243C561EF5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B61538-65E9-4610-9A76-243C561EF5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B61538-65E9-4610-9A76-243C561EF5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C68053-20BB-4100-B002-6BF0397D9560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C68053-20BB-4100-B002-6BF0397D9560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C68053-20BB-4100-B002-6BF0397D9560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C68053-20BB-4100-B002-6BF0397D9560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01274C98-4997-4396-A1B1-D6F756B06320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01274C98-4997-4396-A1B1-D6F756B06320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01274C98-4997-4396-A1B1-D6F756B06320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01274C98-4997-4396-A1B1-D6F756B06320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FA3EDE-7B81-498F-BA17-951F4A95B5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FA3EDE-7B81-498F-BA17-951F4A95B5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FA3EDE-7B81-498F-BA17-951F4A95B5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FA3EDE-7B81-498F-BA17-951F4A95B5ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB675EE-4359-45FE-9F8F-381089E62CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB675EE-4359-45FE-9F8F-381089E62CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB675EE-4359-45FE-9F8F-381089E62CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB675EE-4359-45FE-9F8F-381089E62CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6775880F-5850-4B3D-8C8A-5D653F39FA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6775880F-5850-4B3D-8C8A-5D653F39FA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6775880F-5850-4B3D-8C8A-5D653F39FA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6775880F-5850-4B3D-8C8A-5D653F39FA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5635C949-843D-4160-BD8F-2DD0E4BA515B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5635C949-843D-4160-BD8F-2DD0E4BA515B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5635C949-843D-4160-BD8F-2DD0E4BA515B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5635C949-843D-4160-BD8F-2DD0E4BA515B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB0C965-9013-42B7-88F8-45AE29835A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB0C965-9013-42B7-88F8-45AE29835A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB0C965-9013-42B7-88F8-45AE29835A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB0C965-9013-42B7-88F8-45AE29835A91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DE0321F-333F-4AF7-9581-B91A4ED2195A}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5635C949-843D-4160-BD8F-2DD0E4BA515B} = {90CC7ED9-655A-40AC-840E-1DADC1E3C504}
+		{9BB675EE-4359-45FE-9F8F-381089E62CEE} = {90CC7ED9-655A-40AC-840E-1DADC1E3C504}
+		{7DB0C965-9013-42B7-88F8-45AE29835A91} = {90CC7ED9-655A-40AC-840E-1DADC1E3C504}
+		{75FA3EDE-7B81-498F-BA17-951F4A95B5ED} = {30E2DC05-DB7F-44B9-9737-601E2C1DEFDC}
+		{01274C98-4997-4396-A1B1-D6F756B06320} = {30E2DC05-DB7F-44B9-9737-601E2C1DEFDC}
+		{6775880F-5850-4B3D-8C8A-5D653F39FA72} = {30E2DC05-DB7F-44B9-9737-601E2C1DEFDC}
+	EndGlobalSection
+EndGlobal

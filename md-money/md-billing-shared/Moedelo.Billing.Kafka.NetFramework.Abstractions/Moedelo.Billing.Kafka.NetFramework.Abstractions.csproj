@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <LangVersion>default</LangVersion>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+      <ProjectReference Include="..\Moedelo.Billing.Kafka.Common\Moedelo.Billing.Kafka.Common.csproj" />
+      <ProjectReference Include="..\Moedelo.Billing.Shared.Enums\Moedelo.Billing.Shared.Enums.csproj" />
+    </ItemGroup>
+
+</Project>

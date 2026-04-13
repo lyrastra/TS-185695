@@ -1,0 +1,13 @@
+<div class="{{style.workerCharges}}">
+    {{#if showLabels}}
+        <div class="{{style.workerCharges__header}} md-row">
+            <div class="{{style.workerCharge__selectSection}}">Начисление</div>
+            <div class="md-col--4">К выплате</div>
+        </div>
+    {{/if}}
+    <div class="js-listRegion"></div>
+    {{#unless readonly}}
+        <a class="{{style.addLink}} js-add">начисление</a>
+    {{/unless}}
+    <div class="{{style.workerCharges__totalSum}} js-sumRegion"></div>
+</div>

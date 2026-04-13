@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{473295BC-E0D4-4A95-992B-BEBC28F61A3C}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>default</LangVersion>
+    <AssemblyTitle>Moedelo.InfrastructureV2.ApacheKafka</AssemblyTitle>
+    <Product>Moedelo.InfrastructureV2.ApacheKafka</Product>
+    <Copyright>Copyright © Моё Дело 2019-2026</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <Target Name="CopyKafkaLibToCache" Condition="Exists('$(OutDir)librdkafka\x64\librdkafka.dll')" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <_FilesToCopy64 Include="$(OutDir)librdkafka\x64\*" />
+    </ItemGroup>
+    <Message Text="_FilesToCopy64: @(_FilesToCopy64)" Importance="high" />
+    <Copy SourceFiles="@(_FilesToCopy64)" DestinationFiles="@(_FilesToCopy64-&gt;'$(OutDir)cache\librdkafka\x64\%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="1.9.2" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="librdkafka.redist" Version="1.9.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\Moedelo.InfrastructureV2.Json\Moedelo.InfrastructureV2.Json.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(OutDir)cache\librdkafka\x64\*" Condition="Exists('$(OutDir)cache\librdkafka\x64\librdkafka.dll')">
+      <Link>librdkafka\x64\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

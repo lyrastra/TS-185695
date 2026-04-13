@@ -1,0 +1,36 @@
+﻿<PaymentOrder xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Payer>
+    <Name>Гномик</Name>
+    <Inn>5837004553</Inn>
+    <Kpp>111111111</Kpp>
+    <SettlementNumber>12345678912345678912</SettlementNumber>
+    <BankName>ПУ БАНКА РОССИИ N 10462</BankName>
+    <BankBik>040009002</BankBik>
+    <BankCorrespondentAccount />
+    <BankCity />
+    <IsOoo>true</IsOoo>
+    <KontragentType xsi:nil="true" />
+    <Address />
+    <Okato>45263555000</Okato>
+    <Oktmo>45280574</Oktmo>
+  </Payer>
+  <Recipient>
+    <Name>asd</Name>
+    <IsOoo>true</IsOoo>
+    <KontragentType xsi:nil="true" />
+    <Address />
+  </Recipient>
+  <PaymentNumber>1</PaymentNumber>
+  <OrderDate>2019-09-11T00:00:00</OrderDate>
+  <Sum>11</Sum>
+  <Direction>Outgoing</Direction>
+  <Purpose>Оплата контрагенту на сумму 11,00 руб. НДС не облагается.</Purpose>
+  <PaymentPriority>Fifth</PaymentPriority>
+  <BudgetaryPayerStatus>None</BudgetaryPayerStatus>
+  <BudgetaryPaymentBase>None</BudgetaryPaymentBase>
+  <BudgetaryDocDate xsi:nil="true" />
+  <BudgetaryPaymentType>None</BudgetaryPaymentType>
+  <NumberTop>0401060</NumberTop>
+  <BankDocType>PaymentOrder</BankDocType>
+  <OrderType>PaymentOrder</OrderType>
+</PaymentOrder>

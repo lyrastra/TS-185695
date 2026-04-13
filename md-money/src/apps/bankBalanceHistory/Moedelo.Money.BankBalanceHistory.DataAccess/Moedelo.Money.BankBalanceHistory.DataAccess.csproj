@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="Balances\Scripts\IsContainsDataForPeriod.sql" />
+    <EmbeddedResource Include="Balances\Scripts\DeleteByFirmIds.sql" />
+    <EmbeddedResource Include="Balances\Scripts\SelectOnDateByFirmId.sql" />
+    <EmbeddedResource Include="Balances\Scripts\SelectOnDateByFirmIds.sql" />
+    <EmbeddedResource Include="Balances\Scripts\Select.sql" />
+    <EmbeddedResource Include="Balances\Scripts\Save.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-postgresqldataaccess\src\Moedelo.Common.PostgreSQLDataAccess.Abstractions\Moedelo.Common.PostgreSQLDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-redisdataaccess\src\Moedelo.Common.Redis.Abstractions\Moedelo.Common.Redis.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-postgresqldataaccess\src\Moedelo.Infrastructure.PostgreSqlDataAccess.Abstractions\Moedelo.Infrastructure.PostgreSqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-redisdataaccess\src\Moedelo.Infrastructure.Redis.Abstractions\Moedelo.Infrastructure.Redis.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.BankBalanceHistory.DataAccess.Abstractions\Moedelo.Money.BankBalanceHistory.DataAccess.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

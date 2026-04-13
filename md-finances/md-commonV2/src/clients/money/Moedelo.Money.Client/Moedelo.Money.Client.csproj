@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ACD91A2-4715-4F69-881B-7D0E07079CCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Money.Client</RootNamespace>
+    <AssemblyName>Moedelo.Money.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BankBalanceHistory\MoneyBankBalanceApiClient.cs" />
+    <Compile Include="CashOrders\CashOrdersApiClient.cs" />
+    <Compile Include="CashOrders\ICashOrdersApiClient.cs" />
+    <Compile Include="CashOrders\Outgoing\UnifiedBudgetaryPayment\IUnifiedBudgetaryPaymentClient.cs" />
+    <Compile Include="CashOrders\Outgoing\UnifiedBudgetaryPayment\UnifiedBudgetaryPaymentClient.cs" />
+    <Compile Include="CurrencyPaymentOrders\CurrencyPaymentOrdersApiClient.cs" />
+    <Compile Include="CurrencyPaymentOrders\ICurrencyPaymentOrdersApiClient.cs" />
+    <Compile Include="BankBalanceHistory\IMoneyBankBalanceApiClient.cs" />
+    <Compile Include="IMoneyApiClient.cs" />
+    <Compile Include="IMoneyOperationsClient.cs" />
+    <Compile Include="IMoneyOperationsAccessClient.cs" />
+    <Compile Include="MoneyOperationsClient.cs" />
+    <Compile Include="Numeration\PaymentOrder\IPaymentOrderNumerationApiClient.cs" />
+    <Compile Include="Numeration\PaymentOrder\PaymentOrderNumerationApiClient.cs" />
+    <Compile Include="PaymentOrders\IOutsourceApproveApiClient.cs" />
+    <Compile Include="PaymentOrders\IPaymentOrdersApiClient.cs" />
+    <Compile Include="PaymentOrders\Incoming\RefundFromAccountablePerson\IRefundFromAccountablePersonClient.cs" />
+    <Compile Include="PaymentOrders\Incoming\RefundFromAccountablePerson\RefundFromAccountablePersonClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\IBudgetaryPaymentClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\BudgetaryPaymentClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\UnifiedBudgetaryPayment\IUnifiedBudgetaryPaymentClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\UnifiedBudgetaryPayment\UnifiedBudgetaryPaymentClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\UnifiedBudgetaryPayment\SubPayment\IUnifiedBudgetarySubPaymentClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\UnifiedBudgetaryPayment\SubPayment\UnifiedBudgetarySubPaymentClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\IPaymentToNaturalPersonsClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\PaymentToNaturalPersonsClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\IPaymentToSupplierClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\PaymentToSupplierClient.cs" />
+    <Compile Include="PaymentOrders\OutsourceApproveApiClient.cs" />
+    <Compile Include="PaymentOrders\PaymentOrdersApiClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\IPaymentToAccountablePersonClient.cs" />
+    <Compile Include="MoneyApiClient.cs" />
+    <Compile Include="MoneyOperationsAccessClient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\PaymentToAccountablePersonClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\IMoneyReportsApiClient.cs" />
+    <Compile Include="Reports\MoneyReportsApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52bbdd20-fe18-48d1-a6d6-03daced1421d}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.Money.Dto\Moedelo.Money.Dto.csproj">
+      <Project>{3c1d288f-4c6d-4aa6-9f36-ad937df3f384}</Project>
+      <Name>Moedelo.Money.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

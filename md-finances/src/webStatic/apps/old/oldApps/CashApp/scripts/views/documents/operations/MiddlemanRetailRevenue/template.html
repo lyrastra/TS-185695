@@ -1,0 +1,80 @@
+<div class="mdRow fieldRow">
+    <div class="mdCol-16">
+        <div class="mdCol-8">
+            <label>Плательщик</label>
+            <input type="text" data-bind="WorkerName"/>
+        </div>
+    </div>
+</div>
+
+<div class="mdRow fieldRow">
+    <div class="mdCol-16">
+        <div class="mdCol-8">
+            <label>Для принципала по посредническому договору</label>
+            <input type="text" class="js-middlemanContract" placeholder=" № договора" data-bind="MiddlemanContract" />
+            <div class="js-middleman middlemanContractDescription"></div>
+        </div>
+    </div>
+</div>
+
+<div class="mdRow fieldRow">
+    <div class="mdCol-20">
+        <div class="mdCol-3">
+            <label>Сумма</label><br/>
+            <input type="text" data-bind="Sum" class="small sum" data-type="float"/> р.
+            <span data-valmsg-for="Sum"></span>
+        </div>
+
+        <div class="mdCol-6">
+            <label>В т.ч. по банковским картам</label><br/>
+            <input type="text" data-bind="PaidCardSum" class="small sum" data-type="float"/> р.
+            <span data-valmsg-for="PaidCardSum"></span>
+        </div>
+    </div>
+</div>
+
+<div class="mdRow fieldRow js-myReward">
+        <div class="mdCol-4">
+            <label>
+                Мое вознаграждение
+                <i class="md-tooltipIcon js-myRewardIcon"></i>
+            </label><br/>
+            <input type="text" data-bind="MyReward" class="small sum" data-type="float"/> р.
+            <span data-valmsg-for="MyReward"></span>
+        </div>
+        <div class="mdCol-12 hidden js-mediationNds">
+            <div class="mdCol-2 js-ndsSection">
+                <label for="MediationNdsCheckbox">В т.ч. НДС</label><br/>    
+                <div class="mdCheckbox">
+                    <input type="checkbox" data-bind="IncludeMediationNds" id="NdsMediationCheckbox" name="NdsMediationCheckbox"/>
+                    <label for="NdsMediationCheckbox"></label>
+                </div>
+            </div>
+            <div class="mdCol-8 js-ndsFieldsSection" id="mediationNdsSumContainer">
+                <div class="mdCol-3">
+                    <label>Ставка</label>
+                    <div id="mediationNdsTypeSelect"></div>
+                </div>
+                <div id="ndsTooltipAccPolicy" class="mdCol-1">
+                    <div id="ndsWarningIconMountPoint"></div>
+                </div>
+                <div class="mdCol-3">
+                    <label>Сумма</label>
+                    <input type="text" data-bind="MediationNdsSum" class="small sum" data-type="float"/>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="mdRow fieldRow">
+    <div class="mdCol-16">
+        <div class="mdCol-8">
+            <label>Основание</label>
+            <input type="text" data-bind="Destination"/>
+        </div>
+        <div class="mdCol-8">
+            <label>Приложение</label>
+            <input type="text" data-bind="Comments"/>
+        </div>
+    </div>
+</div>

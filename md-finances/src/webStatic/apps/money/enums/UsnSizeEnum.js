@@ -1,0 +1,4 @@
+export default {
+    6: 6,
+    15: 15
+};

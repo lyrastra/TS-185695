@@ -1,0 +1,149 @@
+/* stylelint-disable */
+
+@red: #de3318;
+@green: #009900;
+@grey: hsla(0, 0%, 68%, 1);
+@blackMd: hsla(0, 0%, 20%, 1);
+@yellow: hsl(40, 94%, 61%);
+@borderColor: #e4e4e4;
+@backgroundColor: #ffffff;
+
+.spoiler--opened {
+    border-bottom: 1px solid @borderColor;
+}
+
+.spoiler {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    line-height:     13px;
+    padding: 0 40px;
+
+    .spoiler__title {
+        flex: 1;
+
+        &--red {
+            color: @red;
+        }
+
+        &--grey {
+            color: @grey
+        }
+
+        &--green {
+            color: @green;
+        }
+
+        &--yellow {
+            color: @yellow;
+        }
+    }
+
+    .spoiler__button {
+        padding: 0;
+        white-space: nowrap;
+
+        &--red,
+        &--red:hover,
+        &--red:active,
+        &--red:focus {
+            color: @red;
+        }
+
+        &--grey,
+        &--grey:hover,
+        &--grey:active,
+        &--grey:focus {
+            color: @blackMd;
+        }
+
+        &--green,
+        &--green:hover,
+        &--green:active,
+        &--green:focus {
+            color: @green;
+        }
+
+        &--yellow,
+        &--yellow:hover,
+        &--yellow:active,
+        &--yellow:focus {
+            color: @yellow;
+        }
+
+        &:hover, &:active, &:focus {
+            background: none;
+            box-shadow: none;
+        }
+    }
+
+    .spoiler__operationCount {
+        margin-left:   6px;
+        font-size:     10px;
+        padding:       1px 5px;
+        line-height:   13px;
+        border-radius: 50px;
+
+        &--red {
+            color:  @red;
+            border: 1px solid @red;
+        }
+
+        &--grey {
+            color:  @backgroundColor;
+            background-color: @grey;
+            border: 1px solid @grey;
+        }
+
+        &--green {
+            color:  @green;
+            border: 1px solid @green;
+        }
+
+        &--yellow {
+            color:  @yellow;
+            border: 1px solid @yellow;
+        }
+    }
+
+    .spoiler__operationCountArrow {
+        margin-left: 8px;
+
+        &--red {
+            fill: @red;
+        }
+
+        &--grey {
+            fill:  @grey;
+        }
+
+        &--green {
+            fill: @green;
+        }
+
+        &--yellow{
+            fill: @yellow;
+        }
+    }
+
+    .spoiler__status {
+        text-align: center;
+        flex:       1;
+        color:      #999999;
+        font-size:  13px;
+        align-self: center;
+    }
+
+    .spoiler__buttonContainer {
+        width: 335px;
+        text-align: right;
+    }
+}
+
+.toMainTable {
+    margin-right: 20px;
+}
+
+.thinArrow {
+    transform: rotate(-90deg);
+}

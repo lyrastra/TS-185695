@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <LangVersion>10</LangVersion>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\md-common-aspnet\src\Moedelo.Common.AspNet.HostedServices\Moedelo.Common.AspNet.HostedServices.csproj" />
+      <ProjectReference Include="..\..\..\..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\..\md-common-audit\src\Moedelo.Common.Audit\Moedelo.Common.Audit.csproj" />
+      <ProjectReference Include="..\..\..\..\md-common-redisdataaccess\src\Moedelo.Common.Redis.Abstractions\Moedelo.Common.Redis.Abstractions.csproj" />
+      <ProjectReference Include="..\..\Moedelo.BankIntegrations.IntegrationPartnersInfo\Moedelo.BankIntegrations.IntegrationPartnersInfo.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-common-redisdataaccess\src\Moedelo.Common.Redis.Abstractions\Moedelo.Common.Redis.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.BankIntegrations.Enums\Moedelo.BankIntegrations.Enums.csproj" />
+    <ProjectReference Include="..\Moedelo.BankIntegrations.IntegrationPartnersInfo\Moedelo.BankIntegrations.IntegrationPartnersInfo.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,403 @@
+.icon16 {
+    font-size: 0;
+    vertical-align: bottom;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background: transparent url("/App/oldApps/Common/public/stylesheets/img/icons16.png") no-repeat;
+}
+
+.gray_message {
+    background-position: 0 0;
+}
+
+.gray_warning {
+    background-position: 0 -16px;
+}
+
+.blue_ballon {
+    background-position: 0 -32px;
+}
+
+.lifebuoy {
+    background-position: 0 -48px;
+}
+
+.consultation_ballon {
+    background-position: 0 -64px;
+}
+
+.red_rub {
+    background-position: 0 -96px;
+}
+
+.black_rub {
+    background-position: 0 -112px;
+}
+
+.green_rub {
+    background-position: 0 -128px;
+}
+
+.ellow_warning_icon {
+    background-position: 0 -176px;
+}
+
+.excel_icon {
+    background-position: 0 -192px;
+}
+
+.pdf_icon {
+    background-position: 0 -208px;
+}
+
+.xml_icon {
+    background-position: 0 -224px;
+}
+
+.word_icon {
+    background-position: 0 -240px;
+}
+
+.add_icon {
+    background-position: 0 -256px;
+}
+
+.clip_icon {
+    background-position: 0 -272px;
+}
+
+.back_icon {
+    background-position: 0 -288px;
+}
+
+.next_icon {
+    background-position: 0 -304px;
+}
+
+.close_icon {
+    background-position: 0 -320px;
+    cursor: pointer;
+}
+
+.ok_icon {
+    background-position: 0 -336px;
+}
+
+.find_icon {
+    background-position: 0 -352px;
+}
+
+.copy_icon {
+    background-position: 0 -368px;
+}
+
+.copy_deselect_icon {
+    background-position: 0 -848px;
+}
+
+.new_document_icon {
+    background-position: 0 -384px;
+}
+
+.arhive_icon {
+    background-position: 0 -400px;
+}
+
+.unarhive_icon {
+    background-position: 0 -416px;
+}
+
+.message_icon {
+    background-position: 0 -432px;
+}
+
+.user_card_icon {
+    background-position: 0 -480px;
+}
+
+.money_icon {
+    background-position: 0 -496px;
+}
+
+.comments_dotted_icon {
+    background-position: -1px -513px;
+}
+
+.comments_icon {
+    background-position: -1px -529px;
+}
+
+.sbbank_deselected_icon {
+    background-position: 0 -544px;
+}
+
+.sbbank_icon {
+    background-position: 0 -560px;
+}
+
+.alphabank_icon {
+    background-position: 0 -963px;
+}
+
+.alphabank_deselected_icon {
+    background-position: 0 -982px;
+}
+
+.psbank_icon {
+    background-position: 0 -1041px;
+}
+
+.psbank_deselected_icon {
+    background-position: 0 -1061px;
+}
+
+.sdmbank_icon {
+    background-position: 0 -1123px;
+}
+
+.sdmbank_deselected_icon {
+    background-position: 0 -1139px;
+}
+
+.robokassa_icon {
+    background-position: 0 -1001px;
+}
+
+.robokassa_deselected_icon {
+    background-position: 0 -1020px;
+}
+
+.new_document_deselect_icon {
+    background-position: 0 -576px;
+}
+
+.arhive_deselect_icon {
+    background-position: 0 -592px;
+}
+
+.unarhive_deselect_icon {
+    background-position: 0 -608px;
+}
+
+.close_deselect_icon {
+    background-position: 0 -624px;
+}
+
+.excel_deselect_icon {
+    background-position: 0 -640px;
+}
+
+.pdf_deselect_icon {
+    background-position: 0 -656px;
+}
+
+.xml_deselect_icon {
+    background-position: 0 -672px;
+}
+
+.word_deselect_icon {
+    background-position: 0 -688px;
+}
+
+.money_deselect_icon {
+    background-position: 0 -704px;
+}
+
+.find_deselect_icon {
+    background-position: 0 -720px;
+}
+
+.calendar_icon {
+    background-position: 0 -736px;
+}
+
+.error_icon {
+    background-position: 0 -752px;
+}
+
+.ok_circle_icon {
+    background-position: 0 -768px;
+}
+
+.information_icon {
+    background-position: 0 -784px;
+}
+
+.odinc_icon {
+    background-position: 0 -816px;
+}
+
+.odinc_deselect_icon {
+    background-position: 0 -832px;
+}
+
+.select_all_icon {
+    background-position: 0 -864px;
+}
+
+.recipient_title {
+    margin: 0 0 0 215px;
+    width: 360px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    font-family: 'Segoe UI','Arial',sans-serif;
+}
+
+.extract_1c_icon {
+    background-position: 0 -944px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.icon10 {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: transparent url("/App/oldApps/Common/public/stylesheets/img/icons16.png") no-repeat;
+}
+
+.edit_icon_10 {
+    background-position: 0 -80px;
+}
+
+.bottom_arrow_icon10 {
+    background-position: 0 -448px;
+}
+
+.right_arrow_icon10 {
+    background-position: 0 -464px;
+}
+
+.icon9 {
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    background: transparent url("/App/oldApps/Common/public/stylesheets/img/icons16.png") no-repeat;
+}
+
+.close_gray_icon {
+    background-position: 0 -144px;
+}
+
+.close_black_icon {
+    background-position: 0 -160px;
+}
+
+.icon24 {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    background: transparent url("/App/oldApps/Common/public/stylesheets/img/icons24.png") no-repeat;
+}
+
+.gray_check_icon24 {
+    background-position: 0 0;
+}
+
+.gray_check_over_icon24 {
+    background-position: 0 -24px;
+}
+
+.gray_check_clicked_icon24 {
+    background-position: 0 -48px;
+}
+
+.gray_arrow_left_icon24 {
+    background-position: 0 -72px;
+}
+
+.gray_arrow_left_over_icon24 {
+    background-position: 0 -96px;
+}
+
+.gray_arrow_left_clicked_icon24 {
+    background-position: 0 -120px;
+}
+
+.gray_arrow_bottom_icon24 {
+    background-position: 0 -144px;
+}
+
+.gray_arrow_bottom_over_icon24 {
+    background-position: 0 -168px;
+}
+
+.gray_arrow_bottom_clicked_icon24 {
+    background-position: 0 -192px;
+}
+
+.icon32 {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background: transparent url("/App/oldApps/Common/public/stylesheets/img/icons32.png") no-repeat;
+}
+
+.doc_icon32 {
+    background-position: 0 0;
+}
+
+.xls_icon32 {
+    background-position: 0 -32px;
+}
+
+.pdf_icon32 {
+    background-position: 0 -64px;
+}
+
+.download_icon32 {
+    background-position: 0 -96px;
+}
+
+.warning_icon32 {
+    background-position: 0 -128px;
+}
+
+.email_icon32 {
+    background-position: 0 -160px;
+}
+
+.ya_icon32 {
+    width: 52px;
+    background-position: 10px -194px;
+}
+
+#center {
+    margin-top: 35px;
+    position: fixed;
+    top: 5px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.processDialog {
+    background-color: #FFF6C6;
+    border: 1px solid #E5C200;
+    border-radius: 2px 2px 2px 2px;
+    color: #000000;
+    display: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: relative;
+}
+
+#infoWindow {
+    position: absolute;
+    top: 5px;
+    width: 350px;
+    z-index: 1000;
+    background-color: #FFF6C6;
+    border: 1px solid #E5C200;
+    border-radius: 2px 2px 2px 2px;
+    color: #000000;
+    display: none;
+    cursor: pointer;
+}
+
+.infoWindow {
+    font-weight: bold;
+    padding: 5px 25px 5px 10px;
+}

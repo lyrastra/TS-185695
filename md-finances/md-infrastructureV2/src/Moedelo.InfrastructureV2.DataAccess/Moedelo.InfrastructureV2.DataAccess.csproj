@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{25C631AD-D8AE-4D72-94FE-7C236AEC9DA6}</ProjectGuid>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyTitle>Moedelo.InfrastructureV2.DataAccess</AssemblyTitle>
+    <Product>Moedelo.InfrastructureV2.DataAccess</Product>
+    <Copyright>Copyright © Moe Delo 2016-2025</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj" />
+    <ProjectReference Include="..\Moedelo.InfrastructureV2.Json\Moedelo.InfrastructureV2.Json.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
+  </ItemGroup>
+  <!-- Copy Microsoft.Data.SqlClient native DLLs to cache for redistribution -->
+  <Target Name="CopySqlClientNativeToCache" AfterTargets="Build">
+    <ItemGroup>
+      <_SqlClientNativeDlls Include="$(OutDir)Microsoft.Data.SqlClient.SNI*.dll" />
+    </ItemGroup>
+    <Message Text="Copying SqlClient native DLLs: @(_SqlClientNativeDlls)" Importance="high" Condition="'@(_SqlClientNativeDlls)' != ''" />
+    <Copy SourceFiles="@(_SqlClientNativeDlls)" 
+          DestinationFiles="@(_SqlClientNativeDlls->'$(OutDir)cache\%(Filename)%(Extension)')" 
+          SkipUnchangedFiles="true" 
+          Condition="'@(_SqlClientNativeDlls)' != ''" />
+  </Target>
+  <ItemGroup>
+    <Content Include="$(OutDir)cache\Microsoft.Data.SqlClient.SNI*.dll">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

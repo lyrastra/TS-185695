@@ -1,0 +1,11 @@
+using Moedelo.Common.Enums.Enums.Finances.Money;
+
+namespace Moedelo.Finances.Client.Money.Dto
+{
+    public class MoneySourceBalanceDto
+    {
+        public long Id { get; set; }
+        public MoneySourceType Type { get; set; }
+        public decimal Balance { get; set; }
+    }
+}

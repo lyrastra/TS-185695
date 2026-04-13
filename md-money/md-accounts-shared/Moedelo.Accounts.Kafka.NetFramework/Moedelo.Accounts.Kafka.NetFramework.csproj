@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AF244B6-3C15-4BCE-B2FA-1931528B4D35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Accounts.Kafka.NetFramework</RootNamespace>
+    <AssemblyName>Moedelo.Accounts.Kafka.NetFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Events\AccountWasMergedWithAnotherAccountEvent.cs" />
+    <Compile Include="Events\FirmAccess\FirmAccessGrantedEvent.cs" />
+    <Compile Include="Events\FirmsWereDeletedEvent.cs" />
+    <Compile Include="Events\FirmWasRemovedFromAccountEvent.cs" />
+    <Compile Include="Events\Firm\FirmMarkedIsDeletedEvent.cs" />
+    <Compile Include="Events\NewFirmWasCreatedInAccountEvent.cs" />
+    <Compile Include="Events\NewUserWasCreatedInAccountEvent.cs" />
+    <Compile Include="Events\Users\UserFioChangedEvent.cs" />
+    <Compile Include="Events\Users\UserLoginChangedEvent.cs" />
+    <Compile Include="Events\Users\UserMarkedAsDeletedEvent.cs" />
+    <Compile Include="Events\Users\UserBackofficePermissionsChangedEvent.cs" />
+    <Compile Include="Events\Firm\FirmIsInternalChangedEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.Accounts.Kafka.Abstractions\Moedelo.Accounts.Kafka.Abstractions.csproj">
+      <Project>{2559005d-d74c-4ac7-987c-25de8a80b26b}</Project>
+      <Name>Moedelo.Accounts.Kafka.Abstractions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

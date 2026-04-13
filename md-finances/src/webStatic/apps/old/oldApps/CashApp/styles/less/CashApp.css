@@ -1,0 +1,624 @@
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+#CashTable .ttSumm {
+  width: 90px;
+  padding-right: 25px;
+  text-align: right;
+}
+#CashTable .ttSumm span {
+  margin-right: -9px;
+  padding-left: 3px;
+  position: relative;
+  top: -2px;
+}
+#CashTable .ttSumm.greenText {
+  color: #0B5901;
+}
+#CashTable .ttDate {
+  width: 67px;
+}
+#CashTable .ttKlient {
+  width: 155px;
+  padding-right: 5px;
+}
+#CashTable .ttNumber {
+  padding-right: 5px;
+  width: 73px;
+}
+#CashTable .ttCheck {
+  width: 35px;
+}
+#CashTable .ttCorrAccount {
+  width: 165px;
+}
+#CashTable .busyShowing {
+  top: 60px;
+}
+#CashTable .mdTableHeader .ttRelated {
+  line-height: 12px;
+  margin-top: 2px;
+}
+#CashTable .ttRelated {
+  cursor: default;
+  width: 34px;
+  overflow: visible;
+}
+#CashTable .ttRelated .relatedCount {
+  border-bottom: 1px dashed #1F85C5;
+  cursor: pointer;
+  text-align: center;
+}
+#CashTable .ttRelated .relatedListWrapper {
+  display: none;
+  position: absolute;
+  top: 30px;
+  z-index: 100;
+}
+#CashTable .ttRelated .relatedListWrapper .close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  color: #838383;
+  font-size: 18px;
+  text-decoration: none;
+  line-height: 18px;
+}
+#CashTable .ttRelated .relatedListWrapper .close:hover {
+  color: #A00;
+}
+#CashTable .ttRelated .relatedListWrapper .relatedList {
+  background: white;
+  z-index: 300;
+  padding: 15px 20px 10px 10px;
+  -webkit-box-shadow: 0px 2px 7px #dddddd;
+  -moz-box-shadow: 0px 2px 7px #dddddd;
+  box-shadow: 0px 2px 7px #dddddd;
+  border: 1px solid #bbbbbb;
+  cursor: default;
+}
+#CashTable .ttRelated .relatedListWrapper .relatedList li {
+  float: none;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  position: relative;
+}
+#CashTable .ttRelated .relatedListWrapper .relatedList li:hover {
+  background: white;
+}
+#CashTable .ttRelated .relatedListWrapper .relatedList li a,
+#CashTable .ttRelated .relatedListWrapper .relatedList li span:first-child {
+  white-space: nowrap;
+  display: inline-block;
+  *display: inline;
+  padding-right: 80px;
+}
+#CashTable .ttRelated .relatedListWrapper .relatedList li span:last-child {
+  position: absolute;
+  white-space: nowrap;
+  color: #494949;
+  right: 0;
+}
+#CashTable .ttProvideInTax {
+  padding-right: 5px;
+  width: 45px;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.jrender div,
+#CashTable .mdTableControls .mdButton.toolDelete.jrender a,
+#CashTable .mdTableControls .mdButton.toolDelete.jrender {
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.activated {
+  position: relative;
+  top: 8px;
+  margin-top: -10px;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.activated > .innerText {
+  background: white;
+  border-bottom: none;
+  font-weight: bold;
+  -webkit-border-radius: 2px 2px 0 0;
+  -moz-border-radius: 2px 2px 0 0;
+  border-radius: 2px 2px 0 0;
+  -webkit-box-shadow: #d5d5d5 0px -1px 1px;
+  -moz-box-shadow: #d5d5d5 0px -1px 1px;
+  box-shadow: #d5d5d5 0px -1px 1px;
+  position: absolute;
+  z-index: 301;
+  top: -1px;
+  left: -1px;
+  padding: 3px 14px 11px 13px;
+  border: 1px solid #BDBDBD;
+  border-bottom-color: transparent;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.activated > div {
+  display: none;
+  position: absolute;
+  background: #FFF;
+  border: 1px solid #BDBDBD;
+  width: 320px;
+  top: 32px;
+  left: -120px;
+  border-radius: 4px;
+  -webkit-box-shadow: #D5D5D5 0 2px 3px 0;
+  -moz-box-shadow: #d5d5d5 0 2px 3px 0;
+  box-shadow: #D5D5D5 0 2px 3px 0;
+  z-index: 300;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.activated > div .dialogContent {
+  font: 13px Arial;
+  line-height: 20px;
+  padding: 10px 20px 10px 10px;
+  overflow: hidden;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.activated > div .dialogContent div {
+  margin-top: 7px;
+  white-space: normal;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.activated > div .dialogContent .linkOnline {
+  float: left;
+  white-space: normal;
+}
+#CashTable .mdTableControls .mdButton.toolDelete.activated .mdCloseLink {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+#CashTable .mdTableControls .mdButton.toolDelete .dialog_buttons {
+  padding: 0;
+  text-align: center;
+}
+.cashPageContent .busyShowingHG {
+  margin-top: 70px;
+  width: 100%;
+  position: relative;
+}
+.cashPageContent .downloadCashbook {
+  margin-left: 13px;
+}
+.cashPageContent .buttonsBar {
+  display: inline-block;
+}
+.cashPageContent .buttonsBar .mdButton {
+  position: relative;
+  margin-right: 5px;
+}
+.cashPageContent #downloadReport {
+  display: inline-block;
+}
+.cashPageContent #downloadCashbookTitle {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.cashPageContent #downloadCashbookLink {
+  border-bottom: 1px dashed #1F85C5;
+  vertical-align: middle;
+  color: #1F85C5;
+}
+.cashPageContent .mdTotalSumm {
+  background-color: #F4EDDF;
+  font-weight: bold;
+}
+.cashPageContent .mdTotalSumm .mdTotalAll {
+  background-color: #ffffff;
+  font-weight: normal;
+}
+.cashPageContent .mdTotalSumm .tSum .tAllRow {
+  text-align: right;
+}
+.cashPageContent .mdTotalSumm .tSum .tAllRow.severalIndicators > div {
+  position: relative;
+  margin-left: 15px;
+}
+.cashPageContent .mdTotalSumm .tSum .tAllRow.severalIndicators > div:first-child {
+  margin: 0;
+}
+.cashPageContent .mdTotalSumm .tSum .tAllRow.severalIndicators .direction {
+  top: 0;
+  right: -12px;
+  position: absolute;
+}
+.cashPageContent .filter {
+  display: inline-block;
+  float: right;
+}
+.cashPageContent .mdFilter-searchArea {
+  margin-left: 0px;
+  margin-top: 20px;
+}
+.cashPageContent .mdFilter-control {
+  width: 217px;
+}
+.cashPageContent #paginator {
+  margin-bottom: 10px;
+}
+.cashPageContent .pale {
+  color: #777;
+}
+.cashPageContent .jsLink {
+  text-decoration: none;
+  border-bottom: 1px dashed #1f85c5;
+}
+.cashPageContent .jsLink:hover {
+  border-bottom: none;
+}
+.cashPageContent .mdTableHeader .mdTableCell.disabled {
+  cursor: default;
+}
+.sliderButton .mdDropDownList {
+  width: 78px;
+}
+.downloadCashbook {
+  display: none;
+}
+.extendedFilter-dialog .fields .field .title {
+  max-width: 100px;
+}
+.extendedFilter-dialog .fields .field .title span {
+  line-height: 15px;
+  display: block;
+}
+.status_panel {
+  margin-bottom: 24px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-raduis: 3px;
+}
+.grey_link {
+  color: #777;
+  text-decoration: underline;
+}
+.extendedFilter-dialog .field input,
+.extendedFilter-dialog .field select {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.TabDialogWrapper {
+  z-index: 10;
+}
+.TabDialogWrapper .tab {
+  margin-left: 8px;
+  margin-top: 3px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+.accountingPostings {
+  display: none;
+}
+.accountingPostings .showPostingLink {
+  display: none;
+}
+.postingTable .mdTableCell .field-validation-error {
+  margin-top: 5px;
+}
+.cashbook-qtip {
+  width: 470px;
+  max-width: 470px;
+  -webkit-box-shadow: 0px 2px 7px #dddddd;
+  -moz-box-shadow: 0px 2px 7px #dddddd;
+  box-shadow: 0px 2px 7px #dddddd;
+}
+.cashbook-qtip .qtip-header {
+  text-align: right;
+  padding: 3px 3px 0 0;
+}
+.cashbook-qtip .qtip-closer {
+  text-align: right;
+  padding: 2px;
+  color: #999999;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 18px;
+  margin-left: 7px;
+  position: relative;
+  vertical-align: top;
+}
+.cashbook-qtip .ui-tooltip-tip {
+  position: absolute;
+}
+.cashbook-qtip .qtip-content {
+  padding: 5px 20px;
+}
+.cashbook-qtip .ui-tooltip-content {
+  background-color: white;
+  border: 1px solid #E2E2E2;
+  font: 13px 'Arial';
+  color: #454545;
+  overflow: visible;
+  padding: 0px;
+}
+.cashbook-qtip .field {
+  margin-bottom: 15px;
+}
+.cashbook-qtip .title {
+  width: 174px;
+  display: inline-block;
+  vertical-align: top;
+}
+.cashbook-qtip .control {
+  display: inline-block;
+  vertical-align: top;
+}
+.cashbook-qtip .datepicker {
+  width: 100px;
+}
+.cashbook-qtip .buttons {
+  background-color: #F4EDDF;
+  display: block;
+  padding: 20px 0;
+  padding: 20px 0 20px 20px;
+}
+.cashbook-qtip .buttons ul {
+  text-align: left;
+}
+.cashbook_error {
+  display: none;
+  color: #B13033;
+  padding-left: 174px;
+  margin-bottom: 15px;
+}
+.crossButton {
+  color: #999999;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 18px;
+  margin-left: 7px;
+  position: relative;
+  vertical-align: top;
+  right: 0;
+  top: 0;
+}
+.crossButton:hover {
+  color: #FD0606;
+}
+.newWave h1 {
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px 0px 24px;
+}
+.newWave h1 span,
+.newWave h1 div {
+  vertical-align: top;
+}
+.newWave h1 input[type=text].dateInput {
+  width: 90px;
+}
+.newWave .h1 span.input_text {
+  border-bottom: 0;
+}
+.newWave .h1 span.input_text:hover {
+  border-bottom: 1px dashed #1f85c5;
+}
+
+.newWave input[type=text].short,
+.newWave select.short {
+  width: 90px;
+}
+.newWave input[type=text].small {
+  width: 118px;
+}
+.newWave input[type=text].x-small {
+  width: 77px;
+}
+.newWave input[type=text].sum.small {
+  width: 100px;
+  margin: 0px;
+  text-align: left;
+}
+
+.newWave select.x-small {
+  width: 80px;
+}
+.newWave .radioBox {
+  float: left;
+  margin-right: 10px;
+}
+.newWave .mdRow {
+  padding-bottom: 0;
+}
+.newWave .mdRow.down-row-message {
+  width: 485px;
+  line-height: 18px;
+  margin-top: -12px;
+}
+.newWave .mdRow.fieldRow {
+  margin-bottom: 24px;
+}
+.newWave .mdCol-8 {
+  width: 344px;
+}
+.newWave .buttonPanel {
+  line-height: normal;
+  background: none;
+  padding: 0px;
+}
+.newWave .buttonPanel .mdDoubleButton {
+  margin-right: 20px;
+}
+.newWave .buttonPanel .mdDoubleButton [data-mddropdown-link] {
+  width: 12px;
+  display: inline-block;
+  color: #777777;
+}
+.newWave .buttonPanel .mdDoubleButton [data-mddropdown-link]:after {
+  top: 11px;
+  margin-left: 0px;
+  width: 14px;
+  left: 5px;
+}
+.newWave .buttonPanel .mdDoubleButton [data-mddropdown-list] {
+  margin-left: -82px;
+}
+.newWave .buttonPanel .saveAndCreateLink {
+  margin-right: 20px;
+}
+.cashOperation .newWave .buttonPanel .mdButton {
+  line-height: normal;
+  height: auto;
+}
+.newWave [data-mddropdown-link]:after {
+  content: 'v';
+  font-family: 'fontello';
+  font-size: 5px;
+  position: absolute;
+}
+.newWave .mdCustomSelectWrap,
+.newWave .mdSelectUlWrap {
+  display: block;
+  height: 27px;
+}
+.newWave .actions {
+  position: absolute;
+  right: 0px;
+  margin-right: 20px;
+}
+.newWave .actions [data-mddropdown-link]:after {
+  top: 2px;
+  margin-left: 4px;
+}
+.newWave .actions .mdDropDownList {
+  width: 90px;
+}
+.newWave .postingControl {
+  margin-top: 35px;
+}
+.newWave .postingControl .mdTableHeader {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 3px 0;
+  color: #8e8e8e;
+  font-size: 13px;
+}
+.newWave .postingControl .explainigMessage {
+  border-top: 0px solid #ddd;
+}
+.newWave .postingControl .tabHeader {
+  border: 0px none;
+}
+.newWave div.collapsible-container {
+  display: inline-block;
+  min-height: 26px;
+}
+.newWave .workerPayment {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+.newWave .workerPayment .workerName{
+  width: 100%;
+  box-sizing: border-box;
+  height: 27px;
+}
+.newWave .workerPayment.row {
+  margin-bottom: 10px;
+}
+.newWave .workerPayment .icon.close {
+  left: -10px;
+}
+.newWave .workerPayment .workerPayment__removeLink.icon.close {
+  left: 0;
+}
+.newWave .workerPayment.workerPayment__footer {
+  border-top: 1px solid #ddd;
+  padding-top: 7px;
+  width: 775px;
+  position: relative;
+}
+.newWave .workerPayment .workerPayment__totalSum {
+  color: #8e8e8e;
+  position: absolute;
+  right: 25px;
+  top: 7px;
+}
+.newWave .fieldRow.paybill .downloadPaybill.link {
+  margin-left: 3px;
+}
+.newWave .fieldRow.paybill .downloadPaybill.link:after {
+  margin-left: 3px;
+  margin-top: 1px;
+}
+.newWave .fieldRow.paybill .mdDropDownList.downloadPaybill {
+  width: 65px;
+}
+.newWave .linkedDocuments .result .field-validation-error span {
+  position: absolute;
+  right: 0px;
+  width: 225px;
+}
+.newWave input.incorrectSum {
+  border-color: #b13033;
+}
+.newWave .sumWarning {
+  color: #CB3338;
+}
+.newWave [data-control=middlemanContract] input[type=text].sz-medium {
+  width: 210px;
+  box-sizing: initial;
+  height: 23px;
+}
+.newWave [data-control=middlemanContract] .mdCustomSelectWrap {
+  margin-left: 3px;
+}
+.newWave [data-control=middlemanContract] .mdCustomSelectWrap select {
+  width: 168px;
+}
+.newWave [data-control=middlemanContract] .middlemanContractLinkContainer {
+  width: auto;
+  margin-right: 10px;
+}
+.newWave [data-control=middlemanContract] .mdCloseLink:after {
+  content: '×';
+}
+.newWave .documentForm .mdPostingsAndTaxControl a,
+.newWave .documentForm .link {
+  border-bottom: 0;
+}
+.newWave .documentForm .mdPostingsAndTaxControl a:hover,
+.newWave .documentForm .link:hover {
+  border-bottom: 1px dashed #1f85c5;
+}
+.newWave .documentForm .mdPostingsAndTaxControl .datePicker__calendarContainer  a {
+  line-height: normal;
+}
+.newWave .documentForm .mdPostingsAndTaxControl .datePicker__calendarContainer  a:hover {
+  border-bottom: none;
+}
+.inline-section {
+  display: inline-block;
+}
+.cashOperation input[type=text]{
+  width: 100%;
+  box-sizing: border-box;
+  height: 27px;
+}
+.cashOperation select{
+  width: 338px;
+}
+.cashOperation .block{
+  display: block;
+}
+.cashOperation .mdRow .cash-totalAmount {
+  float: left;
+  width: 160px;
+}
+
+.cashOperation .middlemanContractDescription {
+  line-height: 16px;
+  font-size: 13px;
+  color: #8e8e8e;
+  margin-top: 5px;
+}
+
+.ac_desc.middlemenContractDescription{
+  padding: 0;
+  color: #8e8e8e;
+}

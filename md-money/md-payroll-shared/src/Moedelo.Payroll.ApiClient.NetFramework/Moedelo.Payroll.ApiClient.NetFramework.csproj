@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{B0DAAAC6-1CC4-4D8A-9672-5C84C71303FB}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Moedelo.Payroll.ApiClient.NetFramework</RootNamespace>
+        <AssemblyName>Moedelo.Payroll.ApiClient.NetFramework</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Efs\EfsReportApiClient.cs" />
+        <Compile Include="FundsContributions\FundsContributionsClient.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Worker\WorkerApiClient.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj">
+        <Project>{6f8df367-5802-4c58-8701-9fdec6dd0a6e}</Project>
+        <Name>Moedelo.Common.Types</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+        <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+        <Name>Moedelo.InfrastructureV2.Domain</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Moedelo.Payroll.ApiClient.Abstractions\Moedelo.Payroll.ApiClient.Abstractions.csproj">
+        <Project>{19da4aa6-2e66-4358-a5a8-95ee4185bb26}</Project>
+        <Name>Moedelo.Payroll.ApiClient.Abstractions</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Moedelo.Payroll.Enums\Moedelo.Payroll.Enums.csproj">
+        <Project>{03ff37ea-874c-48ee-b3d0-7eb67720e433}</Project>
+        <Name>Moedelo.Payroll.Enums</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <RootNamespace>Moedelo.CommonV2.Audit</RootNamespace>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.ApacheKafka\Moedelo.InfrastructureV2.ApacheKafka.csproj" />
+      <ProjectReference Include="..\Moedelo.CommonV2.Audit\Moedelo.CommonV2.Audit.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Transactions" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IsExternalInit" Version="1.0.3">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+</Project>

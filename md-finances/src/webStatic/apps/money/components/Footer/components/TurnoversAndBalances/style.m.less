@@ -1,0 +1,43 @@
+.tableFooter {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+        color: hsl(0, 0%, 60%);
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+
+    .block {
+        display: inline-block;
+    }
+
+    .balance {
+        font-size: 15px;
+    }
+
+    &:before,
+    &:after {
+        border: none;
+        background: transparent;
+    }
+}
+
+.footer__content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.gray {
+    color: hsl(0, 0%, 60%);
+}
+
+.incoming {
+    color: hsl(120, 100%, 30%);
+}
+
+.outgoing {
+    color: hsl(8, 80%, 48%);
+}

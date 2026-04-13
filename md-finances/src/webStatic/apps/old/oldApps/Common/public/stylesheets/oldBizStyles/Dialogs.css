@@ -1,0 +1,67 @@
+.dialog_buttons {
+    padding-left: 195px;
+    background-color: #F4EDDF;
+    line-height: 60px;
+    height: 60px;
+}
+
+.dialog_buttons .mdButton {
+    margin-right: 10px;
+}
+
+.dialog_buttons .cancelLink {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #1F85C5;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.dialog_buttons .cancelLink:hover {
+    text-decoration: none;
+}
+
+.dialog-backLink
+{
+    color: #1F85C5;
+    float: left;
+    position: relative;
+    margin-left: 30px;
+}
+
+.dialog-backLink a
+{
+    color: #1F85C5 !important;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.dialog-backLink a:hover
+{
+    color: #1F85C5;
+    text-decoration: none
+}
+
+.dialog-backArrow
+{
+    color: #1F85C5;
+    position: absolute;
+    left: -20px;
+    text-align: right;
+    font-family: Times New Roman;
+    font-size: 16px;
+}
+
+.dialog-saveBtn
+{
+    position: absolute;
+    float:left;
+    left: 270px;
+}
+
+.dialog-nextBtn
+{
+    float: right;
+    position: relative;
+    margin-right: 20px;
+}

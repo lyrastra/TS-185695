@@ -1,0 +1,69 @@
+.documentsWrapper {
+    position: relative;
+    flex-direction: column;
+}
+
+.documentsHead {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: hsl(0, 0%, 20%);
+}
+
+.documentsList {
+    padding: 20px 0;
+}
+
+.documentRow {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 15px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.documentsTotalSum {
+    text-align: right;
+}
+
+.documentsControls {
+    position: relative;
+}
+
+.documentCol {
+    margin-left: 20px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.documentNumber {
+    width: 214px;
+}
+
+.sum {
+    width: 104px;
+    text-align: right;
+}
+
+.currency {
+    &:after {
+        top: 6px;
+    }
+}
+
+.remove {
+    width: 20px;
+    text-align: right;
+}
+
+.error {
+    color: #ef6b57;
+    width: 355px;
+    text-align: right;
+}

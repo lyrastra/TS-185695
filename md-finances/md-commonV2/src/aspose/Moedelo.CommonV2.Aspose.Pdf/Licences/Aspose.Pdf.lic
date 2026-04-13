@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Moe delo Inc</LicensedTo>
+    <EmailTo>license@moedelo.org</EmailTo>
+    <LicenseType>Developer OEM</LicenseType>
+    <LicenseNote>Limited to 1 developer, unlimited physical locations</LicenseNote>
+    <OrderID>151221044543</OrderID>
+    <UserID>189817</UserID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Pdf for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>0ef4f1c1-81cb-420a-8e3b-b585a91c5e84</SerialNumber>
+    <SubscriptionExpiry>20161221</SubscriptionExpiry>
+    <LicenseVersion>3.0</LicenseVersion>
+    <LicenseInstructions>http://www.aspose.com/corporate/purchase/license-instructions.aspx</LicenseInstructions>
+  </Data>
+  <Signature>KLQrFk0w9o5dl+juG2vWhAnmLQAnpdStWTQyT1ylMAUrGEG3LjcxQ1OjIMd2igQqTVXrOZQqkgIUAxIdJNDVhqrIOxAYrzOEoXH7gw1m86NjfCsUb4txPMjqCZPyf0ZGnpBupEzuS8QfEfwkrDgQy96ZZI1lQhpzjrjSW11xmcs=</Signature>
+</License>

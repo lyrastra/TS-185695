@@ -1,0 +1,286 @@
+.medium_gray_button {
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    color: black;
+    width: 150px;
+}
+
+.medium_gray_button_img {
+    position: absolute;
+    right: 2px;
+    left: 2px;
+    top: 7px;
+    bottom: 7px;
+}
+
+.small_gray_button {
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 0.85em;
+    color: #444444;
+}
+
+
+.medium_gray_button a, .small_gray_button a {
+    text-decoration: none;
+    color: #444444;
+}
+
+.medium_gray_button div, .small_gray_button div {
+    position: absolute;
+    background-image: url(/App/oldApps/Common/public/stylesheets/img/menu_and_buttons.png);
+    background-color: transparent;
+}
+
+.medium_gray_button_left {
+    background-position: 0 -280px;
+    background-repeat: no-repeat;
+    width: 3px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.medium_gray_button_left_img {
+    background-position: 0 -334px;
+    background-repeat: repeat-x;
+    left: 3px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+}
+
+.small_gray_button_left {
+    background-position: 0 -523px;
+    background-repeat: no-repeat;
+    width: 3px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.medium_gray_button_right {
+    background-position: 0 -307px;
+    background-repeat: no-repeat;
+    width: 3px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.medium_gray_button_right_img {
+    background-position: 0 -334px;
+    background-repeat: repeat-x;
+    right: 3px;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+}
+
+.small_gray_button_right {
+    background-position: 0 -544px;
+    background-repeat: no-repeat;
+    width: 3px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.medium_gray_button_center {
+    background-position: 0 -334px;
+    background-repeat: repeat-x;
+    left: 3px;
+    right: 3px;
+    top: 0;
+    bottom: 0;
+}
+
+.medium_gray_button_center_img {
+    background-position: 0 -334px;
+    background-repeat: repeat-x;
+    left: 3px;
+    right: 3px;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+.medium_gray_button_center_left_img {
+    background-position: 0 -334px;
+    background-repeat: repeat-x;
+    left: 23px;
+    right: 3px;
+    top: 0;
+    bottom: 0;
+}
+
+.medium_gray_button_center_right_img {
+    background-position: 0 -334px;
+    background-repeat: repeat-x;
+    left: 3px;
+    right: 23px;
+    top: 0;
+    bottom: 0;
+}
+
+.small_gray_button_center {
+    background-position: 0 -565px;
+    background-repeat: repeat-x;
+    left: 3px;
+    right: 3px;
+    top: 0;
+    bottom: 0;
+}
+
+div.styledbutton-s {
+    color: white;
+    cursor: pointer;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    height: 46px;
+    line-height: 44px;
+    position: relative;
+    text-align: center;
+}
+
+div.styledbutton-s div.left {
+    background: url("../img/styledbutton.png") no-repeat scroll 0 0 transparent;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 10px;
+}
+
+div.styledbutton-s div.body {
+    background: url("../img/styledbutton.png") repeat-x scroll 0 -46px transparent;
+    bottom: 0;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+div.styledbutton-s div.right {
+    background: url("../img/styledbutton.png") no-repeat scroll 0 -92px transparent;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+}
+
+div.styledbutton-l {
+    color: white;
+    cursor: pointer;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    height: 67px;
+    line-height: 26px;
+    position: relative;
+    text-align: center;
+}
+
+div.styledbutton-l div.left {
+    background: url("../img/styledbutton.png") no-repeat scroll 0 -414px transparent;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 10px;
+}
+
+div.styledbutton-l div.body {
+    background: url("../img/styledbutton.png") repeat-x scroll 0 -481px transparent;
+    bottom: 0;
+    left: 10px;
+    padding-top: 5px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+div.styledbutton-l div.right {
+    background: url("../img/styledbutton.png") no-repeat scroll 0 -548px transparent;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+}
+
+div.styledbutton-m {
+    color: white;
+    cursor: pointer;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 24px;
+    height: 56px;
+    line-height: 38px;
+    position: relative;
+    text-align: center;
+}
+
+div.styledbutton-m div.left {
+    background: url("../img/styledbutton.png") no-repeat scroll 0 -1024px transparent;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 10px;
+}
+
+div.styledbutton-m div.body {
+    background: url("../img/styledbutton.png") repeat-x scroll 0 -1080px transparent;
+    bottom: 0;
+    left: 10px;
+    padding-top: 5px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+
+div.styledbutton-m div.right {
+    background: url("../img/styledbutton.png") no-repeat scroll 0 -1136px transparent;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+}
+
+.btn-arrow {
+    display: inline;
+    font-size: 15px;
+    position: absolute;
+    float: right;
+    top: -1px;
+    font-family: Times New Roman;
+}
+
+.btn-income-arrow {
+    color: #98bd1f;
+}
+
+.btn-outgo-arrow {
+    color: red;
+}
+
+.btn-movement-arrow {
+    top: 0;
+    right: 5px;
+}
+
+.btn-arrow-text {
+    padding-right: 4px;
+}
+
+.btn-movement-arrow-text {
+    padding-right: 7px;
+}

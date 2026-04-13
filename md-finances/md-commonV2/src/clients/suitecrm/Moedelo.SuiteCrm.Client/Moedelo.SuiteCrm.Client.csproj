@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BECADFC-9C7B-4ADF-B051-C66A9D1DECF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.SuiteCrm.Client</RootNamespace>
+    <AssemblyName>Moedelo.SuiteCrm.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsteriskRequestsApiClient.cs" />
+    <Compile Include="ClientApiClient.cs" />
+    <Compile Include="CrmBpmApiClient.cs" />
+    <Compile Include="CrmDocumentApiClient.cs" />
+    <Compile Include="CrmKayakoApiClient.cs" />
+    <Compile Include="CrmMailParserApiClient.cs" />
+    <Compile Include="CrmYouTrackApiClient.cs" />
+    <Compile Include="EmployeesApiClient.cs" />
+    <Compile Include="IAsteriskRequestsApiClient.cs" />
+    <Compile Include="IClientApiClient.cs" />
+    <Compile Include="ICrmBpmApiClient.cs" />
+    <Compile Include="ICrmDocumentApiClient.cs" />
+    <Compile Include="ICrmKayakoApiClient.cs" />
+    <Compile Include="ICrmMailParserApiClient.cs" />
+    <Compile Include="ICrmYouTrackApiClient.cs" />
+    <Compile Include="IEmployeesApiClient.cs" />
+    <Compile Include="IOutsourcingsApiClient.cs" />
+    <Compile Include="ISuiteCrmApiClient.cs" />
+    <Compile Include="ISuiteCrmAsteriskApiClient.cs" />
+    <Compile Include="ISuiteCrmRequestsApiClient.cs" />
+    <Compile Include="ICrmSynchronizationApiClient.cs" />
+    <Compile Include="OutsourcingsApiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuiteCrmApiClient.cs" />
+    <Compile Include="SuiteCrmAsteriskApiClient.cs" />
+    <Compile Include="SuiteCrmRequestsApiClient.cs" />
+    <Compile Include="CrmSynchronizationApiClient.cs" />
+    <Compile Include="Tasks\CrmTaskApiClient.cs" />
+    <Compile Include="Tasks\ICrmTaskApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Moedelo.CommonV2.EventBus\Moedelo.CommonV2.EventBus.csproj">
+      <Project>{E72A28D6-8A5E-4825-9167-EC01854707D1}</Project>
+      <Name>Moedelo.CommonV2.EventBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.SuiteCrm.Dto\Moedelo.SuiteCrm.Dto.csproj">
+      <Project>{F23B13B9-B06F-404E-B604-35C5E5C106B7}</Project>
+      <Name>Moedelo.SuiteCrm.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

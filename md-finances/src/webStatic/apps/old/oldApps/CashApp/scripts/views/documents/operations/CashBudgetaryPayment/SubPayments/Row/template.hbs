@@ -1,0 +1,44 @@
+<div class="{{style.wrapper}}">
+    <div class="{{grid.row}} {{style.row}}">
+        <div class="{{grid.col_7}}">
+            <label>Вид налогов/взносов</label><br/>
+            <div class="js-subType"></div>
+        </div>
+        <div class="{{grid.col}}">
+            <label>Период</label><br/>
+            <div class="js-subPeriod"></div>
+        </div>
+
+        {{#if canRemove }}
+            <span class="js-remove mdCloseLink {{style.remove}}">×</span>
+        {{/if}}
+    </div>
+    <div class="{{grid.row}} {{style.row}}">
+        <div class="{{grid.col_5}} js-patentWrapper">
+            <label>Патент</label><br/>
+            <div class="js-subPatent"></div>
+        </div>
+        <div class="{{grid.col_9}}">
+            <label>КБК</label><br/>
+            <div class="js-subKbk"></div>
+        </div>
+        <div class="{{grid.col_4}}">
+            <label>Сумма</label><br/>
+            <div>
+                <div class="js-subSum {{style.sumInput}}"></div>
+                <span class="{{style.currency}}">р.</span>
+            </div>
+        </div>
+    </div>
+    <div class="js-subPostingWrapper">
+        <label>Расход в НУ</label><br/>
+        <div class="{{grid.row}} {{style.row}}">
+            <div class="{{grid.col_4}}">
+                <div class="js-subPostingSum {{style.sumInput}}"></div>
+                <span class="{{style.currency}}">р.</span>
+            </div>
+            <div class="js-subPostingDescription {{grid.col_8}}"></div>
+            <span class="js-removePosting mdCloseLink {{style.removePosting}}">×</span>
+        </div>
+    </div>
+</div>

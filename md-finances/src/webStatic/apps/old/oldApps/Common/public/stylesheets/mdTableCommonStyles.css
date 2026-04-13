@@ -1,0 +1,7 @@
+.mdTable .mdTableBody .ttKlient a {
+  display: inline-block;
+  *display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 32px;
+}

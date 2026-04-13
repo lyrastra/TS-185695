@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <App Include="Finances">
+        <PrjPath>src\apps\finances\Moedelo.Finances.WebApp\Moedelo.Finances.WebApp.csproj</PrjPath>
+        <PublishPath>org.moedelo.base/Finances</PublishPath>
+    </App>
+    <App Include="FinancesApi">
+        <PrjPath>src\apps\finances\Moedelo.Finances.Api\Moedelo.Finances.Api.csproj</PrjPath>
+        <PublishPath>org.moedelo.private/Finances</PublishPath>
+    </App>
+    <App Include="FinancesPublic">
+        <PrjPath>src\apps\finances\Moedelo.Finances.Public\Moedelo.Finances.Public.csproj</PrjPath>
+        <PublishPath>org.moedelo.restapi/Finances</PublishPath>
+    </App>
+  </ItemGroup>
+</Project>

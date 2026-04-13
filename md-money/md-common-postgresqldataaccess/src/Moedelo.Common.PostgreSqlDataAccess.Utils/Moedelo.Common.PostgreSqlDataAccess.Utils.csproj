@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Moedelo.Common.PostgreSQLDataAccess.Abstractions\Moedelo.Common.PostgreSQLDataAccess.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Scripts\CleanUpFirmData.sql" />
+      <EmbeddedResource Include="Scripts\CleanUpFirmData.sql" />
+    </ItemGroup>
+
+</Project>

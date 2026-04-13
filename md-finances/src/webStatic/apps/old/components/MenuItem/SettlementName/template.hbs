@@ -1,0 +1,13 @@
+<div class="{{css.component}}">
+    {{#if Name}}
+        <a class="{{#if HasBankIntegration}}hasBankIntegration{{/if}} js-name">{{Name}}
+            {{#if ImportCount}}<span class="importCount">({{ImportCount}})</span>{{/if}}
+        </a>
+    {{else}}
+        <a class="{{#if HasBankIntegration}}hasBankIntegration{{/if}} js-settlementNumber ">{{Number}}
+            {{#if ImportCount}}<span class="importCount">({{ImportCount}})</span>{{/if}}
+        </a>
+        <div class="{{css.component__bankName}}">{{BankName}}</div>
+    {{/if}}
+    <span class="{{css.component__editIcon}} js-edit"></span>
+</div>

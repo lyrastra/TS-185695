@@ -1,0 +1,1 @@
+# md-catalog-shared

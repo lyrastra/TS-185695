@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentMigrator" Version="3.2.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="2023\scripts\Mg20230911133301_AddView.sql" />
+      <EmbeddedResource Include="2023\scripts\Mg20230911133302_AlterView.sql" />
+      <EmbeddedResource Include="2023\scripts\Mg20230911133303_AlterView.sql" />
+      <None Remove="2023\scripts\Mg20230911133300_Init.sql" />
+      <EmbeddedResource Include="2023\scripts\Mg20230911133300_Init.sql" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,128 @@
+@red: #DE3318;
+@green: #009900;
+@gray: #999999;
+@originalBgColor: rgba(0, 0, 0, 0.02);
+@originalBorderColor: #dfdfdf;
+
+.operationBody {
+    font-size: 15px;
+    padding-top: 10px;
+
+    .operationBody__row {
+        margin-bottom: 0;
+    }
+
+    .operationBody__link {
+        text-decoration: none;
+    }
+
+    .operationBody__date {
+        font-size: 15px;
+        color: #333333;
+    }
+
+    .operationBody__number {
+        font-size: 13px;
+        color: @gray;
+    }
+
+    .operationBody__desc,
+    .operationBody__taxes,
+    .operationBody__reason {
+        color: @gray;
+    }
+
+    .operationBody__kontragent {
+        margin-bottom: 5px;
+        max-height: 38px;
+        overflow: hidden;
+    }
+
+    .operationBody__year {
+        font-size: 13px;
+        margin-top: 2px;
+    }
+
+    .operationBody__desc,
+    .operationBody__reason {
+        font-size: 13px;
+        word-wrap: break-word;
+    }
+
+    .operationBody__taxes {
+        font-size: 12px;
+    }
+
+    .operationBody__payment {
+        position: relative;
+        text-align: right;
+
+        .operationBody__currency {
+            position: absolute;
+            right: -15px;
+        }
+
+        &.incoming {
+            color: @green;
+
+            .operationBody__currency {
+                color: #4CB74C;
+            }
+        }
+        &.outgoing {
+            color: @red;
+
+            .operationBody__currency {
+                color: #DF8576;
+            }
+        }
+    }
+
+    .operationBody__details {
+
+        div[class*=dropdownList] {
+            width: 266px;
+            left: -180px;
+        }
+
+        .operationAdditional {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 20px 20px 0;
+
+            .operationAdditional__title {
+                font-size: 14px;
+                color: @gray;
+            }
+
+            .operationAdditional__content {
+                padding: 10px 0 15px;
+                border-bottom: 1px solid @gray;
+
+                button {
+                    margin-left: 10px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            .operationAdditional__remove {
+                padding: 5px 0;
+
+                button {
+                    width: 100%;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.operationBody--original .operationBody__content {
+        margin-top: 20px;
+        padding: 15px 0;
+        background-color: @originalBgColor;
+        border: 1px solid @originalBorderColor;
+    }
+
+}

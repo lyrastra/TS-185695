@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net461</TargetFramework>
+        <Copyright>Copyright © Моё Дело 2026</Copyright>
+    </PropertyGroup>
+
+</Project>

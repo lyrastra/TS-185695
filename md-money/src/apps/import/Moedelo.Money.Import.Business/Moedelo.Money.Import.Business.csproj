@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accounting-shared\src\Moedelo.Accounting.Domain.Shared\Moedelo.Accounting.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-aspose\src\Moedelo.Infrastructure.Aspose.Cells\Moedelo.Infrastructure.Aspose.Cells.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-kontragents-shared\src\Moedelo.Konragents.ApiClient.Abstractions\Moedelo.Konragents.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-kontragents-shared\src\Moedelo.Konragents.ApiClient\Moedelo.Konragents.ApiClient.csproj" />
+    <ProjectReference Include="..\..\..\..\md-kontragents-shared\src\Moedelo.Konragents.Enums\Moedelo.Konragents.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-money-shared\src\Moedelo.Money.Kafka.Abstractions\Moedelo.Money.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.ApiClient.Abstractions\Moedelo.Requisites.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.ApiClient\Moedelo.Requisites.ApiClient.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.Import.Domain\Moedelo.Money.Import.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.Cells" Version="19.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Import_by_payment_systems.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="Content\Import_by_payment_systems_2025_ИП.xls" />
+    <EmbeddedResource Include="Content\Import_by_payment_systems_2025_ИП.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="Content\Import_by_payment_systems_2025_ООО.xls" />
+    <EmbeddedResource Include="Content\Import_by_payment_systems_2025_ООО.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

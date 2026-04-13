@@ -1,0 +1,21 @@
+.moneyDialog__Autocomplete {
+  border-color: #939393;
+}
+.moneyDialog__Autocomplete .mdAutocomplete__item {
+  padding: 3px 5px;
+  line-height: 20px;
+}
+.moneyDialog__Autocomplete .mdAutocomplete__item > a {
+  color: #404040;
+}
+.moneyDialog__Autocomplete .mdAutocomplete__item--label {
+  font-weight: bold;
+  line-height: 30px;
+}
+.moneyDialog__Autocomplete .mdAutocomplete__item__subRow {
+  font-size: 11px;
+  color: #8e8e8e;
+}
+.mdAutocomplete-wrapper.input-validation-error > input[type=text] {
+  border-color: #CB3338;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="image_control_icon" horiz-adv-x="1000" >
+<font-face font-family="image_control_icon" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="scale-+" unicode="&#x2b;" d="M438 475h125v-62h-125v-125h-63v125h-125v62h125v125h63v-125z m433-563l-257 258c-58-44-130-70-208-70-190 0-343 154-343 344s153 344 343 344c190 0 344-154 344-344 0-78-26-150-70-208l258-257-67-67z m-465 251c155 0 282 126 282 281s-127 281-282 281-281-126-281-281 126-281 281-281z" horiz-adv-x="1000" />
+<glyph glyph-name="scale--" unicode="&#x2d;" d="M250 475h313v-62h-313v62z m621-563l-257 258c-58-44-130-70-208-70-190 0-343 154-343 344 0 190 153 344 343 344 190 0 344-154 344-344 0-78-26-150-70-208l258-257-67-67z m-465 251c155 0 282 126 282 281s-127 281-282 281-281-126-281-281 126-281 281-281z" horiz-adv-x="1000" />
+<glyph glyph-name="close" unicode="&#x63;" d="M1000 762l-412-412 412-412-88-88-412 412-412-412-88 88 412 412-412 412 88 88 412-412 412 412 88-88z" horiz-adv-x="1000" />
+<glyph glyph-name="download" unicode="&#x64;" d="M500 100l-250 312h125v313h250v-313h125l-250-312z m-250-125h500v63h-500v-63z" horiz-adv-x="1000" />
+<glyph glyph-name="turn-left" unicode="&#x6c;" d="M375 725v-125h125c207 0 375-168 375-375v-250h-125v250c0 138-112 250-250 250h-125v-125l-250 188 250 187z" horiz-adv-x="1000" />
+<glyph glyph-name="print" unicode="&#x70;" d="M688 40h-375v188h375v-188z m-375 625h375v-125h-375v125z m437-125v188h-500v-188h-125v-375h125v-187h500v187h125v375h-125z" horiz-adv-x="1000" />
+<glyph glyph-name="turn-right" unicode="&#x72;" d="M625 725v-125h-125c-207 0-375-168-375-375v-250h125v250c0 138 112 250 250 250h125v-125l250 188-250 187z" horiz-adv-x="1000" />
+<glyph glyph-name="trash" unicode="&#x74;" d="M813 600v63h-188v62h-250v-62h-187v-63h625z m-513-62h-50v-63-437-63h50 400 50v63 437 63h-50-100-50-100-50-100z m325-63h63v-437h-63v437z m-187 0h125v-437h-125v437z m-125 0h62v-437h-62v437z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

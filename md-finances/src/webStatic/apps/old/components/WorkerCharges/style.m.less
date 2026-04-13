@@ -1,0 +1,37 @@
+.workerCharges {
+    position: relative;
+
+    .addLink {
+        border-bottom: 1px dashed #1F85C5;
+        transition: none;
+        position: relative;
+        margin-left: 10px;
+
+        &:hover {
+            border-bottom-color: transparent;
+        }
+
+        &:before {
+            content: '+';
+            position: absolute;
+            left: -10px;
+        }
+    }
+}
+
+.workerCharges__header {
+    color: #8e8e8e;
+}
+
+.workerCharge__selectSection {
+    width: 398px;
+    float: left;
+    padding-right: 15px;
+}
+
+.workerCharges__totalSum {
+    color: #b2b2b2;
+    position: absolute;
+    right: 62px;
+    bottom: 0;
+}

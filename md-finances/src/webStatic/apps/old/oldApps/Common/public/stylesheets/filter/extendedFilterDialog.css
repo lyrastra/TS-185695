@@ -1,0 +1,201 @@
+.extendedFilter-dialog {
+  border-radius: 0px;
+  -webkit-box-shadow: 0 2px 7px #c9c6c6;
+  -moz-box-shadow: 0 2px 7px #c9c6c6;
+  box-shadow: 0 2px 7px #c9c6c6;
+  border: 1px solid #939393;
+}
+.extendedFilter-dialog .ui-widget-header {
+  display: none;
+}
+.extendedFilter-dialog .filterDialogHeader {
+  display: inline-block;
+  height: 25px;
+}
+.extendedFilter-dialog .filterDialogHeader .closeLink {
+  background-color: white;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: normal;
+  color: #b2b2b2;
+  position: absolute;
+  right: 7px;
+  top: 4px;
+}
+.extendedFilter-dialog .filterDialogHeader .closeLink:hover {
+  color: #cb3338;
+}
+.extendedFilter-dialog .ui-dialog-content {
+  font-family: Arial;
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.extendedFilter-dialog .fields {
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+}
+.extendedFilter-dialog .fields .field {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 15px;
+  text-align: right;
+}
+.extendedFilter-dialog .fields .field .title {
+  float: left;
+  text-align: left;
+  padding-left: 20px;
+}
+.extendedFilter-dialog .fields .field .title label {
+  margin: 0;
+  padding: 0px;
+}
+.extendedFilter-dialog .fields .field .control {
+  display: inline-block;
+  text-align: left;
+  margin-right: 25px;
+  width: 320px;
+}
+.extendedFilter-dialog .fields .field .control input[type=text] {
+  width: 310px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 23px;
+  font-family: Arial;
+}
+.extendedFilter-dialog .fields .field .control input[type=checkbox] {
+  margin-left: -2px;
+  margin-top: 7px;
+}
+.extendedFilter-dialog .fields .field .control input[name=Sum] {
+  width: 224px;
+}
+.extendedFilter-dialog .fields .field .control textarea {
+  width: 310px;
+  padding: 0px 4px;
+  resize: none;
+  line-height: 23px;
+  min-height: 23px;
+  height: auto;
+  overflow-y: hidden;
+}
+.extendedFilter-dialog .fields .field .control .mdCustomSelect {
+  vertical-align: top;
+  height: 25px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.extendedFilter-dialog .fields .field .control .mdCustomSelect select {
+  top: 0;
+  left: -1px;
+  margin: 0px -2px 0px 0px;
+  width: 81px;
+}
+.extendedFilter-dialog .fields .field .control .mdCustomSelect .mdSelectText {
+  right: -17px;
+  line-height: 26px;
+  top: 0;
+}
+.extendedFilter-dialog .fields .field .control .mdCustomSelect .mdSelectButton {
+  /*top:-3px; */
+  top: 10px;
+}
+.extendedFilter-dialog .fields .field .control .searchArea {
+  float: none;
+  color: #1F85C5;
+  cursor: pointer;
+  border-bottom: 1px dotted #1F85C5;
+}
+.extendedFilter-dialog .fields .field .control .searchArea:hover {
+  border-bottom: 0;
+}
+.extendedFilter-dialog .fields .field .control .searchArea.selected {
+  color: #222;
+  border-bottom: 0;
+  cursor: default;
+}
+.extendedFilter-dialog .fields .field .control .mdCloseLink {
+  background-color: white;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 1em;
+  color: #999;
+  position: relative;
+  top: 3px;
+  left: 0px;
+  margin-right: -13px;
+  margin-left: -22px;
+  padding: 0 3px;
+}
+.extendedFilter-dialog .fields .field .control .mdCloseLink:hover {
+  color: #fd0606;
+}
+.extendedFilter-dialog .buttons {
+  display: inline-block;
+  width: 365px;
+  background-color: #F4EDDF;
+  height: 38px;
+  position: absolute;
+  bottom: 0px;
+  padding-left: 184px;
+  padding-top: 12px;
+}
+.extendedFilter-dialog .buttons .button a {
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #bdbdbd;
+  float: left;
+  text-decoration: none;
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f3f3f3), to(#e3e3e3));
+  background: -webkit-linear-gradient(#f3f3f3, #e3e3e3);
+  background: -moz-linear-gradient(#f3f3f3, #e3e3e3);
+  background: -ms-linear-gradient(#f3f3f3, #e3e3e3);
+  background: -o-linear-gradient(#f3f3f3, #e3e3e3);
+  background: linear-gradient(#f3f3f3, #e3e3e3);
+  padding: 5px 10px 5px 10px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  height: 15px;
+  color: #444;
+}
+.extendedFilter-dialog .buttons .button a:hover {
+  border-color: #888888;
+}
+.extendedFilter-dialog .buttons .button a:active {
+  -webkit-box-shadow: inset #CDCDCD 0px 1px 1px;
+  -moz-box-shadow: inset #CDCDCD 0px 1px 1px;
+  box-shadow: inset #CDCDCD 0px 1px 1px;
+  background: #E7E7E7;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e7e7e7), to(#d9d9d9));
+  background: -webkit-linear-gradient(#e7e7e7, #d9d9d9);
+  background: -moz-linear-gradient(#e7e7e7, #d9d9d9);
+  background: -ms-linear-gradient(#e7e7e7, #d9d9d9);
+  background: -o-linear-gradient(#e7e7e7, #d9d9d9);
+  background: linear-gradient(#e7e7e7, #d9d9d9);
+}
+.extendedFilter-dialog .buttons .cancelLink {
+  display: inline-block;
+  position: relative;
+  color: #1F85C5;
+  text-decoration: underline;
+  margin-left: 10px;
+  cursor: pointer;
+  vertical-align: top;
+}
+.extendedFilter-dialog .buttons .cancelLink:hover {
+  text-decoration: none;
+}
+.ie8 .extendedFilter-dialog .fields .field .control .mdCustomSelect {
+  height: 26px;
+}

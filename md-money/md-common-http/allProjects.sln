@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Http.Abstractions", "src\Moedelo.Common.Http.Abstractions\Moedelo.Common.Http.Abstractions.csproj", "{18CD7FD8-8017-45D4-9BC8-FB482E76450C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{30394743-E880-472A-9443-DBF4128544D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{4CC55633-7433-4288-8596-1723AA80552B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Http.Abstractions", "..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj", "{F66B00E5-65F4-4C9F-A68A-F70388523DFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Audit.Abstractions", "..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj", "{AC0BE337-CB94-44F1-BF03-56D414E1D30C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.ExecutionContext.Abstractions", "..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj", "{25BF918F-9E98-4669-B30B-77AC60AB38E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Settings.Abstractions", "..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj", "{9CFC53B6-8165-4905-A075-3E7AC1867088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.Json", "..\md-infrastructure-core-json\src\Moedelo.Infrastructure.Json\Moedelo.Infrastructure.Json.csproj", "{9BF29E4D-A1D3-422B-BBB7-B16A5868455D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{B28CB84F-25AB-4E69-BA07-216BD2E73B9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Types", "..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj", "{4D3DC5AC-CB11-4490-B89D-A021CCAAC333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.AccessRules.Abstractions", "..\md-common-accessrules\src\Moedelo.Common.AccessRules.Abstractions\Moedelo.Common.AccessRules.Abstractions.csproj", "{543D9EEB-9DC2-4E3B-BFB5-2554DB450FFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18CD7FD8-8017-45D4-9BC8-FB482E76450C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CD7FD8-8017-45D4-9BC8-FB482E76450C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CD7FD8-8017-45D4-9BC8-FB482E76450C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CD7FD8-8017-45D4-9BC8-FB482E76450C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66B00E5-65F4-4C9F-A68A-F70388523DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66B00E5-65F4-4C9F-A68A-F70388523DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66B00E5-65F4-4C9F-A68A-F70388523DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66B00E5-65F4-4C9F-A68A-F70388523DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0BE337-CB94-44F1-BF03-56D414E1D30C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0BE337-CB94-44F1-BF03-56D414E1D30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0BE337-CB94-44F1-BF03-56D414E1D30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0BE337-CB94-44F1-BF03-56D414E1D30C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25BF918F-9E98-4669-B30B-77AC60AB38E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25BF918F-9E98-4669-B30B-77AC60AB38E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25BF918F-9E98-4669-B30B-77AC60AB38E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25BF918F-9E98-4669-B30B-77AC60AB38E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CFC53B6-8165-4905-A075-3E7AC1867088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFC53B6-8165-4905-A075-3E7AC1867088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CFC53B6-8165-4905-A075-3E7AC1867088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CFC53B6-8165-4905-A075-3E7AC1867088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF29E4D-A1D3-422B-BBB7-B16A5868455D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF29E4D-A1D3-422B-BBB7-B16A5868455D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF29E4D-A1D3-422B-BBB7-B16A5868455D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF29E4D-A1D3-422B-BBB7-B16A5868455D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B28CB84F-25AB-4E69-BA07-216BD2E73B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28CB84F-25AB-4E69-BA07-216BD2E73B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B28CB84F-25AB-4E69-BA07-216BD2E73B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B28CB84F-25AB-4E69-BA07-216BD2E73B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D3DC5AC-CB11-4490-B89D-A021CCAAC333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D3DC5AC-CB11-4490-B89D-A021CCAAC333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D3DC5AC-CB11-4490-B89D-A021CCAAC333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D3DC5AC-CB11-4490-B89D-A021CCAAC333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{543D9EEB-9DC2-4E3B-BFB5-2554DB450FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543D9EEB-9DC2-4E3B-BFB5-2554DB450FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543D9EEB-9DC2-4E3B-BFB5-2554DB450FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543D9EEB-9DC2-4E3B-BFB5-2554DB450FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F66B00E5-65F4-4C9F-A68A-F70388523DFD} = {30394743-E880-472A-9443-DBF4128544D2}
+		{AC0BE337-CB94-44F1-BF03-56D414E1D30C} = {4CC55633-7433-4288-8596-1723AA80552B}
+		{25BF918F-9E98-4669-B30B-77AC60AB38E1} = {4CC55633-7433-4288-8596-1723AA80552B}
+		{9CFC53B6-8165-4905-A075-3E7AC1867088} = {4CC55633-7433-4288-8596-1723AA80552B}
+		{9BF29E4D-A1D3-422B-BBB7-B16A5868455D} = {30394743-E880-472A-9443-DBF4128544D2}
+		{B28CB84F-25AB-4E69-BA07-216BD2E73B9B} = {30394743-E880-472A-9443-DBF4128544D2}
+		{4D3DC5AC-CB11-4490-B89D-A021CCAAC333} = {4CC55633-7433-4288-8596-1723AA80552B}
+		{543D9EEB-9DC2-4E3B-BFB5-2554DB450FFC} = {4CC55633-7433-4288-8596-1723AA80552B}
+	EndGlobalSection
+EndGlobal

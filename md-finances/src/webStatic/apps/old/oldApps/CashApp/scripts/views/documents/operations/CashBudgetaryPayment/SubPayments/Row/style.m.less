@@ -1,0 +1,73 @@
+.wrapper {
+    margin-bottom: 10px;
+    position: relative;
+
+    :global {
+        .tripleContainer .mdCustomSelectWrap {
+            display: inline-block;
+        }
+
+        .md-input input[type=text].md-input__field {
+            border: 1px solid #c7c7c7;
+            height: 27px;
+        }
+
+        .md-input input[type=text].md-input--invalid {
+            border-color: #cb3338;
+        }
+
+        .md-input__invalid-msg {
+            color: #cb3338;
+            margin-top: 3px;
+        }
+    }
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+:global {
+    .documentForm :local(.wrapper) select.middle {
+        width: 100%;
+    }
+
+    .newWave :local(.wrapper) .mdCustomSelect {
+        width: 100%;
+    }
+
+    .cashOperation :local(.wrapper) select {
+        &[name=CalendarType],
+        &[name=Month] {
+            width: 120px;
+        }
+
+        &[name=Year],
+        &[name=Quarter],
+        &[name=HalfYear] {
+            width: 65px;
+        }
+    }
+
+    .mdCloseLink:local {
+        &.remove {
+            top: 32px;
+        }
+
+        &.removePosting {
+            top: 6px;
+        }
+    }
+}
+
+.sumInput {
+    display: inline-block;
+    text-align: right;
+    max-width: 130px;
+}
+
+.currency {
+    display: inline-block;
+    vertical-align: top;
+}
+

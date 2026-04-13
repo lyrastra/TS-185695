@@ -1,0 +1,32 @@
+﻿namespace Moedelo.Common.Enums.Enums.Integration
+{
+    public enum SberbankPaymentRequestStatus
+    {
+        UNKNOWN,
+        DELIVERED,
+        VALIDEDS,
+        INVALIDEDS,
+        REQUISITEERROR,
+        TRIED,
+        DELAYED,
+        CORRESPONDENT_APPROVE_WAITING,
+        EXPORTED,
+        IMPLEMENTED,
+        REFUSEDBYABS,
+        ACCEPTED_BY_ABS,
+        CARD2,
+        SIGNED_BANK,
+        ACCEPTED,
+        CHECKERROR,
+        UNABLE_TO_RECEIVE,
+        CREATED,
+        IMPORTED,
+        INCONSISTENT_DATA,
+        SENDED_TO_PAYER,
+        ACCEPTANCE,
+        NONEACCEPTANCE,
+        PARTSIGNED,
+        SIGNED,
+        REFUSEDBYBANK
+    }
+}

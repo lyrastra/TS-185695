@@ -1,0 +1,35 @@
+/* eslint-disable */
+(function(common) {
+    common.Data.AccountingDocumentType = {
+        Default: 0,
+        Waybill: 1,
+        Invoice: 2,
+        StockDocument: 3,
+        AccountingStatement: 4,
+        PaymentOrder: 5,
+        Statement: 6,
+        ReturnFromBuyer: 7,
+        IncomingStatementOfFixedAsset: 8,
+        IncomingCashOrder: 9,
+        OutcomingCashOrder: 10,
+        AccountingAdvanceStatement: 11,
+        RetailReport: 12,
+        Bill: 13,
+        Project: 14,
+        FixedAssetClosedPeriod: 15,
+        Salary: 16,
+        ReturnToSupplier: 17,
+        InventoryCard: 18,
+        FixedAssetInvestment: 19,
+        MiddlemanContract: 24,
+        MiddlemanReport: 25,
+        RequisitionWaybill: 26,
+        PurseOperation: 31,
+        Bundling: 32,
+        Upd: 33,
+        RetailRefund: 34,
+        SalesUpd: 36,
+        ReceiptStatement: 54,
+        Other: 101
+    };
+}(Common));

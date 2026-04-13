@@ -1,0 +1,192 @@
+#filter {
+    background-color: #F4EDDF;
+    line-height: normal;
+    position: relative;
+    margin-bottom: 14px;
+    padding: 9px 12px 2px 12px;
+}
+
+#filter .toggle {
+    position: absolute;
+    font-size: .85em;
+    line-height: normal;
+    color: #bcbc94;
+    right: 0;
+    top: -15px;
+    cursor: pointer;
+    padding-left: 8px;
+}
+
+#filter .toggle div {
+    background-color: #fff;
+}
+
+#filter select {
+    width: 180px;
+    vertical-align: top;
+    height: 22px;
+    color: #434343;
+    padding: 0px 0px 0px 0px;
+}
+
+* + html #filter select {
+    position: relative;
+}
+
+#filter .interval {
+    display: inline-block;
+    margin: -9px -6px -2px -12px;
+    padding: 9px 24px 1px 12px;
+    vertical-align: top;
+    width: 168px;
+    float: left;
+}
+
+#filter .interval.active {
+    background: #E4E4C1;
+}
+
+#filter .typeListFilter {
+    margin: -9px 0px -23px 0px;
+    padding: 10px 6px 16px 0px;
+}
+
+#filter .typeListFilter.active {
+    background: #E4E4C1;
+}
+
+#filter .typeListFilter .ionlist-date{
+    margin: 0 0px 16px 6px;
+}
+
+#filter .moneyBayTypeFilter .ionlist-date {
+    margin: 1px 0px 5px 4px;
+}
+
+* + html #filter .interval {
+    display: inline;
+    zoom: 1;
+    position: relative;
+}
+
+#filter .interval select {
+    margin: 0;
+}
+
+
+#filter .datePicker {
+    background-color: #e4e4c1;
+    width: 310px;
+    margin: 5px 0 0 0;
+    padding: 10px 10px 8px 0;
+    display: none;
+    float: left;
+}
+
+#filter .subtypeListWrapper{
+    background-color: #e4e4c1;
+}
+
+#filter .payrollListWrapper{
+    background-color: #e4e4c1;
+}
+
+#filter .datePicker input {
+    width: 115px;
+    margin-left: 3px;
+    background: #fff;
+    border: 1px solid #c5c5c4;
+    padding: 2px 0 2px 6px;
+    color: #434343;
+}
+
+#filter .datePicker input,
+#filter .datePicker label {
+    display: inline-block;
+}
+
+* + html #filter .datePicker input {
+    vertical-align: middle;
+}
+
+#filter .datePicker input[name=startDate] {
+    margin-right: 10px;
+}
+
+#filter .subtypeListWrapper{
+    display: none;
+}
+
+#filter .payrollListWrapper{
+    display: none;
+}
+
+#filter .submit {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: top;
+    margin: -1px 0 0 15px;
+    font-size: .85em;
+    color: #585858;
+    text-shadow: 1px 1px #fff;
+}
+
+* + html #filter .submit {
+    zoom: 1;
+    display: inline;
+    /*background-image: url(img/accButtons.png);*/
+    position: relative;
+}
+
+#filter .submit span {
+    display: block;
+    background-position: right -25px;
+    margin-right: -6px;
+}
+
+* + html #filter .submit span {
+    /*background-image: url(img/accButtons.png);*/
+    zoom: 1;
+}
+
+#filter .submit b {
+    height: 16px;
+    padding: 5px 10px 4px 30px;
+    display: block;
+    color: #585858;
+    font-weight: normal;
+}
+
+.filterLinks {
+    margin-bottom: 10px;
+}
+
+.filterList li {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.filterLink {
+    color: #2089C6!important;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px dotted #2089C6;
+}
+
+.filterLink:hover {
+    border-bottom: none;
+}
+
+.selectedFilter {
+    color: #000000;
+    font-weight: bold;
+    padding: 5px 7px;
+    text-decoration: none;
+    border-bottom: none;
+    background-color: #f4eddf;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    cursor: default;
+}

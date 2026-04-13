@@ -1,0 +1,98 @@
+.row {
+    cursor: pointer;
+    font-size: 15px;
+
+    .link {
+        text-decoration: none;
+    }
+
+    &Content {
+        display: flex;
+    }
+
+    .cell {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .wideCheckbox {
+        label {
+            padding-left: 30%;
+            margin-left: -30%;
+            height: 30px;
+        }
+    }
+
+    .taxList {
+        margin-top: 7px;
+    }
+
+    .tax {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+        margin-top: 3px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .date {
+        text-transform: capitalize;
+        font-size: 15px;
+        color: hsl(0, 0%, 20%);
+    }
+
+    .number {
+        color: hsl(0, 0%, 60%);
+        padding: 3px 0 0 0;
+        text-transform: capitalize;
+        font-size: 13px;
+    }
+
+    .kontragentName {
+        max-height: 35px;
+        overflow: hidden;
+        margin-bottom: 5px;
+    }
+
+    .operationType {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .description {
+        font-size: 13px;
+        color: hsl(0, 0%, 60%);
+        word-wrap: break-word;
+    }
+
+    .priceCell {
+        position: relative;
+        text-align: right;
+        color: hsl(0, 0%, 20%);
+
+        &.incoming {
+            color: hsl(120, 100%, 30%);
+        }
+
+        &.outgoing {
+            color: hsl(8, 80%, 48%);
+        }
+    }
+
+    .currencyIcon {
+        position: absolute;
+        right: -5px;
+    }
+
+    .text--right {
+        text-align: right;
+    }
+}
+
+.rowWrapper {
+    & > div {
+        background: none !important;
+    }
+}

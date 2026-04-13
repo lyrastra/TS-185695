@@ -1,0 +1,153 @@
+/* stylelint-disable */
+
+.page {
+    font-family: Roboto, sans-serif;
+    padding: 20px 0;
+    margin: 0 auto;
+
+    .balanceReconciliationContainer {
+        background: #ffffff;
+    }
+
+    .blockWrapper {
+        margin: 10px auto 10px;
+        background: #ffffff;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .topPanel {
+        padding: 30px 40px 0;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 0 !important;
+        font-size: 15px;
+        justify-content: space-between;
+    }
+
+    .sourceType {
+        margin: 0 0 0 20px;
+        width: 260px;
+    }
+
+    .analyticsIncomeAndOutgoing {
+        text-align: right;
+    }
+
+    &__container {
+        position: relative;
+        background: #f8f8f8;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        margin: 20px 0 -40px 0;
+        padding-top: 18px;
+    }
+
+    &__widgetsContainer {
+        padding: 0;
+        width: 960px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__widgetsGrid {
+        display: flex;
+        justify-content: space-between;
+        transition: all 1s;
+        min-height: 300px;
+    }
+
+    &__column {
+        width: 472px;
+        display: inline-block;
+    }
+
+    &__widgetConfigLink {
+        bottom: 3px;
+        right: 0px;
+        position: absolute;
+        cursor: pointer;
+        color: #1f85c5;
+    }
+
+    .rightButtonsGroup {
+        justify-content: flex-end;
+    }
+}
+
+.page_loader {
+    background: #ffffff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    svg {
+        display: block;
+        margin: 0 auto;
+
+    }
+}
+
+:global {
+    body {
+        font-size: 13px;
+        font-family: Roboto, sans-serif;
+        color: #404040;
+        margin: 0px;
+    }
+
+    .clearfix {
+        &:after, &:before {
+            content: ' ';
+            display: table
+        }
+        &:after {
+            clear: both
+        }
+    }
+
+    .ui-widget {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+    }
+
+    .mdButton {
+        border: 1px solid #bdbdbd;
+        cursor: pointer;
+        border-radius: 2px;
+    }
+
+    a {
+        color: #1f85c5;
+    }
+
+    .contactText {
+        color: #808080;
+    }
+}
+
+.taxSystemAndOwnership {
+    width: 350px;
+
+    :global(.md-dialog__title) {
+        padding-right: 10px;
+    }
+}
+
+.leftBlock {
+    gap: 12px;
+}
+
+.rightBlock {
+    display: flex;
+    justify-content: end;
+    gap: 12px;
+}
+
+.addButtonsContainer {
+    display: flex;
+    gap: 12px;
+}

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CashOrders\Scripts\Delete.sql" />
+    <EmbeddedResource Include="CashOrders\Scripts\GetOperationTypeByBaseIds.sql" />
+    <EmbeddedResource Include="CashOrders\Scripts\Select.sql" />
+    <EmbeddedResource Include="CashOrders\Scripts\Insert.sql" />
+    <EmbeddedResource Include="CashOrders\Scripts\Update.sql" />
+    <EmbeddedResource Include="CashOrders\Scripts\GetDocumentsStatusByBaseIds.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-sqldataaccess\src\Moedelo.Common.SqlDataAccess.Abstractions\Moedelo.Common.SqlDataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.CashOrders.DataAccess.Abstractions\Moedelo.Money.CashOrders.DataAccess.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

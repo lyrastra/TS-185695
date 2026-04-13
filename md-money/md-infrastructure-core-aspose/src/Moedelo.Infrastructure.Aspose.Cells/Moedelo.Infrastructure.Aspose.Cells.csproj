@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Aspose.Cells" Version="19.7.0" />
+      <PackageReference Include="System.Drawing.Common" Version="8.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Aspose.Cells.lic" />
+      <EmbeddedResource Include="Aspose.Cells.lic" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-infrastructure-core-extensions\src\Moedelo.Infrastructure.System.Extensions\Moedelo.Infrastructure.System.Extensions.csproj" />
+      <ProjectReference Include="..\Moedelo.Infrastructure.Aspose.Cells.Abstraction\Moedelo.Infrastructure.Aspose.Cells.Abstraction.csproj" />
+    </ItemGroup>
+
+</Project>

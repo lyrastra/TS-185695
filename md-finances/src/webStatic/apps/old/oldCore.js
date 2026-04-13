@@ -1,0 +1,9 @@
+import './oldApps/Core/libs/jquery/jquery-nomin';
+import './oldApps/Core/libs/jquery/jquery-migrate-1.2.1.min';
+import './oldApps/Core/libs/underscore/underscore-min';
+import './oldApps/Core/libs/backbone/backbone.1.0';
+import './oldApps/Core/libs/backbone/backbone.marionette';
+import '../old/oldApps/Core/modules';
+import './oldApps/Common/CommonModule';
+import './oldApps/Core/libs/backbone/backboneValidation/backbone-validation';
+import './oldApps/Core/libs/backbone/extensions/backbone-validation';

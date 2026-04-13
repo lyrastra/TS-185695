@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8420913-6305-4104-9862-82F092A777A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.AccountingV2.Client</RootNamespace>
+    <AssemblyName>Moedelo.AccountingV2.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>$(SolutionDir)\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountablePersonMoneyPayments\AccAccountablePersonPaymentsApiClient.cs" />
+    <Compile Include="AccountablePersonMoneyPayments\BizAccountablePersonPaymentsApiClient.cs" />
+    <Compile Include="AccountablePersonMoneyPayments\IAccAccountablePersonPaymentsApiClient.cs" />
+    <Compile Include="AccountablePersonMoneyPayments\IBizAccountablePersonPaymentsApiClient.cs" />
+    <Compile Include="AccountingStatement\AccountingStatementApiClient.cs" />
+    <Compile Include="AccountingStatement\IAccountingStatementApiClient.cs" />
+    <Compile Include="AccountingStatement\ISelfCostAccountingStatementsClient.cs" />
+    <Compile Include="AccountingStatement\IUsnFundPaymentExpensesApiClient.cs" />
+    <Compile Include="AccountingStatement\SelfCostAccountingStatementsClient.cs" />
+    <Compile Include="AccountingStatement\UsnFundPaymentExpensesApiClient.cs" />
+    <Compile Include="BalanceAndIncome\AccountingOfBalanceAndIncomeWizardApiClient.cs" />
+    <Compile Include="BalanceAndIncome\IAccountingOfBalanceAndIncomeWizardApiClient.cs" />
+    <Compile Include="Balances\ISettlementSummaryApiClient.cs" />
+    <Compile Include="Balances\SettlementSummaryApiClient.cs" />
+    <Compile Include="BizToAccMoneySource\BizToAccMoneySourceApiClient.cs" />
+    <Compile Include="BizToAccMoneySource\IBizToAccMoneySourceApiClient.cs" />
+    <Compile Include="Invoice\IPurchasesAdvanceInvoiceApiClient.cs" />
+    <Compile Include="Invoice\ISalesAdvanceInvoiceApiClient.cs" />
+    <Compile Include="Invoice\PurchasesAdvanceInvoiceApiClient.cs" />
+    <Compile Include="Invoice\SalesAdvanceInvoiceApiClient.cs" />
+    <Compile Include="MoneyStatistics\IncomeApiClient.cs" />
+    <Compile Include="MoneyStatistics\IIncomeApiClient.cs" />
+    <Compile Include="Ndfl3Validator\Ndfl3ValidatorApiClient.cs" />
+    <Compile Include="Ndfl3Validator\INdfl3ValidatorApiClient.cs" />
+    <Compile Include="AgencyContract\AgencyContractApiClient.cs" />
+    <Compile Include="AgencyContract\Dto\AgencyContractDto.cs" />
+    <Compile Include="AgencyContract\IAgencyContractApiClient.cs" />
+    <Compile Include="AuthorizedCapital\AuthorizedCapitalClient.cs" />
+    <Compile Include="AutoBb\AutoBbApiClient.cs" />
+    <Compile Include="AutoBb\IAutoBbApiClient.cs" />
+    <Compile Include="AutoCreation\AutoCreationSheduleApiClient.cs" />
+    <Compile Include="AutoCreation\IAutoCreationSheduleApiClient.cs" />
+    <Compile Include="Balances\BalancesApiClient.cs" />
+    <Compile Include="AuthorizedCapital\IAuthorizedCapitalClient.cs" />
+    <Compile Include="AdvanceStatement\AdvanceStatementApiClient.cs" />
+    <Compile Include="AdvanceStatement\IAdvanceStatementApiClient.cs" />
+    <Compile Include="Bills\ISalesBillApiClient.cs" />
+    <Compile Include="Bills\SalesBillApiClient.cs" />
+    <Compile Include="BizPostings\BizPostingApiClient.cs" />
+    <Compile Include="BizPostings\BizPostingDto.cs" />
+    <Compile Include="BizPostings\BizPostingReportDto.cs" />
+    <Compile Include="BizPostings\GetBizPostingReportResponse.cs" />
+    <Compile Include="BizPostings\GetBizPostingsForReconciliationStatementResponse.cs" />
+    <Compile Include="BizPostings\IBizPostingApiClient.cs" />
+    <Compile Include="BudgetaryPaymentsClient\BudgetaryPaymentsClient.cs" />
+    <Compile Include="BudgetaryPaymentsClient\IBudgetaryPaymentsClient.cs" />
+    <Compile Include="Cashier\CashierApiClient.cs" />
+    <Compile Include="Cashier\ICashierApiClient.cs" />
+    <Compile Include="CashOrder\CashOrderApiClient.cs" />
+    <Compile Include="CashOrder\ICashOrderApiClient.cs" />
+    <Compile Include="CashOrder\IOutgoingCashOrderClient.cs" />
+    <Compile Include="CashOrder\OutgoingCashOrderClient.cs" />
+    <Compile Include="Cash\CashApiClient.cs" />
+    <Compile Include="Cash\ICashApiClient.cs" />
+    <Compile Include="ClosedPeriods\ClosedPeriodApiClient.cs" />
+    <Compile Include="Balances\IBalancesApiClient.cs" />
+    <Compile Include="ClosedPeriods\ClosingPeriodSettingsApiClient.cs" />
+    <Compile Include="ClosedPeriods\IClosedPeriodApiClient.cs" />
+    <Compile Include="ClosedPeriods\IClosingPeriodSettingsApiClient.cs" />
+    <Compile Include="ClosedPeriods\IPeriodStateClient.cs" />
+    <Compile Include="ClosedPeriods\PeriodStateClient.cs" />
+    <Compile Include="DataResponseWrapper.cs" />
+    <Compile Include="FinancialResults\AccountingBalanceApiClient.cs" />
+    <Compile Include="FinancialResults\IAccountingBalanceApiClient.cs" />
+    <Compile Include="Initialization\IInitializationApiClient.cs" />
+    <Compile Include="Initialization\InitializationApiClient.cs" />
+    <Compile Include="Invoice\IInvoiceApiClient.cs" />
+    <Compile Include="Invoice\InvoiceApiClient.cs" />
+    <Compile Include="Invoice\IPurchasesInvoiceApiClient.cs" />
+    <Compile Include="Invoice\ISalesInvoiceApiClient.cs" />
+    <Compile Include="Invoice\PurchasesInvoiceApiClient.cs" />
+    <Compile Include="Invoice\SalesInvoiceApiClient.cs" />
+    <Compile Include="Kontragents\Dto\ReconcillationStatementRequestDto.cs" />
+    <Compile Include="Kontragents\IKontragentDocumentsApiClient.cs" />
+    <Compile Include="Kontragents\KontragentDocumentsApiClient.cs" />
+    <Compile Include="ListResponseWrapper.cs" />
+    <Compile Include="MeasureUnits\IMeasureUnitApiClient.cs" />
+    <Compile Include="MeasureUnits\MeasureUnitApiClient.cs" />
+    <Compile Include="MediationContractRevenue\Dto\MediationContractRevenueDto.cs" />
+    <Compile Include="MediationContractRevenue\Dto\MiddlemanContractClientDataDto.cs" />
+    <Compile Include="MediationContractRevenue\IMediationContractRevenueApiClient.cs" />
+    <Compile Include="MediationContractRevenue\MediationContractRevenueApiClient.cs" />
+    <Compile Include="Money\FinancialApiClient.cs" />
+    <Compile Include="Money\IFinancialApiClient.cs" />
+    <Compile Include="Money\IMoneyApiClient.cs" />
+    <Compile Include="Money\IMoneyTurnoverApiClient.cs" />
+    <Compile Include="Money\MoneyApiClient.cs" />
+    <Compile Include="Money\MoneyTurnoverApiClient.cs" />
+    <Compile Include="NdsCodes\INdsCodesApiClient.cs" />
+    <Compile Include="NdsCodes\NdsCodesApiClient.cs" />
+    <Compile Include="PaymentAutomation\IPaymentAutomationApiClient.cs" />
+    <Compile Include="PaymentAutomation\PaymentAutomationApiClient.cs" />
+    <Compile Include="PaymentDocuments\IPaymentDocumentsApiClient.cs" />
+    <Compile Include="PaymentDocuments\PaymentDocumentsApiClient.cs" />
+    <Compile Include="PaymentOrder\IPaymentOrderApiClient.cs" />
+    <Compile Include="Payments\AccPaymentsApiClient.cs" />
+    <Compile Include="Payments\BizPaymentsApiClient.cs" />
+    <Compile Include="Payments\IAccPaymentsApiClient.cs" />
+    <Compile Include="Payments\IBizPaymentsApiClient.cs" />
+    <Compile Include="Preview\IPreviewApiClient.cs" />
+    <Compile Include="Preview\PreviewApiClient.cs" />
+    <Compile Include="PrimaryDocuments\ContractPrimaryDocumentsApiClient.cs" />
+    <Compile Include="PrimaryDocuments\IContractPrimaryDocumentsApiClient.cs" />
+    <Compile Include="PrimaryDocuments\IPrimaryDocumentsApiClient.cs" />
+    <Compile Include="PrimaryDocuments\IPrimaryDocumentsOldApiClient.cs" />
+    <Compile Include="PrimaryDocuments\PrimaryDocumentsApiClient.cs" />
+    <Compile Include="PrimaryDocuments\PrimaryDocumentsOldApiClient.cs" />
+    <Compile Include="PurseOperations\IPurseOperationApiClient.cs" />
+    <Compile Include="PurseOperations\PurseOperationApiClient.cs" />
+    <Compile Include="ReconciliationStatements\ReconciliationStatementsApiClient.cs" />
+    <Compile Include="ReconciliationStatements\IReconciliationStatementsApiClient.cs" />
+    <Compile Include="Remains\IOpeningBalanceApiClient.cs" />
+    <Compile Include="Remains\OpeningBalanceApiCLient.cs" />
+    <Compile Include="Requisites\FirmRequisitesV2ApiClient.cs" />
+    <Compile Include="Requisites\IFirmRequisitesV2ApiClient.cs" />
+    <Compile Include="RetailReport\RetailReportApiClient.cs" />
+    <Compile Include="PaymentOrder\PaymentOrderApiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetailReport\IRetailReportClient.cs" />
+    <Compile Include="RetailReport\RetailReportProductMergeRequestDto.cs" />
+    <Compile Include="RetailRevenue\Dto\CashierPaginationCriterions.cs" />
+    <Compile Include="RetailRevenue\Dto\Nds.cs" />
+    <Compile Include="RetailRevenue\Dto\RetailRevenueCollectionDto.cs" />
+    <Compile Include="RetailRevenue\Dto\RetailRevenueDto.cs" />
+    <Compile Include="RetailRevenue\Dto\СonsideredInPatentDto.cs" />
+    <Compile Include="RetailRevenue\IRetailRevenueApiClient.cs" />
+    <Compile Include="RetailRevenue\RetailRevenueApiClient.cs" />
+    <Compile Include="ReturnToCustomer\Dto\ReturnToCustomerDto.cs" />
+    <Compile Include="ReturnToCustomer\IReturnToCustomerApiClient.cs" />
+    <Compile Include="ReturnToCustomer\ReturnToCustomerApiClient.cs" />
+    <Compile Include="Statement\IncomingStatementClient.cs" />
+    <Compile Include="Statement\IOutgoingStatementClient.cs" />
+    <Compile Include="Statement\IPurchasesStatementApiClient.cs" />
+    <Compile Include="Statement\ISalesStatementApiClient.cs" />
+    <Compile Include="Statement\IStatementApiClient.cs" />
+    <Compile Include="Statement\OutgoingStatementClient.cs" />
+    <Compile Include="Statement\PurchasesStatementApiClient.cs" />
+    <Compile Include="Statement\SalesStatementApiClient.cs" />
+    <Compile Include="Statement\StatementApiClient.cs" />
+    <Compile Include="StockDebitOperation\IStockDebitOperationClient.cs" />
+    <Compile Include="StockDebitOperation\StockDebitOperationsClient.cs" />
+    <Compile Include="Statement\IIncomingStatementClient.cs" />
+    <Compile Include="TaxReductionTip\ITaxReductionTipClient.cs" />
+    <Compile Include="TaxReductionTip\TaxReductionTipClient.cs" />
+    <Compile Include="TransferRetailRevenue\Dto\AccountingCashOrderDto.cs" />
+    <Compile Include="TransferRetailRevenue\ITransferRetailRevenueClient.cs" />
+    <Compile Include="TransferRetailRevenue\TransferRetailRevenueClient.cs" />
+    <Compile Include="Waybill\IPurchasesWaybillApiClient.cs" />
+    <Compile Include="Waybill\ISalesWaybillApiClient.cs" />
+    <Compile Include="Waybill\PurchasesWaybillApiClient.cs" />
+    <Compile Include="Waybill\SalesWaybillApiClient.cs" />
+    <Compile Include="Waybill\WaybillApiClient.cs" />
+    <Compile Include="Waybill\IWaybillApiClient.cs" />
+    <Compile Include="ProductMergeRequestDto.cs" />
+    <Compile Include="Wizard\IWizardApiClient.cs" />
+    <Compile Include="Wizard\WizardApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{7D9EC280-8CEE-4202-BC51-AD26C3429FE9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Json\Moedelo.InfrastructureV2.Json.csproj">
+      <Project>{83524410-19D8-4330-BF4D-8D963CDE2E8C}</Project>
+      <Name>Moedelo.InfrastructureV2.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\utils\Moedelo.CommonV2.Extensions.System\Moedelo.CommonV2.Extensions.System.csproj">
+      <Project>{C5CBB4F1-A2EB-421B-B98F-94626EB172BD}</Project>
+      <Name>Moedelo.CommonV2.Extensions.System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.AccountingV2.Dto\Moedelo.AccountingV2.Dto.csproj">
+      <Project>{512D07B8-F24B-4158-9DC0-0961A3E265E5}</Project>
+      <Name>Moedelo.AccountingV2.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

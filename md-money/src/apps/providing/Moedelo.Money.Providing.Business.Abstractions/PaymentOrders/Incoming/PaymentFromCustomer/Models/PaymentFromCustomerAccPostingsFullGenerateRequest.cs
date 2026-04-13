@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using Moedelo.Money.Providing.Business.Abstractions.Models;
+
+namespace Moedelo.Money.Providing.Business.Abstractions.PaymentOrders.Incoming.PaymentFromCustomer.Models
+{
+    public class PaymentFromCustomerAccPostingsFullGenerateRequest
+    {
+        public long DocumentBaseId { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public decimal Sum { get; set; }
+
+        /// <summary>
+        /// Расчетный счет
+        /// </summary>
+        public int SettlementAccountId { get; set; }
+
+        /// <summary>
+        /// Плательщик
+        /// </summary>
+        public int KontragentId { get; set; }
+
+        /// <summary>
+        /// По договору 
+        /// </summary>
+        public long? ContractBaseId { get; set; }
+
+        /// <summary>
+        /// Признак посредничества
+        /// </summary>
+        public bool IsMediation { get; set; }
+
+        /// <summary>
+        /// Список первичных документов
+        /// </summary>
+        public IReadOnlyCollection<DocumentLink> DocumentLinks { get; set; }
+
+        /// <summary>
+        /// Признак: основной контрагент
+        /// </summary>
+        public bool IsMainKontragent { get; set; }
+    }
+}

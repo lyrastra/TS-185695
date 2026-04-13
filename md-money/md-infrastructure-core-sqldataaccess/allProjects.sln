@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.SqlDataAccess.Abstractions", "src\Moedelo.Infrastructure.SqlDataAccess.Abstractions\Moedelo.Infrastructure.SqlDataAccess.Abstractions.csproj", "{A1F2CD0F-C154-4376-9EF2-7DDA12BE08ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.SqlDataAccess", "src\Moedelo.Infrastructure.SqlDataAccess\Moedelo.Infrastructure.SqlDataAccess.csproj", "{2A2E4878-6BF0-464E-8295-B24880078A53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.DependencyInjection.Abstractions", "..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj", "{164B2EF7-8940-4654-A102-A41AD1B87448}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1F2CD0F-C154-4376-9EF2-7DDA12BE08ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1F2CD0F-C154-4376-9EF2-7DDA12BE08ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1F2CD0F-C154-4376-9EF2-7DDA12BE08ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1F2CD0F-C154-4376-9EF2-7DDA12BE08ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A2E4878-6BF0-464E-8295-B24880078A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A2E4878-6BF0-464E-8295-B24880078A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A2E4878-6BF0-464E-8295-B24880078A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A2E4878-6BF0-464E-8295-B24880078A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164B2EF7-8940-4654-A102-A41AD1B87448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164B2EF7-8940-4654-A102-A41AD1B87448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164B2EF7-8940-4654-A102-A41AD1B87448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164B2EF7-8940-4654-A102-A41AD1B87448}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32291D22-1741-4C82-82B8-872851BFFDD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Money.Kafka</RootNamespace>
+    <AssemblyName>Moedelo.Money.Kafka</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\BillLink.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Contractor.cs" />
+    <Compile Include="Models\DocumentLink.cs" />
+    <Compile Include="Models\Nds.cs" />
+    <Compile Include="MoneyConstants.cs" />
+    <Compile Include="PaymentOrders\CUDEventMessageValue.cs" />
+    <Compile Include="PaymentOrders\CUDCommandMessageValue.cs" />
+    <Compile Include="PaymentOrders\Import\Events\ImportFailed.cs" />
+    <Compile Include="PaymentOrders\Import\IPaymentOrderImportEventWriter.cs" />
+    <Compile Include="PaymentOrders\Import\PaymentOrderImportConstants.cs" />
+    <Compile Include="PaymentOrders\Import\PaymentOrderImportEventWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\AccrualOfInterest\Commands\ImportDuplicateAccrualOfInterest.cs" />
+    <Compile Include="PaymentOrders\Incoming\AccrualOfInterest\Commands\ImportAccrualOfInterest.cs" />
+    <Compile Include="PaymentOrders\Incoming\AccrualOfInterest\IAccrualOfInterestCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\AccrualOfInterest\AccrualOfInterestCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\AccrualOfInterest\AccrualOfInterestConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPaymentFromCustomer\Commands\ImportCurrencyPaymentFromCustomer.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPaymentFromCustomer\Commands\ImportDuplicateCurrencyPaymentFromCustomer.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPaymentFromCustomer\Commands\ImportWithMissingContractorCurrencyPaymentFromCustomer.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPaymentFromCustomer\Commands\ImportWithMissingExchangeRateCurrencyPaymentFromCustomer.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPaymentFromCustomer\CurrencyPaymentFromCustomerConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPurchase\Commands\ImportDuplicateIncomingCurrencyPurchase.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPurchase\Commands\ImportIncomingCurrencyPurchase.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPurchase\IncomingCurrencyPurchaseConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencySale\Commands\ImportDuplicateIncomingCurrencySale.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencySale\Commands\ImportIncomingCurrencySale.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencySale\Commands\ImportWithMissingCurrencySettlementAccountIncomingCurrencySale.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencySale\IncomingCurrencySaleConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyTransferFromAccount\Commands\ImportCurrencyTransferFromAccount.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyTransferFromAccount\Commands\ImportDuplicateCurrencyTransferFromAccount.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyTransferFromAccount\Commands\ImportWithMissingCurrencySettlementAccountCurrencyTransferFromAccount.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyTransferFromAccount\CurrencyTransferFromAccountConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\PaymentFromCustomer\Commands\ImportDuplicatePaymentFromCustomer.cs" />
+    <Compile Include="PaymentOrders\Incoming\PaymentFromCustomer\Commands\ImportPaymentFromCustomer.cs" />
+    <Compile Include="PaymentOrders\Incoming\PaymentFromCustomer\Commands\ImportWithMissingContractorPaymentFromCustomer.cs" />
+    <Compile Include="PaymentOrders\Incoming\PaymentFromCustomer\IPaymentFromCustomerCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\PaymentFromCustomer\PaymentFromCustomerCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\PaymentFromCustomer\PaymentFromCustomerConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\FinancialAssistance\Commands\ImportFinancialAssistance.cs" />
+    <Compile Include="PaymentOrders\Incoming\FinancialAssistance\Commands\ImportDuplicateFinancialAssistance.cs" />
+    <Compile Include="PaymentOrders\Incoming\FinancialAssistance\Commands\ImportWithMissingContractorFinancialAssistance.cs" />
+    <Compile Include="PaymentOrders\Incoming\FinancialAssistance\FinancialAssistanceCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\FinancialAssistance\FinancialAssistanceConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\FinancialAssistance\IFinancialAssistanceCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanObtaining\Commands\ImportLoanObtaining.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanObtaining\Commands\ImportDuplicateLoanObtaining.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanObtaining\Commands\ImportWithMissingContractLoanObtaining.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanObtaining\Commands\ImportWithMissingContractorLoanObtaining.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanObtaining\LoanObtainingCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanObtaining\LoanObtainingConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanObtaining\ILoanObtainingCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\Commands\ImportDuplicateLoanReturn.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\Commands\ImportLoanReturn.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\Commands\ImportWithMissingContractLoanReturn.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\Commands\ImportWithMissingContractorLoanReturn.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\ILoanReturnCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\LoanReturnCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\LoanReturnConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\RetailRevenue\Commands\ImportRetailRevenue.cs" />
+    <Compile Include="PaymentOrders\Incoming\RetailRevenue\Commands\ImportDuplicateRetailRevenue.cs" />
+    <Compile Include="PaymentOrders\Incoming\RetailRevenue\RetailRevenueCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\RetailRevenue\RetailRevenueConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\RetailRevenue\IRetailRevenueCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromAccount\Commands\ImportDuplicateTransferFromAccount.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromAccount\Commands\ImportTransferFromAccount.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromAccount\ITransferFromAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromAccount\TransferFromAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromAccount\TransferFromAccountConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromCash\Commands\ImportDuplicateTransferFromCash.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromCash\Commands\ImportTransferFromCash.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromCash\ITransferFromCashCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromCash\TransferFromCashCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromCash\TransferFromCashConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromPurse\Commands\ImportTransferFromPurse.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromPurse\Commands\ImportDuplicateTransferFromPurse.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromPurse\TransferFromPurseCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromPurse\TransferFromPurseConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\TransferFromPurse\ITransferFromPurseCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionOfOwnFunds\Commands\ImportContributionOfOwnFunds.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionOfOwnFunds\Commands\ImportDuplicateContributionOfOwnFunds.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionOfOwnFunds\ContributionOfOwnFundsCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionOfOwnFunds\ContributionOfOwnFundsConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionOfOwnFunds\IContributionOfOwnFundsCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionToAuthorizedCapital\Commands\ImportContributionToAuthorizedCapital.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionToAuthorizedCapital\Commands\ImportDuplicateContributionToAuthorizedCapital.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionToAuthorizedCapital\Commands\ImportWithMissingContractorContributionToAuthorizedCapital.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionToAuthorizedCapital\ContributionToAuthorizedCapitalCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionToAuthorizedCapital\ContributionToAuthorizedCapitalConstants.cs" />
+    <Compile Include="PaymentOrders\Incoming\ContributionToAuthorizedCapital\IContributionToAuthorizedCapitalCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPaymentFromCustomer\CurrencyPaymentFromCustomerCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPaymentFromCustomer\ICurrencyPaymentFromCustomerCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyTransferFromAccount\CurrencyTransferFromAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyTransferFromAccount\ICurrencyTransferFromAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencySale\IIncomingCurrencySaleCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencySale\IncomingCurrencySaleCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPurchase\IIncomingCurrencyPurchaseCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\CurrencyPurchase\IncomingCurrencyPurchaseCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\Events\LoanReturnUpdatedMessage.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\ILoanReturnEventWriter.cs" />
+    <Compile Include="PaymentOrders\Incoming\LoanReturn\LoanReturnEventWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BankFee\IOutgoingCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\Commands\ActualizeFromImport\ActualizeFromImport.cs" />
+    <Compile Include="PaymentOrders\Outgoing\Commands\ActualizeFromImport\ActualizeFromImportItem.cs" />
+    <Compile Include="PaymentOrders\Outgoing\Commands\ActualizeFromImport\IOutgoingPaymentOrdersCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\Commands\ActualizeFromImport\OutgoingPaymentOrdersCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\BudgetaryPaymentCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\BudgetaryPaymentConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\Commands\ImportBudgetaryPayment.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\Commands\ImportDuplicateBudgetaryPayment.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\IBudgetaryPaymentCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BudgetaryPayment\Models\BudgetaryRecipient.cs" />
+    <Compile Include="PaymentOrders\Outgoing\Commands\OutgoingPaymentOrdersConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyBankFee\Commands\ImportCurrencyBankFee.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyBankFee\Commands\ImportDuplicateCurrencyBankFee.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyBankFee\Commands\ImportWithMissingExchangeRateCurrencyBankFee.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyBankFee\CurrencyBankFeeConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPaymentToSupplier\Commands\ImportCurrencyPaymentToSupplier.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPaymentToSupplier\Commands\ImportDuplicateCurrencyPaymentToSupplier.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPaymentToSupplier\Commands\ImportWithMissingMissingContractorCurrencyPaymentToSupplier.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPaymentToSupplier\Commands\ImportWithMissingMissingExchangeRateCurrencyPaymentToSupplier.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPaymentToSupplier\CurrencyPaymentToSupplierConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPurchase\Commands\ImportDuplicateOutgoingCurrencyPurchase.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPurchase\Commands\ImportOutgoingCurrencyPurchase.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPurchase\Commands\ImportWithMissingMissingExchangeRateOutgoingCurrencyPurchase.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPurchase\Commands\ImportWithMissingCurrencySettlementAccountOutgoingCurrencyPurchase.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPurchase\OutgoingCurrencyPurchaseConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencySale\Commands\ImportDuplicateOutgoingCurrencySale.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencySale\Commands\ImportOutgoingCurrencySale.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencySale\Commands\ImportWithMissingMissingExchangeRateOutgoingCurrencySale.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencySale\OutgoingCurrencySaleConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyTransferToAccount\Commands\ImportCurrencyTransferToAccount.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyTransferToAccount\Commands\ImportDuplicateCurrencyTransferToAccount.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyTransferToAccount\Commands\ImportWithMissingCurrencySettlementAccountCurrencyTransferToAccount.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyTransferToAccount\CurrencyTransferToAccountConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\Commands\PaymentToNaturalPersonsType.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\Commands\ImportDuplicatePaymentToSupplier.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\Commands\ImportPaymentToSupplier.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\Commands\ImportWithMissingContractorPaymentToSupplier.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\IPaymentToSupplierCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\PaymentToSupplierCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToSupplier\PaymentToSupplierConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\Commands\ImportDuplicatePaymentToNaturalPersons.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\Commands\ImportPaymentToNaturalPersons.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\Commands\ImportWithMissingEmployeePaymentToNaturalPersons.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\IPaymentToNaturalPersonsCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\PaymentToNaturalPersonsCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToNaturalPersons\PaymentToNaturalPersonsConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\Commands\ImportDuplicatePaymentToAccountablePerson.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\Commands\ImportPaymentToAccountablePerson.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\Commands\ImportWithMissingEmployeePaymentToAccountablePerson.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\IPaymentToAccountablePersonCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\PaymentToAccountablePersonCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\PaymentToAccountablePerson\PaymentToAccountablePersonConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanRepayment\Commands\ImportDuplicateLoanRepayment.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanRepayment\Commands\ImportLoanRepayment.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanRepayment\Commands\ImportWithMissingContractLoanRepayment.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanRepayment\Commands\ImportWithMissingContractorLoanRepayment.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanRepayment\ILoanRepaymentCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanRepayment\LoanRepaymentCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanRepayment\LoanRepaymentConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\Commands\ImportDuplicateLoanIssue.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\Commands\ImportLoanIssue.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\Commands\ImportWithMissingContractLoanIssue.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\Commands\ImportWithMissingContractorLoanIssue.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\ILoanIssueCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\LoanIssueCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\LoanIssueConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\TransferToAccount\Commands\ImportDuplicateTransferToAccount.cs" />
+    <Compile Include="PaymentOrders\Outgoing\TransferToAccount\Commands\ImportTransferToAccount.cs" />
+    <Compile Include="PaymentOrders\Outgoing\TransferToAccount\ITransferToAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\TransferToAccount\TransferToAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\TransferToAccount\TransferToAccountConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalFromAccount\Commands\ImportDuplicateWithdrawalFromAccount.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalFromAccount\Commands\ImportWithdrawalFromAccount.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalFromAccount\IWithdrawalFromAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalFromAccount\WithdrawalFromAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalFromAccount\WithdrawalFromAccountConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalOfProfit\Commands\ImportDuplicateWithdrawalOfProfit.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalOfProfit\Commands\ImportWithdrawalOfProfit.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalOfProfit\Commands\ImportWithMissingContractorWithdrawalOfProfit.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalOfProfit\IWithdrawalOfProfitCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalOfProfit\WithdrawalOfProfitCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\WithdrawalOfProfit\WithdrawalOfProfitConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\RefundToCustomer\Commands\ImportWithMissingContractorRefundToCustomer.cs" />
+    <Compile Include="PaymentOrders\Outgoing\RefundToCustomer\RefundToCustomerCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\RefundToCustomer\RefundToCustomerConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\RefundToCustomer\Commands\ImportRefundToCustomer.cs" />
+    <Compile Include="PaymentOrders\Outgoing\RefundToCustomer\Commands\ImportDuplicateRefundToCustomer.cs" />
+    <Compile Include="PaymentOrders\Outgoing\RefundToCustomer\IRefundToCustomerCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BankFee\Commands\ImportBankFee.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BankFee\Commands\ImportDuplicateBankFee.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BankFee\BankFeeCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BankFee\BankFeeConstants.cs" />
+    <Compile Include="PaymentOrders\Outgoing\BankFee\IBankFeeCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPaymentToSupplier\CurrencyPaymentToSupplierCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPaymentToSupplier\ICurrencyPaymentToSupplierCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyBankFee\CurrencyBankFeeCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyBankFee\ICurrencyBankFeeCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyTransferToAccount\ICurrencyTransferToAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyTransferToAccount\CurrencyTransferToAccountCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPurchase\IOutgoingCurrencyPurchaseCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencyPurchase\OutgoingCurrencyPurchaseCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencySale\IOutgoingCurrencySaleCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\CurrencySale\OutgoingCurrencySaleCommandWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\Events\LoanIssueUpdatedMessage.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\ILoanIssueEventWriter.cs" />
+    <Compile Include="PaymentOrders\Outgoing\LoanIssue\LoanIssueEventWriter.cs" />
+    <Compile Include="PaymentOrders\PaymentOrdersConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurseOperations\Incoming\PaymentFromCustomer\PaymentFromCustomerConstants.cs" />
+    <Compile Include="PurseOperations\Incoming\PaymentFromCustomer\PaymentFromCustomerEventWriter.cs" />
+    <Compile Include="PurseOperations\Incoming\PaymentFromCustomer\IPaymentFromCustomerEventWriter.cs" />
+    <Compile Include="PurseOperations\Incoming\PaymentFromCustomer\Events\PaymentFromCustomerCreated.cs" />
+    <Compile Include="PurseOperations\Incoming\PaymentFromCustomer\Events\PaymentFromCustomerDeleted.cs" />
+    <Compile Include="PurseOperations\Incoming\PaymentFromCustomer\Events\PaymentFromCustomerUpdated.cs" />
+    <Compile Include="PurseOperations\PurseOperationsConstants.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{D75DDFA4-BF4C-410C-A6AF-9F0D5F2582D9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Json\Moedelo.InfrastructureV2.Json.csproj">
+      <Project>{83524410-19D8-4330-BF4D-8D963CDE2E8C}</Project>
+      <Name>Moedelo.InfrastructureV2.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\clients\executionContext\Moedelo.ExecutionContext.Client\Moedelo.ExecutionContext.Client.csproj">
+      <Project>{079581e8-2d94-4daf-91f4-6874ffb328b0}</Project>
+      <Name>Moedelo.ExecutionContext.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,71 @@
+
+        <form>
+            <div class="field client">
+                <div class="title">Имя</div>
+                <div class="controls">
+                    <input type="text" id="Name" name="Name" data-val="true" data-val-required="Укажите имя контрагента" autocomplete="off" />
+                    <br/><span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            
+            <div class="field kontragentTypes" style="display: none;">
+                <div class="title">Тип</div>
+                <div class="controls">
+                    <span class="selected" data-value="2" >Клиент</span>
+                    <span class="link" data-value="3">Агент</span>
+                    <span class="link" data-value="1">Контрагент</span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="title">ИНН</div>
+                <div class="controls checkKontragent__support--dialog">
+                    <input type="text" id="Inn" name="Inn" style="width: 200px;" class="js-checkKontragent-inn"
+                           data-val="true" data-val-inn="Некорректный формат ИНН" data-val-inn-length="ИНН состоит из 8, 10 или 12 цифр" maxlength="12" />
+                    <br /><span class="field-validation-valid" data-valmsg-for="Inn" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            
+            <div class="field">
+                <div class="title">КПП</div>
+                <div class="controls checkKontragent__support--dialog">
+                    <input type="text" id="Kpp" name="Kpp" maxlength="9" style="width: 200px;" class="js-checkKontragent-kpp"
+                           data-val="true" data-val-length="КПП состоит из 9 цифр" data-val-length-min="9" />
+                    <br /><span class="field-validation-valid" data-valmsg-for="Kpp" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            
+            <div class="field">
+                <div class="title"><label for="Address">Адрес</label></div>
+                <div class="controls">
+                    <textarea id="Address" name="Address" data-val="true" maxlength="1000" rows="3" style="max-width: 400px;height: auto;"></textarea>
+                    <br/><span class="field-validation-valid" data-valmsg-for="Address" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="title">Банк</div>
+                <div class="controls">
+                    <input type="text" id="BankName" name="BankName" data-val="true" watermark=" Начните вводить название или БИК банка"/>
+                    <input type="hidden" id="Bik" name="Bik" data-val="true"/>
+                    <br/><span class="field-validation-valid" data-valmsg-for="BankName" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            
+            <div class="field">
+                <div class="title">Расчетный счет</div>
+                <div class="controls">
+                    <input type="text" id="SettlementAccountNumber" name="SettlementAccountNumber"  maxlength="20"  style="width: 200px;" 
+                    data-val="true"  data-val="true" data-val-length="Расчетный счет состоит из 20 цифр" data-val-length-min="20"/>
+                    <br/><span class="field-validation-valid" data-valmsg-for="SettlementAccountNumber" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+        </form>
+        <div class="dialog_buttons">
+                <div class="mdButton" id="save">
+                    <span class="innerText">Сохранить</span>
+                </div>
+                <a id="cancelAddKontragent" class="cancelLink">Отменить</a>
+        </div>
+

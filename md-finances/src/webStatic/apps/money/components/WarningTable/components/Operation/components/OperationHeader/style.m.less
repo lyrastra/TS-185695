@@ -1,0 +1,72 @@
+@buttonColor: #209ac4;
+@red: #DE3318;
+@yellow: #F7BA2A;
+@green: #62b251;
+
+.operation-type {
+    font-size: 15px;
+    line-height: 1;
+
+    .operation-type__icon {
+        display: inline-block;
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        text-align: center;
+
+        svg {
+            width: 10px;
+            height: 10px;
+            fill: #ffffff;
+            vertical-align: -1px;
+        }
+
+        &--clear {
+            background-color: @red;
+        }
+
+        &--warning {
+            background-color: @yellow;
+        }
+
+        &--success {
+            background-color: @green;
+        }
+    }
+
+    .what-to-do__button {
+        border: none !important;
+        background: none !important;
+        color: @buttonColor !important;
+        height: 12px !important;
+
+        &__text {
+            border-bottom: 1px solid transparent;
+
+            &:hover {
+                border-bottom: 1px dashed rgba(32, 154, 196, 0.5);
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: @buttonColor;
+            }
+        }
+
+        & > svg {
+            margin-left: 5px;
+            margin-bottom: 1px;
+            fill: #63b8d6;
+        }
+
+        & + div[class*=dropdown] {
+            top: 38px;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello-copy-doc-control" horiz-adv-x="1000" >
+<font-face font-family="fontello-copy-doc-control" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="icon_copy_doc" unicode="&#x63;" d="M167 850v-167h-167v-833h667v167h166v833h-666z m416-917h-500v667h84v-583h416v-84z m167 167h-500v667h500v-667z" horiz-adv-x="833" />
+</font>
+</defs>
+</svg>

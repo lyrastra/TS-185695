@@ -1,0 +1,171 @@
+.mdLMenu {
+  width: 215px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  color: #1f85c5;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.mdLMenu ul {
+  float: left;
+}
+.mdLMenu li {
+  width: 100%;
+  float: left;
+  line-height: 27px;
+}
+.mdLMenu .mdLMenuItem {
+  padding: 4px 5px 4px 5px;
+  cursor: pointer;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  min-height: 17px;
+  line-height: 1.5;
+}
+.mdLMenu .mdLMenuItem:hover:not(.mdDisableItem):not(.mdSelectedItem) span {
+  border-bottom: 1px solid transparent;
+}
+.mdLMenu .mdLMenuItem.mdSelectedItem {
+  background-color: #f1d6a9;
+}
+.mdLMenu .mdLMenuItem.mdSelectedItem span.mdLMenuTextSpan {
+  border-bottom: 1px solid transparent;
+  color: #404040;
+  font-size: 13px;
+  font-weight: bold;
+}
+.mdLMenu .mdLMenuItem.mdSelectedItem a {
+  text-decoration: none;
+  border-bottom: none;
+  color: #404040;
+  font-size: 13px;
+  font-weight: bold;
+}
+.mdLMenu .mdLMenuItem .mdLMenuText {
+  width: 80%;
+  display: inline-block;
+}
+.mdLMenu .mdLMenuItem span {
+  border-bottom: none;
+}
+.mdLMenu ul.secondLevel {
+  width: 195px;
+  margin-left: 20px;
+}
+.mdLMenu ul.thirdLevel {
+  width: 175px;
+  margin-left: 20px;
+}
+.mdLMenu ul.fourthLevel {
+  width: 155px;
+  margin-left: 20px;
+}
+.mdLMenu .contextMenuElement {
+  float: right;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.mdLMenu .contextMenuElement .contextMenuButton {
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  color: #bdbdbd;
+  font-size: 20px;
+  text-align: center;
+  line-height: 15px;
+}
+.mdLMenu .mdSelectedItem .contextMenuElement {
+  border-color: #bdbdbd;
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f3f3f3), to(#e3e3e3));
+  background: -webkit-linear-gradient(#f3f3f3, #e3e3e3);
+  background: -moz-linear-gradient(#f3f3f3, #e3e3e3);
+  background: -ms-linear-gradient(#f3f3f3, #e3e3e3);
+  background: -o-linear-gradient(#f3f3f3, #e3e3e3);
+  background: linear-gradient(#f3f3f3, #e3e3e3);
+  -webkit-box-shadow: #d5d5d5 0px 1px 1px;
+  -moz-box-shadow: #D5D5D5 0px 1px 1px;
+  box-shadow: #d5d5d5 0px 1px 1px;
+}
+.mdLMenu .mdSelectedItem .contextMenuElement:hover {
+  border-color: #888888;
+}
+.mdLMenu .mdSelectedItem .contextMenuElement:active {
+  outline: none;
+  border-color: #BDBDBD;
+  -webkit-box-shadow: inset #CDCDCD 0px 1px 1px;
+  -moz-box-shadow: inset #CDCDCD 0px 1px 1px;
+  box-shadow: inset #CDCDCD 0px 1px 1px;
+  background: #E7E7E7;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#e7e7e7), to(#d9d9d9));
+  background: -webkit-linear-gradient(#e7e7e7, #d9d9d9);
+  background: -moz-linear-gradient(#e7e7e7, #d9d9d9);
+  background: -ms-linear-gradient(#e7e7e7, #d9d9d9);
+  background: -o-linear-gradient(#e7e7e7, #d9d9d9);
+  background: linear-gradient(#e7e7e7, #d9d9d9);
+}
+.mdLMenu .mdSelectedItem .contextMenuElement .contextMenuButton {
+  color: #404040;
+  font-weight: bold;
+}
+.mdLMenu .secondLevel .mdLMenuItem:hover .contextMenuElement,
+.mdLMenu .thirdLevel .mdLMenuItem:hover .contextMenuElement,
+.mdLMenu .fourthLevel .mdLMenuItem:hover .contextMenuElement {
+  width: 18px;
+  height: 18px;
+  border: 1px solid transparent;
+  position: relative;
+  float: right;
+}
+.mdLMenu .secondLevel .mdLMenuItem:hover .contextMenuElement:hover,
+.mdLMenu .thirdLevel .mdLMenuItem:hover .contextMenuElement:hover,
+.mdLMenu .fourthLevel .mdLMenuItem:hover .contextMenuElement:hover {
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #bdbdbd;
+  background-color: #fff;
+}
+.mdLMenu .secondLevel .mdLMenuItem:hover .contextMenuElement:hover .contextMenuButton,
+.mdLMenu .thirdLevel .mdLMenuItem:hover .contextMenuElement:hover .contextMenuButton,
+.mdLMenu .fourthLevel .mdLMenuItem:hover .contextMenuElement:hover .contextMenuButton {
+  border-color: #000 transparent transparent transparent;
+}
+.mdLMenu .secondLevel .mdLMenuItem:hover .contextMenuElement .contextMenuButton,
+.mdLMenu .thirdLevel .mdLMenuItem:hover .contextMenuElement .contextMenuButton,
+.mdLMenu .fourthLevel .mdLMenuItem:hover .contextMenuElement .contextMenuButton {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 7px 4px 0 4px;
+  border-color: #9a9a9a transparent transparent transparent;
+}
+.mdLMenu .secondLevel .mdSelectedItem .contextMenuElement,
+.mdLMenu .thirdLevel .mdSelectedItem .contextMenuElement,
+.mdLMenu .fourthLevel .mdSelectedItem .contextMenuElement {
+  border: none;
+  background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.mdHorisontalSeparateLine {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 15px;
+  float: left;
+  border-bottom: 1px solid #dddddd;
+}

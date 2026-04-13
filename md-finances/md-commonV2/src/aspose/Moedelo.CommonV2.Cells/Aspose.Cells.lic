@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Moe delo Inc</LicensedTo>
+    <LicenseType>Developer OEM</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>121206035613</OrderID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Cells for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>faeb3689-f207-405d-a2d4-adaa3f128f01</SerialNumber>
+    <SubscriptionExpiry>20131206</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>KCgvLG20iqout9/4WBE24P0jjhOzLngVJVmpd+9vt2F4fVYlH22vzImiGR2JCaXq8HIywvjlv73uJmBhc3r8wjPNBdXkZehei39O0GA+Wfio4vY+7kLbCclHAwatj/SkpfZ2PkNTo5ZHV9tIn8+BKwN2/stYo7gHg1Pf38dSkFo=</Signature>
+</License>

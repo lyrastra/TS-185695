@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'WebSymbolsLigaRegular';
+  src: url('/App/oldApps/Common/public/fonts/websymbolsligaregular.eot');
+  src: url('/App/oldApps/Common/public/fonts/websymbolsligaregular.eot?#iefix') format('embedded-opentype'), url('/App/oldApps/Common/public/fonts/websymbolsligaregular.woff') format('woff'), url('/App/oldApps/Common/public/fonts/websymbolsligaregular.ttf') format('truetype'), url('/App/oldApps/Common/public/fonts/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+}
+.mdFilter-control {
+  border: 1px solid;
+  border-color: #6A6A6A #939393 #ADADAD;
+  position: relative;
+  display: inline-block;
+}
+.mdFilter-control .mdFilter-inputElement {
+  padding-left: 10px;
+  width: 155px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.mdFilter-control .mdFilter-shortList {
+  display: none;
+  position: absolute;
+  background: white;
+  z-index: 510;
+  -webkit-box-shadow: 0 2px 7px #c9c6c6;
+  -moz-box-shadow: 0 2px 7px #c9c6c6;
+  box-shadow: 0 2px 7px #c9c6c6;
+  border: 1px solid #939393;
+  border-top: 0;
+  top: 26px;
+  left: -1px;
+}
+.mdFilter-control .mdFilter-shortList li {
+  padding: 1px 10px;
+  cursor: pointer;
+}
+.mdFilter-control .mdFilter-shortList li:last-child {
+  padding-bottom: 2px;
+}
+.mdFilter-control .mdFilter-shortList li:first-child {
+  padding-top: 2px;
+}
+.mdFilter-control .mdFilter-shortList li.mdFilter-shortList-item-hover {
+  background: #f2d7a9;
+}
+.mdFilter-control .mdFilter-searchButton {
+  color: #777;
+  /*
+        -webkit-text-shadow:  0px 0px 1px #777;
+        text-shadow: 0px 0px 1px #777; 
+        */
+  font-size: 13px;
+  font-family: 'WebSymbolsLigaRegular';
+  margin-right: 5px;
+  cursor: pointer;
+}
+.mdFilter-control .mdFilter-searchButton:hover {
+  color: #000;
+}
+.mdFilter-control .mdFilter-extendedFilterButton {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  border-top: 6px solid #B2B2B2;
+  border-bottom: 5px solid rgba(0, 0, 0, 0);
+  position: relative;
+  top: 4px;
+  right: 14px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.mdFilter-control .mdFilter-extendedFilterButton:hover {
+  border-top-color: #000;
+}
+.mdFilter-control .mdFilter-splitter {
+  width: 0;
+  height: 15px;
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  position: relative;
+  top: 3px;
+  right: 8px;
+}
+.ie8 .mdFilter-inputElement {
+  background: transparent;
+}
+.searchArea {
+  float: right;
+}
+.mdFilter-searchArea {
+  margin-top: 10px;
+  display: inline-block;
+  width: 728px;
+}
+.mdFilter-searchArea .removeAll {
+  border: 1px solid #B2B2B2;
+  border-radius: 2px 2px 2px 2px;
+  color: #777777;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight: bold;
+  height: 16px;
+  line-height: 15px;
+  padding: 1px;
+  position: relative;
+  text-align: center;
+  top: 2px;
+  width: 16px;
+}
+.mdFilter-searchArea .removeAll:hover {
+  color: #FD0606;
+}
+.mdFilter-searchArea .extendedFilterLink {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.mdFilter-searchArea .extendedFilterLink:hover {
+  text-decoration: none;
+}

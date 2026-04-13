@@ -1,0 +1,32 @@
+﻿@using Moedelo.CommonV2.Webpack
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Деньги − интернет-бухгалтерия Моё дело";
+}
+
+<div id="content"></div>
+
+@section header
+{
+    @Html.Raw(WebpackInitializer.RenderCss("index"))
+    @Html.Raw(WebpackInitializer.RenderCss("bankApp", "Static"))
+}
+
+@section scripts
+{
+    @Html.Raw(WebpackInitializer.RenderJs("oldCore"))
+    @Html.Raw(WebpackInitializer.RenderJs("bankApp", "Static"))
+    <script>
+        window._preloading = window._preloading || {};
+        window._preloading.TaxationSystems = @Html.Raw(ViewBag.TaxationSystems);
+        window._preloading.CanViewPosting = @Html.Raw(ViewBag.CanViewPosting.ToString().ToLower());
+        window._preloading.IsProfOutsource = @Html.Raw(ViewBag.IsProfOutsource.ToString().ToLower());
+        window._preloading.IsOoo = @Html.Raw(ViewBag.IsOoo.ToString().ToLower());
+
+        window.UserAccessManager = {
+            AccessRule: @Html.Raw(ViewBag.AccessRule)
+        };
+    </script>
+
+    @Html.Raw(WebpackInitializer.RenderJs("index"))
+}

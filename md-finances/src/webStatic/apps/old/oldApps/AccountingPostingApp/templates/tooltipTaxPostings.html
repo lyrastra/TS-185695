@@ -1,0 +1,41 @@
+<ul class="taxPostingsHeader">
+    <li>
+        <div class="date">Дата</div>
+        <div class="incoming">Доход</div>
+        <div class="outgoing">Расход</div>
+        <div class="destination">Описание</div>
+        <div class="type">Тип</div>
+        <div class="kind">Вид</div>
+        <div class="normalizedCostType">Нормируемый</div>
+    </li>
+</ul>
+<div data-bind="List">
+<ul class="taxPostings" data-bind="MainPostings">
+    <li>
+        <div class="date" data-bind="PostingDate"></div>
+        <div class="incoming" data-bind="Incoming"></div>
+        <div class="outgoing" data-bind="Outgoing"></div>
+        <div class="destination" data-bind="Destination"></div>
+        <div class="type" data-bind="Type"></div>
+        <div class="kind" data-bind="Kind"></div>
+        <div class="normalizedCostType" data-bind="NormalizedCostType"></div>
+    </li>
+</ul>
+    <div class="linkDoc">По связанным документам <span class="greyLine"></span></div>
+    <ul class="taxPostings" data-bind="LinkedDocuments">
+        <li>
+            <div class="documentName"><span data-bind="Type"></span> № <span data-bind="DocumentNumber"></span> от <span data-bind="DocumentDate"></span></div>
+            <ul data-bind="Postings">
+                <li>
+                    <div class="date" data-bind="PostingDate"></div>
+                    <div class="incoming" data-bind="Incoming"></div>
+                    <div class="outgoing" data-bind="Outgoing"></div>
+                    <div class="destination" data-bind="Destination"></div>
+                    <div class="type" data-bind="Type"></div>
+                    <div class="kind" data-bind="Kind"></div>
+                    <div class="normalizedCostType" data-bind="NormalizedCostType"></div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

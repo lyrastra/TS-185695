@@ -1,0 +1,168 @@
+[submodule "md-infrastructure-core-dependencyinjection"]
+	path = md-infrastructure-core-dependencyinjection
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-dependencyinjection.git
+[submodule "md-infrastructure-core-sqldataaccess"]
+	path = md-infrastructure-core-sqldataaccess
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-sqldataaccess.git
+[submodule "md-infrastructure-core-consul"]
+	path = md-infrastructure-core-consul
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-consul.git
+[submodule "md-common-settings"]
+	path = md-common-settings
+	url = https://gitlab.mdtest.org/development/infra/md-common-settings.git
+[submodule "md-common-executioncontext"]
+	path = md-common-executioncontext
+	url = https://gitlab.mdtest.org/development/infra/md-common-executioncontext.git
+[submodule "md-common-jwt"]
+	path = md-common-jwt
+	url = https://gitlab.mdtest.org/development/infra/md-common-jwt.git
+[submodule "md-common-audit"]
+	path = md-common-audit
+	url = https://gitlab.mdtest.org/development/infra/md-common-audit.git
+[submodule "md-common-logging"]
+	path = md-common-logging
+	url = https://gitlab.mdtest.org/development/infra/md-common-logging.git
+[submodule "md-infrastructure-core-json"]
+	path = md-infrastructure-core-json
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-json.git
+[submodule "md-infrastructure-core-apachekafka"]
+	path = md-infrastructure-core-apachekafka
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-apachekafka.git
+[submodule "md-common-apachekafka"]
+	path = md-common-apachekafka
+	url = https://gitlab.mdtest.org/development/infra/md-common-apachekafka.git
+[submodule "md-infrastructure-core-http"]
+	path = md-infrastructure-core-http
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-http.git
+[submodule "md-accPostings-shared"]
+	path = md-accPostings-shared
+	url = https://gitlab.mdtest.org/development/md-accPostings-shared.git
+[submodule "md-money-shared"]
+	path = md-money-shared
+	url = https://gitlab.mdtest.org/development/md-money-shared.git
+[submodule "md-taxPostings-shared"]
+	path = md-taxPostings-shared
+	url = https://gitlab.mdtest.org/development/md-taxPostings-shared.git
+[submodule "md-contracts-shared"]
+	path = md-contracts-shared
+	url = https://gitlab.mdtest.org/development/md-contracts-shared.git
+[submodule "md-linkedDocuments-shared"]
+	path = md-linkedDocuments-shared
+	url = https://gitlab.mdtest.org/development/md-linkedDocuments-shared.git
+[submodule "md-kontragents-shared"]
+	path = md-kontragents-shared
+	url = https://gitlab.mdtest.org/development/md-kontragents-shared.git
+[submodule "md-infrastructure-core-aspnet"]
+	path = md-infrastructure-core-aspnet
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-aspnet.git
+[submodule "md-accounting-shared"]
+	path = md-accounting-shared
+	url = https://gitlab.mdtest.org/development/md-accounting-shared.git
+[submodule "md-requisites-shared"]
+	path = md-requisites-shared
+	url = https://gitlab.mdtest.org/development/md-requisites-shared.git
+[submodule "md-common-http"]
+	path = md-common-http
+	url = https://gitlab.mdtest.org/development/infra/md-common-http.git
+[submodule "md-common-accessrules"]
+	path = md-common-accessrules
+	url = https://gitlab.mdtest.org/development/infra/md-common-accessrules.git
+[submodule "md-infrastructure-core-redisdataaccess"]
+	path = md-infrastructure-core-redisdataaccess
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-redisdataaccess.git
+[submodule "md-common-redisdataaccess"]
+	path = md-common-redisdataaccess
+	url = https://gitlab.mdtest.org/development/infra/md-common-redisdataaccess.git
+[submodule "md-payroll-shared"]
+	path = md-payroll-shared
+	url = https://gitlab.mdtest.org/development/md-payroll-shared.git
+[submodule "md-historicalLogs-shared"]
+	path = md-historicalLogs-shared
+	url = https://gitlab.mdtest.org/development/md-historicalLogs-shared.git
+[submodule "md-receiptStatement-shared"]
+	path = md-receiptStatement-shared
+	url = https://gitlab.mdtest.org/development/md-receiptStatement-shared.git
+[submodule "md-catalog-shared"]
+	path = md-catalog-shared
+	url = https://gitlab.mdtest.org/development/md-catalog-shared.git
+[submodule "md-docs-shared"]
+	path = md-docs-shared
+	url = https://gitlab.mdtest.org/development/md-docs-shared.git
+[submodule "md-common-sqldataaccess"]
+	path = md-common-sqldataaccess
+	url = https://gitlab.mdtest.org/development/infra/md-common-sqldataaccess.git
+[submodule "md-estate-shared"]
+	path = md-estate-shared
+	url = https://gitlab.mdtest.org/development/md-estate-shared.git
+[submodule "md-spam-shared"]
+	path = md-spam-shared
+	url = https://gitlab.mdtest.org/development/md-spam-shared.git
+[submodule "md-address-shared"]
+	path = md-address-shared
+	url = https://gitlab.mdtest.org/development/md-address-shared.git
+[submodule "md-accountingStatements-shared"]
+	path = md-accountingStatements-shared
+	url = https://gitlab.mdtest.org/development/md-accountingStatements-shared.git
+[submodule "md-commonApi-shared"]
+	path = md-commonApi-shared
+	url = https://gitlab.mdtest.org/development/md-commonApi-shared.git
+[submodule "md-common-types"]
+	path = md-common-types
+	url = https://gitlab.mdtest.org/development/infra/md-common-types.git
+[submodule "md-billing-shared"]
+	path = md-billing-shared
+	url = https://gitlab.mdtest.org/development/md-billing-shared.git
+[submodule "md-infrastructure-core-extensions"]
+	path = md-infrastructure-core-extensions
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-extensions.git
+[submodule "md-paymentImport-shared"]
+	path = md-paymentImport-shared
+	url = https://gitlab.mdtest.org/development/md-paymentImport-shared.git
+[submodule "md-accounts-shared"]
+	path = md-accounts-shared
+	url = https://gitlab.mdtest.org/development/md-accounts-shared.git
+[submodule "md-stock-shared"]
+	path = md-stock-shared
+	url = https://gitlab.mdtest.org/development/md-stock-shared.git
+[submodule "md-infrastructure-core-postgresqldataaccess"]
+	path = md-infrastructure-core-postgresqldataaccess
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-postgresqldataaccess.git
+[submodule "md-common-postgresqldataaccess"]
+	path = md-common-postgresqldataaccess
+	url = https://gitlab.mdtest.org/development/infra/md-common-postgresqldataaccess.git
+[submodule "md-common-rabbitmq"]
+	path = md-common-rabbitmq
+	url = https://gitlab.mdtest.org/development/infra/md-common-rabbitmq.git
+[submodule "md-infrastructure-core-rabbitmq"]
+	path = md-infrastructure-core-rabbitmq
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-rabbitmq.git
+[submodule "md-parsers"]
+	path = md-parsers
+	url = https://gitlab.mdtest.org/development/md-parsers.git
+[submodule "md-bankIntegrations-shared"]
+	path = md-bankIntegrations-shared
+	url = https://gitlab.mdtest.org/development/md-bankIntegrations-shared.git
+[submodule "md-commissionAgents-shared"]
+	path = md-commissionAgents-shared
+	url = https://gitlab.mdtest.org/development/md-commissionAgents-shared.git
+[submodule "md-changelog-shared"]
+	path = md-changelog-shared
+	url = https://gitlab.mdtest.org/development/md-changelog-shared.git
+[submodule "md-infrastructure-core-aspose"]
+	path = md-infrastructure-core-aspose
+	url = https://gitlab.mdtest.org/development/infra/md-infrastructure-core-aspose.git
+[submodule "md-providing-shared"]
+	path = md-providing-shared
+	url = https://gitlab.mdtest.org/development/md-providing-shared.git
+[submodule "md-common-utils"]
+	path = md-common-utils
+	url = https://gitlab.mdtest.org/development/infra/md-common-utils.git
+[submodule "md-authorities-shared"]
+	path = md-authorities-shared
+	url = https://gitlab.mdtest.org/development/md-authorities-shared.git
+[submodule "md-common-consul"]
+	path = md-common-consul
+	url = https://gitlab.mdtest.org/development/infra/md-common-consul.git
+[submodule "md-common-aspnet"]
+	path = md-common-aspnet
+	url = https://gitlab.mdtest.org/development/infra/md-common-aspnet.git

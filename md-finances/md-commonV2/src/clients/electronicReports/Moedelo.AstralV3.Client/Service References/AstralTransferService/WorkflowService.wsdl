@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="tns" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="https://iotchet.ru/namespases" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="spyne.model.primitive" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xop="http://www.w3.org/2004/08/xop/include" name="WorkflowService" targetNamespace="tns" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="spyne.model.primitive">
+      <xs:simpleType name="MandatoryString">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OKPO">
+        <xs:restriction base="s1:MandatoryString">
+          <xs:minLength value="8" />
+          <xs:maxLength value="14" />
+          <xs:pattern value="[0-9]{8}|[0-9]{10}|[0-9]{12}|[0-9]{14}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ReceiverSTAT">
+        <xs:restriction base="s1:MandatoryString">
+          <xs:minLength value="5" />
+          <xs:maxLength value="8" />
+          <xs:pattern value="[0-9]{2}-[0-9]{2}[\d-]{0,3}" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://iotchet.ru/namespases">
+      <xs:simpleType name="Filename">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="255" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="File">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="signatures" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Signature</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="filename" nillable="true" type="s0:Filename">
+            <xs:annotation>
+              <xs:documentation>Filename</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="content" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Content</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FileWithID">
+        <xs:complexContent mixed="false">
+          <xs:extension base="s0:File">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="id" nillable="true" type="xs:integer">
+                <xs:annotation>
+                  <xs:documentation>File identifier</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="FileArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="File" nillable="true" type="s0:File" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Files">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="File" type="s0:File" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="RealIp">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:pattern value="((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ReceiverAIS">
+        <xs:restriction base="xs:string">
+          <xs:length value="2" />
+          <xs:pattern value="[0-9]{2}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ReceiverFNS">
+        <xs:restriction base="xs:string">
+          <xs:length value="4" />
+          <xs:pattern value="[0-9]{4}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ReceiverPFR">
+        <xs:restriction base="xs:string">
+          <xs:length value="7" />
+          <xs:pattern value="[0-9]{3}-[0-9]{3}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegGUID">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}|\w{0}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Sessionkey">
+        <xs:restriction base="xs:string">
+          <xs:length value="32" />
+          <xs:pattern value="[a-z0-9]{32}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Subject">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="4" />
+          <xs:maxLength value="36" />
+          <xs:pattern value="\w{0}|[0-9]{4}|[0-9]{3}-[0-9]{3}|[0-9]{3}-[0-9]{3}|[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="UID">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="36" />
+          <xs:pattern value="[a-z0-9]{32}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="FileWithIDArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FileWithID" nillable="true" type="s0:FileWithID" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="UIDWithSubjects_senderType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="4" />
+          <xs:maxLength value="36" />
+          <xs:pattern value="\w{0}|[0-9]{4}|[0-9]{3}-[0-9]{3}|[0-9]{3}-[0-9]{3}|[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SubjectArray_SubjectType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="4" />
+          <xs:maxLength value="36" />
+          <xs:pattern value="\w{0}|[0-9]{4}|[0-9]{3}-[0-9]{3}|[0-9]{3}-[0-9]{3}|[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SubjectArray">
+        <xs:annotation>
+          <xs:documentation>Receivers</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Subject" nillable="true" type="s0:SubjectArray_SubjectType">
+            <xs:annotation>
+              <xs:documentation>Subject</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UIDWithSubjects">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="uid" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="receivers" nillable="true" type="s0:SubjectArray">
+            <xs:annotation>
+              <xs:documentation>Receivers</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="sender" nillable="true" type="s0:UIDWithSubjects_senderType">
+            <xs:annotation>
+              <xs:documentation>Sender</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UIDWithSubjectsArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="UIDWithSubjects" nillable="true" type="s0:UIDWithSubjects" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="File" type="s0:File" />
+      <xs:element name="FileWithID" type="s0:FileWithID" />
+      <xs:element name="FileArray" type="s0:FileArray" />
+      <xs:element name="Files" type="s0:Files" />
+      <xs:element name="FileWithIDArray" type="s0:FileWithIDArray" />
+      <xs:element name="SubjectArray" type="s0:SubjectArray" />
+      <xs:element name="UIDWithSubjects" type="s0:UIDWithSubjects" />
+      <xs:element name="UIDWithSubjectsArray" type="s0:UIDWithSubjectsArray" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="tns">
+      <xs:import namespace="https://iotchet.ru/namespases" />
+      <xs:import namespace="spyne.model.primitive" />
+      <xs:complexType name="ConfirmFileResponse" />
+      <xs:complexType name="ConfirmShippingResponse" />
+      <xs:complexType name="GetNewUIDs" />
+      <xs:complexType name="stringArray">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="string" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Abonent Name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfirmFile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:integer" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesFSS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" type="s0:Files" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesRAR">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" nillable="true" type="s0:FileArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesRPN">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" nillable="true" type="s0:FileArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestHeader">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sessionkey" type="s0:Sessionkey">
+            <xs:annotation>
+              <xs:documentation>Session identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConfirmShipping">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Agree" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="X-Real-IP" type="s0:RealIp">
+            <xs:annotation>
+              <xs:documentation>X-Real-IP</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetFilesByUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetFilesByUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FilesWithIDs" type="s0:FileWithIDArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesAIS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" nillable="true" type="s0:FileArray" />
+          <xs:element minOccurs="0" name="ReceiverAIS" nillable="true" type="s0:ReceiverAIS">
+            <xs:annotation>
+              <xs:documentation>ReceiverAIS</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesAISResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesFNS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" type="s0:Files" />
+          <xs:element minOccurs="0" name="ReceiverFNS" nillable="true" type="s0:ReceiverFNS">
+            <xs:annotation>
+              <xs:documentation>ReceiverFNS</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsLetter" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Attachments" nillable="true" type="tns:stringArray" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Subject</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Message</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="X-Real-IP" type="s0:RealIp">
+            <xs:annotation>
+              <xs:documentation>X-Real-IP</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesFNSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesFSSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesPFRResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesRARResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesRPNResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesStatResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendReviseFNS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" type="s0:Files" />
+          <xs:element minOccurs="0" name="ReceiverFNS" nillable="true" type="s0:ReceiverFNS">
+            <xs:annotation>
+              <xs:documentation>ReceiverFNS</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GUID" type="s0:RegGUID">
+            <xs:annotation>
+              <xs:documentation>Registrator identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="X-Real-IP" type="s0:RealIp">
+            <xs:annotation>
+              <xs:documentation>X-Real-IP</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendReviseFNSResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SendFilesStat_OKPOType">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="8" />
+          <xs:maxLength value="14" />
+          <xs:pattern value="[0-9]{8}|[0-9]{10}|[0-9]{12}|[0-9]{14}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SendFilesPFR">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Files" nillable="true" type="s0:FileArray" />
+          <xs:element minOccurs="0" name="ReceiverPFR" nillable="true" type="s0:ReceiverPFR">
+            <xs:annotation>
+              <xs:documentation>ReceiverPFR</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsLetter" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Subject</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Message</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SendFilesStat">
+        <xs:sequence>
+          <xs:element name="Files" type="s0:Files" />
+          <xs:element name="ReceiverStat" type="s1:ReceiverSTAT">
+            <xs:annotation>
+              <xs:documentation>ReceiverStat</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OKPO" type="tns:SendFilesStat_OKPOType">
+            <xs:annotation>
+              <xs:documentation>OKPO</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="IsLetter" type="xs:boolean" />
+          <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Subject</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Message</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetNewUIDsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UIDsWithSubjects" type="s0:UIDWithSubjectsArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ConfirmFileResponse" type="tns:ConfirmFileResponse" />
+      <xs:element name="ConfirmShippingResponse" type="tns:ConfirmShippingResponse" />
+      <xs:element name="GetNewUIDs" type="tns:GetNewUIDs" />
+      <xs:element name="stringArray" type="tns:stringArray" />
+      <xs:element name="ConfirmFile" type="tns:ConfirmFile" />
+      <xs:element name="SendFilesFSS" type="tns:SendFilesFSS" />
+      <xs:element name="SendFilesRAR" type="tns:SendFilesRAR" />
+      <xs:element name="SendFilesRPN" type="tns:SendFilesRPN" />
+      <xs:element name="RequestHeader" type="tns:RequestHeader" />
+      <xs:element name="ConfirmShipping" type="tns:ConfirmShipping" />
+      <xs:element name="GetFilesByUID" type="tns:GetFilesByUID" />
+      <xs:element name="GetFilesByUIDResponse" type="tns:GetFilesByUIDResponse" />
+      <xs:element name="SendFilesAIS" type="tns:SendFilesAIS" />
+      <xs:element name="SendFilesAISResponse" type="tns:SendFilesAISResponse" />
+      <xs:element name="SendFilesFNS" type="tns:SendFilesFNS" />
+      <xs:element name="SendFilesFNSResponse" type="tns:SendFilesFNSResponse" />
+      <xs:element name="SendFilesFSSResponse" type="tns:SendFilesFSSResponse" />
+      <xs:element name="SendFilesPFRResponse" type="tns:SendFilesPFRResponse" />
+      <xs:element name="SendFilesRARResponse" type="tns:SendFilesRARResponse" />
+      <xs:element name="SendFilesRPNResponse" type="tns:SendFilesRPNResponse" />
+      <xs:element name="SendFilesStatResponse" type="tns:SendFilesStatResponse" />
+      <xs:element name="SendReviseFNS" type="tns:SendReviseFNS" />
+      <xs:element name="SendReviseFNSResponse" type="tns:SendReviseFNSResponse" />
+      <xs:element name="SendFilesPFR" type="tns:SendFilesPFR" />
+      <xs:element name="SendFilesStat" type="tns:SendFilesStat" />
+      <xs:element name="GetNewUIDsResponse" type="tns:GetNewUIDsResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SendFilesPFR">
+    <wsdl:part name="SendFilesPFR" element="tns:SendFilesPFR" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesPFRResponse">
+    <wsdl:part name="SendFilesPFRResponse" element="tns:SendFilesPFRResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestHeader">
+    <wsdl:part name="RequestHeader" element="tns:RequestHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesAIS">
+    <wsdl:part name="SendFilesAIS" element="tns:SendFilesAIS" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesAISResponse">
+    <wsdl:part name="SendFilesAISResponse" element="tns:SendFilesAISResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUIDs">
+    <wsdl:part name="GetNewUIDs" element="tns:GetNewUIDs" />
+  </wsdl:message>
+  <wsdl:message name="GetNewUIDsResponse">
+    <wsdl:part name="GetNewUIDsResponse" element="tns:GetNewUIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesByUID">
+    <wsdl:part name="GetFilesByUID" element="tns:GetFilesByUID" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesByUIDResponse">
+    <wsdl:part name="GetFilesByUIDResponse" element="tns:GetFilesByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesStat">
+    <wsdl:part name="SendFilesStat" element="tns:SendFilesStat" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesStatResponse">
+    <wsdl:part name="SendFilesStatResponse" element="tns:SendFilesStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesFSS">
+    <wsdl:part name="SendFilesFSS" element="tns:SendFilesFSS" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesFSSResponse">
+    <wsdl:part name="SendFilesFSSResponse" element="tns:SendFilesFSSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesFNS">
+    <wsdl:part name="SendFilesFNS" element="tns:SendFilesFNS" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesFNSResponse">
+    <wsdl:part name="SendFilesFNSResponse" element="tns:SendFilesFNSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesRAR">
+    <wsdl:part name="SendFilesRAR" element="tns:SendFilesRAR" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesRARResponse">
+    <wsdl:part name="SendFilesRARResponse" element="tns:SendFilesRARResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmShipping">
+    <wsdl:part name="ConfirmShipping" element="tns:ConfirmShipping" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmShippingResponse">
+    <wsdl:part name="ConfirmShippingResponse" element="tns:ConfirmShippingResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendReviseFNS">
+    <wsdl:part name="SendReviseFNS" element="tns:SendReviseFNS" />
+  </wsdl:message>
+  <wsdl:message name="SendReviseFNSResponse">
+    <wsdl:part name="SendReviseFNSResponse" element="tns:SendReviseFNSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesRPN">
+    <wsdl:part name="SendFilesRPN" element="tns:SendFilesRPN" />
+  </wsdl:message>
+  <wsdl:message name="SendFilesRPNResponse">
+    <wsdl:part name="SendFilesRPNResponse" element="tns:SendFilesRPNResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmFile">
+    <wsdl:part name="ConfirmFile" element="tns:ConfirmFile" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmFileResponse">
+    <wsdl:part name="ConfirmFileResponse" element="tns:ConfirmFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WorkflowService">
+    <wsdl:operation name="SendFilesPFR" parameterOrder="SendFilesPFR">
+      <wsdl:documentation>Send files to PFR</wsdl:documentation>
+      <wsdl:input name="SendFilesPFR" message="tns:SendFilesPFR" />
+      <wsdl:output name="SendFilesPFRResponse" message="tns:SendFilesPFRResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesAIS" parameterOrder="SendFilesAIS">
+      <wsdl:input name="SendFilesAIS" message="tns:SendFilesAIS" />
+      <wsdl:output name="SendFilesAISResponse" message="tns:SendFilesAISResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUIDs" parameterOrder="GetNewUIDs">
+      <wsdl:documentation>Get UID list with new files</wsdl:documentation>
+      <wsdl:input name="GetNewUIDs" message="tns:GetNewUIDs" />
+      <wsdl:output name="GetNewUIDsResponse" message="tns:GetNewUIDsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesByUID" parameterOrder="GetFilesByUID">
+      <wsdl:documentation>Get new files by UID</wsdl:documentation>
+      <wsdl:input name="GetFilesByUID" message="tns:GetFilesByUID" />
+      <wsdl:output name="GetFilesByUIDResponse" message="tns:GetFilesByUIDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesStat" parameterOrder="SendFilesStat">
+      <wsdl:documentation>Send files to RosStat</wsdl:documentation>
+      <wsdl:input name="SendFilesStat" message="tns:SendFilesStat" />
+      <wsdl:output name="SendFilesStatResponse" message="tns:SendFilesStatResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesFSS" parameterOrder="SendFilesFSS">
+      <wsdl:documentation>
+        Send files to FSS
+        </wsdl:documentation>
+      <wsdl:input name="SendFilesFSS" message="tns:SendFilesFSS" />
+      <wsdl:output name="SendFilesFSSResponse" message="tns:SendFilesFSSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesFNS" parameterOrder="SendFilesFNS">
+      <wsdl:documentation>
+        Send files to FNS
+        </wsdl:documentation>
+      <wsdl:input name="SendFilesFNS" message="tns:SendFilesFNS" />
+      <wsdl:output name="SendFilesFNSResponse" message="tns:SendFilesFNSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesRAR" parameterOrder="SendFilesRAR">
+      <wsdl:documentation> Send file to RAR </wsdl:documentation>
+      <wsdl:input name="SendFilesRAR" message="tns:SendFilesRAR" />
+      <wsdl:output name="SendFilesRARResponse" message="tns:SendFilesRARResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmShipping" parameterOrder="ConfirmShipping">
+      <wsdl:documentation>Confirm shipping</wsdl:documentation>
+      <wsdl:input name="ConfirmShipping" message="tns:ConfirmShipping" />
+      <wsdl:output name="ConfirmShippingResponse" message="tns:ConfirmShippingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendReviseFNS" parameterOrder="SendReviseFNS">
+      <wsdl:documentation>
+        Send files to FNS
+        </wsdl:documentation>
+      <wsdl:input name="SendReviseFNS" message="tns:SendReviseFNS" />
+      <wsdl:output name="SendReviseFNSResponse" message="tns:SendReviseFNSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesRPN" parameterOrder="SendFilesRPN">
+      <wsdl:documentation>Send file to RPN</wsdl:documentation>
+      <wsdl:input name="SendFilesRPN" message="tns:SendFilesRPN" />
+      <wsdl:output name="SendFilesRPNResponse" message="tns:SendFilesRPNResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmFile" parameterOrder="ConfirmFile">
+      <wsdl:documentation>Confirm receipt file</wsdl:documentation>
+      <wsdl:input name="ConfirmFile" message="tns:ConfirmFile" />
+      <wsdl:output name="ConfirmFileResponse" message="tns:ConfirmFileResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorkflowService" type="tns:WorkflowService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendFilesPFR">
+      <soap:operation soapAction="SendFilesPFR" style="document" />
+      <wsdl:input name="SendFilesPFR">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendFilesPFRResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesAIS">
+      <soap:operation soapAction="SendFilesAIS" style="document" />
+      <wsdl:input name="SendFilesAIS">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendFilesAISResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewUIDs">
+      <soap:operation soapAction="GetNewUIDs" style="document" />
+      <wsdl:input name="GetNewUIDs">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetNewUIDsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesByUID">
+      <soap:operation soapAction="GetFilesByUID" style="document" />
+      <wsdl:input name="GetFilesByUID">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFilesByUIDResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesStat">
+      <soap:operation soapAction="SendFilesStat" style="document" />
+      <wsdl:input name="SendFilesStat">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendFilesStatResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesFSS">
+      <soap:operation soapAction="SendFilesFSS" style="document" />
+      <wsdl:input name="SendFilesFSS">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendFilesFSSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesFNS">
+      <soap:operation soapAction="SendFilesFNS" style="document" />
+      <wsdl:input name="SendFilesFNS">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendFilesFNSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesRAR">
+      <soap:operation soapAction="SendFilesRAR" style="document" />
+      <wsdl:input name="SendFilesRAR">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendFilesRARResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmShipping">
+      <soap:operation soapAction="ConfirmShipping" style="document" />
+      <wsdl:input name="ConfirmShipping">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ConfirmShippingResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendReviseFNS">
+      <soap:operation soapAction="SendReviseFNS" style="document" />
+      <wsdl:input name="SendReviseFNS">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendReviseFNSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFilesRPN">
+      <soap:operation soapAction="SendFilesRPN" style="document" />
+      <wsdl:input name="SendFilesRPN">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendFilesRPNResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmFile">
+      <soap:operation soapAction="ConfirmFile" style="document" />
+      <wsdl:input name="ConfirmFile">
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestHeader" part="RequestHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ConfirmFileResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorkflowService">
+    <wsdl:port name="WorkflowService" binding="tns:WorkflowService">
+      <soap:address location="http://iotchet.ru/api/workflow" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1 @@
+# md-contracts-shared

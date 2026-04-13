@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <LangVersion>default</LangVersion>
+	  <AssemblyName>Moedelo.Payroll.Shared.Enums</AssemblyName>
+	  <RootNamespace>Moedelo.Payroll.Shared.Enums</RootNamespace>
+  </PropertyGroup>
+
+</Project>

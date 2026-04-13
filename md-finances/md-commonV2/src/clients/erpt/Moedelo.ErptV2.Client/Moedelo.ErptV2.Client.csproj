@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{774D5F85-1C18-4151-8CF9-6767E04DF61D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.ErptV2.Client</RootNamespace>
+    <AssemblyName>Moedelo.ErptV2.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoComplete\ErptAutocompleteClient.cs" />
+    <Compile Include="AutoComplete\IErptAutocompleteClient.cs" />
+    <Compile Include="BizToAccTransfer\ErptBizToAccTransferClient.cs" />
+    <Compile Include="BizToAccTransfer\IErptBizToAccTransferClient.cs" />
+    <Compile Include="DocumentEditing\ErptDocumentEditingApiClient.cs" />
+    <Compile Include="DocumentEditing\IErptDocumentEditingApiClient.cs" />
+    <Compile Include="EdsApi\EdsRequisitesValidateRequest.cs" />
+    <Compile Include="EdsApi\EdsRequisitesValidateResponse.cs" />
+    <Compile Include="EdsApi\FileInfo.cs" />
+    <Compile Include="EdsDocuments\SignatureDocumentRequest.cs" />
+    <Compile Include="EdsRequestTasks\IEdsRequestTasksClient.cs" />
+    <Compile Include="EdsRequestTasks\EdsRequestTasksClient.cs" />
+    <Compile Include="EdsRequests\EdsRequestClient.cs" />
+    <Compile Include="EdsRequests\IEdsRequestClient.cs" />
+    <Compile Include="EdsSmev\EdsSmevClient.cs" />
+    <Compile Include="EdsSmev\IEdsSmevClient.cs" />
+    <Compile Include="EdsWizardTesterApiClient.cs" />
+    <Compile Include="ErptDocuments\ErptDocumentsApiClient.cs" />
+    <Compile Include="ErptDocuments\IErptDocumentsApiClient.cs" />
+    <Compile Include="ErptReports\ErptReportsClient.cs" />
+    <Compile Include="ErptReports\IErptReportsClient.cs" />
+    <Compile Include="FlcNetCore\FlcNetCoreApiClient.cs" />
+    <Compile Include="FlcNetCore\IFlcNetCoreApiClient.cs" />
+    <Compile Include="FnsDirection\FirmFnsDirectionApiClient.cs" />
+    <Compile Include="FnsDirection\IFirmFnsDirectionApiClient.cs" />
+    <Compile Include="FnsNeformalDocuments\IFnsNeformalDocumentsClient.cs" />
+    <Compile Include="FnsNeformalDocuments\FnsNeformalDocumentsClient.cs" />
+    <Compile Include="MainPageNotification\MainPageNotificationClient.cs" />
+    <Compile Include="MainPageNotification\IMainPageNotificationClient.cs" />
+    <Compile Include="NeformalDocuments\NeformalDocumentsApiClient.cs" />
+    <Compile Include="NeformalDocuments\INeformalDocumentsApiClient.cs" />
+    <Compile Include="EdsApiClient.cs" />
+    <Compile Include="EdsApi\ChangeCodeOfOutgoingDirectionRequest.cs" />
+    <Compile Include="EdsApi\ChangeCodeOfOutgoingDirectionResponse.cs" />
+    <Compile Include="EdsApi\EdsRequest.cs" />
+    <Compile Include="EdsApi\EdsResponse.cs" />
+    <Compile Include="EdsDocumentsApi.cs" />
+    <Compile Include="EdsDocuments\Sberbank\AgreementForProcessPersonalData.cs" />
+    <Compile Include="EdsDocuments\Sberbank\EdsRequest.cs" />
+    <Compile Include="EdsWizardApiClient.cs" />
+    <Compile Include="EReportRequisites\EReportRequisitesApiClient.cs" />
+    <Compile Include="EReportRequisites\IEReportRequisitesApiClient.cs" />
+    <Compile Include="EReportSettings\EReportSettingsApiClient.cs" />
+    <Compile Include="EReportSettings\IEReportSettingsApiClient.cs" />
+    <Compile Include="Flc\FlcApiClient.cs" />
+    <Compile Include="Flc\IFlcApiClient.cs" />
+    <Compile Include="Notification\ErptNotificationClient.cs" />
+    <Compile Include="Notification\IErptNotificationClient.cs" />
+    <Compile Include="Packages\IPackagesApiClient.cs" />
+    <Compile Include="Packages\PackagesApiClient.cs" />
+    <Compile Include="PfrEdmStatement\PfrEdmStatementClient.cs" />
+    <Compile Include="PfrEdmStatement\IPfrEdmStatementClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendReports\ISendReportsClient.cs" />
+    <Compile Include="SendReports\SendReportsClient.cs" />
+    <Compile Include="UploadFile\ErptUploadedDocumentsApiClient.cs" />
+    <Compile Include="UploadFile\IErptUploadedDocumentsApiClient.cs" />
+    <Compile Include="UploadFile\IReportFileClient.cs" />
+    <Compile Include="UploadFile\ReportFileClient.cs" />
+    <Compile Include="UploadFile\FileDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.ErptV2.Dto\Moedelo.ErptV2.Dto.csproj">
+      <Project>{9c078d80-6f28-40d1-89dd-172589c50987}</Project>
+      <Name>Moedelo.ErptV2.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

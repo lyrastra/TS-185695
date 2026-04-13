@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.SqlDataAccess.Abstractions", "src\Moedelo.Common.SqlDataAccess.Abstractions\Moedelo.Common.SqlDataAccess.Abstractions.csproj", "{0D85C6D7-D070-4771-9AEB-646AFAC6E994}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{5A9D76C6-68B8-4378-8F17-CB71645C0C41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{C9133FBD-39FE-443A-8379-E03D9047BABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Infrastructure.SqlDataAccess.Abstractions", "..\md-infrastructure-core-sqldataaccess\src\Moedelo.Infrastructure.SqlDataAccess.Abstractions\Moedelo.Infrastructure.SqlDataAccess.Abstractions.csproj", "{83345F6D-2AB6-4717-954B-AC5AAB18A17B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Settings.Abstractions", "..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj", "{10937112-B4B5-4FE3-AC2E-519EB600C46C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moedelo.Common.Audit.Abstractions", "..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj", "{2802E444-859F-44C5-9C1B-E51D859062F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D85C6D7-D070-4771-9AEB-646AFAC6E994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D85C6D7-D070-4771-9AEB-646AFAC6E994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D85C6D7-D070-4771-9AEB-646AFAC6E994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D85C6D7-D070-4771-9AEB-646AFAC6E994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83345F6D-2AB6-4717-954B-AC5AAB18A17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83345F6D-2AB6-4717-954B-AC5AAB18A17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83345F6D-2AB6-4717-954B-AC5AAB18A17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83345F6D-2AB6-4717-954B-AC5AAB18A17B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10937112-B4B5-4FE3-AC2E-519EB600C46C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10937112-B4B5-4FE3-AC2E-519EB600C46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10937112-B4B5-4FE3-AC2E-519EB600C46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10937112-B4B5-4FE3-AC2E-519EB600C46C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2802E444-859F-44C5-9C1B-E51D859062F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2802E444-859F-44C5-9C1B-E51D859062F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2802E444-859F-44C5-9C1B-E51D859062F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2802E444-859F-44C5-9C1B-E51D859062F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83345F6D-2AB6-4717-954B-AC5AAB18A17B} = {C9133FBD-39FE-443A-8379-E03D9047BABF}
+		{10937112-B4B5-4FE3-AC2E-519EB600C46C} = {5A9D76C6-68B8-4378-8F17-CB71645C0C41}
+		{2802E444-859F-44C5-9C1B-E51D859062F0} = {5A9D76C6-68B8-4378-8F17-CB71645C0C41}
+	EndGlobalSection
+EndGlobal

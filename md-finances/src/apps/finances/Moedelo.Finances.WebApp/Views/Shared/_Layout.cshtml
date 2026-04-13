@@ -1,0 +1,41 @@
+@using Moedelo.CommonV2.Webpack
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    @Html.Raw(WebpackInitializer.RenderCss("headerStyle", "Static"))
+    @Html.Raw(WebpackInitializer.RenderCss("md"))
+
+    <script type="text/javascript">
+        var localStorageToken = "@ViewBag.LocalStorageToken";
+        var selectedMenuItem = "PaymentDocuments";
+        __STATIC_PATH__ = "@WebpackInitializer.StaticPath";
+    </script>
+
+    @RenderSection("header", false)
+
+    @Html.Raw(WebpackInitializer.RenderCss("header"))
+    @Html.Raw(WebpackInitializer.RenderWlCss())
+</head>
+<body>
+    <div id="headContent"></div>
+    <div class="mdPage__body">
+        <div class="mdPage__nav" id="navContent"></div>
+        <div class="mdPage__content mdPage__content--newHeader" id="content">
+            @RenderBody()
+        </div>
+    </div>
+    @Html.Raw(WebpackInitializer.RenderJs("manifest"))
+    @Html.Raw(WebpackInitializer.RenderJs("vendor"))
+    @Html.Raw(WebpackInitializer.RenderJs("md"))
+    @Html.Raw(WebpackInitializer.RenderJs("header"))
+
+    <div id="sectionScripts">
+        @RenderSection("scripts", false)
+    </div>
+
+    @Html.Partial("Tools/GoogleTagManagerTemplate")
+</body>
+</html>

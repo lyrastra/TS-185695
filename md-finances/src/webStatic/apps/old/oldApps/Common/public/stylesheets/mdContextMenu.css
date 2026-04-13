@@ -1,0 +1,23 @@
+.mdContextMenu {
+  position: absolute;
+  display: inline-block;
+  border: 1px solid #bbb;
+  background: #fff;
+  cursor: default;
+  z-index: inherit;
+  font-weight: normal;
+  min-width: 110px;
+  width: 150px;
+  top: 20px;
+  color: #404040;
+  -webkit-box-shadow: 0 2px 7px #c9c6c6;
+  box-shadow: 0 2px 7px #c9c6c6;
+}
+.mdContextMenu .mdContextMenuItem {
+  padding: 0 15px;
+  min-width: 120px;
+}
+.mdContextMenu .mdContextMenuItem:hover:not(.mdDisableItem) {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}

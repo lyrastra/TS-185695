@@ -1,0 +1,67 @@
+@background: hsl(0, 0%, 100%);
+
+.blockWrapper {
+    margin: 10px auto 10px;
+    width: 1006px;
+    padding: 0 40px 0;
+    background: @background;
+}
+
+.table {
+    background-color: @background;
+    padding: 0;
+    transition: all 0.2s linear;
+    height: fit-content;
+    display: block;
+
+    .tableHead {
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        min-height: 38px;
+        border-bottom: 1px solid hsl(0, 0%, 89%);
+        padding: 0 40px;
+
+        .priceCell {
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .checkbox__label {
+            color: hsl(0, 0%, 60%);
+        }
+    }
+
+    .cell {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .cell__action {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .checkedCount {
+        white-space: nowrap;
+        color: hsl(0, 0%, 60%);
+    }
+
+    .tableBody {
+        transition: height 0.3s linear;
+    }
+
+    .tableBodyClosed {
+        height: 0;
+        overflow: hidden;
+    }
+}
+
+.tableHeader {
+    padding: 0;
+    width: 100%;
+}
+
+.headerWrapper {
+    position: relative;
+}

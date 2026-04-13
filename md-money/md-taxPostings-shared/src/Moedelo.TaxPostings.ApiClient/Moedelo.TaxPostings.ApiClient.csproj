@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-common-http\src\Moedelo.Common.Http.Abstractions\Moedelo.Common.Http.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.TaxPostings.ApiClient.Abstractions\Moedelo.TaxPostings.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.TaxPostings.Enums\Moedelo.TaxPostings.Enums.csproj" />
+  </ItemGroup>
+
+</Project>

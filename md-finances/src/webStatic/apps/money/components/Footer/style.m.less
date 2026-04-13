@@ -1,0 +1,16 @@
+.fixed {
+    box-shadow: 0 -2px 7px rgba(0, 0, 0, 0.3);
+    background-color: white;
+
+    div {
+        &:before {
+            box-shadow: -1px -2px 7px rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+
+        &:after {
+            box-shadow: 1px -2px 7px rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+    }
+}

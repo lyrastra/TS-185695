@@ -1,0 +1,59 @@
+<div class="cashBudgetaryPayment">
+    <div class="mdRow fieldRow js-accountWrapper" style="display: none;">
+        <div class="controls js-accountType"></div>
+    </div>
+
+    <div class="mdRow fieldRow">
+        <div class="js-accountSelect accountSelect"></div>
+        <div class="paymentType" style="display: none;">
+            <label class="forRadio"><input type="radio" name="KbkPaymentType" value="0"><span class="js-commonKbkPaymentType">Налог</span></label>
+            <label class="forRadio"><input type="radio" name="KbkPaymentType" value="1"><span>Пени</span></label>
+            <label class="forRadio"><input type="radio" name="KbkPaymentType" value="2"><span>Штраф</span></label>
+        </div>
+    </div>
+
+
+    <div class="mdRow fieldRow js-periodPatent" style="display: none;">
+        <div class="js-patent"></div>
+        <label>Период</label>
+        <div class="period">
+            <div class="js-period"></div>
+        </div>
+    </div>
+
+    <div class="mdRow fieldRow js-kbkWrapper" style="display: none;">
+        <label>КБК</label><br/>
+        <div class="controls js-kbk kbkSelect"></div>
+    </div>
+
+    <div class="js-subPayments" />
+
+    <div class="mdRow fieldRow js-editableSumWrapper" style="display: none;">
+        <label>Сумма</label><br/>
+        <input type="text" data-bind="Sum" class="small sum" data-type="float"/> р.
+        <span data-valmsg-for="Sum"></span>
+    </div>
+
+    <div class="mdRow fieldRow js-uneditableSumWrapper" style="display: none;">
+        <div class="mdCol-3 uneditableSumCol"><b>Общая сумма</b></div>
+        <div class="mdCol-6 uneditableSumCol">
+            <label>К оплате</label><br/>
+            <span class="js-uneditableSum"></span> р.
+        </div>
+        <span data-valmsg-for="Sum"></span>
+    </div>
+
+    <div class="mdRow fieldRow">
+        <label>Назначение</label><br/>
+        <textarea class="description" data-bind="Destination" ></textarea>
+        <span data-valmsg-for="Destination"></span>
+    </div>
+
+    <div class="mdRow fieldRow">
+        <label>Получатель</label><br/>
+        <input type="text" data-bind="KontragentName" class="kontragentName"/>
+        <span data-valmsg-for="KontragentName"></span>
+    </div>
+</div>
+
+

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-catalog-shared\src\Moedelo.Catalog.ApiClient.Enums\Moedelo.Catalog.ApiClient.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-contracts-shared\src\Moedelo.Contracts.Enums\Moedelo.Contracts.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-docs-shared\src\Moedelo.Docs.Enums\Moedelo.Docs.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-money-shared\src\Moedelo.Money.Enums\Moedelo.Money.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-requisites-shared\src\Moedelo.Requisites.Enums\Moedelo.Requisites.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-taxPostings-shared\src\Moedelo.TaxPostings.Enums\Moedelo.TaxPostings.Enums.csproj" />
+  </ItemGroup>
+
+</Project>

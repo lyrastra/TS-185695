@@ -1,0 +1,4 @@
+{
+  "main": "CurrencySumWithCourse.js",
+  "description": "Сумма в валюте * курс центробанка = сумма в ₽"
+}

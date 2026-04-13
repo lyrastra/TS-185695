@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{795A7E65-1DD8-458E-BEE8-70BEEE72DB0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.BankIntegrations.Utils.Framework</RootNamespace>
+    <AssemblyName>Moedelo.BankIntegrations.Utils.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redis\BankIntegrationsRedisDbExecutor.cs" />
+    <Compile Include="Services\BackUriService.cs" />
+    <Compile Include="Services\CryptoService.cs" />
+    <Compile Include="Services\IntegrationMenuService.cs" />
+    <Compile Include="Services\SensitiveDataMaskService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-commonV2\src\utils\Moedelo.CommonV2.Utils\Moedelo.CommonV2.Utils.csproj">
+      <Project>{9a5590cd-3ed9-40c1-b796-aa1de54fa210}</Project>
+      <Name>Moedelo.CommonV2.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj">
+      <Project>{9a7790fa-8ab4-4856-9099-a5ea851a6827}</Project>
+      <Name>Moedelo.Infrastructure.DependencyInjection.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-redisdataaccess\src\Moedelo.Infrastructure.Redis.Abstractions\Moedelo.Infrastructure.Redis.Abstractions.csproj">
+      <Project>{cdb3f9f7-06d6-46ab-b058-3de68db190bf}</Project>
+      <Name>Moedelo.Infrastructure.Redis.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructure-core-redisdataaccess\src\Moedelo.Infrastructure.Redis\Moedelo.Infrastructure.Redis.csproj">
+      <Project>{e4475ba6-b1d7-42f7-8fd5-a38ff7349e5f}</Project>
+      <Name>Moedelo.Infrastructure.Redis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.RedisDataAccess\Moedelo.InfrastructureV2.RedisDataAccess.csproj">
+      <Project>{800e344a-2243-4d61-b8b9-a3d4c3892c00}</Project>
+      <Name>Moedelo.InfrastructureV2.RedisDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.BankIntegrations.Enums\Moedelo.BankIntegrations.Enums.csproj">
+      <Project>{cfaeb62e-afc0-4146-a7d6-a19efcee106f}</Project>
+      <Name>Moedelo.BankIntegrations.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.BankIntegrations.IntegrationPartnersInfo\Moedelo.BankIntegrations.IntegrationPartnersInfo.csproj">
+      <Project>{33446b87-6251-4feb-a61d-90e23645e4c8}</Project>
+      <Name>Moedelo.BankIntegrations.IntegrationPartnersInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.BankIntegrations.Models\Moedelo.BankIntegrations.Models.csproj">
+      <Project>{2765b7e2-d6d9-45a0-a976-9410b5027bab}</Project>
+      <Name>Moedelo.BankIntegrations.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.BankIntegrations.Utils.Framework.Abstractions\Moedelo.BankIntegrations.Utils.Framework.Abstractions.csproj">
+      <Project>{c978a650-5629-43d9-a781-a644bce5bedd}</Project>
+      <Name>Moedelo.BankIntegrations.Utils.Framework.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.BankIntegrations.Utils.Framework.Abstractions\Moedelo.BankIntegrations.Utils.Framework.Abstractions.csproj">
+      <Project>{c978a650-5629-43d9-a781-a644bce5bedd}</Project>
+      <Name>Moedelo.BankIntegrations.Utils.Framework.Abstractions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

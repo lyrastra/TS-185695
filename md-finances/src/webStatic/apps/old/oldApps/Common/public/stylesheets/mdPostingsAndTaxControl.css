@@ -1,0 +1,316 @@
+.mdPostingsAndTaxControl {
+  margin-bottom: 30px;
+  display: inline-block;
+  min-width: 795px;
+}
+.mdPostingsAndTaxControl .explainigMessage {
+  padding: 10px 0 10px 1px;
+}
+.mdPostingsAndTaxControl .explainigMessage .largeExplainigMessage {
+  line-height: 20px;
+}
+.mdPostingsAndTaxControl .explainigMessage .largeExplainigMessage p {
+  margin: 0 0 7px 0;
+  text-align: justify;
+}
+.mdPostingsAndTaxControl .postingStatusMsg {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.mdPostingsAndTaxControl .postingStatusMsg .postingStatusMsgTooltip {
+  color: #8e8e8e;
+}
+.mdPostingsAndTaxControl .disabledProvideInAccounting .operations,
+.mdPostingsAndTaxControl .disabledProvideInAccounting .mdTableHeader,
+.mdPostingsAndTaxControl .disabledProvideInAccounting .explainigMessage {
+  opacity: 0.5;
+}
+.mdPostingsAndTaxControl .mdTable[data-mode=read] .ttDelete {
+  display: none;
+}
+.mdPostingsAndTaxControl .mdTable[data-mode=write] .changeableSection .mdTableCell .readableText {
+  display: none;
+}
+.mdPostingsAndTaxControl .mdTable[data-mode=write] .addItemBlock {
+  display: block;
+}
+.mdPostingsAndTaxControl .mdTable .ttDelete {
+  float: none;
+}
+.mdPostingsAndTaxControl .slamRow {
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+.mdPostingsAndTaxControl .slamRow.disabled {
+  opacity: 0.4;
+}
+.mdPostingsAndTaxControl .slamRow.disabled a {
+  cursor: default;
+  border-bottom: transparent;
+}
+.mdPostingsAndTaxControl .slamRow.disabled .slamState {
+  cursor: default;
+}
+.mdPostingsAndTaxControl .slamRow.open .slamState {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #1f85c5;
+  border-bottom: 2px solid transparent;
+}
+.mdPostingsAndTaxControl .slamRow.open .slamRowContent {
+  display: block;
+  overflow: hidden;
+}
+.mdPostingsAndTaxControl .slamRow .slamState {
+  width: 0;
+  height: 0;
+  position: relative;
+  border-left: 8px solid #1f85c5;
+  border-right: 2px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  margin-right: 8px;
+  display: inline-block;
+  background: none;
+  cursor: pointer;
+}
+.mdPostingsAndTaxControl .slamRow .slamRowContent {
+  display: none;
+}
+.mdPostingsAndTaxControl .slamRow .slamRowContent .slamRowContentRow {
+  word-spacing: -0.36em;
+}
+.mdPostingsAndTaxControl .slamRow .slamRowText {
+  word-spacing: normal;
+}
+.mdPostingsAndTaxControl .slamRow .slamWarning {
+  color: #cb3338;
+  font-size: 11px;
+  margin-left: 10px;
+}
+.mdPostingsAndTaxControl .tabHeader {
+  border-bottom: 1px solid #dddddd;
+  position: relative;
+  bottom: -1px;
+}
+.mdPostingsAndTaxControl .typeItem {
+  position: relative;
+  bottom: -1px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  line-height: 25px;
+  padding: 0 10px;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+.mdPostingsAndTaxControl .typeItem.selected {
+  background: #f2d7a9;
+}
+.mdPostingsAndTaxControl .typeItem.selected > a {
+  color: #404040;
+  border-color: transparent;
+}
+.mdPostingsAndTaxControl a {
+  line-height: 13px;
+  cursor: pointer;
+  border-bottom: 1px dashed #1f85c5;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.mdPostingsAndTaxControl a:hover {
+  border-bottom: transparent;
+}
+.mdPostingsAndTaxControl .typeSwitcher {
+  position: relative;
+  bottom: -1px;
+  float: right;
+}
+.mdPostingsAndTaxControl .controlWrapper {
+  display: none;
+}
+.mdPostingsAndTaxControl .validationMessage {
+  display: none;
+  color: #cb3338;
+}
+.mdPostingsAndTaxControl div.taxControl {
+  width: 795px;
+}
+.mdPostingsAndTaxControl div.taxControl.osnoTaxControl {
+  width: 960px;
+}
+.mdPostingsAndTaxControl div.taxControl .mdTableCell {
+  margin-left: 15px;
+}
+.mdPostingsAndTaxControl div.taxControl .mdTableCell:first-child {
+  margin-left: 0;
+}
+.mdPostingsAndTaxControl div.taxControl .ttIncoming {
+  width: 100px;
+}
+.mdPostingsAndTaxControl div.taxControl .ttIncoming input[type=text] {
+  width: 90px;
+}
+.mdPostingsAndTaxControl div.taxControl .ttOutgoing {
+  width: 100px;
+}
+.mdPostingsAndTaxControl div.taxControl .ttOutgoing input[type=text] {
+  width: 90px;
+}
+.mdPostingsAndTaxControl div.taxControl .ttDescription {
+  width: 380px;
+}
+.mdPostingsAndTaxControl div.taxControl .ttDescription input[type=text] {
+  width: 370px;
+}
+.mdPostingsAndTaxControl div.taxControl .ttType,
+.mdPostingsAndTaxControl div.taxControl .ttKind,
+.mdPostingsAndTaxControl div.taxControl .ttNormalizedCostType {
+  width: 175px;
+}
+.mdPostingsAndTaxControl div.taxControl .ttType select,
+.mdPostingsAndTaxControl div.taxControl .ttKind select,
+.mdPostingsAndTaxControl div.taxControl .ttNormalizedCostType select {
+  width: 173px;
+}
+.mdPostingsAndTaxControl div.taxControl .mdTableHeader .ttDate {
+  width: 114px;
+  padding-left: 8px;
+}
+.mdPostingsAndTaxControl div.taxControl .mdTableBody .ttDate {
+  width: 123px;
+}
+.mdPostingsAndTaxControl div.taxControl .mdTableBody .ttDate .readableText {
+  margin-left: 2px;
+}
+.mdPostingsAndTaxControl div.taxControl .mdTableBody .ttDate input[type=text] {
+  width: 110px;
+  margin-left: 2px;
+}
+.mdPostingsAndTaxControl div.taxControl .normalizedCostTypeQtip {
+  background: url("./img/icons16_2.png") no-repeat scroll 0 -64px rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 3px;
+}
+.mdPostingsAndTaxControl div.postingsControl {
+  width: 960px;
+}
+.mdPostingsAndTaxControl div.postingsControl .mdTableCell {
+  margin-right: 10px;
+}
+.mdPostingsAndTaxControl div.postingsControl .mdTableCell .field-validation-error {
+  line-height: 17px;
+  margin-top: 5px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttDate {
+  padding-left: 10px;
+  width: 90px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttDate input {
+  width: 95px;
+  margin-left: -5px;
+  box-sizing: border-box;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttDebit {
+  padding-left: 10px;
+  width: 60px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttDebit input[type=text] {
+  width: 50px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttCredit {
+  width: 70px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttCredit input[type=text] {
+  width: 60px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoDebit,
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoCredit {
+  width: 170px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoDebit input[type=text],
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoCredit input[type=text] {
+  width: 160px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoDebit .subcontoReadMode,
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoCredit .subcontoReadMode {
+  line-height: 18px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoDebit .subcontoReadMode:first-child,
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoCredit .subcontoReadMode:first-child {
+  margin-top: 0px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoDebit .subcontoPanel,
+.mdPostingsAndTaxControl div.postingsControl .ttSubcontoCredit .subcontoPanel {
+  line-height: 17px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSumm {
+  width: 90px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSumm input[type=text] {
+  width: 65px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttSumm .field-validation-error {
+  text-align: left;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttPostingDescription {
+  width: 210px;
+  margin-right: 0px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttPostingDescription textarea {
+  width: 195px;
+  height: 17px;
+  resize: none;
+  margin: 0;
+  padding: 2px 5px 3px;
+}
+.mdPostingsAndTaxControl div.postingsControl .ttDelete {
+  float: none;
+  margin-right: 0px;
+  display: inline-block;
+}
+.mdPostingsAndTaxControl div.postingsControl[data-mode=write] section.linkedDocuments,
+.mdPostingsAndTaxControl div.postingsControl[data-mode=write] .operationHeader,
+.mdPostingsAndTaxControl div.postingsControl[data-mode=write] .linkedDocumentsHeader {
+  display: none;
+}
+.mdPostingsAndTaxControl div.postingsControl .subcontoEmptyAccount {
+  position: relative;
+  top: 4px;
+}
+.mdPostingsAndTaxControl div.postingsControl .provideInAccounting {
+  display: none;
+}
+.mdPostingsAndTaxControl .addItemBlock {
+  display: none;
+  margin: 7px 0;
+}
+.mdPostingsAndTaxControl input[type=text][disabled] {
+  background: #eeeeee;
+  opacity: 1;
+}
+.mdPostingsAndTaxControl .mdCloseLink {
+  top: 3px;
+}
+body.ie8 .mdPostingsAndTaxControl .mdTable.disabledProvideInAccounting .operationRow,
+body.ie8 .mdPostingsAndTaxControl .mdTable.disabledProvideInAccounting .mdTableHeader {
+  filter: alpha(opacity=50);
+}
+body.ie8 .mdPostingsAndTaxControl .mdTable.disabledProvideInAccounting .operationRow div.mdTableCell,
+body.ie8 .mdPostingsAndTaxControl .mdTable.disabledProvideInAccounting .mdTableHeader div.mdTableCell {
+  filter: alpha(opacity=50);
+}

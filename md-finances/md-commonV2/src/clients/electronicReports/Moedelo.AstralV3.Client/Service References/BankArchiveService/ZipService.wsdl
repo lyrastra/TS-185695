@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="tns" xmlns:senc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="https://iotchet.ru/namespases" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12env="http://www.w3.org/2003/05/soap-envelope/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:plink="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:senv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xop="http://www.w3.org/2004/08/xop/include" name="ZipService" targetNamespace="tns" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="https://iotchet.ru/namespases">
+      <xs:simpleType name="Filename">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1" />
+          <xs:maxLength value="255" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="UID">
+        <xs:restriction base="xs:string">
+          <xs:maxLength value="36" />
+          <xs:pattern value="[a-z0-9]{32}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="File">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="signatures" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Signature</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="filename" nillable="true" type="s0:Filename">
+            <xs:annotation>
+              <xs:documentation>Filename</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="content" type="xs:base64Binary">
+            <xs:annotation>
+              <xs:documentation>Content</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FileWithID">
+        <xs:complexContent mixed="false">
+          <xs:extension base="s0:File">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="id" nillable="true" type="xs:integer">
+                <xs:annotation>
+                  <xs:documentation>File identifier</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="FileWithIDArray">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FileWithID" nillable="true" type="s0:FileWithID" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="File" type="s0:File" />
+      <xs:element name="FileWithID" type="s0:FileWithID" />
+      <xs:element name="FileWithIDArray" type="s0:FileWithIDArray" />
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="tns">
+      <xs:import namespace="https://iotchet.ru/namespases" />
+      <xs:complexType name="GetFilesWithUID">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" nillable="true" type="s0:UID">
+            <xs:annotation>
+              <xs:documentation>Unique identifier</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetFilesWithUIDResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FilesWithIDs" type="s0:FileWithIDArray" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GetFilesWithUID" type="tns:GetFilesWithUID" />
+      <xs:element name="GetFilesWithUIDResponse" type="tns:GetFilesWithUIDResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFilesWithUID">
+    <wsdl:part name="GetFilesWithUID" element="tns:GetFilesWithUID" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesWithUIDResponse">
+    <wsdl:part name="GetFilesWithUIDResponse" element="tns:GetFilesWithUIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZipService">
+    <wsdl:operation name="GetFilesWithUID" parameterOrder="GetFilesWithUID">
+      <wsdl:input name="GetFilesWithUID" message="tns:GetFilesWithUID" />
+      <wsdl:output name="GetFilesWithUIDResponse" message="tns:GetFilesWithUIDResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZipService" type="tns:ZipService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFilesWithUID">
+      <soap:operation soapAction="GetFilesWithUID" style="document" />
+      <wsdl:input name="GetFilesWithUID">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetFilesWithUIDResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZipService">
+    <wsdl:port name="ZipService" binding="tns:ZipService">
+      <soap:address location="http://iotchet.ru/api/zip" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

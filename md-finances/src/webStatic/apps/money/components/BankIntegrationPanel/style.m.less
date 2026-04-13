@@ -1,0 +1,58 @@
+.panel__container {
+    width: 100%;
+    border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+
+.panel {
+    width: auto;
+    padding: 10px 40px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.content {
+    padding: 10px 40px 16px 40px;
+    display: flex;
+    justify-content: flex-start;
+    border-top: none;
+}
+
+.panel__title {
+    position: relative;
+    font-size: 15px;
+}
+
+.panel__title__notification:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 2px;
+    right: -9px;
+    border-radius: 50%;
+    background-color: hsla(3, 100%, 59%, 1);
+}
+
+.tag {
+    background-color: hsla(8, 83%, 64%, 1);
+    padding: 0 6px;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 11px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.arrow {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    fill: hsla(0, 0%, 68%, 1);
+}
+
+.bank__icon {
+    width: 20px;
+    height: 20px;
+    fill: hsla(0, 0%, 68%, 1);
+}

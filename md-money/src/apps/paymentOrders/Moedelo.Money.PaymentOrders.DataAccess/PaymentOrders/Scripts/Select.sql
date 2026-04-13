@@ -1,0 +1,67 @@
+select --SelectOneFilter-- top 1
+	Id,
+	FirmId,
+	SettlementAccountId,
+	KontragentId,
+	PaymentNumber as Number,
+	Sum,
+	PaymentSnapshot,
+	Direction,
+	OrderType,
+	Description,
+	SalaryWorkerId,
+	KontragentSettlementAccountId as TransferSettlementAccountId,
+	KontragentName,
+	ProvideInAccounting,
+	PaidStatus,
+	PostingsAndTaxMode,
+	OperationType,
+	Date,
+	IncludeNds,
+	NdsSum,
+	BudgetaryTaxesAndFees,
+	NdsType,
+	UnderContract,
+	KontragentAccountCode,
+	DocumentBaseId,
+	TaxPostingType,
+	TaxationSystemType,
+	BudgetaryPeriodType,
+	BudgetaryPeriodNumber,
+	BudgetaryPeriodYear,
+	KbkPaymentType,
+	KbkId,
+	PaymentPriority,
+	ModifyDate,
+	CreateDate,
+	TradingObjectId,
+	IsLongTermLoan,
+	LoanInterestSum,
+	AcquiringCommission,
+	AcquiringCommissionDate,
+	IsMediation,
+	MediationCommission,
+	OperationState,
+	DuplicateId,
+	SourceFileId,
+	BudgetaryPeriodDate,
+	ExchangeRate,
+	TotalSum,
+	ExchangeRateDiff,
+	PatentId,
+	IsIgnoreNumber,
+	SaleDate,
+	IsTargetIncome,
+	OutsourceState,
+	MediationNdsType,
+	MediationNdsSum
+	from dbo.Accounting_PaymentOrder
+	where FirmId = @FirmId
+		and coalesce(OperationState, @OperationStateDefault) not in @badStates
+		--SelectOneFilter-- and DocumentBaseId = @DocumentBaseId
+		--SelectListFilter-- and DocumentBaseId in (select Id from #BaseIds)
+		--CurrencyOperationsTypesFilter-- and OperationType in @currencyOperationsTypes
+		--PeriodFilter-- and Date >= @startDate and Date <= @endDate
+		--OperationStateFilter-- and OperationState = @operationState
+		--OperationTypeFilter-- and OperationType = @operationType
+		

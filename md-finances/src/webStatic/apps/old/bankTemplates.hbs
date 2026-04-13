@@ -1,0 +1,3682 @@
+<script type="text/template" id="MainPageTemplate">
+    <div
+            id="mdBankPage" class="mdWrapPage mdBankPage">
+        <div class="mdLayoutLeftCol">
+            <div class="mdLayoutHeader">
+                <div id="separatedTimeFilter"></div>
+            </div>
+            <div class="mdLayoutBody">
+
+            </div>
+        </div>
+        <div class="mdLayoutMainCol">
+            <div class="mdLayoutHeader">
+                <div id="buttonsBar" class="buttonsBar"></div>
+                <div class="filter">
+                    <input class="primaryDocumentsFilter" id="primaryDocumentsFilter" type="text"/>
+                </div>
+
+                <div class="searchArea"></div>
+            </div>
+            <div class="mdLayoutBody"></div>
+        </div>
+    </div></script>
+<script type="text/template" id="separatedTimeFilterTemplate">
+    <div
+            class="current">
+        <span class="selectedPeriod"></span>
+        <span class="controls"><a class="prev"></a><a class="next"></a></span>
+    </div>
+    <a href="#" class="today">сегодня</a>
+    <a href="#" class="close">&times; закрыть</a>
+    <section>
+        <ul class="customList">
+            <li><a data-type="month">Месяц</a></li>
+            <li><a data-type="quarter">Квартал</a></li>
+            <li><a data-type="year">Год</a></li>
+            <li><a data-type="custom">Произвольно</a></li>
+            <li><a data-type="all">За все время</a></li>
+        </ul>
+        <div class="calendar month">
+            <a data-month="1" data-text="ЯНВАРЬ">янв</a>
+            <a data-month="2" data-text="ФЕВРАЛЬ">фев</a>
+            <a data-month="3" data-text="МАРТ">мар</a>
+            <a data-month="4" data-text="АПРЕЛЬ">апр</a>
+            <a data-month="5" data-text="МАЙ">май</a>
+            <a data-month="6" data-text="ИЮНЬ">июн</a>
+            <a data-month="7" data-text="ИЮЛЬ">июл</a>
+            <a data-month="8" data-text="АВГУСТ">авг</a>
+            <a data-month="9" data-text="СЕНТЯБРЬ">сен</a>
+            <a data-month="10" data-text="ОКТЯБРЬ">окт</a>
+            <a data-month="11" data-text="НОЯБРЬ">ноя</a>
+            <a data-month="12" data-text="ДЕКАБРЬ">дек</a>
+        </div>
+        <div class="calendar quarter">
+            <a data-text="1 КВАРТАЛ">1 кв</a>
+            <a data-text="2 КВАРТАЛ">2 кв</a>
+            <a data-text="3 КВАРТАЛ">3 кв</a>
+            <a data-text="4 КВАРТАЛ">4 кв</a>
+        </div>
+        <div class="calendar year">
+            <a data-year="2009">2009</a>
+            <a data-year="2010" class="selected">2010</a>
+            <a data-year="2011">2011</a>
+            <a data-year="2012">2012</a>
+            <a data-year="2013">2013</a>
+        </div>
+        <div class="calendar custom">
+            <label>
+                с
+                <input type="text" id="fcStartDate" class="datepicker fcStartDate" value=""/>
+            </label>
+            <label>
+                по
+                <input type="text" id="fcFinalDate" class="datepicker fcFinalDate" value=""/>
+            </label>
+        </div>
+    </section></script>
+<script type="text/template" id="searchAreaTemplate">
+    <div
+            class="mdFilter-searchArea">
+        <span class="removeAll">×</span>
+        <span class="extendedFilterLink">Область поиска</span>:
+        <span class="description"></span>
+    </div></script>
+<script type="text/template" id="TablePaginatorTemplate">
+    <aside
+            class="paginator">
+        <div class="cell">
+            <div class="c_guides">
+                <!-- PREVIOUS BUTTON -->
+                <% if (page > firstPage) { %>
+                <a class="serverprevious">
+                    <i></i>предыдущая
+                </a>
+                <% }else{ %>
+                <a class="serverprevious disabled">
+                    <i></i>предыдущая
+                </a>
+                <% } %>
+
+                <!-- NEXT BUTTON -->
+                <% if (page < totalPages) { %>
+                <a class="servernext">следующая<i></i></a>
+                <% }else{ %>
+                <a class="servernext disabled">
+                    следующая<i></i>
+                </a>
+                <% } %>
+            </div>
+            <!-- PAGE COUNTER -->
+            <!-- p < page+3 && p > page-3 || || p > totalPages-2 -->
+            <% if(totalPages > 1){ %>
+            <% for(p=1;p<=totalPages;p++){%>
+            <% if((page < 5 && p <= 8) || (page > totalPages-3 && p >= totalPages-6)) { %>
+
+            <% if (page == p) { %>
+            <% if(page == 1) {%>
+            <span class="page selected first"><%= p %></span>
+            <% } else {%>
+            <span class="page selected"><%= p %></span>
+            <% } %>
+            <% } else{ %>
+            <a class="page"><%= p %></a>
+            <% } %>
+
+            <% } else { %>
+            <% if(p < page+4 && p > page-4) { %>
+            <% if (page == p) { %>
+            <% if(page == 1) {%>
+            <span class="page selected first"><%= p %></span>
+            <% } else {%>
+            <span class="page selected"><%= p %></span>
+            <% } %>
+            <% } else{ %>
+            <a class="page"><%= p %></a>
+            <% } %>
+            <% } %>
+            <% } %>
+            <%}%>
+
+            <%} %>
+        </div>
+
+        <div class="serverhowmany">
+            Показывать: <span class="custom-select">
+            <% if(totalCount <= 20){ %>
+            <% }else if(totalCount <= 50){ %>
+            <select name="countSelector" class="countSelector">
+                <option
+                <% if (perPage == 20) { %> selected="selected" <% } %> value="20">20</option>
+                <option
+                <% if (perPage == 1000000) { %> selected="selected" <% } %> value="1000000">Все</option>
+            </select>
+            <span class="custom-select__value"></span>
+            <span class="custom-select__button"></span>
+            <% } else if(totalCount <= 100) { %>
+            <select name="serverhowmany" class="countSelector">
+                <option
+                <% if (perPage == 20) { %> selected="selected"<% } %> value="20">20</option>
+                <option
+                <% if (perPage == 50) { %> selected="selected"<% } %> value="50">50</option>
+                <option
+                <% if (perPage > 50) { %> selected="selected" <% } %> value="1000000">Все</option>
+            </select>
+            <span class="custom-select__value"></span>
+            <span class="custom-select__button"></span>
+            <% }else if(totalCount > 100 &&  totalCount <= 300){ %>
+            <select name="serverhowmany" class="countSelector">
+                <option
+                <% if (perPage == 20) { %> selected="selected"<% } %> value="20">20</option>
+                <option
+                <% if (perPage == 50) { %> selected="selected"<% } %> value="50">50</option>
+                <option
+                <% if (perPage == 100) { %> selected="selected" <% } %> value="100">100</option>
+                <option
+                <% if (perPage == 300) { %> selected="selected"<% } %> value="300">Все</option>
+            </select>
+            <span class="custom-select__value"></span>
+            <span class="custom-select__button"></span>
+            <% }else if(totalCount > 300){ %>
+            <select name="serverhowmany" class="countSelector">
+                <option
+                <% if (perPage == 20) { %> selected="selected"<% } %> value="20">20</option>
+                <option
+                <% if (perPage == 50) { %> selected="selected" <% } %> value="50">50</option>
+                <option
+                <% if (perPage == 100) { %> selected="selected"<% } %> value="100">100</option>
+                <option
+                <% if (perPage >= 300) { %> selected="selected"<% } %> value="300">300</option>
+            </select>
+            <span class="custom-select__value"></span>
+            <span class="custom-select__button"></span>
+            <% } %>
+
+        </span>
+        </div>
+    </aside></script>
+
+
+<script type="text/template" id="DocumentHeaderControl">
+    <div
+            class="h1">
+        <span class="docTitle"></span> № <span class="input_text" data-text-for="Number"></span>
+
+        <div class="input">
+            <input type="text" id="NumberDocument" data-bind="Number" name="Number" class="short" data-val="true"
+                   autocomplete="off"
+                   data-val-required="Укажите номер документа"/>
+        </div>
+        от
+        <span class="input_text" data-text-for="Date"></span>
+
+        <div class="input">
+            <input type="text" id="DateDocument" name="Date" data-bind=Date class="mdDatepicker short"
+                   data-val="true"
+                   data-val-required="Укажите дату"
+                   data-val-date="Некорректная дата"
+                   data-val-checkmindate="Дата не может быть меньше даты регистрации компании"
+                   data-val-checkclosedperiod="Нельзя создавать документы в закрытом периоде"/>
+        </div>
+        <div class="status">
+            <span data-value="" class="selected">Не подписан</span>
+            <ul class="statusList  mdDropDownList">
+                <li data-val="0">Не подписан</li>
+                <li data-val="1">Скан</li>
+                <li data-val="2">На руках</li>
+                <li data-val="4">Не оплачен</li>
+                <li data-val="6">Оплачен</li>
+            </ul>
+        </div>
+        <span class="field-validation-valid" data-valmsg-for="Number" data-valmsg-replace="true"></span>
+        <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
+    </div></script>
+<script type="text/template" id="DocumentHeaderControlPaymentOrder">
+    <div
+            class="h1">
+        <span class="docTitle"></span> № <span class="input_text"></span>
+
+        <div class="input">
+            <input type="text" id="Number" name="Number" class="short" data-val="true"
+                   data-val-required="Укажите номер документа"/>
+        </div>
+        от
+        <span class="input_text"></span>
+
+        <div class="input">
+            <input type="text" id="Date" name="Date" class="mdDatepicker short" data-val="true"
+                   data-val-required="Укажите дату"
+                   data-val-date="Некорректная дата"
+                   data-val-checkMinDate="Дата не может быть меньше даты регистрации компании"
+                   data-val-checkClosedPeriod="Нельзя создавать документы в закрытом периоде"/>
+        </div>
+        <div class="status">
+            <span data-value="" class="selected">Не подписан</span>
+            <ul class="statusList  mdDropDownList">
+                <li data-val="0">Не подписано</li>
+                <li data-val="1">Скан</li>
+                <li data-val="2">На руках</li>
+                <li data-val="4">Не оплачено</li>
+                <li data-val="6">Оплачено</li>
+            </ul>
+        </div>
+        <span class="field-validation-valid" data-valmsg-for="Number" data-valmsg-replace="true"></span>
+        <span class="field-validation-valid" data-valmsg-for="Date" data-valmsg-replace="true"></span>
+    </div></script>
+<script type="text/template" id="ReasonDocumentsControl">
+    <div
+            class="field reason">
+        <div class="title">На основании</div>
+        <div class="controls">
+            <ul class="reasonFields"></ul>
+            <div class="fieldAddLinks">
+                <span class="icon">+</span>
+                <span class="noElements">Нет / Добавить </span>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="ReasonDocumentControl">
+    <div
+            class="details named">№
+        <input type="text" data-val="true" name="DocumentName" data-bind="DocumentName"
+               class="extraShort reasonNameField"
+               validator data-val-required="Укажите номер документа">
+        от
+        <input type="text" data-val="true" name="DocumentDate" data-bind="DocumentDate" class="short reasonDateField"
+               validator data-val-required="Укажите дату"
+               data-val-date="Некорректная дата"/>
+        на сумму
+        <div class="sumInputContainer">
+            <input type="text" name="DocumentSum" data-format="float" data-bind="DocumentSum"
+                   class="extraShort sum reasonSumField"
+                   data-val="true" data-val-ignore
+                   data-val-required="Укажите сумму"
+                   data-val-positivefloat="Введите положительное число"
+                   data-val-maxmoney="Слишком большое число"
+                   data-val-fractionalpart="Укажите 2 знака после запятой"/>р.
+        </div>
+
+    </div>
+    <div class="details unNamed">
+        <input type="text" data-val="true" name="DocumentName" data-bind="DocumentName" class="short reasonNameField"
+               validator data-val-required="Укажите документ">
+        от
+        <input type="text" data-val="true" name="DocumentDate" data-bind="DocumentDate" class="short reasonDateField"
+               validator data-val-required="Укажите дату"
+               data-val-date="Некорректная дата"/>
+        на сумму
+        <div class="sumInputContainer">
+            <input type="text" data-val="true" name="DocumentSum" data-format="float" data-bind="DocumentSum" validator
+                   class="extraShort sum reasonSumField"
+                   data-val-required="Укажите сумму"
+                   data-val-positivefloat="Введите положительное число"
+                   data-val-maxmoney="Слишком большое число"
+                   data-val-fractionalpart="Укажите 2 знака после запятой">р.
+        </div>
+    </div>
+    <span class='qtip_icon'/>
+    <span class="closeLink">×</span>
+
+    <div class="errorMessageContainer">
+        <span class="field-validation-valid" data-valmsg-for="DocumentName" data-valmsg-replace="true"></span>
+        <span class="field-validation-valid" data-valmsg-for="DocumentDate" data-valmsg-replace="true"></span>
+        <span class="field-validation-valid" data-valmsg-for="DocumentSum" data-valmsg-replace="true"></span>
+    </div>
+</script>
+<script type="text/template" id="TaxationSystemControlTemplate">
+    <div
+            id="TaxationSystemControl" class="field">
+        <div class="title">Учесть в</div>
+        <div class="controls">
+            <div id="UsnAndEnvdControls">
+                <div>
+                    <input type="radio" id="UsnRadio" name="TaxationSystemType" value="1" checked="checked"
+                           data-bind="TaxationSystemType"/>
+                    <label for="UsnRadio">УСН</label>
+                </div>
+                <div>
+                    <input type="radio" id="EnvdRadio" name="TaxationSystemType" value="3"
+                           data-bind="TaxationSystemType"/>
+                    <label for="EnvdRadio">ЕНВД</label>
+                </div>
+            </div>
+            <div id="OsnoAndEnvdControls">
+                <div>
+                    <input type="radio" id="OsnoRadio" name="TaxationSystemType" value="2" checked="checked"
+                           data-bind="TaxationSystemType"/>
+                    <label for="OsnoRadio">ОСНО</label>
+                </div>
+                <div>
+                    <input type="radio" id="EnvdRadio" name="TaxationSystemType" value="3"
+                           data-bind="TaxationSystemType"/>
+                    <label for="EnvdRadio">ЕНВД</label>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="TaxationSystemControlWithDistributionTemplate">
+    <div
+            id="TaxationSystemControl" class="field">
+        <div class="title">Учесть в</div>
+        <div class="controls">
+            <div id="UsnAndEnvdControls">
+                <div>
+                    <input type="radio" id="UsnRadio" name="TaxationSystemType" value="1" checked="checked"
+                           data-bind="TaxationSystemType"/>
+                    <label for="UsnRadio">УСН</label>
+                </div>
+                <div>
+                    <input type="radio" id="EnvdRadio" name="TaxationSystemType" value="3"
+                           data-bind="TaxationSystemType"/>
+                    <label for="EnvdRadio">ЕНВД</label>
+                </div>
+                <div>
+                    <input type="radio" id="UsnAndEnvdRadio" name="TaxationSystemType" value="4"
+                           data-bind="TaxationSystemType"/>
+                    <label for="UsnAndEnvdRadio">УСН + ЕНВД</label><span class='qtip_icon'/>
+                </div>
+            </div>
+            <div id="OsnoAndEnvdControls">
+                <div>
+                    <input type="radio" id="OsnoRadio" name="TaxationSystemType" value="2" checked="checked"
+                           data-bind="TaxationSystemType"/>
+                    <label for="OsnoRadio">ОСНО</label>
+                </div>
+                <div>
+                    <input type="radio" id="EnvdRadio" name="TaxationSystemType" value="3"
+                           data-bind="TaxationSystemType"/>
+                    <label for="EnvdRadio">ЕНВД</label>
+                </div>
+                <div>
+                    <input type="radio" id="OsnoAndEnvdRadio" name="TaxationSystemType" value="5"
+                           data-bind="TaxationSystemType"/>
+                    <label for="OsnoAndEnvdRadio">ОСНО + ЕНВД</label><span class='qtip_icon'/>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="PostingsAndTaxControlTemplate">
+    <section
+            class="mdPostingsAndTaxControl">
+        <header class="tabHeader">
+            <div data-type="0" class="typeItem"><a data-closedperiod="enable" data-readonly="enable">Налоговый учёт</a>
+            </div>
+            <div data-type="1" class="typeItem"><a data-closedperiod="enable" data-readonly="enable">Бухгалтерский
+                учёт</a>
+            </div>
+            <div class="typeSwitcher"></div>
+        </header>
+        <div data-control="tax" class="controlWrapper"></div>
+        <div data-control="posting" class="controlWrapper"></div>
+        <div class="validationMessage controlMessage"></div>
+    </section>
+</script>
+<script type="text/template" id="PostingsAndTaxControlTemplateIp">
+    <section
+            class="mdPostingsAndTaxControl">
+        <header class="tabHeader">
+            <div data-type="0" class="typeItem"><a data-closedperiod="enable" data-readonly="enable">Налоговый учёт</a>
+            </div>
+            <div class="typeSwitcher"></div>
+        </header>
+        <div data-control="tax" class="controlWrapper"></div>
+        <div data-control="posting" class="controlWrapper"></div>
+        <div class="validationMessage controlMessage"></div>
+    </section>
+</script>
+<script type="text/template" id="TaxItemControlTemplate">
+    <div
+            class="ttDate mdTableCell">
+        <input type='text' class="mdDatepicker" data-bind="PostingDate"/>
+    </div>
+    <div class="ttIncoming mdTableCell positive rAlign">
+        <input data-format="decimal" type='text' data-direction="incoming" data-bind="Incoming"/>
+    </div>
+    <div class="ttOutgoing mdTableCell negative rAlign">
+        <input data-format="decimal" type='text' data-direction="outgoing" data-bind="Outgoing"/>
+    </div>
+
+    <div class="ttDescription mdTableCell">
+        <input type='text' data-bind="Destination"/>
+    </div>
+    <div class="ttDelete mdTableCell">
+        <span class="mdCloseLink">&times;</span>
+    </div>
+</script>
+<script type="text/template" id="TaxRowOperationControlTemplate">
+    <div class="mdSeparator" data-bind="operationHeader">
+        <span class="separatorText" data-bind="OperationName">Основные операции</span>
+    </div>
+    <ul data-bind="MainPostings">
+        <li class="mdTableRow">
+            <div class="ttDate mdTableCell">
+                <span class="readableText" data-bind="PostingDate"></span>
+            </div>
+            <div class="ttIncoming mdTableCell positive rAlign">
+                <span class="readableText" data-bind="Incoming"></span>
+            </div>
+            <div class="ttOutgoing mdTableCell negative rAlign">
+                <span class="readableText" data-bind="Outgoing"></span>
+            </div>
+
+            <div class="ttDescription mdTableCell">
+                <span class="readableText" data-bind="Destination"></span>
+            </div>
+            <div class="ttDelete mdTableCell">
+                <span class="mdCloseLink">&times;</span>
+            </div>
+        </li>
+    </ul>
+    <ul data-bind="ManualPostings">
+        <li class="mdTableRow">
+            <div class="ttDate mdTableCell">
+                <input type='text' class="mdDatepicker" data-bind="PostingDate"/>
+            </div>
+            <div class="ttIncoming mdTableCell positive rAlign">
+                <input data-format="decimal" type='text' data-bind="Incoming"/>
+            </div>
+            <div class="ttOutgoing mdTableCell negative rAlign">
+                <input data-format="decimal" type='text' data-bind="Outgoing"/>
+            </div>
+
+            <div class="ttDescription mdTableCell">
+                <input type='text' data-bind="Destination"/>
+            </div>
+            <div class="ttDelete mdTableCell">
+                <span class="mdCloseLink">&times;</span>
+            </div>
+        </li>
+    </ul>
+    <div class="addItemBlock">
+        <span class="plusIcon">+</span>
+        <a class="addItem">доход/расход</a>
+    </div>
+    <div class="mdSeparator linkedDocumentsHeader">
+        <span class="separatorText">Учитывается по связанным документам</span>
+    </div>
+    <ul data-bind="LinkedDocuments">
+        <li class="mdTableRow slamRow">
+            <i class="slamState"></i>
+            <a class="slamRowText" data-bind="DocumentName"></a>
+            <span data-bind="PostingsAndTaxMode" class="slamWarning"></span>
+            <ul class="slamRowContent" data-bind="Postings">
+                <li class="slamRowContentRow">
+                    <div class="ttDate mdTableCell">
+                        <span class="readableText" data-bind="PostingDate"></span>
+                    </div>
+                    <div class="ttIncoming mdTableCell positive rAlign">
+                        <span class="readableText" data-bind="Incoming"></span>
+                    </div>
+                    <div class="ttOutgoing mdTableCell negative rAlign">
+                        <span class="readableText" data-bind="Outgoing"></span>
+                    </div>
+                    <div class="ttDescription mdTableCell">
+                        <span class="readableText" data-bind="Destination"></span>
+                    </div>
+                    <div class="ttDelete mdTableCell">
+                        <span class="mdCloseLink">&times;</span>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</script>
+<script type="text/template" id="PostingsRowOperationControlTemplate">
+    <p class="mdSeparator operationHeader" data-bind="operationHeader">
+        <span class="separatorText" data-bind="OperationName"></span>
+    </p>
+    <ul class="mdTableBody" data-bind="ManualPostings">
+        <li class="mdTableRow">
+            <div class="mdTableCell ttDate">
+                <input type="text" data-bind="Date" class="mdDatepicker" disabled="disabled"/>
+            </div>
+
+            <div class="ttDebit mdTableCell">
+                <input type="text" data-bind="DebitNumber" syntheticaccount="Debit"/>
+            </div>
+            <div class="ttSubcontoDebit mdTableCell" data-bind="SubcontoDebit">
+                <div data-bind="Name" class="subcontoReadMode"></div>
+            </div>
+            <div class="ttCredit mdTableCell">
+                <input type="text" data-bind="CreditNumber" syntheticaccount="Credit"/>
+            </div>
+            <div class="ttSubcontoCredit mdTableCell" data-bind="SubcontoCredit">
+                <div data-bind="Name" class="subcontoReadMode"></div>
+            </div>
+            <div class="ttSumm mdTableCell rAlign">
+                <input type="text" data-bind="Sum" data-number="float"/>
+                <span>р.</span>
+            </div>
+            <div class="ttPostingDescription mdTableCell">
+                <textarea data-bind="Description" rows="1"></textarea>
+            </div>
+            <div class="ttDelete mdTableCell">
+                <span class="mdCloseLink">&times;</span>
+            </div>
+        </li>
+    </ul>
+    <ul class="mdTableBody" data-bind="MainPostings">
+        <li class="mdTableRow">
+            <div class="mdTableCell ttDate">
+                <span data-bind="Date"></span>
+            </div>
+
+            <div class="ttDebit mdTableCell">
+                <span data-bind="DebitNumber"></span>
+            </div>
+            <div class="ttSubcontoDebit mdTableCell" data-bind="SubcontoDebit">
+                <div data-bind="Name" class="subcontoReadMode"></div>
+            </div>
+            <div class="ttCredit mdTableCell">
+                <span data-bind="CreditNumber"></span>
+            </div>
+            <div class="ttSubcontoCredit mdTableCell" data-bind="SubcontoCredit">
+                <div data-bind="Name" class="subcontoReadMode"></div>
+            </div>
+            <div class="ttSumm mdTableCell rAlign">
+                <span data-bind="Sum"></span>
+                <span>р.</span>
+            </div>
+            <div class="ttPostingDescription mdTableCell">
+                <span data-bind="Description"></span>
+            </div>
+        </li>
+    </ul>
+    <div class="addItemBlock">
+        <span class="plusIcon">+</span>
+        <a class="addItem">проводка</a>
+    </div>
+    <p class="mdSeparator linkedDocumentsHeader" data-bind="linkedDocumentsHeader">
+        <span class="separatorText">В связанных документах</span>
+    </p>
+    <section class="linkedDocuments" data-bind="LinkedDocuments">
+        <div class="slamRow linkedDocument">
+            <i class="slamState"></i><a class="slamRowText" data-bind="DocumentName"></a>
+
+            <div class="slamRowContent">
+                <ul class="mdTableBody" data-bind="Postings">
+                    <li class="mdTableRow">
+                        <div class="mdTableCell ttDate">
+                            <span data-bind="Date"></span>
+                        </div>
+
+                        <div class="ttDebit mdTableCell">
+                            <span data-bind="DebitNumber"></span>
+                        </div>
+                        <div class="ttSubcontoDebit mdTableCell" data-bind="SubcontoDebit">
+                            <div data-bind="Name" class="subcontoReadMode"></div>
+                        </div>
+                        <div class="ttCredit mdTableCell">
+                            <span data-bind="CreditNumber"></span>
+                        </div>
+                        <div class="ttSubcontoCredit mdTableCell" data-bind="SubcontoCredit">
+                            <div data-bind="Name" class="subcontoReadMode"></div>
+                        </div>
+                        <div class="ttSumm mdTableCell rAlign">
+                            <span data-bind="Sum"></span>
+                            <span>р.</span>
+                        </div>
+                        <div class="ttPostingDescription mdTableCell">
+                            <span data-bind="Description"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>   </script>
+<script type="text/template" id="PostingsControlTemplate">
+    <div class="mdTable postingsControl noHighlight lowHeight">
+        <div data-block="postingStatus" class="postingStatusMsg">
+            <div class="postingStatusMsgTooltip">Сервис создает бухгалтерские проводки автоматически и демонстрирует их для ознакомления</div>
+            <a id="ProvideInAccounting" class="postingStatusSwitcher"></a>
+        </div>
+        <div data-block="explainigmessage" class="explainigMessage provideInAccounting"></div>
+        <div class="postingsControlTable">
+            <header class="mdTableHeader">
+                <div class="ttDate mdTableCell">Дата</div>
+                <div class="ttDebit mdTableCell">Дебет</div>
+                <div class="ttSubcontoDebit mdTableCell">Объекты учета</div>
+                <div class="ttCredit mdTableCell">Кредит</div>
+                <div class="ttSubcontoCredit mdTableCell">Объекты учета</div>
+                <div class="ttSumm mdTableCell rAlign">Сумма</div>
+                <div class="ttPostingDescription mdTableCell">Комментарии</div>
+            </header>
+            <section id="OperationsContent" class="operations">
+            </section>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="TaxControlTemplate">
+    <div
+            class="mdTable taxControl noHighlight lowHeight" data-mode="read">
+        <header class="mdTableHeader">
+            <div class="ttDate mdTableCell">Дата</div>
+            <div class="ttIncoming mdTableCell rAlign">Доход</div>
+            <div class="ttOutgoing mdTableCell rAlign">Расход</div>
+            <div class="ttDescription  mdTableCell">Описание</div>
+            <div class="ttDelete  mdTableCell"></div>
+        </header>
+
+        <div class="mdTableBody">
+            <ul id="OperationsContent" class="changeableSection" data-bind="Operations"></ul>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="PostingEmptyItemTemplate">
+    <div
+            class="ttDate mdTableCell">
+        <input type="text" data-bind="Date" class="mdDatepicker" disabled="disabled"/>
+    </div>
+    <div class="ttDebit mdTableCell">
+        <input type="text" data-bind="DebitNumber" syntheticaccount="Debit"/>
+    </div>
+    <div class="ttSubcontoDebit mdTableCell" data-bind="SubcontoDebit">
+        <div>
+            <div data-bind="Name"></div>
+        </div>
+    </div>
+    <div class="ttCredit mdTableCell">
+        <input type="text" data-bind="CreditNumber" syntheticaccount="Credit"/>
+    </div>
+    <div class="ttSubcontoCredit mdTableCell" data-bind="SubcontoCredit">
+        <div>
+            <div data-bind="Name"></div>
+        </div>
+    </div>
+    <div class="ttSumm mdTableCell rAlign">
+        <input type="text" data-bind="Sum" data-number="float"/>
+        <span>р.</span>
+    </div>
+    <div class="ttPostingDescription mdTableCell">
+        <textarea data-bind="Description" rows="1"></textarea>
+    </div>
+    <div class="ttDelete mdTableCell">
+        <span class="mdCloseLink">&times;</span>
+    </div></script>
+<script type="text/template" id="OsnoTaxControlTemplate">
+    <div
+            class="mdTable taxControl osnoTaxControl noHighlight lowHeight" data-mode="read">
+        <header class="mdTableHeader">
+            <div class="ttDate mdTableCell">Дата</div>
+            <div class="ttIncoming mdTableCell rAlign">Доход</div>
+            <div class="ttOutgoing mdTableCell rAlign">Расход</div>
+            <div class="ttType mdTableCell">Тип</div>
+            <div class="ttKind mdTableCell">Вид</div>
+            <div class="ttNormalizedCostType mdTableCell">
+                Нормируемый <span class="normalizedCostTypeQtip"></span>
+            </div>
+            <div class="ttDelete  mdTableCell"></div>
+        </header>
+
+        <div class="mdTableBody">
+            <ul id="OperationsContent" class="changeableSection" data-bind="Operations"></ul>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="OsnoTaxRowOperationControlTemplate">
+    <div
+            class="mdSeparator" data-bind="operationHeader">
+        <span class="separatorText" data-bind="OperationName">Основные операции</span>
+    </div>
+    <ul data-bind="MainPostings">
+        <li class="mdTableRow">
+            <div class="ttDate mdTableCell">
+                <span class="readableText" data-bind="PostingDate"></span>
+            </div>
+            <div class="ttIncoming mdTableCell positive rAlign">
+                <span class="readableText" data-bind="Incoming"></span>
+            </div>
+            <div class="ttOutgoing mdTableCell negative rAlign">
+                <span class="readableText" data-bind="Outgoing"></span>
+            </div>
+            <div class="ttType mdTableCell" data-cell="Type">
+                <span class="readableText" data-bind="Type"></span>
+            </div>
+            <div class="ttKind mdTableCell" data-cell="Kind">
+                <span class="readableText" data-bind="Kind"></span>
+            </div>
+            <div class="ttNormalizedCostType mdTableCell" data-cell="NormalizedCostType">
+                <span class="readableText" data-bind="NormalizedCostType"></span>
+            </div>
+            <div class="ttDelete mdTableCell">
+                <span class="mdCloseLink">&times;</span>
+            </div>
+        </li>
+    </ul>
+    <ul data-bind="ManualPostings">
+        <li class="mdTableRow">
+
+            <div class="ttDate mdTableCell">
+                <input type='text' class="mdDatepicker" data-bind="PostingDate"/>
+            </div>
+            <div class="ttIncoming mdTableCell positive rAlign">
+                <input type='text' data-format="decimal" data-direction="incoming" data-bind="Incoming"/>
+            </div>
+            <div class="ttOutgoing mdTableCell negative rAlign">
+                <input type='text' data-format="decimal" data-direction="outgoing" data-bind="Outgoing"/>
+            </div>
+            <div class="ttType mdTableCell" data-cell="Type">
+                <select data-bind="Type" id="Type" name="Type">
+                    <option value="1">Прямой</option>
+                    <option value="2">Косвенный</option>
+                    <option value="3">Внереализационный</option>
+                    <option value="4">От реализации</option>
+                </select>
+            </div>
+            <div class="ttKind mdTableCell" data-cell="Kind">
+                <select data-bind="Kind" id="Kind" name="Kind">
+                    <option value="101">Реализация услуг</option>
+                    <option value="102">Реализация покупных товаров</option>
+                    <option value="103">Реализация имущественных прав</option>
+                    <option value="104">Реализация прочего имущества</option>
+                    <option value="201">Материальный</option>
+                    <option value="202">Оплата труда</option>
+                    <option value="203">Амортизация</option>
+                    <option value="204">Прочий расход</option>
+                </select>
+            </div>
+            <div class="ttNormalizedCostType mdTableCell" data-cell="NormalizedCostType">
+                <select data-bind="NormalizedCostType" id="NormalizedCostType" name="NormalizedCostType">
+                    <option value="0">Нет &lt;br/&gt;</option>
+                    <option value="1">Расходы на возмещение затрат работников по уплате процентов по кредитам на
+                        приобретение или строительство жилого помещения &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000003HJU6CG&amp;referer=Search&amp;query=ст.255%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;п.24.1 ч.2 ст.255 НК РФ&lt;/a&gt;</option>
+                    <option value="2">Расходы на НИОКР &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000025K0GFR&amp;referer=Search&amp;query=ст.262%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;ст.262 НК РФ&lt;/a&gt;</option>
+                    <option value="3">Представительские расходы &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001VPI3AF&amp;referer=Search&amp;query=ст.264%20п.1%20пп.22%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;пп.22 п.1&lt;/a&gt; и &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q00000000245E3E4&amp;referer=Search&amp;query=ст.264%20п.2%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;п.2 ст.264 НК РФ&lt;/a&gt;</option>
+                    <option value="4">Расходы на рекламу &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001N5035U&amp;referer=Search&amp;query=ст.264%20п.1%20пп.28%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;пп.28 п.1&lt;/a&gt; и &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000024H63JA&amp;referer=Search&amp;query=ст.264%20п.4%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;п.4 ст.264 НК РФ&lt;/a&gt;</option>
+                    <option value="5">Расходы в виде процентов по долговым обязательствам &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000023DG3D8&amp;referer=Search&amp;query=ст.265%20п.1%20пп.2%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;пп.2 п.1 ст.265&lt;/a&gt; и &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000003UB0G4E&amp;referer=Search&amp;query=ст.269%20НК%20РФ﻿﻿&amp;position=1&quot;
+                        class=&quot;&quot;&gt;ст.269 НК РФ&lt;/a&gt;</option>
+                    <option value="6">Убыток от уступки права требования &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001V823F3&amp;referer=Search&amp;query=ст.279%20п.1%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;п.1 ст.279 НК РФ&lt;/a&gt;</option>
+                    <option value="7">Потери от недостачи и/или порчи при хранении и транспортировке МПЗ &lt;br/&gt;
+                        &lt;a href=&quot;/Pro/View/Legals/97-426103594883?referer=Search&amp;query=Постановление%20Правительства%20РФ%20от%2012.11.2002%20№%20814&amp;position=1&quot;
+                        class=&quot;&quot;&gt;Постановление Правительства РФ от 12.11.2002 № 814&lt;/a&gt;</option>
+                    <option value="8">Расходы по оплате стоимости проезда и провоза багажа работнику организации,
+                        расположенной в районах Крайнего Севера и приравненных к ним местностям, и членам его семьи &lt;br/&gt;
+                        &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001I8A343&amp;referer=Search&amp;query=ст.255%20п.12.1%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;п.12.1 ч.2 ст.255 НК РФ&lt;/a&gt;</option>
+                    <option value="9">Расходы на обязательное страхование имущества &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001MPO3AQ&amp;referer=Search&amp;query=ст.263%20п.2%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;п.2 ст.263 НК РФ&lt;/a&gt;</option>
+                    <option value="10">Расходы на компенсацию за использование для служебных поездок личного транспорта
+                        &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103649773?referer=Search&amp;query=Постановление%20Правительства%20РФ%20от%2008.02.2002%20№%2092&amp;position=1&amp;anchor=regl_phr4&quot;
+                        class=&quot;&quot;&gt;Постановление Правительства РФ от 08.02.2002 № 92&lt;/a&gt;</option>
+                    <option value="11">Плата государственному и/или частному нотариусу за нотариальное оформление &lt;br/&gt;
+                        &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q00000000393UG28&amp;referer=Search&amp;query=ст.333.24%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;ст.333.24 НК РФ&lt;/a&gt;</option>
+                    <option value="12">Расходы обслуживающих производств и хозяйств &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000021U73VR&amp;referer=Search&amp;query=ст.275.1%20НК%20РФ&amp;position=1&quot;
+                        class=&quot;&quot;&gt;ст. 275.1 НК РФ &lt;/a&gt;</option>
+                </select>
+            </div>
+            <div class="ttDelete mdTableCell">
+                <span class="mdCloseLink">&times;</span>
+            </div>
+        </li>
+    </ul>
+    <div class="addItemBlock">
+        <span class="plusIcon">+</span>
+        <a class="addItem">доход/расход</a>
+    </div>
+    <div class="mdSeparator linkedDocumentsHeader">
+        <span class="separatorText">Учитывается по связанным документам</span>
+    </div>
+    <ul data-bind="LinkedDocuments">
+        <li class="mdTableRow slamRow">
+            <i class="slamState"></i>
+            <a class="slamRowText" data-bind="DocumentName"></a>
+            <span data-bind="PostingsAndTaxMode" class="slamWarning"></span>
+            <ul class="slamRowContent" data-bind="Postings">
+                <li class="slamRowContentRow">
+                    <div class="ttDate mdTableCell">
+                        <span class="readableText" data-bind="PostingDate"></span>
+                    </div>
+                    <div class="ttIncoming mdTableCell positive rAlign">
+                        <span class="readableText" data-bind="Incoming"></span>
+                    </div>
+                    <div class="ttOutgoing mdTableCell negative rAlign">
+                        <span class="readableText" data-bind="Outgoing"></span>
+                    </div>
+                    <div class="ttType mdTableCell" data-cell="Type">
+                        <span class="readableText" data-bind="Type"></span>
+                    </div>
+                    <div class="ttKind mdTableCell" data-cell="Kind">
+                        <span class="readableText" data-bind="Kind"></span>
+                    </div>
+                    <div class="ttNormalizedCostType mdTableCell" data-cell="NormalizedCostType">
+                        <span class="readableText" data-bind="NormalizedCostType"></span>
+                    </div>
+                    <div class="ttDelete mdTableCell">
+                        <span class="mdCloseLink">&times;</span>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul></script>
+<script type="text/template" id="OsnoTaxEditItemTemplate">
+    <div class="ttDate mdTableCell">
+        <input type='text' class="mdDatepicker" data-bind="PostingDate"/>
+    </div>
+    <div class="ttIncoming mdTableCell positive rAlign">
+        <input type='text' data-format="decimal" data-direction="incoming" data-bind="Incoming"/>
+    </div>
+    <div class="ttOutgoing mdTableCell negative rAlign">
+        <input type='text' data-format="decimal" data-direction="outgoing" data-bind="Outgoing"/>
+    </div>
+    <div class="ttType mdTableCell" data-cell="Type">
+        <select data-bind="Type" id="Type" name="Type">
+            <option value="1">Прямой</option>
+            <option value="2">Косвенный</option>
+            <option value="3">Внереализационный</option>
+            <option value="4">От реализации</option>
+        </select>
+    </div>
+    <div class="ttKind mdTableCell" data-cell="Kind">
+        <select data-bind="Kind" id="Kind" name="Kind">
+            <option value="101">Реализация услуг</option>
+            <option value="102">Реализация покупных товаров</option>
+            <option value="103">Реализация имущественных прав</option>
+            <option value="104">Реализация прочего имущества</option>
+            <option value="201">Материальный</option>
+            <option value="202">Оплата труда</option>
+            <option value="203">Амортизация</option>
+            <option value="204">Прочий расход</option>
+        </select>
+    </div>
+    <div class="ttNormalizedCostType mdTableCell" data-cell="NormalizedCostType">
+        <select data-bind="NormalizedCostType" id="NormalizedCostType" name="NormalizedCostType">
+            <option value="0">Нет &lt;br/&gt;</option>
+            <option value="1">Расходы на возмещение затрат работников по уплате процентов по кредитам на приобретение
+                или строительство жилого помещения &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000003HJU6CG&amp;referer=Search&amp;query=ст.255%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;п.24.1 ч.2 ст.255 НК РФ&lt;/a&gt;</option>
+            <option value="2">Расходы на НИОКР &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000025K0GFR&amp;referer=Search&amp;query=ст.262%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;ст.262 НК РФ&lt;/a&gt;</option>
+            <option value="3">Представительские расходы &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001VPI3AF&amp;referer=Search&amp;query=ст.264%20п.1%20пп.22%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;пп.22 п.1&lt;/a&gt; и &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q00000000245E3E4&amp;referer=Search&amp;query=ст.264%20п.2%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;п.2 ст.264 НК РФ&lt;/a&gt;</option>
+            <option value="4">Расходы на рекламу &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001N5035U&amp;referer=Search&amp;query=ст.264%20п.1%20пп.28%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;пп.28 п.1&lt;/a&gt; и &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000024H63JA&amp;referer=Search&amp;query=ст.264%20п.4%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;п.4 ст.264 НК РФ&lt;/a&gt;</option>
+            <option value="5">Расходы в виде процентов по долговым обязательствам &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000023DG3D8&amp;referer=Search&amp;query=ст.265%20п.1%20пп.2%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;пп.2 п.1 ст.265&lt;/a&gt; и &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000003UB0G4E&amp;referer=Search&amp;query=ст.269%20НК%20РФ﻿﻿&amp;position=1&quot;
+                class=&quot;&quot;&gt;ст.269 НК РФ&lt;/a&gt;</option>
+            <option value="6">Убыток от уступки права требования &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001V823F3&amp;referer=Search&amp;query=ст.279%20п.1%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;п.1 ст.279 НК РФ&lt;/a&gt;</option>
+            <option value="7">Потери от недостачи и/или порчи при хранении и транспортировке МПЗ &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103594883?referer=Search&amp;query=Постановление%20Правительства%20РФ%20от%2012.11.2002%20№%20814&amp;position=1&quot;
+                class=&quot;&quot;&gt;Постановление Правительства РФ от 12.11.2002 № 814&lt;/a&gt;</option>
+            <option value="8">Расходы по оплате стоимости проезда и провоза багажа работнику организации, расположенной
+                в районах Крайнего Севера и приравненных к ним местностям, и членам его семьи &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001I8A343&amp;referer=Search&amp;query=ст.255%20п.12.1%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;п.12.1 ч.2 ст.255 НК РФ&lt;/a&gt;</option>
+            <option value="9">Расходы на обязательное страхование имущества &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q000000001MPO3AQ&amp;referer=Search&amp;query=ст.263%20п.2%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;п.2 ст.263 НК РФ&lt;/a&gt;</option>
+            <option value="10">Расходы на компенсацию за использование для служебных поездок личного транспорта &lt;br/&gt;
+                &lt;a href=&quot;/Pro/View/Legals/97-426103649773?referer=Search&amp;query=Постановление%20Правительства%20РФ%20от%2008.02.2002%20№%2092&amp;position=1&amp;anchor=regl_phr4&quot;
+                class=&quot;&quot;&gt;Постановление Правительства РФ от 08.02.2002 № 92&lt;/a&gt;</option>
+            <option value="11">Плата государственному и/или частному нотариусу за нотариальное оформление &lt;br/&gt;
+                &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q00000000393UG28&amp;referer=Search&amp;query=ст.333.24%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;ст.333.24 НК РФ&lt;/a&gt;</option>
+            <option value="12">Расходы обслуживающих производств и хозяйств &lt;br/&gt; &lt;a href=&quot;/Pro/View/Legals/97-426103528166?anchor=Q0000000021U73VR&amp;referer=Search&amp;query=ст.275.1%20НК%20РФ&amp;position=1&quot;
+                class=&quot;&quot;&gt;ст. 275.1 НК РФ &lt;/a&gt;</option>
+        </select>
+    </div>
+    <div class="ttDelete mdTableCell">
+        <span class="mdCloseLink">&times;</span>
+    </div></script>
+
+
+<script type="text/template" id="BudgetaryPaymentTemplate">
+    <div
+            class="documentForm budgetaryPayment">
+        <div class="generalFields">
+            <form>
+                <div class="field">
+                    <div class="controls js-accountType">
+                        <label class="forRadio"><input type="radio" name="AccountType"
+                                                       value="0"><span>Налоги</span></label>
+                        <label class="lightLeftMargin forRadio"><input type="radio" name="AccountType" value="1"><span>Взносы</span></label>
+                    </div>
+                </div>
+
+                <div id="AccountsSelect" class="field">
+                    <div class="controls js-accountSelect"></div>
+                    <div class="controls">
+                        <label class="forRadio"><input type="radio" name="KbkPaymentType"
+                                                       value="0"><span>Налог</span></label>
+                        <label class="forRadio"><input type="radio" name="KbkPaymentType"
+                                                       value="1"><span>Пени</span></label>
+                        <label class="forRadio"><input type="radio" name="KbkPaymentType"
+                                                       value="2"><span>Штраф</span></label>
+                    </div>
+                </div>
+
+                <div id="TradingObjectsSelect" class="field hidden">
+                    <div class="title">Торговый объект</div>
+                    <div class="controls"></div>
+                </div>
+
+                <div class="field period">
+                    <div class="title">Период<span class="plateNumber">107</span></div>
+                    <div class="controls">
+                        <div class="periodControl"></div>
+                        <span id="paymentPeriodHint" class="qtip_icon">&nbsp;</span>
+                    </div>
+                </div>
+
+                <div class="field" data-control="Kbk"></div>
+
+                <div class="field">
+                    <div class="title">Сумма<span class="plateNumber">7</span></div>
+                    <div class="controls">
+                        <input type="text" id="Sum" name="Sum" class="short sum" data-val="true" data-format="float"
+                               data-val-required="Укажите сумму"
+                               data-val-positivefloatnotzero="Введите положительное число"
+                               data-val-positivefloatnotzero-notzero="true"/>р.
+                        <span class="field-validation-valid" data-valmsg-for="Sum" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="title">Назначение<span class="plateNumber">24</span></div>
+                    <div class="controls">
+                        <textarea class="middle" name="Description" placeholder=""></textarea>
+                    <span class="field-validation-valid" data-valmsg-for="Description"
+                          data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+
+                <div class="field autoEditFields">
+                    <div class="title"></div>
+                    <div class="controls">
+                        <div class="collapseFields"></div>
+                    </div>
+                </div>
+
+                <div id="AutoEditFields" class="expandFields hidden">
+                    <div class="field" data-control="payerStatus"></div>
+
+                    <input type="hidden" name="PayerKpp" id="PayerKpp" data-bind="PayerKpp" />
+                    <div class="mdRow">
+                        <div class="mdCol-3">
+                            <div class="field oktmoControl">
+                                <div class="title">ОКТМО<span class="plateNumber">105</span></div>
+                                <div class="controls ">
+                                    <input type="text" id="KontragentOKTMO" name="KontragentOKTMO" class="oktmoInput"
+                                           maxlength="8" data-val="true"
+                                           data-val-required="Укажите OKTMO"
+                                           data-val-regex="Ожидается 8 цифр, нельзя указывать все нули подряд"
+                                           data-val-regex-pattern="^(?!0{8})[0-9]{8}$"/>
+                                <span class="field-validation-valid" data-valmsg-for="KontragentOKTMO"
+                                      data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="field okatoControl hidden">
+                                <div class="title">ОКАТО<span class="plateNumber">105</span></div>
+                                <div class="controls">
+                                    <input type="text" id="KontragentOKATO" name="KontragentOKATO" class="oktmoInput"
+                                           maxlength="11" data-val="true"
+                                           data-val-required="Укажите ОКАТО"
+                                           data-val-regex="Ожидаются только цифры" data-val-regex-pattern="^(\d)*$"
+                                           data-val-length="Ожидается 11 цифр" data-val-length-min="11"
+                                           data-val-length-max="11">
+                                <span class="field-validation-valid" data-valmsg-for="KontragentOKATO"
+                                      data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdCol-5">
+                            <div class="field" data-control="paymentFoundation"></div>
+                        </div>
+                    </div>
+
+                    <div data-control="paymentFoundationNumberAndDate"></div>
+
+                    <div class="mdRow">
+                        <div class="mdCol-3">
+                            <div id="CodeUinFieldBlock" class="field">
+                                <div class="title">
+                                    Код<span class="plateNumber">22</span><span id="codeUinQtip"
+                                                                                class="qtip_icon">&nbsp;</span>
+                                </div>
+                                <div class="controls">
+                                    <input type="text" id="CodeUin" name="CodeUin" class="input118" data-val="true"
+                                           data-val-required="Укажите код"
+                                           data-val-regex="Ожидается 20 или 25 цифр или '0', нельзя указывать все нули подряд"
+                                           data-val-regex-pattern="^((?!0{20})[0-9]{20}|(?!0{25})[0-9]{25}|0{1})$"
+                                           maxlength="25"/>
+
+                                <span class="field-validation-valid" data-valmsg-for="CodeUin"
+                                      data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mdCol-5">
+                            <div class="field">
+                                <div class="title">
+                                    Получатель <span class="local" id="requisitesExpandLink" data-readonly="enable"
+                                                     data-closedperiod="enable">Реквизиты</span>
+                                </div>
+                                <div class="controls">
+                                    <input type="text" id="KontragentName" name="KontragentName" class="middle"
+                                           data-val="true"
+                                           data-val-required="Укажите наименование получателя"/>
+                                <span class="field-validation-valid" data-valmsg-for="KontragentName"
+                                      data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="RequisitesExpandFields" class="expandFields hidden">
+                    <div class="field">
+                        <div class="title">ИНН</div>
+                        <div class="controls">
+                            <input type="text" id="KontragentINN" name="KontragentINN" class="input155" data-val="true"
+                                   data-val-required="Укажите ИНН" data-val-length-min="10"
+                                   data-val-length="Требуется значение длиной 10 или 12 символов"
+                                   data-val-inn="ИНН не прошел форматный контроль" maxlength="12"/>
+                        <span class="field-validation-valid" data-valmsg-for="KontragentINN"
+                              data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="title">КПП</div>
+                        <div class="controls">
+                            <input type="text" id="Kpp" name="KontragentKPP" class="input155" data-val="true"
+                                   data-val-regex="Ожидаются только цифры" data-val-regex-pattern="^(\d)*$"
+                                   data-val-length-min="9"
+                                   data-val-length="Требуется значение длиной 9 символов или пустое значение"
+                                   maxlength="9"/>
+                        <span class="field-validation-valid" data-valmsg-for="KontragentKPP"
+                              data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="title">Банк получателя</div>
+                        <div class="controls">
+                            <input type="text" id="KontragentBankName" name="KontragentBankName" class="middle"
+                                   data-val="true"
+                                   data-val-required="Укажите название банка"/>
+                        <span class="field-validation-valid" data-valmsg-for="KontragentBankName"
+                              data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="title">Расчетный счет</div>
+                        <div class="controls">
+                            <input type="text" id="KontragentSettlementAccount" name="KontragentSettlementAccount"
+                                   class="middle" data-val="true"
+                                   data-val-required="Укажите расчетный счет" data-val-length-min="20"
+                                   data-val-length="Требуется значение длиной 20 цифр"
+                                   data-val-regex="Ожидаются только цифры" data-val-regex-pattern="^(\d)*$"
+                                   maxlength="20"/>
+                        <span class="field-validation-valid" data-valmsg-for="KontragentSettlementAccount"
+                              data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trading-fees-hint hintWrapper">
+                    <div>Внимание! Рекомендуем тщательно проверить <span
+                            class="link toogle-link">следующую информацию:</span></div>
+                    <div data-full="true" class="hidden">
+                        <p>
+                            – при уплате торгового сбора рекомендуем уточнить в налоговой инспекции код ОКТМО,
+                            указываемый в
+                            платежном поручении. Это связано с тем , что в ряде случаев код ОКТМО зависит от места
+                            расположения торгового объекта. По умолчанию выставлен ОКТМО налоговой инспекции, которая
+                            указана в реквизитах;
+                        </p>
+
+                        <p>
+                            – внимательно проверьте данные, отраженные в блоке "Налоговый учет" и при необходимости
+                            скорректируйте их. Это связано с тем, что при учете торгового сбора при расчете налогов есть
+                            ряд
+                            особенностей.
+                        </p>
+                    </div>
+                </div>
+
+                <div data-control="postingsAndTax"></div>
+
+                <div id="usn6-tradingFee-msg" class="hidden">
+                    <div>При уменьшении суммы налога на торговый сбор необходимо учитывать <span
+                            class="link toogle-link">следующее:</span>
+                    </div>
+                    <div data-full="true" class="hidden">
+                        <p>Плательщики УСН при использовании объекта налогообложения "доходы" не включают сумму
+                            торгового
+                            сбора в расходы, однако, они вправе уменьшить на сумму уплаченного торгового сбора единый
+                            налог
+                            при УСН с учетом следующих особенностей.</p>
+
+                        <p>Единый налог при УСН (авансовый платеж по нему) за отчетный (налоговый) период можно
+                            уменьшить на
+                            сумму торгового сбора, уплаченного в течение этого налогового (отчетного) периода.</p>
+
+                        <p>Если ведется несколько видов деятельности, то на сумму уплаченного торгового сбора можно
+                            уменьшить только ту часть налога (авансового платежа), которая сама рассчитана именно по
+                            виду
+                            деятельности, по которому уплачивается сбор.</p>
+
+                        <p>Уменьшение можно сделать только в случае, если торговый сбор уплачен в бюджет того же
+                            региона, в
+                            который зачисляется единый налог (авансовый платеж) при УСН. Например, ИП, который проживает
+                            в
+                            Московской области, но ведет торговую деятельность только в г. Москве, не вправе уменьшить
+                            единый налог при УСН на сумму торгового сбора. Это связано с тем, что торговый сбор
+                            зачисляется
+                            в бюджет г. Москвы, а единый налог при УСН (авансовые платежи по нему) – в бюджет Московской
+                            области по месту жительства ИП.</p>
+
+                        <p>Вычет нельзя применить если налогоплательщик не представил в отношении объекта, по которому
+                            уплачен торговый сбор, уведомление о постановке на учет в качестве плательщика торгового
+                            сбора.
+                            Вместе с тем несвоевременное представление уведомления не лишит права на уменьшение суммы
+                            налога
+                            (авансового платежа).</p>
+
+                        <p>Сумма, отраженная в поле "Расход" блока налоговый учет уменьшит сумму налога (авансового
+                            платежа
+                            по нему), попадая в раздел IV КУДИР. При необходимости с учетом вышеописанных особенностей
+                            применения вычета на сумму торгового сбора, измените сумму, отраженную в поле "Расход".</p>
+                    </div>
+                </div>
+
+                <div id="usn15-tradingFee-msg" class="hidden">
+                    <div>При включении суммы торгового сбора в расходы необходимо учитывать <span
+                            class="link toogle-link">следующее:</span>
+                    </div>
+                    <div data-full="true" class="hidden">
+                        <p>Включить торговый сбор в расходы при УСН можно только если объект торговли, с которого
+                            уплачивается сбор, используется в деятельности на УСН.</p>
+
+                        <p>Сбор нельзя включить в расходы, если в отношении объекта, по которому он уплачен, не подано
+                            уведомление о постановке на учет в качестве плательщика торгового сбора.</p>
+
+                        <p>При необходимости, с учетом вышеописанных особенностей признания торгового сбора в расходах,
+                            измените сумму, отраженную в поле "Расход".</p>
+                    </div>
+                </div>
+
+                <div id="osno-tradingFee-msg" class="hidden">
+                    <div>При уменьшении суммы налога на торговый сбор необходимо учитывать <span
+                            class="link toogle-link">следующее:</span>
+                    </div>
+                    <div data-full="true" class="hidden">
+                        <p>Плательщики налога на прибыль не включают сумму торгового сбора в расходы, однако они вправе
+                            уменьшить на сумму уплаченного торгового сбора налог на прибыль (авансовый платеж по нему) с
+                            учетом следующих особенностей.</p>
+
+                        <p>Налог на прибыль (авансовый платеж по нему) можно уменьшить на сумму торгового сбора,
+                            уплаченного
+                            в течение этого налогового (отчетного) периода. </p>
+
+                        <p>Вычет нельзя применить если в отношении объекта, по которому уплачен торговый сбор, не
+                            представлено уведомление о постановке на учет в качестве плательщика сбора. Вместе с тем
+                            несвоевременное представление уведомления не лишает права на уменьшение суммы налога
+                            (авансового
+                            платежа). </p>
+
+                        <p>Сумма, отраженная в поле "Расход" блока налоговый учет уменьшит сумму налога (авансового
+                            платежа
+                            по нему) попадая в декларацию по налогу на прибыль . При необходимости, с учетом
+                            вышеописанных
+                            особенностей применения вычета по торговому сбору, измените сумму, отраженную в поле
+                            "Расход".</p>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="TripleCalendar">
+    <div class="tripleContainer">
+        <select name="CalendarType" id="CalendarType">
+            <option data-bind="type"></option>
+        </select>
+        <select name="Month" class="temporary">
+            <option data-bind="type"></option>
+        </select>
+        <select name="Quarter" class="temporary"></select>
+        <select name="HalfYear" class="temporary"></select>
+        <select name="Year"></select>
+    </div>
+    <div class="singleContainer">
+        <input type="text" name="BudgetaryPeriodDate" data-mask="true" class="short" data-mask="false" />
+    </div>
+</script>
+<script type="text/template" id="BudgetaryPaymentSelectControl"><select class="middle">
+</select><span class="field-validation-error js-selectError"/></script>
+<script type="text/template" id="PaymentFoundationControlTemplate">
+    <div
+            class="title">Основание платежа<span class="plateNumber">106</span></div>
+    <div class="controls">
+        <span class="empty">0</span>
+
+        <div class="paymentFoundation">
+            <select name="PaymentFoundation" id="PaymentFoundation" data-val="true" class="middle"
+                    data-val-required="Укажите основание платежа">
+                <option data-bind="type"></option>
+            </select>
+            <span class="field-validation-valid" data-valmsg-for="PaymentFoundation" data-valmsg-replace="true"></span>
+        </div>
+    </div></script>
+<script type="text/template" id="PaymentFoundationNumberAndDateControlTemplate">
+    <div data-template="foundationNumber" class="field">
+        <div class="title">Номер документа<span class="plateNumber">108</span></div>
+        <div class="controls">0</div>
+    </div>
+    <div data-template="foundationDate" class="field">
+        <div class="title">Дата документа<span class="plateNumber">109</span></div>
+        <div class="controls">
+            <input type="text" data-bind="PaymentFoundationDate" name="PaymentFoundationDate" class="short mdDatepicker" data-mask="false" />
+            <span class="paymentFoundationDateHint qtip_icon">&nbsp;</span>
+        </div>
+    </div>
+    <div data-template="foundationNumberAndDate" class="field">
+        <div class="title">
+            Номер документа<span class="plateNumber">108</span> и дата<span class="plateNumber">109</span>
+        </div>
+        <div class="controls">
+            <div class="foundationNumber">
+                <input type="text" name="PaymentFoundationNumber" id="PaymentFoundationNumber" data-bind="PaymentFoundationNumber" maxlength="15" data-val-ignore />
+            </div>
+            <div class="foundationDate">
+                <input type="text" data-bind="PaymentFoundationDate" id="PaymentFoundationDate" name="PaymentFoundationDate" class="short mdDatepicker" data-mask="false" />
+                <span class="paymentFoundationDateHint qtip_icon">&nbsp;</span>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="KbkControlTemplate">
+    <div
+            class="title">КБК<span class="plateNumber">104</span></div>
+    <div class="controls">
+        <select name="KbkId" class="long hidden"></select>
+
+        <input type="text" id="KBK" name="KBK" data-bind="KBK" class="middle hidden" data-val="true"
+               placeholder="Введите номер"
+               data-val-required="Укажите код бюджетной классификации" data-val-kbk="Ожидается 20 цифр"
+               data-val-kbkformat="Неверный формат. КБК не может начинаться с трёх нулей."/>
+        <a href="https://www.moedelo.org/Pro/View/Questions/117-190?referer=Version" class="kbkLink hidden"
+           target="_blank">Справочник КБК</a>
+        <span class="field-validation-valid" data-valmsg-for="KBK" data-valmsg-replace="true"></span>
+    </div></script>
+<script type="text/template" id="PayerStatusControlTemplate">
+    <div
+            class="title">Статус плательщика<span class="plateNumber">101</span></div>
+    <div class="controls">
+        <select name="PayerStatus" id="PayerStatus" data-val="true" class="long"
+                data-val-required="Укажите статус плательщика">
+            <option data-bind="type"></option>
+        </select>
+        <span class="field-validation-valid" data-valmsg-for="PayerStatus" data-valmsg-replace="true"></span>
+    </div></script>
+
+<script type="text/template" id="bankPaymentOrderButtonRegionTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-3">
+            <div class="mdButton-group saveDocumentButton js-saveAndDownloadButton">
+                <div class="btn-group">
+                    <button id="saveButton" type="button" class="btn">Сохранить</button>
+                    <button type="button" class="btn dropdown-toggle" data-toggle="off"></button>
+                </div>
+                <ul class="dropdown-menu download">
+                    <li data-type="3">Сохранить и скачать в 1С</li>
+                    <li data-type="1">Сохранить и скачать в PDF</li>
+                    <li data-type="0">Сохранить и скачать в XLS</li>
+                </ul>
+            </div>
+            <button id="saveButton" type="button" class="mdButton saveDocumentButton js-saveButton">Сохранить</button>
+        </div>
+        <div id="bankIntegrationButtonRegion" class="bankIntegrationButton bankIntegrationButton--paymentOrder bankIntegrationButton--hidden"></div>
+        <div class="mdCol-3">
+            <a href="" id="saveAndCreate">Сохранить и новый</a>
+        </div>
+        <div class="mdCol-2">
+            <a href="" id="cancel">Отмена</a>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="bankPaymentOrderSaveButtonRegionTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-3">
+            <button id="saveButton" type="button" class="mdButton saveDocumentButton">Сохранить</button>
+        </div>
+        <div class="mdCol-2">
+            <a href="" id="cancel">Отмена</a>
+        </div>
+    </div></script>
+
+<script type="text/template" id="LinkedDocumentsTableTemplate">
+    <div
+            class="linkedDocuments">
+        <table>
+            <thead>
+            <tr>
+                <td width="95px">Документ</td>
+                <td width="95px">Номер</td>
+                <td width="110px">Дата</td>
+                <td width="130px" class="tdSum">Сумма</td>
+                <td width="130px" class="tdSum">Уже оплачено</td>
+                <td width="130px" class="tdSum" data-field="resultSum">К оплате</td>
+                <td width="25px"></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td width="95px"><span data-bind="DocumentName"></span></td>
+                <td>
+                    <input placeholder="№" type="text" class="sz-x-small" data-bind="Number"/>
+                </td>
+                <td>
+                    <span data-bind="Date"></span>
+                </td>
+                <td class="tdSum">
+                    <span data-bind="DocumentSum" data-type="float"></span>
+                </td>
+                <td class="tdSum">
+                    <span data-bind="PaidSum" data-type="float"></span>
+                </td>
+                <td class="tdSum">
+                    <div>
+                        <input type="text" data-bind="Sum" data-type="float" class="sz-x-small"/>
+                    </div>
+                </td>
+                <td class="tdDelete">
+                    <span class="icon close"></span>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5">
+
+                </td>
+                <td class="tdSum">
+                    <div class="result">Итого <span data-bind="DocumentsSum" data-type="float"></span></div>
+                </td>
+                <td></td>
+            </tr>
+            </tfoot>
+        </table>
+        <div data-element="newDoc" data-mddropdown>
+            <span class="link add" data-mddropdown-link>документ</span>
+            <ul data-mddropdown-list class="mdDropDownList">
+                <li id="addStatement">Акт</li>
+                <li id="addWaybill">Накладная</li>
+            </ul>
+        </div>
+
+    </div>
+</script>
+
+<script type="text/template" id="IncomingFromOtherSettlementTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-8">
+            <label>Расчетный счет</label><br/>
+            <span data-bind="SettlementNumber"></span>
+        </div>
+    </div>
+    <div class="mdRow">
+        <div class="mdCol-8">
+            <div class="bank-totalAmount">
+                <div class="mdInput-group">
+                    <label data-field="resultSum">Всего к оплате</label>
+                    <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true"> р.
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="IncomingFromBankContributingTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Плательщик <span class="qtip_icon js-qtip"></span></label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="IncomingLoanObtainTemplate">
+    <div
+            class="mdRow">
+        <label class="bank-radio">
+            <div class="mdCheckbox">
+                <input type="checkbox" id="IsLongTermLoan" name="IsLongTermLoan" data-bind="IsLongTermLoan"/>
+                <label for="IsLongTermLoan"></label>
+            </div>
+            Долгосрочный <span class="qtip_icon js-qtip"></span>
+        </label>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Плательщик</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-3" data-control="project">
+            <label>По договору</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="ProjectNumber">
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="IncomingMaterialAidTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Плательщик <span class="qtip_icon js-qtip"></span></label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="OutgoingLoanRepaymentTemplate">
+    <div
+            class="mdRow">
+        <label class="bank-radio">
+            <div class="mdCheckbox">
+                <input type="checkbox" id="IsLongTermLoan" name="IsLongTermLoan" data-bind="IsLongTermLoan"/>
+                <label for="IsLongTermLoan"></label>
+            </div>
+            Долгосрочный <span class="qtip_icon js-longTermQtip"></span>
+        </label>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-3" data-control="project">
+            <label>По договору</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="ProjectNumber">
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-4">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+            <div class="mdCol-5 js-loanInterestSumBlock hidden">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label>В т.ч. проценты</label>
+                        <input type="text" class="sz-small" data-bind="LoanInterestSum" data-number="float"> р.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="ReturnFromAccountablePersonTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Плательщик</label>
+                <input type="text" class="sz-xx-large" data-bind="WorkerName" data-validation="true">
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-8">
+            <div class="bank-totalAmount">
+                <label>Сумма</label>
+
+                <div class="mdInput-group">
+                    <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true"> р.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-8">
+            <label>На основании</label>
+
+            <div class="mdInput-group">
+                <input type="text" class="sz-xx-large" data-bind="AdvanceStatement" data-validation="true">
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="BackToBuyerTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+            <div class="mdCol-8" data-control="kontragentAccountCode">
+                <label>Тип контрагента</label><br>
+                <label class="bank-radio">
+                    <div class="mdRadio">
+                        <input type="radio" id="firstRadio" name="firstRadio" data-bind="KontragentAccountCode"
+                               value="620200"/>
+                        <label for="firstRadio"></label>
+                    </div>
+                    Основной
+                </label>
+                <label class="bank-radio">
+                    <div class="mdRadio">
+                        <input type="radio" id="secondRadio" name="firstRadio" data-bind="KontragentAccountCode"
+                               value="760600"/>
+                        <label for="secondRadio"></label>
+                    </div>
+                    Прочий
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-3" data-control="project">
+            <label>По договору</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="ProjectNumber">
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+                <div class="bank-withNdsField js-ndsSection">
+                    <label class="bank-radio">
+                        <div class="mdCheckbox">
+                            <input type="checkbox" id="NdsCheckbox" name="IncludeNds" data-bind="IncludeNds"/>
+                            <label for="NdsCheckbox"></label>
+                        </div>
+                        В том числе НДС
+                    </label>
+                </div>
+            </div>
+            <div class="mdCol-8 hidden js-ndsFieldsSection" data-ndsFields>
+                <div class="mdCol-2">
+                    <label>Ставка</label>
+                    <select class="sz-x-small" data-bind="NdsType" data-correctwidth="auto"></select>
+                </div>
+                <div class="mdCol-2" data-control="NdsSum">
+                    <label>Сумма</label>
+                    <input type="text" class="sz-x-small" data-bind="NdsSum" data-number="float"
+                           data-validation="true"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="usnNdsMessage" class="mdRow fieldRow down-row-message hidden">
+        <b>Внимание!</b> С 2016 г. НДС не включается в налоговые доходы при условии выставления счета-фактуры. Если вы
+        не выставляли/не будете выставлять счет-фактуру (НДС выделен ошибочно), отключите блок "в т.ч. НДС."
+    </div>
+    <div class="mdRow" data-control="linkedDocuments"></div>
+    <div id="confirmChangeKontragentContainer"></div>
+</script>
+<script type='text/template' id='IncomingFromPurseTemplate'>
+    <div
+            class="mdRow">
+        <div class="mdCol-8">
+            <div class="bank-totalAmount">
+                <div class="mdInput-group">
+                    <label data-field="resultSum">Всего к оплате</label>
+                    <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true"> р.
+                </div>
+            </div>
+        </div>
+    </div></script>
+
+<script type="text/template" id="BankLeftMenuTemplate">
+    <div
+            class="mdLeftMenu">
+        <div class="settlements"></div>
+        <div class="purses"></div>
+    </div></script>
+<script type='text/template' id='BankLeftMenuItemTemplate'>
+    <div
+            class="mdLeftMenuItemHeader">
+        <a class="Name" data-bind="Name"><span class="importCount" data-bind="ImportCount"/></a>
+    </div>
+    <div data-bind="CurrentBalance" class="currentBalance"></div>
+    <ul class="direction">
+        <li>
+            <a class="directionLink directionLink-incoming">Поступления</a>
+            <span class="arrow"></span>
+        </li>
+        <li>
+            <a class="directionLink directionLink-outgoing">Списания</a>
+            <span class="arrow"></span>
+        </li>
+    </ul></script>
+<script type='text/template' id='SettlementsMenuTemplate'>
+    <div
+            class="mdLeftMenuItem mdLeftMenuItem-title">
+        <div class="mdLeftMenuItemHeader">
+            <a class="Name">Счета в банках</a>
+        </div>
+    </div>
+    <ul id="actualAccounts"></ul>
+
+    <div id="deletedAccountsTitle" class="mdLeftMenuItem hidden">
+        <div class="mdLeftMenuItemHeader disabled">
+            Удаленные счета
+        </div>
+    </div>
+    <ul id="deletedAccounts"></ul></script>
+<script type='text/template' id='SettlementExtendedFilter'>
+    <div
+            class="field">
+        <div class="title">
+            Контрагент
+        </div>
+        <div class="control">
+            <input name="KontragentName" id="KontragentName" type="text" data-bind="KontragentName"/>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            Тип
+        </div>
+        <div class="control">
+            <select name="Type" class="mdSelect" style="width: 175px;"></select>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            <label for="Sum">Сумма</label>
+        </div>
+        <div class="control">
+            <select name="SumType" class="mdSelect" data-bind="SumType">
+                <option value="equal">Равно</option>
+                <option value="more">Больше</option>
+                <option value="less">Меньше</option>
+            </select>
+            <input name="Sum" type="text" data-val="true" data-bind="Sum"/>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            Назначение
+        </div>
+        <div class="control">
+            <textarea name="Description" data-bind="Description"></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            Проведен
+        </div>
+        <div class="control">
+            <span class="searchArea" value="" data-bind="ProvideInAccounting">Все</span> /
+            <span class="searchArea" value="true" data-bind="ProvideInAccounting">Да</span> /
+            <span class="searchArea selected" value="false" data-bind="ProvideInAccounting">Нет</span>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            Оплачен
+        </div>
+        <div class="control">
+            <span class="searchArea" value="" data-bind="PaidStatus">Все</span> /
+            <span class="searchArea" value="true" data-bind="PaidStatus">Да</span> /
+            <span class="searchArea selected" value="false" data-bind="PaidStatus">Нет</span>
+
+        </div>
+    </div></script>
+<script type='text/template' id='ExtendedFilter'>
+    <div
+            class="filter">
+        <div class="filterDialogHeader">
+            <span class="closeLink">×</span>
+        </div>
+
+        <div class="fields"></div>
+
+        <div class="buttons">
+            <div class="button" id="applyFilter">
+                <a>Найти</a>
+            </div>
+
+            <span class="cancelLink">Отменить</span>
+        </div>
+
+    </div></script>
+<script type='text/template' id='RequestBankStatement'>
+    <div
+            class="newWave">
+        <div class="mdDialogHeader clearfix">
+            <span class="mdDialogCloseButton">×</span>
+        </div>
+        <div class="mdDialogWrap">
+            <header class="clearfix">
+                <div class="mdDialogTitle" data-bind="Title"></div>
+            </header>
+            <div class="mdDialogContent clearfix">
+                <p>Используйте эту функцию для получения данных за прошлые месяцы.</p>
+
+                <p>Укажите период запроса (не более месяца):</p>
+
+                <div>
+                    C <input type="text" data-bind="StartDate" class="sz-small"/> по <input type="text"
+                                                                                            data-bind="EndDate"
+                                                                                            class="sz-small"/>
+                </div>
+                <div data-valmsg-for="StartDate"></div>
+                <div data-valmsg-for="EndDate"></div>
+            </div>
+        </div>
+        <div class="mdDialogFooter">
+            <div class="mdButton innerText">Отправить запрос</div>
+            <a class="js-cancel">Отменить</a>
+        </div>
+    </div>
+
+</script>
+
+<script type='text/template' id='PursesMenuTemplate'>
+    <div
+            class="mdLeftMenuItem mdLeftMenuItem-title">
+        <div class="mdLeftMenuItemHeader">
+            <a class="Name">ПЛАТЕЖНЫЕ СИСТЕМЫ</a>
+        </div>
+    </div>
+    <ul data-bind="Items"></ul></script>
+<script type='text/template' id='PursesButtonsBar'>
+    <div
+            class="mdButton innerText" data-bind="Incoming">
+        Поступление
+    </div>
+
+    <div class="mdButton innerText" data-bind="Outgoing">
+        Списание
+    </div>
+
+    <div class="mdDoubleButton importButton">
+        <div class="mdButton innerText">
+            Выписки <b data-bind="ImportCount"></b>
+        </div>
+        <div class="mdButton direction">
+            <span class="direction"></span>
+        </div>
+        <ul class="mdDropDownList">
+            <li><a data-bind="Import">Импорт <span data-bind="ImportCount"></span></a></li>
+            <li><a data-bind="ImportRequest">Запрос</a></li>
+        </ul>
+    </div></script>
+<script type='text/template' id='IncomingPurseDocument'>
+    <div
+            class="documentForm mdContainer bankForm bankForm--purse">
+        <div data-control="documentActions"></div>
+        <div data-control="documentheader"></div>
+
+        <div class="mdRow">
+            <div class="mdCol-8" style="width: 360px;">
+                <div class="mdCol">
+                    <label class="titleLable">Платежная система</label>
+                    <select data-bind="Purse" class="sz-xx-large"></select>
+                </div>
+            </div>
+        </div>
+
+        <div data-control="payers"></div>
+
+        <div class="mdRow">
+            <div class="sz-small js-taxationSystemType"></div>
+            <div class="js-patent"></div>
+        </div>
+
+        <div class="mdRow" data-control="documents"></div>
+
+        <div class="mdRow">
+            <div class="mdCol-16">
+                <div class="mdCol-8">
+                    <label class="titleLable">Комментарий</label>
+                    <textarea class="sz-xx-large" data-bind="Comment"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div data-control="postingsAndTax"></div>
+
+        <div class="mdRow">
+            <div class="mdCol-3">
+                <button id="saveButton" type="button" class="mdButton">Сохранить</button>
+            </div>
+            <a id="cancel">Отмена</a>
+        </div>
+    </div></script>
+<script type='text/template' id='PayersControl'>
+    <div class="mdRow fieldRow">
+        <div class="mdCol-8 mdTableCell">
+            <label>Плательщик</label>
+            <input type="text" class="sz-xx-large" data-bind="KontragentName"/>
+        </div>
+        <div class="mdCol-1">&nbsp;</div>
+        <div class="mdCol-8 mdTableCell">
+            <label>По счету</label>
+            <input placeholder="№" type="text" class="sz-xx-large" data-bind="BillNumber"/>
+        </div>
+    </div>
+    <div class="mdRow fieldRow" data-control="project">
+        <div class="mdCol-16">
+            <div class="mdCol-4">
+                <div>
+                    <label>По договору</label><br/>
+                    <input type="text" data-bind="ProjectNumber" placeholder="№" class="small"/>
+                </div>
+            </div>
+            <span data-valmsg-for="ProjectNumber"></span>
+        </div>
+    </div>
+    <div class="mdRow fieldRow">
+        <div class="mdCol-3">
+            <label>Поступило</label><br/>
+            <input type="text" data-bind="Sum" class="small sum" data-type="float"/> р.
+            <span data-valmsg-for="Sum"></span>
+        </div>
+        <div class="ndsContainer">
+            <div class="mdCol-3">
+                <label for="NdsCheckbox">В т.ч. НДС</label><br/>
+                <div class="mdCheckbox">
+                    <input type="checkbox" data-bind="IncludeNds" id="NdsCheckbox" name="NdsCheckbox"/>
+                    <label for="NdsCheckbox"></label>
+                </div>
+            </div>
+            <div id="ndsSumContainer">
+                <div class="mdRow fieldRow">
+                    <div class="mdCol-3">
+                        <label>Ставка</label>
+                        <div id="NdsTypeSelect"></div>
+                    </div>
+                    <div id="ndsTooltipAccPolicy" class="mdCol-1">
+                        <div id="ndsWarningIconMountPoint"></div>
+                    </div>
+                    <div class="mdCol-3">
+                        <label>Сумма</label>
+                        <input type="text" data-bind="NdsSum" class="small sum" data-type="float"/>
+                    </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type='text/template' id='OutgoingPurseDocument'>
+    <div
+            class="documentForm mdContainer bankForm">
+        <div data-control="documentActions"></div>
+        <div data-control="documentheader"></div>
+
+        <div class="mdRow">
+            <div class="mdCol mdCol-5">
+                <label class="titleLable">Платежная система</label>
+                <select data-bind="Purse"></select>
+            </div>
+            <div class="mdCol mdCol-5">
+                <label class="titleLable">Тип списания</label>
+                <select data-bind="Type" class="sz-large"></select>
+            </div>
+        </div>
+
+        <div data-control="operation"></div>
+
+        <div class="mdRow">
+            <div class="mdCol mdCol-18">
+                <label class="titleLable">Комментарий</label>
+                <textarea class="sz-xx-large" data-bind="Comment"></textarea>
+            </div>
+        </div>
+
+        <div data-control="postingsAndTax"></div>
+
+        <div class="mdRow">
+            <div class="mdCol-3">
+                <button id="saveButton" type="button" class="mdButton">Сохранить</button>
+            </div>
+            <a id="cancel">Отмена</a>
+        </div>
+    </div></script>
+<script type='text/template' id='MovementToSettlementPurseOperation'>
+    <div
+            class="mdRow">
+        <div class="mdCol-18">
+            <label class="titleLable">Расчетный счет</label>
+            <select data-bind="Settlement" class="sz-xx-large"></select>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol mdCol-18" data-control="sum"></div>
+    </div></script>
+<script type='text/template' id='NdsControl'>
+        <div class="ndsContainer">
+            <div class="mdCol-3">
+                <label for="NdsCheckbox">В т.ч. НДС</label><br/>
+                <div class="mdCheckbox">
+                    <input type="checkbox" data-bind="IncludeNds" id="NdsCheckbox" name="NdsCheckbox"/>
+                    <label for="NdsCheckbox"></label>
+                </div>
+            </div>
+            <div id="ndsSumContainer">
+                <div class="mdCol-3">
+                    <label>Ставка</label>
+                    <div id="NdsTypeSelect"></div>
+                </div>
+                <div class="mdCol-1"></div>
+                <div class="mdCol-3">
+                    <label>Сумма</label>
+                    <input type="text" data-bind="NdsSum" class="small sum" data-type="float"/>
+                </div>
+                <div class="mdCol-1">
+                    <div id="commissionIconMountPoint" class="commissionIcon"></div>
+                </div>
+            </div>
+        </div>
+</script>
+<script type='text/template' id='CommissionHoldPurseOperation'>
+    <div class="mdRow">
+        <div class="mdCol-5" data-control="sum"></div>
+        <div data-control="ndsBlock"></div>
+    </div>
+    <div class="mdRow">
+        <div class="sz-small js-taxationSystemType"></div>
+        <div class="js-patent"></div>
+    </div>
+</script>
+<script type='text/template' id='OtherOutgoingPurseOperation'>
+    <div
+            class="mdRow">
+        <div class="mdCol-8">
+            <label class="titleLable">Получатель</label>
+            <input type="text" data-bind="KontragentName" class="sz-xx-large"/>
+        </div>
+        <div class="mdCol-3">
+            <label>По договору</label>
+            <input type="text" data-bind="ProjectNumber" class="sz-small" placeholder="№"/>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol mdCol-18" data-control="sum"></div>
+    </div></script>
+<script type='text/template' id='SumControl'><label class="titleLable">Всего к оплате</label>
+<input type="text" data-bind="Sum" class="sz-small"/> р.
+<span data-valmsg-for="Sum"></span></script>
+<script type='text/template' id='PursesTable'>
+    <div
+            class="mdTableWrap clearfix bankTable purse-bankTable">
+        <div class="mdTableControls">
+            <div class="mdButton smallBtn toolCopy">
+                <a class="innerText">Копировать</a>
+            </div>
+
+            <div class="mdButton smallBtn toolDelete">
+                <a class="innerText">Удалить</a>
+            </div>
+        </div>
+
+        <div class="mdTable">
+            <header class="mdTableHeader">
+                <label class="ttCheck mdTableCell"><input type="checkbox" class="checkAll"></label>
+
+                <div class="ttNumber mdTableCell" data-sorter="Date">№ Дата</div>
+                <div class="ttKlient mdTableCell" data-sorter="Kontragent">Контрагент</div>
+                <div class="ttSumm mdTableCell" data-sorter="Sum">Сумма</div>
+                <div class="ttOperationsNames mdTableCell">Операции</div>
+                <div class="ttPurpose mdTableCell">Назначение</div>
+                <div class="ttRelated mdTableCell">Связ. док.</div>
+                <div class="ttProvideInTax mdTableCell" data-sorter="TaxStatus">НУ</div>
+                <div class="ttProvideInAccounting mdTableCell" data-sorter="ProvideInAccounting">БУ</div>
+            </header>
+            <ul class="mdTableBody"></ul>
+            <div class="mdTableCleaner"></div>
+        </div>
+
+        <div class="floatHeader">
+            <div class="mdTableControls">
+                <div class="mdButton smallBtn toolCopy disabled">
+                    <a class="innerText">Копировать</a>
+                </div>
+
+                <div class="mdButton smallBtn toolDelete disabled">
+                    <a class="innerText">Удалить</a>
+                </div>
+            </div>
+
+            <div class="mdTable">
+                <header class="mdTableHeader">
+                    <label class="ttCheck mdTableCell"><input type="checkbox" class="checkAll"></label>
+
+                    <div class="ttNumber mdTableCell" data-sorter="DateOrder">№ Дата</div>
+                    <div class="ttKlient mdTableCell" data-sorter="kontragent">Контрагент</div>
+                    <div class="ttSumm mdTableCell" data-sorter="summ">Сумма</div>
+                    <div class="ttOperationsNames mdTableCell">Операции</div>
+                    <div class="ttPurpose mdTableCell">Назначение</div>
+                    <div class="ttRelated mdTableCell">Связ. док.</div>
+                    <div class="ttProvideInTax mdTableCell" data-sorter="TaxStatusOrder">НУ</div>
+                    <div class="ttProvideInAccounting mdTableCell" data-sorter="ProvideInAccountingOrder">БУ</div>
+                </header>
+            </div>
+        </div>
+
+        <div id="paginator" class="summary"></div>
+
+        <div class="mdTotalSumm">
+            <div class="totalStatistics totalBlock">
+                <ul class="mdTotalNames tAllList">
+                    <li class="tAllRow">
+                        <div>Вход. остаток</div>
+                    </li>
+                    <li class="tAllRow">
+                        <div>Обороты</div>
+                    </li>
+                    <li class="tAllRow">
+                        <div>Исход. остаток</div>
+                    </li>
+                </ul>
+
+                <ul class="mdTotalSumms tAllList tSum">
+                    <li class="tAllRow"><span data-bind="IncomingBalance"></span> р</li>
+                    <li class="tAllRow severalIndicators">
+                        <div>
+                            <span data-bind="IncomingSum"></span> р <span class="direction">↓</span>
+                        </div>
+                        <div>
+                            <span data-bind="OutgoingSum"></span> р <span class="direction">↑</span>
+                        </div>
+                    </li>
+                    <li class="tAllRow"><span data-bind="OutgoingBalance"></span> р</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="to_top">
+        <div class="to_top_panel" title="Наверх">
+            <div class="to_top_button">
+                <span class="arrow">↑</span>
+                <span class="label">наверх</span>
+            </div>
+        </div>
+    </div></script>
+<script type='text/template' id='SummaryTemplate'>
+    <div
+            class="pageSizeBlock">
+        <label>Показывать:</label>
+        <select data-bind="PageSize"></select>
+    </div>
+
+    <div>
+        <a class="previous">предыдущая</a>
+        <a class="next">следующая</a>
+    </div>
+
+    <div class="pagination"></div></script>
+<script type='text/template' id='PursesTableRow'><label class="ttCheck mdTableCell"><input type="checkbox"
+                                                                                           data-bind="Selected"></label>
+<div class="ttNumber mdTableCell">
+    <a data-bind="Number"></a>
+
+    <div class="ttDate" data-bind="Date"></div>
+</div>
+<div class="ttKlient mdTableCell">
+    <span data-bind="KontragentName"></span>
+
+    <div class="kontragentDetails"></div>
+</div>
+<div class="ttSumm mdTableCell">
+    <span data-bind="Sum"></span>
+</div>
+<div class="ttOperationsNames mdTableCell" data-bind="OperationName"></div>
+<div class="ttPurpose mdTableCell" data-bind="Description"></div>
+<div class="ttRelated mdTableCell">
+    <span class="relatedCount" data-bind="LinkedDocumentsCount"></span>
+
+    <div class="relatedListWrapper mdTooltip">
+        <ul class="relatedList"></ul>
+    </div>
+</div>
+<div class="ttProvideInTax mdTableCell">
+    <span data-bind="TaxStatus"></span>
+</div>
+<div class="ttProvideInAccounting mdTableCell">
+    <span data-bind="ProvideInAccounting"></span>
+</div></script>
+<script type='text/template' id='LinkedDocumentRow'><a data-bind="DocumentName"></a><span data-bind="Date"></span>
+</script>
+<script type='text/template' id='PurseExtendedFilter'>
+    <div
+            class="field">
+        <div class="title">
+            Контрагент
+        </div>
+        <div class="control">
+            <input name="KontragentName" id="KontragentName" type="text" data-bind="KontragentName"/>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            Тип
+        </div>
+        <div class="control">
+            <select name="Type" class="mdSelect" style="width: 175px;"></select>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            <label for="Sum">Сумма</label>
+        </div>
+        <div class="control">
+            <select name="SumType" class="mdSelect" data-bind="SumType">
+                <option value="equal">Равно</option>
+                <option value="more">Больше</option>
+                <option value="less">Меньше</option>
+            </select>
+            <input name="Sum" type="text" data-val="true" data-bind="Sum"/>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            Назначение
+        </div>
+        <div class="control">
+            <textarea name="Description" data-bind="Description"></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="title">
+            Проведен
+        </div>
+        <div class="control">
+            <span class="searchArea" value="" data-bind="ProvideInAccounting">Все</span> /
+            <span class="searchArea" value="true" data-bind="ProvideInAccounting">Да</span> /
+            <span class="searchArea selected" value="false" data-bind="ProvideInAccounting">Нет</span>
+        </div>
+    </div></script>
+<script type='text/template' id='PurseOperationDialog'>
+    <div
+            >
+        <div class="mdDialogHeader clearfix">
+            <span class="mdDialogCloseButton">×</span>
+        </div>
+        <div class="mdDialogWrap">
+            <div class="mdDialogContent clearfix"></div>
+        </div>
+
+        <div class="mdDialogFooter newWave">
+            <button id="saveButton" type="button" class="mdButton">Сохранить</button>
+            <a id="cancel">Отмена</a>
+        </div>
+    </div></script>
+<script type='text/template' id='DocumentActions'>
+    <div
+            class="actions">
+        <span class="link" id="copyDocument">Копировать</span><br/>
+        <span class="link" id="deleteDocument">Удалить</span>
+    </div></script>
+<script type='text/template' id='SplitKontragentsStepTemplate'>
+    <div
+            class="splitKontragentsStep">
+        <p>
+            В автоматическом режиме все суммы отображаются как поступления от одного контрагента — Население.<br/>
+            Если Вы хотите разбить суммы по каждому покупателю (в соответствии с данными выписки), включите
+            соответствующую
+            опцию.
+        </p>
+
+        <p>
+            <label for="splitKontragents">Разбить по покупателям</label><input type="checkbox" id="splitKontragents"/>
+        </p>
+    </div>
+</script>
+<script type='text/template' id='PurseImportWizardTemplate'>
+    <div
+            class="ImportWizardPage">
+        <div class="page">
+            <div class="title">
+                <h1>Мастер импорта выписок</h1>
+            </div>
+            <div class="mdLayoutLeftCol steps">
+            </div>
+            <div class="mdLayoutMainCol content">
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="mdButton nextStep">
+                <span class="caption">Далее</span>
+            </div>
+        </div>
+    </div></script>
+<script type='text/template' id='ImportSummaryStepTemplate'>
+    <div
+            class="importSummaryStep">
+        <p>
+            Обороты по выпискам
+            <span class="paymentSum income" data-bind="IncomingSum"></span>
+            <span class="paymentSum outgoing" data-bind="OutgoingSum"></span>
+        </p>
+
+        <div data-bind="NewKontragents"></div>
+        <div data-bind="NewOperations"></div>
+        <div data-bind="Duplicates"></div>
+        <div data-bind="RejectedOperations"></div>
+    </div>
+</script>
+<script type='text/template' id='ImportSummaryStep_KontragentsTableRowTemplate'>
+    <div
+            class="mdTableRow">
+        <div class="ttKontragent mdTableCell"><span data-bind="KontragentName"></span>
+
+            <div class="ttNew">новый контрагент</div>
+        </div>
+        <div class="ttDescription ttKontragentInfo mdTableCell"></div>
+    </div></script>
+<script type='text/template' id='ImportSummaryStep_KontragentsTableTemplate'>
+    <div>
+        <div class="accordionHeader">
+            Создание новых контрагентов (<span data-bind="Count"></span>)
+        </div>
+        <div class="mdTable importDetailsTable">
+            <header class="mdTableHeader">
+                <div class="ttKontragent mdTableCell">Контрагент</div>
+                <div class="ttDescription mdTableCell">Реквизиты</div>
+            </header>
+
+            <div class="mdTableBody"></div>
+        </div>
+    </div>
+</script>
+<script type='text/template' id='ImportSummaryStep_OperationsTableRowTemplate'>
+    <div
+            class="mdTableRow">
+        <div class="ttNumberDate mdTableCell">
+            <div class="ttDate" data-bind="Date"></div>
+            <div class="ttStatus ttDublicate">дубликат</div>
+            <div class="ttStatus ttError">ошибка</div>
+        </div>
+        <div class="ttKontragent mdTableCell" data-bind="KontragentName">
+            <div class="ttNew">новый контрагент</div>
+        </div>
+        <div class="ttSumm mdTableCell" data-bind="Sum"></div>
+        <div class="ttDescription mdTableCell" data-bind="Description"></div>
+        <div class="ttOperation mdTableCell" data-bind="Operation"></div>
+    </div></script>
+<script type='text/template' id='ImportSummaryStep_OperationsTableTemplate'>
+    <div>
+        <div class="accordionHeader">
+            <span data-bind="Title"></span> (<span data-bind="Count"></span>)
+        </div>
+        <div class="mdTable importDetailsTable">
+            <header class="mdTableHeader">
+                <div class="ttNumberDate mdTableCell">Дата</div>
+                <div class="ttKontragent mdTableCell">Контрагент</div>
+                <div class="ttSumm mdTableCell">Сумма</div>
+                <div class="ttDescription mdTableCell">Назначение</div>
+                <div class="ttOperation mdTableCell">Операция</div>
+            </header>
+
+            <div class="mdTableBody"></div>
+        </div>
+
+    </div>
+</script>
+
+<script type='text/template' id='EditOperationsTable'>
+    <div
+            class="mdTable">
+        <header class="mdTableHeader">
+            <label class="ttCheck mdTableCell"><input type="checkbox" class="checkAll"></label>
+
+            <div class="ttNumberDate mdTableCell">№ дата</div>
+            <div class="ttKontragent mdTableCell">Контрагент</div>
+            <div class="ttSumm mdTableCell">Сумма</div>
+            <div class="ttDescription mdTableCell">Назначение</div>
+            <div class="ttOperation mdTableCell">Операция</div>
+        </header>
+
+        <ul class="mdTableBody"></ul>
+    </div>
+</script>
+<script type='text/template' id='EditOperationsTableRow'><label class="ttCheck mdTableCell"><input class="checkPayment"
+                                                                                                   type="checkbox"></label>
+<div class="ttNumberDate mdTableCell">
+    <span class="ttNumber" data-bind="Number"></span>
+
+    <div class="ttDate" data-bind="Date"></div>
+    <div class="ttStatus ttDublicate">дубликат</div>
+    <div class="ttStatus ttError">ошибка</div>
+</div>
+<div class="ttKontragent mdTableCell">
+    <span data-bind="KontragentName"></span>
+
+    <div class="ttNew">новый контрагент</div>
+    <div class="KontragentMatch"></div>
+</div>
+<div class="ttSumm mdTableCell" data-bind="Sum"><span class="sDirection"></span></div>
+<div class="ttDescription mdTableCell" data-bind="Description">Назначение</div>
+<div class="ttOperation mdTableCell"><span data-bind="Operation">Не определена</span></div>
+</script>
+
+<script type="text/template" id="ButtonsBar">
+    <div class="mdButton">
+        <a class="js-addSettlement js-incoming innerText" href="?_companyId=6187310#documents/incomingpp/new">Поступление</a>
+    </div>
+
+    <div class="mdButton">
+        <a class="js-addSettlement js-outcoming innerText"
+           href="?_companyId=6187310#documents/outgoingpp/new">Списание</a>
+    </div>
+
+    <div class="mdDoubleButton importWizardIntegration">
+        <div class="mdButton innerText js-bankStatements">
+            <a>Выписки<span class="importCount"/></a>
+        </div>
+        <div class="mdButton direction openDocFormatList">
+            <span class="direction"></span>
+        </div>
+        <ul class="docFormat_list mdDropDownList">
+            <li class="import"><a>Импорт<span class="importCount"/></a></li>
+            <li class="requestFromBank"><a>Запрос в банк</a></li>
+            <li><a href="?_companyId=6187310#importWizard/download/file">Загрузка из файла</a></li>
+        </ul>
+    </div>
+
+    <a href="?_companyId=6187310#importWizard" class="importWizard js-importWizard">Загрузка выписки из
+        файла</a></script>
+<script type="text/template" id="TableWrapperTemplate">
+    <div
+            class="mdTableWrap clearfix bankTable" id="BankTable">
+        <div class="mdTableControls">
+
+            <div class="mdButton smallBtn toolSend disabled">
+                <a class="innerText">Отправить в банк</a>
+            </div>
+
+            <div class="sliderButton mdButton smallBtn toolDocDownload disabled">
+            <span class="innerText">
+                Скачать
+                <span class="direction"></span>
+            </span>
+                <ul class="mdDropDownList">
+                    <li><a class="pdf" data-type="1">PDF</a></li>
+                    <li><a class="excel" data-type="0">XLS</a></li>
+                    <li><a class="1c" data-type="3">1С</a></li>
+                </ul>
+            </div>
+
+            <div class="mdButton smallBtn toolCopy disabled">
+                <a class="innerText">Копировать</a>
+            </div>
+
+            <div class="mdButton smallBtn toolDelete disabled">
+                <a class="innerText">Удалить</a>
+            </div>
+        </div>
+
+        <div class="mdTable">
+            <header class="mdTableHeader">
+                <label class="ttCheck mdTableCell"><input type="checkbox" class="checkAll"></label>
+
+                <div class="ttNumber mdTableCell" data-sorter="DateOrder">№ Дата</div>
+                <div class="ttKlient mdTableCell" data-sorter="kontragent">Контрагент/сотрудник</div>
+                <div class="ttSumm mdTableCell" data-sorter="SumOrder">Сумма</div>
+                <div class="ttOperationsNames mdTableCell">Операции</div>
+                <div class="ttPurpose mdTableCell">Назначение</div>
+                <div class="ttRelated mdTableCell">Связ. док.</div>
+                <div class="ttProvideInTax mdTableCell" data-sorter="TaxStatusOrder">НУ</div>
+                <div class="ttProvideInAccounting mdTableCell" data-sorter="ProvideInAccountingOrder">БУ</div>
+            </header>
+            <ul class="mdTableBody"></ul>
+            <div class="mdTableCleaner"></div>
+        </div>
+
+        <div class="floatHeader">
+            <div class="mdTableControls">
+                <div class="mdButton smallBtn toolSend disabled">
+                    <a class="innerText">Отправить в банк</a>
+                </div>
+
+                <div class="sliderButton mdButton smallBtn toolDocDownload disabled">
+                <span class="innerText">
+                    Скачать
+                    <span class="direction"></span>
+                </span>
+                    <ul class="mdDropDownList">
+                        <li><a class="pdf" data-type="1">PDF</a></li>
+                        <li><a class="excel" data-type="0">XLS</a></li>
+                        <li><a class="1c" data-type="3">1С</a></li>
+                    </ul>
+                </div>
+
+                <div class="mdButton smallBtn toolCopy disabled">
+                    <a class="innerText">Копировать</a>
+                </div>
+
+                <div class="mdButton smallBtn toolDelete disabled">
+                    <a class="innerText">Удалить</a>
+                </div>
+            </div>
+
+            <div class="mdTable">
+                <header class="mdTableHeader">
+                    <label class="ttCheck mdTableCell"><input type="checkbox" class="checkAll"></label>
+
+                    <div class="ttNumber mdTableCell" data-sorter="DateOrder">№ Дата</div>
+                    <div class="ttKlient mdTableCell" data-sorter="kontragent">Контрагент/сотрудник</div>
+                    <div class="ttSumm mdTableCell" data-sorter="summ">Сумма</div>
+                    <div class="ttOperationsNames mdTableCell">Операции</div>
+                    <div class="ttPurpose mdTableCell">Назначение</div>
+                    <div class="ttRelated mdTableCell">Связ. док.</div>
+                    <div class="ttProvideInTax mdTableCell" data-sorter="TaxStatusOrder">НУ</div>
+                    <div class="ttProvideInAccounting mdTableCell" data-sorter="ProvideInAccountingOrder">БУ</div>
+                </header>
+            </div>
+        </div>
+
+        <div id="paginator"></div>
+        <div class="mdTotalSumm"></div>
+    </div>
+
+    <div class="to_top">
+        <div class="to_top_panel" title="Наверх">
+            <div class="to_top_button">
+                <span class="arrow">↑</span>
+                <span class="label">наверх</span>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="MainTableContentEmpty">
+    <div
+            class="noElements all">
+        Добавьте <a class="addSettlement" href="#documents/incomingpp/new">поступление</a>,
+        <a class="addSettlement" href="#documents/outgoingpp/new">списание</a> или
+        загрузите <a href="#importWizard">выписку</a>
+    </div>
+
+    <div class="noElements outgoingOnly">
+        Добавьте <a class="addSettlement" href="#documents/outgoingpp/new">списание</a>
+        или загрузите <a href="#importWizard">выписку</a>
+    </div>
+
+    <div class="noElements incomingOnly">
+        Добавьте <a class="addSettlement" href="#documents/incomingpp/new">поступление</a>
+        или загрузите <a href="#importWizard">выписку</a>
+    </div>
+
+    <div class="noElements notPaid">
+        Чтобы создать документ <a href='/Pay/'>оплатите</a> доступ к сервису.
+    </div>
+
+    <div class="noElements noAccess">
+        К сожалению, у вас недостаточно прав для создания документов.
+    </div>
+
+    <div class="noElements deletedSettlementAccount">
+        Чтобы создать документ, <a href='/Requisites?settlements&amp;_companyId=6187310'>восстановите</a> расчётный
+        счёт.
+    </div></script>
+<script type="text/template" id="MainTableContent">
+    <li
+            class="mdTableRow">
+        <label class="ttCheck mdTableCell"><input type="checkbox"></label>
+
+        <div class="ttNumber mdTableCell">
+            <a></a>
+
+            <div class="ttDate"></div>
+        </div>
+        <div class="ttKlient mdTableCell">
+            <div>
+                <a href="#"></a>
+                <span class="addition"></span>
+            </div>
+        </div>
+        <div class="ttSumm mdTableCell">
+            <span class="sDirection"></span>
+
+            <div class="ttStatus"></div>
+        </div>
+        <div class="ttOperationsNames mdTableCell"></div>
+        <div class="ttPurpose mdTableCell"></div>
+        <div class="ttRelated mdTableCell"></div>
+        <div class="ttProvideInTax mdTableCell"></div>
+        <div class="ttProvideInAccounting mdTableCell"></div>
+    </li></script>
+<script type="text/template" id="TableTotalInformation">
+    <div
+            class="totalStatistics totalBlock">
+        <ul class="mdTotalNames tAllList">
+            <li class="tAllRow">
+                <div>Вход. остаток</div>
+            </li>
+            <li class="tAllRow">
+                <div>Обороты</div>
+            </li>
+            <li class="tAllRow">
+                <div>Неоплаченные</div>
+            </li>
+            <li class="tAllRow">
+                <div>Исход. остаток</div>
+            </li>
+        </ul>
+
+        <ul class="mdTotalSumms tAllList tSum">
+            <li class="tAllRow">
+                <div data-bind="IncomingBalance"></div>
+                р
+            </li>
+            <li class="tAllRow severalIndicators">
+                <div>
+                    <div data-bind="IncomingSum"></div>
+                    р <span class="direction">&darr;</span>
+                </div>
+                <div>
+                    <div data-bind="OutgoingSum"></div>
+                    р <span class="direction">&uarr;</span>
+                </div>
+            </li>
+            <li class="tAllRow severalIndicators">
+                <div>
+                    <div data-bind="UnpaidSum"></div>
+                    р <span class="direction">&uarr;</span>
+                </div>
+            </li>
+            <li class="tAllRow">
+                <div data-bind="OutgoingBalance"></div>
+                р
+            </li>
+        </ul>
+    </div></script>
+
+<script type="text/template" id="MediationFeeTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Плательщик</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-20">
+            <div data-control="middlemanContract"></div>
+
+            <div class="mdCol-7 hidden" id="operationBills"}>
+                <label>По счету</label>
+                <input type="text" class="sz-small" data-bind="BillNumber"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Поступило</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+                <div class="bank-withNdsField">
+                    <label class="bank-radio">
+                        <div class="mdCheckbox">
+                            <input type="checkbox" id="NdsCheckbox" name="IncludeNds" data-bind="IncludeNds"/>
+                            <label for="NdsCheckbox"></label>
+                        </div>
+                        В том числе НДС
+                    </label>
+                </div>
+            </div>
+            <div class="mdCol-8 hidden" data-ndsFields>
+                <div class="mdCol-2">
+                    <label>Ставка</label>
+                    <select class="sz-x-small" data-bind="NdsType" data-correctwidth="auto"></select>
+                </div>
+                <div class="mdCol-2" data-control="NdsSum">
+                    <label>Сумма</label>
+                    <input type="text" class="sz-x-small" data-bind="NdsSum" data-number="float"
+                           data-validation="true"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="usnNdsMessage" class="mdRow fieldRow down-row-message hidden">
+        <b>Внимание!</b> С 2016 г. НДС не включается в налоговые доходы при условии выставления счета-фактуры. Если вы
+        не выставляли/не будете выставлять счет-фактуру (НДС выделен ошибочно), отключите блок "в т.ч. НДС."
+    </div>
+
+    <div class="mdRow" data-control="linkedDocuments"></div></script>
+
+<script type="text/template" id="BankPaymentOrderSalaryProjectTemplate">
+    <div
+            class="">
+        <div class="content">
+            <div class="documentForm js-documentForm mdContainer">
+                <div class="generalFields">
+                    <form>
+                        <div class="mdRow">
+                            <div class="mdCol-16">
+                                <div class="bankForm">
+                                    <div class="">
+                                        <div class="mdCol-16">
+                                            <div data-control="documentheader"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mdRow">
+                                        <div class="mdCol-18">
+                                            <div class="mdCol">
+                                                <label>Расчётный счет</label>
+                                                <select data-bind="SettlementNumber" disabled="disabled"></select>
+                                            </div>
+                                            <div class="mdCol" style="margin-right: 4px;">
+                                                <label>Тип платежа</label>
+                                                <select id="operationSelect" data-bind="OperationType" disabled="disabled"></select>
+                                            </div>
+                                            <div class="mdCol-2 js-paymentPriority">
+                                                <label>Очеред.</label>
+                                                <select class="sz-x-small" data-bind="PaymentPriority"
+                                                        data-correctwidth="352" disabled="disabled"></select>
+                                            </div>
+                                            <div class="mdCol-3" data-control="workerType">
+                                                <label>Тип договора</label>
+                                                <select data-bind="UnderContract" class="sz-medium" disabled="true">
+                                                    <option></option>
+                                                </select>
+                                            </div>
+                                            <div id="additionalField" class="mdCol-7 hidden">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="operationRegion" class="mdRow operationRegion"></div>
+                                    <div class="mdRow js-description">
+                                        <div class="mdCol-16">
+                                            <div class="mdCol-8">
+                                                <label>Назначение</label>
+                                                <textarea class="sz-xx-large" data-bind="Description"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="pageContextMenuRegion" class="mdCol-5 actionsBlock">
+                                <div class="actions">
+                                    <div class="js-download">
+                                        <div data-mddropdown>
+                                            <span data-mddropdown-link class="link">Скачать</span>
+                                            <ul data-mddropdown-list class="mdDropDownList" id="download">
+                                                <li data-type="1">PDF</li>
+                                                <li data-type="0">XLS</li>
+                                                <li data-type="3">1С</li>
+                                            </ul>
+                                        </div>
+                                        <br/>
+                                    </div>
+                                    <span class="link" id="downloadRegistry">Скачать реестр</span><br/>
+                                    <span class="link" id="deleteDocument">Удалить</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div data-control="postingsAndTax"></div>
+                    <div id="pageButtonRegion"></div>
+                </div>
+            </div>
+        </div>
+    </div></script>
+
+<script type="text/template" id="BankPaymentOrderTemplate">
+    <div
+            class="">
+        <div class="content">
+            <div class="documentForm js-documentForm mdContainer">
+                <div class="generalFields">
+                    <form>
+                        <div class="mdRow">
+                            <div class="mdCol-16">
+                                <div class="bankForm">
+                                    <div class="">
+                                        <div class="mdCol-16">
+                                            <div data-control="documentheader"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mdRow">
+                                        <div class="mdCol-18">
+                                            <div class="mdCol">
+                                                <label>Расчётный счет</label>
+                                                <select data-bind="SettlementNumber"></select>
+                                            </div>
+                                            <div class="mdCol" style="margin-right: 4px;">
+                                                <label>Тип платежа</label>
+                                                <select id="operationSelect" data-bind="OperationType"></select>
+                                            </div>
+                                            <div class="mdCol-2 js-paymentPriority">
+                                                <label>Очеред.</label>
+                                                <select class="sz-x-small" data-bind="PaymentPriority"
+                                                        data-correctwidth="352"></select>
+                                            </div>
+                                            <div class="mdCol-3" data-control="workerType">
+                                                <label>Тип договора</label>
+                                                <select data-bind="UnderContract" class="sz-medium">
+                                                    <option></option>
+                                                </select>
+                                            </div>
+                                            <div id="additionalField" class="mdCol-7 hidden">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="operationRegion" class="mdRow operationRegion"></div>
+                                    <div class="mdRow js-description">
+                                        <div class="mdCol-16">
+                                            <div class="mdCol-8">
+                                                <label>Назначение</label>
+                                                <textarea class="sz-xx-large" data-bind="Description"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="pageContextMenuRegion" class="mdCol-5 actionsBlock">
+                                <div class="actions">
+                                    <div class="js-download">
+                                        <div data-mddropdown>
+                                            <span data-mddropdown-link class="link">Скачать</span>
+                                            <ul data-mddropdown-list class="mdDropDownList" id="download">
+                                                <li data-type="1">PDF</li>
+                                                <li data-type="0">XLS</li>
+                                                <li data-type="3">1С</li>
+                                            </ul>
+                                        </div>
+                                        <br/>
+                                    </div>
+                                    <span class="link" id="copyDocument">Копировать</span><br/>
+                                    <span class="link" id="deleteDocument">Удалить</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div data-control="postingsAndTax"></div>
+                    <div id="pageButtonRegion"></div>
+                </div>
+            </div>
+        </div>
+    </div></script>
+
+<script type="text/template" id="OtherPaymentTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-3" data-control="project">
+            <label>По договору</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="ProjectNumber">
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+                <div class="bank-withNdsField">
+                    <label class="bank-radio">
+                        <div class="mdCheckbox">
+                            <input type="checkbox" id="NdsCheckbox" name="IncludeNds" data-bind="IncludeNds"/>
+                            <label for="NdsCheckbox"></label>
+                        </div>
+                        В том числе НДС
+                    </label>
+                </div>
+            </div>
+            <div class="mdCol-8 hidden" data-ndsFields>
+                <div class="mdCol-2">
+                    <label>Ставка</label>
+                    <select class="sz-x-small" data-bind="NdsType" data-correctwidth="auto"></select>
+                </div>
+                <div class="mdCol-2" data-control="NdsSum">
+                    <label>Сумма</label>
+                    <input type="text" class="sz-x-small" data-bind="NdsSum" data-number="float"
+                           data-validation="true"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="usnNdsMessage" class="mdRow fieldRow down-row-message hidden">
+        <b>Внимание!</b> С 2016 г. НДС не включается в налоговые доходы при условии выставления счета-фактуры. Если вы
+        не выставляли/не будете выставлять счет-фактуру (НДС выделен ошибочно), отключите блок "в т.ч. НДС."
+    </div></script>
+<script type="text/template" id="OutgoingProfitWithdrawingTemplate">
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <i class="md-tooltipIcon js-kontragentIcon"></i>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="PaymentProviderTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+            <div class="mdCol-8" data-control="kontragentAccountCode">
+                <label>Тип контрагента</label><br>
+                <label class="bank-radio">
+                    <div class="mdRadio">
+                        <input type="radio" id="firstRadio" name="firstRadio" data-bind="KontragentAccountCode"
+                               value="600200"/>
+                        <label for="firstRadio"></label>
+                    </div>
+                    Основной
+                </label>
+                <label class="bank-radio">
+                    <div class="mdRadio">
+                        <input type="radio" id="secondRadio" name="firstRadio" data-bind="KontragentAccountCode"
+                               value="760500"/>
+                        <label for="secondRadio"></label>
+                    </div>
+                    Прочий
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="mdRow hidden" data-row="requisites">
+        <div class="mdCol-5">
+            <label>Банк получателя</label>
+            <input type="text" class="sz-medium" placeholder="наименование" data-bind="BankName" data-val-ignore/>
+        </div>
+        <div class="mdCol-5">
+            <label>Счет</label>
+            <input type="text" class="sz-medium" placeholder="№" data-bind="KontragentSettlementAccount" maxlength="20"
+                   data-val-ignore/>
+        </div>
+        <div class="mdCol-3">
+            <label>ИНН</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="KontragentINN" maxlength="12"
+                   data-val-ignore/>
+        </div>
+        <div class="mdCol-3">
+            <label>КПП</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="KontragentKPP" maxlength="9"
+                   data-val-ignore/>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-3" data-control="project">
+            <label>По договору</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="ProjectNumber">
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+                <div class="bank-withNdsField">
+                    <label class="bank-radio">
+                        <div class="mdCheckbox">
+                            <input type="checkbox" id="NdsCheckbox" name="IncludeNds" data-bind="IncludeNds"/>
+                            <label for="NdsCheckbox"></label>
+                        </div>
+                        В том числе НДС
+                    </label>
+                </div>
+            </div>
+            <div class="mdCol-8 hidden" data-ndsfields>
+                <div class="mdCol-2">
+                    <label>Ставка</label>
+                    <select class="sz-x-small" data-bind="NdsType" data-correctwidth="auto"></select>
+                </div>
+                <div class="mdCol-2" data-control="NdsSum">
+                    <label>Сумма</label>
+                    <input type="text" class="sz-x-small" data-bind="NdsSum" data-number="float"
+                           data-validation="true"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdRow" data-control="linkedDocuments"></div></script>
+<script type="text/template" id="PaymentAgencyContractTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+        </div>
+    </div>
+    <div class="mdRow hidden" data-row="requisites">
+        <div class="mdCol-5">
+            <label>Банк получателя</label>
+            <input type="text" class="sz-medium" placeholder="наименование" data-bind="BankName" data-val-ignore/>
+        </div>
+        <div class="mdCol-5">
+            <label>Счет</label>
+            <input type="text" class="sz-medium" placeholder="№" data-bind="KontragentSettlementAccount" maxlength="20"
+                   data-val-ignore/>
+        </div>
+        <div class="mdCol-3">
+            <label>ИНН</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="KontragentINN" maxlength="12"
+                   data-val-ignore/>
+        </div>
+        <div class="mdCol-3">
+            <label>КПП</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="KontragentKPP" maxlength="9"
+                   data-val-ignore/>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-3" data-control="project">
+            <label>По договору</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="ProjectNumber">
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+            <div class="mdCol-8 hidden" data-ndsfields>
+                <div class="mdCol-2">
+                    <label>Ставка</label>
+                    <select class="sz-x-small" data-bind="NdsType" data-correctwidth="auto"></select>
+                </div>
+                <div class="mdCol-2" data-control="NdsSum">
+                    <label>Сумма</label>
+                    <input type="text" class="sz-x-small" data-bind="NdsSum" data-number="float"
+                           data-validation="true"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdRow" data-control="linkedDocuments"></div>
+</script>
+<script type="text/template" id="TransferAnotherAccountTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-8">
+            <label>Расчетный счет</label>
+            <select class="sz-xx-large" data-bind="TransferSettlementaccountId"></select>
+        </div>
+    </div>
+    <div class="mdRow">
+        <div class="mdCol-8">
+            <div class="bank-totalAmount">
+                <div class="mdInput-group">
+                    <label data-field="resultSum">Всего к оплате</label>
+                    <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true"> р.
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="WagesPaymentTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <input type="text" class="sz-xx-large" data-bind="WorkerName" data-validation="true">
+            </div>
+        </div>
+    </div>
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="IncomingReceiptForSaleOfGoodsTemplate">
+    <div
+            class="mdRow" data-control="MediationCheckboxField">
+        <div class="mdCol-7">
+            <div class="mdCheckbox-wrapper">
+                <div class="mdCheckbox">
+                    <input type="checkbox" id="IsMediationCheckbox" name="IsMediation" data-bind="IsMediation">
+                    <label for="IsMediationCheckbox"></label>
+                </div>
+                <label>Посредничество<i class="md-tooltipIcon js-isMediationIcon"></i></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Плательщик</label>
+                <input type="text" class="sz-xx-large" data-bind="KontragentName" data-validation="true">
+                <span class="local" data-local="requisites">Реквизиты</span>
+            </div>
+            <div class="mdCol-8" data-control="kontragentAccountCode">
+                <label>Тип контрагента</label><br>
+                <label class="bank-radio">
+                    <div class="mdRadio">
+                        <input type="radio" id="firstRadio" name="firstRadio" data-bind="KontragentAccountCode"
+                               value="620200"/>
+                        <label for="firstRadio"></label>
+                    </div>
+                    Основной
+                </label>
+                <label class="bank-radio">
+                    <div class="mdRadio">
+                        <input type="radio" id="secondRadio" name="firstRadio" data-bind="KontragentAccountCode"
+                               value="760600"/>
+                        <label for="secondRadio"></label>
+                    </div>
+                    Прочий
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow hidden" data-row="requisites"></div>
+
+    <div class="mdRow">
+        <div class="mdCol-3" data-control="project">
+            <label>По договору</label>
+            <input type="text" class="sz-small" placeholder="№" data-bind="ProjectNumber">
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+                <div class="bank-withNdsField">
+                    <label class="bank-radio">
+                        <div class="mdCheckbox">
+                            <input type="checkbox" id="NdsCheckbox" name="IncludeNds" data-bind="IncludeNds"/>
+                            <label for="NdsCheckbox"></label>
+                        </div>
+                        В том числе НДС
+                    </label>
+                </div>
+            </div>
+            <div class="mdCol-8 hidden" data-ndsfields>
+                <div class="mdCol-2">
+                    <label>Ставка</label>
+                    <select class="sz-x-small" data-bind="NdsType" data-correctwidth="auto"></select>
+                </div>
+                <div class="mdCol-2" data-control="NdsSum">
+                    <label>Сумма</label>
+                    <input type="text" class="sz-x-small" data-bind="NdsSum" data-number="float"
+                           data-validation="true"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="usnNdsMessage" class="mdRow fieldRow down-row-message hidden">
+        <b>Внимание!</b> С 2016 г. НДС не включается в налоговые доходы при условии выставления счета-фактуры. Если вы
+        не выставляли/не будете выставлять счет-фактуру (НДС выделен ошибочно), отключите блок "в т.ч. НДС."
+    </div>
+    <div class="mdRow hidden" data-mediationfield>
+        <div class="mdCol-7">
+            <div class="mdInput-group">
+                <label>Удержать вознаграждение посредника<i
+                        class="md-tooltipIcon js-mediationCommissionIcon"></i></label>
+                <input type="text" class="sz-small" data-bind="MediationCommission" data-validation="true"
+                       data-number="float"/> р.
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow" data-control="linkedDocuments"></div></script>
+<script type="text/template" id="IssuanceAccountablePersonTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <label>Получатель</label>
+                <input type="text" class="sz-xx-large" data-bind="WorkerName" data-validation="true">
+            </div>
+        </div>
+    </div>
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-8">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdRow fieldRow">
+        <div class="mdCol-8">
+            <label>На основании</label>
+
+            <div class="js_advanceStatementList">
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="MemorialPageTemplate">
+    <div
+            class="content">
+        <div class="documentForm mdContainer">
+            <div class="generalFields">
+                <form class="bankForm">
+                    <div class="mdRow">
+                        <div class="mdCol-16">
+                            <div class="mdRow">
+                                <div class="mdCol-16">
+                                    <div data-control="documentheader"></div>
+                                </div>
+                            </div>
+                            <div class="mdRow">
+                                <div class="mdCol-16">
+                                    <div class="mdCol">
+                                        <label>Расчётный счет</label>
+                                        <select data-bind="SettlementNumber"></select>
+                                    </div>
+                                    <div class="mdCol">
+                                        <label>Тип платежа</label>
+                                        <select id="operationSelect" data-bind="OperationType"></select>
+                                    </div>
+                                    <div id="additionalField" class="mdCol"></div>
+                                </div>
+                            </div>
+                            <div id="operationRegion"></div>
+                            <div class="mdRow">
+                                <div class="mdCol-16">
+                                    <div class="mdCol-8">
+                                        <label>Назначение</label>
+                                        <textarea class="sz-xx-large" data-bind="Description"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="pageContextMenuRegion" class="mdCol-5">
+                            <div class="actions">
+                                <span class="link" id="copyDocument">Копировать</span><br/>
+                                <span class="link" id="deleteDocument">Удалить</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div data-control="postingsAndTax"></div>
+                <div id="pageButtonRegion"></div>
+            </div>
+        </div>
+    </div></script>
+
+<script type="text/template" id="MemorialReceiptGoodsPaidCreditCardTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-4">
+                <div class="mdInput-group">
+                    <label>
+                        Комиссия (эквайринг)
+                        <span class="qtip_icon js-qtip"></span>
+                    </label>
+                    <input type="text" class="sz-small" data-bind="AcquiringCommission" data-number="float"
+                           data-validation="true"> р.
+                </div>
+            </div>
+            <div class="mdCol-4 js-acquiringCommissionDateBlock">
+                <div class="mdInput-group">
+                    <label>Дата комиссии</label>
+                    <input type="text" class="sz-small mdDatepicker" data-bind="AcquiringCommissionDate"
+                           data-validation="true">
+                </div>
+            </div>
+            <div class="mdCol-3 js-taxationSystemFieldBlock">
+                <label>Учесть в</label>
+                <select id="taxationSystemSelect" data-bind="TaxationSystemType"></select>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="MemorialBankFeeIsDeductedTemplate">
+    <div class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-4">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+            <div id="taxationSystemField" class="mdCol-3">
+                <label>Учесть в</label>
+                <select id="taxationSystemSelect" data-bind="TaxationSystemType"></select>
+            </div>
+        </div>
+    </div></script>
+<script type="text/template" id="MemorialReceiptFromCashTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="PaymentOrderIncomingContributionOfOwnFundsTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Поступило</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="MemorialCreditingCollectedFundsTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="MemorialReceivedCashInBankTemplate">
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-7">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type='text/template' id='MemorialAccrualOfInterestOperationTemplate'>
+    <div
+            class="mdRow">
+        <div class="mdCol-16">
+            <div class="mdCol-4">
+                <div class="bank-totalAmount">
+                    <div class="mdInput-group">
+                        <label data-field="resultSum">Всего к оплате</label>
+                        <input type="text" class="sz-small" data-bind="Sum" data-number="float" data-validation="true">
+                        р.
+                    </div>
+                </div>
+            </div>
+            <div id="taxationSystemField" class="mdCol-3">
+                <label>Учесть в</label>
+                <select id="taxationSystemSelect" data-bind="TaxationSystemType"></select>
+            </div>
+        </div>
+    </div></script>
+
+
+<script type="text/template" id="kontragentRequisites">
+    <div
+            class="mdCol-5">
+        <label>Банк получателя</label>
+        <input type="text" class="sz-medium" placeholder="наименование" data-bind="BankName" data-val-ignore/>
+    </div>
+    <div class="mdCol-5">
+        <label>Счет</label>
+        <input type="text" class="sz-medium" placeholder="№" data-bind="KontragentSettlementAccount" maxlength="20"
+               data-val-ignore/>
+    </div>
+    <div class="mdCol-3">
+        <label>ИНН</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentINN" maxlength="12" data-val-ignore/>
+    </div>
+    <div class="mdCol-3">
+        <label>КПП</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentKPP" maxlength="9" data-val-ignore/>
+    </div>
+</script>
+
+<script type="text/template" id="kontragentRequisitesInlineView">
+    <div
+            class="mdCol-5">
+        <label>Счет</label>
+
+        <div data-bind="KontragentSettlementAccount" class="sz-medium"></div>
+    </div>
+    <div class="mdCol-5">
+        <label>Банк получателя</label>
+
+        <div data-bind="KontragentBankName" class="sz-medium"></div>
+    </div>
+    <div class="mdCol-3">
+        <label>ИНН</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentINN" maxlength="12" data-val-ignore/>
+    </div>
+    <div class="mdCol-3">
+        <label>КПП</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentKPP" maxlength="9" data-val-ignore/>
+    </div>
+</script>
+
+<script type="text/template" id="kontragentRequisitesManualView">
+    <div
+            class="mdCol-5">
+        <label>Счет</label>
+        <input type="text" class="sz-medium" placeholder="№" data-bind="KontragentSettlementAccount" maxlength="20"
+               data-val-ignore/>
+    </div>
+    <div class="mdCol-5">
+        <label>Банк получателя</label>
+        <input type="text" class="sz-medium" placeholder="наименование" data-bind="BankName" data-val-ignore/>
+    </div>
+    <div class="mdCol-3">
+        <label>ИНН</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentINN" maxlength="12" data-val-ignore/>
+    </div>
+    <div class="mdCol-3">
+        <label>КПП</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentKPP" maxlength="9" data-val-ignore/>
+    </div>
+</script>
+
+<script type="text/template" id="kontragentRequisitesListView">
+    <div
+            class="mdCol-5">
+        <label for="KontragentSettlements">Счет</label>
+        <select name="KontragentSettlements" id="KontragentSettlements"
+                class="js-kontragentSettlements kontragentSettlements__select"></select>
+    </div>
+    <div class="mdCol-5">
+        <label>Банк получателя</label>
+
+        <div data-bind="KontragentBankName" class="sz-medium"></div>
+    </div>
+    <div class="mdCol-3">
+        <label>ИНН</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentINN" maxlength="12" data-val-ignore/>
+    </div>
+    <div class="mdCol-3">
+        <label>КПП</label>
+        <input type="text" class="sz-small" placeholder="№" data-bind="KontragentKPP" maxlength="9" data-val-ignore/>
+    </div>
+</script>
+
+<script type="text/template" id="MiddlemanContractControlTemplate">
+    <div
+            class="mdCol-5 numberAutocomplete">
+        <label>По посредническому договору</label>
+        <input type="text" class="sz-medium" data-bind="ContractNumber" placeholder="№">
+    </div></script>
+
+
+<script type="text/template" id="components-mdKontragentDialogContent">
+    <div class="mdContainer">
+        <div class="mdRow">
+            <span class="js-formSelect"></span>
+            <section class="mdKontragentDialog__section">
+                <span class="js-typeSelect"></span>
+
+                <div class="field-validation-error hidden js-typeSelectValidation">Выберите тип</div>
+            </section>
+        </div>
+        <div class="mdRow">
+            <section class="mdKontragentDialog__section--short js-innSection">
+                <label for="mdKontragentDialog__inn" class="mdKontragentDialog__label">ИНН</label>
+
+                <div class="mdInput-group clearfix">
+                    <input type="text" id="mdKontragentDialog__inn"
+                           class="mdKontragentDialog__shortInput js-numberField js-innField"
+                           maxlength="12" data-bind="Inn">
+                </div>
+            </section>
+            <section class="mdKontragentDialog__section--short js-paxPayerSection hidden">
+                <label for="mdKontragentDialog__paxPayerNumber" class="mdKontragentDialog__label">№
+                    налогоплательщика</label>
+                <input type="text" id="mdKontragentDialog__paxPayerNumber"
+                       class="mdKontragentDialog__shortInput"
+                       data-bind="TaxpayerNumber">
+            </section>
+            <section class="mdKontragentDialog__section js-kppSection">
+                <label for="mdKontragentDialog__kpp" class="mdKontragentDialog__label">КПП</label>
+                <input type="text" id="mdKontragentDialog__kpp"
+                       class="mdKontragentDialog__shortInput js-numberField js-fieldForLoad js-kppField" maxlength="9"
+                       data-bind="Kpp">
+            </section>
+        </div>
+        <div class="mdRow">
+            <label for="mdKontragentDialog__name" class="mdKontragentDialog__label js-nameLabel">Краткое
+                наименование</label>
+            <input type="text" id="mdKontragentDialog__name"
+                   class="mdKontragentDialog__name js-fieldForLoad js-nameField" maxlength="256" data-bind="Name">
+        </div>
+        <div class="mdRow">
+            <label for="mdKontragentDialog__address" class="mdKontragentDialog__label">Адрес</label>
+    <textarea id="mdKontragentDialog__address" class="mdKontragentDialog__addressArea js-fieldForLoad js-addressField"
+              maxlength="512"
+              data-bind="Address"></textarea>
+        </div>
+        <div class="mdRow">
+            <section class="mdKontragentDialog__section--short">
+                <label for="mdKontragentDialog__bill" class="mdKontragentDialog__label">Счет</label>
+                <input type="text" id="mdKontragentDialog__bill"
+                       class="mdKontragentDialog__shortInput js-settlement js-numberField"
+                       maxlength="20" data-bind="SettlementAccountNumber">
+            </section>
+            <section class="mdKontragentDialog__section js-bankSection">
+                <label for="mdKontragentDialog__bank" class="mdKontragentDialog__label">Банк</label>
+                <input type="text" id="mdKontragentDialog__bank" class="mdKontragentDialog__bank js-bankField"
+                       data-bind="BankName">
+            </section>
+            <section class="mdKontragentDialog__section js-nrBankSection hidden">
+                <label for="mdKontragentDialog__nonResidentBankName" class="mdKontragentDialog__label">Банк</label>
+                <input type="text" id="mdKontragentDialog__nonResidentBankName" class="mdKontragentDialog__bank"
+                       data-bind="NonResidentBankName">
+            </section>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-audit\src\Moedelo.Common.Audit.Abstractions\Moedelo.Common.Audit.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-common-settings\src\Moedelo.Common.Settings.Abstractions\Moedelo.Common.Settings.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-rabbitmq\src\Moedelo.Infrastructure.RabbitMQ.Abstractions\Moedelo.Infrastructure.RabbitMQ.Abstractions.csproj" />
+      <ProjectReference Include="..\Moedelo.Common.RabbitMQ.Abstractions\Moedelo.Common.RabbitMQ.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

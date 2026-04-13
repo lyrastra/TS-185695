@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2B4C24E-BDC9-4DE4-9BDD-A7571263FC5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.RptV2.Client</RootNamespace>
+    <AssemblyName>Moedelo.RptV2.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyticsApi\AnalyticsApiClient.cs" />
+    <Compile Include="AnalyticsApi\IAnalyticsApiClient.cs" />
+    <Compile Include="AutoWizardCompletion\AutoPayMailSendApiClient.cs" />
+    <Compile Include="AutoWizardCompletion\AutoPaySettingsApi.cs" />
+    <Compile Include="AutoWizardCompletion\WizardAutoCompleteApiClient.cs" />
+    <Compile Include="AutoWizardCompletion\IAutoPayMailSendApiClient.cs" />
+    <Compile Include="AutoWizardCompletion\IAutoPaySettingsApi.cs" />
+    <Compile Include="AutoWizardCompletion\IWizardAutoCompleteApiClient.cs" />
+    <Compile Include="DownloadReport\DownloadReportApiClient.cs" />
+    <Compile Include="DownloadReport\IDownloadReportApiClient.cs" />
+    <Compile Include="FileResponse.cs" />
+    <Compile Include="FileResponseBase64.cs" />
+    <Compile Include="FixedPayments\IFixedPaymentsApiClient.cs" />
+    <Compile Include="FixedPayments\FixedPaymentsApiClient.cs" />
+    <Compile Include="Nds\INdsApiClient.cs" />
+    <Compile Include="Nds\NdsApiClient.cs" />
+    <Compile Include="Nds\Request\InventoryJournalOfInvoicesXmlRequest.cs" />
+    <Compile Include="OutsourceCalendar\IOutsourceCalendarApiClient.cs" />
+    <Compile Include="OutsourceCalendar\OutsourceCalendarApiClient.cs" />
+    <Compile Include="PfrFixes\IPfrFixesApiClient.cs" />
+    <Compile Include="PfrFixes\PfrFixesApiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReconciliationStatements\IReconciliationStatementsApiClient.cs" />
+    <Compile Include="ReconciliationStatements\ReconciliationStatementsApiClient.cs" />
+    <Compile Include="ReportingStatistics\ReportingStatisticsRequest.cs" />
+    <Compile Include="ReportStatus\IReportStatusTrackerClient.cs" />
+    <Compile Include="ReportStatus\ReportStatusTrackerClient.cs" />
+    <Compile Include="RequisitesMaster\IRequisitesMasterClient.cs" />
+    <Compile Include="RequisitesMaster\RequisitesMasterClient.cs" />
+    <Compile Include="TradingTax\ITradingTaxNotificationClient.cs" />
+    <Compile Include="TradingTax\ITradingTaxPaymentClient.cs" />
+    <Compile Include="TradingTax\TradingTaxNotificationClient.cs" />
+    <Compile Include="TradingTax\TradingTaxPaymentClient.cs" />
+    <Compile Include="UsnDeclaration\IUsnDeclarationClient.cs" />
+    <Compile Include="UsnDeclaration\UsnDeclarationClient.cs" />
+    <Compile Include="WizardEngine\IWizardEngineClient.cs" />
+    <Compile Include="WizardEngine\WizardEngineClient.cs" />
+    <Compile Include="Wizard\IWizardClient.cs" />
+    <Compile Include="Wizard\WizardClient.cs" />
+    <Compile Include="RptSettings\IRptSettingsApiClient.cs" />
+    <Compile Include="RptSettings\RptSettingsApiClient.cs" />
+    <Compile Include="RptSettings\RptSettingsSaveRequest.cs" />
+    <Compile Include="Turnovers\ITurnoverApiClient.cs" />
+    <Compile Include="Turnovers\TurnoverApiClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{d75ddfa4-bf4c-410c-a6af-9f0d5f2582d9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Json\Moedelo.InfrastructureV2.Json.csproj">
+      <Project>{83524410-19d8-4330-bf4d-8d963cde2e8c}</Project>
+      <Name>Moedelo.InfrastructureV2.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\spam\Moedelo.SpamV2.Dto\Moedelo.SpamV2.Dto.csproj">
+      <Project>{87A28B52-6E6E-4A69-B5A3-263A894C6381}</Project>
+      <Name>Moedelo.SpamV2.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.RptV2.Dto\Moedelo.RptV2.Dto.csproj">
+      <Project>{4CCE3B13-2C6C-4FE4-B3D5-106F348983C9}</Project>
+      <Name>Moedelo.RptV2.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

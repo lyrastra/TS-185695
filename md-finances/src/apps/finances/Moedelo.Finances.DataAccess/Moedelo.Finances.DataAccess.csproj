@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{143F4B84-6B5C-49DA-B1A9-81F643CCD4A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moedelo.Finances.DataAccess</RootNamespace>
+    <AssemblyName>Moedelo.Finances.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClosedCashGroup\ClosedGroupCashDao.cs" />
+    <Compile Include="ClosedCashGroup\Sql.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sql.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ClosedPeriods\ClosedPeriodsDao.cs" />
+    <Compile Include="ClosedPeriods\Sql.Designer.cs">
+      <DependentUpon>Sql.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FinancialOperations\FinancialOperationsDuplicatesDao.cs" />
+    <Compile Include="FinancialOperations\Sql.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sql.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Operations\PaymentOrders\PaymentOrderOperationQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentOrderOperationQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Reconcilation\Mappers\ReconciliationResultMapper.cs" />
+    <Compile Include="Money\UnrecognizedOperationStates.cs" />
+    <Compile Include="Money\Contractors\MoneyContractorDao.cs" />
+    <Compile Include="Money\Contractors\ContractorQueries.Designer.cs">
+      <DependentUpon>ContractorQueries.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Money\Balances\AccMoneyBalancesDao.cs" />
+    <Compile Include="Money\Balances\AccMoneyBalancesQueryBuilder.cs" />
+    <Compile Include="Money\Operations\CashOrders\CashOrderOperationQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CashOrderOperationQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Operations\CashOrders\QueryBuilder.cs" />
+    <Compile Include="Money\Operations\MoneyTransfers\MoneyTransferOperationQeries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoneyTransferOperationQeries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Operations\OperationQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentOrdersDuplicatesQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Operations\MoneyTransfers\MoneyTransferOperationDao.cs" />
+    <Compile Include="Money\Operations\MoneyTransfers\MoneyTransferOperationSqlBuilder.cs" />
+    <Compile Include="Money\Operations\PaymentOrders\PaymentOrderOperationSqlBuilder.cs" />
+    <Compile Include="Money\Balances\BalancesQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalancesQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Operations\RefundPaymentAutocomplete\RefundPaymentAutocompleteDao.cs" />
+    <Compile Include="Money\Operations\RefundPaymentAutocomplete\RefundPaymentAutocompleteQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefundPaymentAutocompleteQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Operations\RefundPaymentAutocomplete\RefundPaymentAutocompleteQueryBuilder.cs" />
+    <Compile Include="Money\Reconcilation\BalanceReconcilationDao.cs" />
+    <Compile Include="Money\Reconcilation\Models\MongoReconciliationResult.cs" />
+    <Compile Include="Money\Reconcilation\ReconcilationQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReconcilationQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Tables\TableQueries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TableQueries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Money\Tables\MoneyTableSqlBuilder.cs" />
+    <Compile Include="Money\Tables\MoneyTableDao.cs" />
+    <Compile Include="Money\Operations\CashOrders\CashOrderOperationDao.cs" />
+    <Compile Include="Money\Operations\OperationDao.cs" />
+    <Compile Include="Money\Operations\PaymentOrders\PaymentOrderOperationDao.cs" />
+    <Compile Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesDao.cs" />
+    <Content Include="ClosedCashGroup\Scripts\GetLastClosedCashDate.sql" />
+    <Content Include="FinancialOperations\Scripts\GetForBatchDetection.sql" />
+    <Content Include="FinancialOperations\Scripts\GetAllOutgoingOperations.sql" />
+    <Content Include="Money\Operations\CashOrders\CashOrderScripts\Get.sql" />
+    <Content Include="Money\Operations\CashOrders\CashOrderScripts\GetWithUnifiedTaxPayments.sql" />
+    <Content Include="Money\Operations\MoneyTransfers\Scripts\DeleteByBaseIds.sql" />
+    <Content Include="Money\Operations\MoneyTransfers\Scripts\HasOperationsBySettlementAccount.sql" />
+    <Content Include="Money\Operations\MoneyTransfers\Scripts\GetIsBalanceSettedForFirms.sql" />
+    <Content Include="Money\Operations\MoneyTransfers\Scripts\Update.sql" />
+    <Content Include="Money\Operations\MoneyTransfers\Scripts\Insert.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrderScripts\Get.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrderScripts\GetWithUnifiedTaxPayments.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrderScripts\HasOperationsBySettlementAccount.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesScripts\GetForBatchDetection.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesScripts\GetBalancePaymentOrder.sql" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Money\Operations\Scripts\GetByPatent.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetByDate.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetLastBySettlementAccountIds.sql" />
+    <Content Include="Money\Tables\Scripts\GetImportedOperationCount.sql" />
+    <Content Include="Money\Tables\Scripts\GetOutsourceProcessing.sql" />
+    <Content Include="Money\Tables\Scripts\GetUnrecognizedOperationCount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\paymentImport\Moedelo.PaymentImport.Client\Moedelo.PaymentImport.Client.csproj">
+      <Project>{1edc8846-522e-4e4e-b6b6-e1055a9fbebc}</Project>
+      <Name>Moedelo.PaymentImport.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\clients\paymentImport\Moedelo.PaymentImport.Dto\Moedelo.PaymentImport.Dto.csproj">
+      <Project>{98066e77-d217-4365-b4d5-cdaab34311fe}</Project>
+      <Name>Moedelo.PaymentImport.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-commonV2\src\utils\Moedelo.CommonV2.Extensions.System\Moedelo.CommonV2.Extensions.System.csproj">
+      <Project>{c5cbb4f1-a2eb-421b-b98f-94626eb172bd}</Project>
+      <Name>Moedelo.CommonV2.Extensions.System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-enums\src\common\Moedelo.Common.Enums\Moedelo.Common.Enums.csproj">
+      <Project>{52BBDD20-FE18-48D1-A6D6-03DACED1421D}</Project>
+      <Name>Moedelo.Common.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.DataAccess\Moedelo.InfrastructureV2.DataAccess.csproj">
+      <Project>{25c631ad-d8ae-4d72-94fe-7c236aec9da6}</Project>
+      <Name>Moedelo.InfrastructureV2.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\md-infrastructureV2\src\Moedelo.InfrastructureV2.Domain\Moedelo.InfrastructureV2.Domain.csproj">
+      <Project>{D75DDFA4-BF4C-410C-A6AF-9F0D5F2582D9}</Project>
+      <Name>Moedelo.InfrastructureV2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moedelo.Finances.Domain\Moedelo.Finances.Domain.csproj">
+      <Project>{A1E42218-9079-44C4-A8BB-76E82FB05C7F}</Project>
+      <Name>Moedelo.Finances.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ClosedCashGroup\Sql.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sql.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClosedPeriods\Sql.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sql.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancialOperations\Sql.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sql.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Contractors\ContractorQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContractorQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Operations\CashOrders\CashOrderOperationQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CashOrderOperationQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Operations\MoneyTransfers\MoneyTransferOperationQeries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MoneyTransferOperationQeries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Operations\PaymentOrders\PaymentOrderOperationQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>PaymentOrderOperationQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Operations\OperationQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OperationQueries.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Balances\BalancesQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>BalancesQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Operations\RefundPaymentAutocomplete\RefundPaymentAutocompleteQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RefundPaymentAutocompleteQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Reconcilation\ReconcilationQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReconcilationQueries.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Tables\TableQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TableQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesQueries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PaymentOrdersDuplicatesQueries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClosedPeriods\Scripts\GetLastClosedDate.sql" />
+    <Content Include="ClosedPeriods\Scripts\GetNonProvidedInAccountingOrderCounts.sql" />
+    <Content Include="FinancialOperations\Scripts\GetAllIncomingOperations.sql" />
+    <Content Include="FinancialOperations\Scripts\GetOperationDuplicateIdExt.sql" />
+    <Content Include="FinancialOperations\Scripts\GetRoboAndSapeIncomingOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetUkInpamentOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetMovementOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetMaterialAidOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetRoboAndSapeOutgoingOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetYandexMovementOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetYandexOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetBudgetaryPaymentOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetDividendPaymentOperationDuplicateId.sql" />
+    <Content Include="FinancialOperations\Scripts\GetOperationDuplicateId.sql" />
+    <Content Include="Money\Contractors\Scripts\GetWithRating.sql" />
+    <Content Include="Money\Operations\MoneyTransfers\Scripts\GetByFirm.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrderScripts\GetStatusesByBaseIds.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrderScripts\GetBaseIdsForUncategorized.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrderScripts\GetLastDateUntil.sql" />
+    <Content Include="Money\Operations\RefundPaymentAutocomplete\Scripts\GetByCriterion.sql" />
+    <Content Include="Money\Operations\Scripts\GetOperations.sql" />
+    <Content Include="Money\Operations\Scripts\GetOperationsKindsByIds.sql" />
+    <Content Include="Money\Operations\Scripts\TopByOperationsWithKontragentsAcc.sql" />
+    <Content Include="Money\Operations\MoneyTransfers\Scripts\TopByOperationsWithKontragents.sql" />
+    <Content Include="Money\Balances\Scripts\GetCashOrderBalances.sql" />
+    <Content Include="Money\Balances\Scripts\GetPaymentOrderBalances.sql" />
+    <Content Include="Money\Balances\Scripts\GetPurseOperationBalances.sql" />
+    <Content Include="Money\Operations\Scripts\GetByBaseId.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrderScripts\GetDuplicateBaseIdsByOriginalBaseIds.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetLastForSettlementAccount.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetLastSessionIdInProcess.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetLast.sql" />
+    <Content Include="Money\Reconcilation\Scripts\Get.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetBySessionId.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetMaxCreateDate.sql" />
+    <Content Include="Money\Reconcilation\Scripts\Insert.sql" />
+    <Content Include="Money\Reconcilation\Scripts\GetSettlementAccountsInProgress.sql" />
+    <Content Include="Money\Reconcilation\Scripts\IsAnyInProgress.sql" />
+    <Content Include="Money\Reconcilation\Scripts\SetReadyToComplete.sql" />
+    <Content Include="Money\Reconcilation\Scripts\SetStatus.sql" />
+    <Content Include="Money\Tables\Scripts\GetUnrecognized.sql" />
+    <Content Include="Money\Tables\Scripts\GetImported.sql" />
+    <Content Include="Money\Tables\Scripts\GetMain.sql" />
+    <Content Include="Money\Operations\Scripts\GetOperationsKindsByBaseIds.sql" />
+    <Content Include="Money\Operations\Scripts\GetOperationKind.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesScripts\GetAllPaymentOrders.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesScripts\GetPaymentOrderIdExt.sql" />
+    <Content Include="Money\Operations\PaymentOrders\PaymentOrdersDuplicatesScripts\GetPaymentOrderId.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

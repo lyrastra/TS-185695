@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.Abstractions\Moedelo.Common.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Accounts.Kafka.Abstractions\Moedelo.Accounts.Kafka.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Accounts.Kafka.NetCore.Abstractions\Moedelo.Accounts.Kafka.NetCore.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

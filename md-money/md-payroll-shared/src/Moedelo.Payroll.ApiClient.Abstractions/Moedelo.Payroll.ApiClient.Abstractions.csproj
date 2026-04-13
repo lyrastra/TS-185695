@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <LangVersion>default</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\md-accounting-shared\src\Moedelo.Accounting.Enums\Moedelo.Accounting.Enums.csproj" />
+    <ProjectReference Include="..\..\..\md-common-types\src\Moedelo.Common.Types\Moedelo.Common.Types.csproj" />
+    <ProjectReference Include="..\..\..\md-infrastructure-core-http\src\Moedelo.Infrastructure.Http.Abstractions\Moedelo.Infrastructure.Http.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Payroll.Enums\Moedelo.Payroll.Enums.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Legacy\Dto\ChargeGeneration\" />
+  </ItemGroup>
+
+</Project>

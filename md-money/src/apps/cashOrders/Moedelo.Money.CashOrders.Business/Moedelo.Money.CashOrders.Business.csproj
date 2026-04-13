@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.ApiClient.Abstractions\Moedelo.AccPostings.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-accPostings-shared\src\Moedelo.AccPostings.Enums\Moedelo.AccPostings.Enums.csproj" />
+    <ProjectReference Include="..\..\..\..\md-catalog-shared\src\Moedelo.Catalog.ApiClient.Abstractions\Moedelo.Catalog.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-common-executioncontext\src\Moedelo.Common.ExecutionContext.Abstractions\Moedelo.Common.ExecutionContext.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-infrastructure-core-dependencyinjection\src\Moedelo.Infrastructure.DependencyInjection.Abstractions\Moedelo.Infrastructure.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\md-requisites-shared\src\Moedelo.Requisites.ApiClient.Abstractions\Moedelo.Requisites.ApiClient.Abstractions.csproj" />
+    <ProjectReference Include="..\..\common\Moedelo.Money.Common.DataAccess.Abstractions\Moedelo.Money.Common.DataAccess.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.CashOrders.Business.Abstractions\Moedelo.Money.CashOrders.Business.Abstractions.csproj" />
+    <ProjectReference Include="..\Moedelo.Money.CashOrders.DataAccess.Abstractions\Moedelo.Money.CashOrders.DataAccess.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

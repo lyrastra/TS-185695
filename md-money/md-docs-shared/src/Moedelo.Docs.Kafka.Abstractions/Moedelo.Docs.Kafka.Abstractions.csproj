@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\md-common-apachekafka\src\Moedelo.Common.Kafka.Abstractions\Moedelo.Common.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-infrastructure-core-apachekafka\src\Moedelo.Infrastructure.Kafka.Abstractions\Moedelo.Infrastructure.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\md-requisites-shared\src\Moedelo.Requisites.Enums\Moedelo.Requisites.Enums.csproj" />
+      <ProjectReference Include="..\Moedelo.Docs.Enums\Moedelo.Docs.Enums.csproj" />
+      <ProjectReference Include="..\Moedelo.Docs.Shared.Kafka.Abstractions\Moedelo.Docs.Shared.Kafka.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>
